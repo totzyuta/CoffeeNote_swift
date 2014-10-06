@@ -11,17 +11,40 @@ import UIKit
 class NewViewController: UIViewController {
   
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  @IBOutlet weak var blendName: UITextField!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+    // Do any additional setup after loading the view.
+  }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
+  
+  
+  
+  @IBAction func saveNewNote(sender: AnyObject) {
     
+    // NSUserDefaultsインスタンスの生成
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
+    // キー: "saveText" , 値: "<textFieldの入力値>" を格納。（idは任意）
+    userDefaults.setObject(blendName.text?, forKey: "saveText")
+    
+    // NSUserDefaultsインスタンスの生成
+    // let userDefaults = NSUserDefaults.standardUserDefaults()
+    
+    // キーが"saveText"のStringをとります。
+    var loadText : String! = userDefaults.stringForKey("saveText")
+    
+    // labelに表示
+    println(loadText)
+    
+  }
     
     /*
     // MARK: - Navigation

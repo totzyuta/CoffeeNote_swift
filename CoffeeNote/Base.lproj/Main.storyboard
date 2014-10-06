@@ -7,7 +7,7 @@
         <!--New Note-->
         <scene sceneID="sRz-dp-gcd">
             <objects>
-                <viewController id="ZAN-w2-coa" customClass="NewViewController" sceneMemberID="viewController">
+                <viewController id="ZAN-w2-coa" customClass="NewViewController" customModule="CoffeeNote" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dyA-UQ-9Mg"/>
                         <viewControllerLayoutGuide type="bottom" id="fhz-C2-LbY"/>
@@ -48,10 +48,13 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="9Jm-CS-22r">
                             <connections>
-                                <segue destination="fMH-kp-Lbx" kind="unwind" unwindAction="unwindToAllBySave:" id="NmS-Ud-Sev"/>
+                                <action selector="saveNewNote:" destination="ZAN-w2-coa" id="i1V-hM-eGs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="blendName" destination="buh-KY-0ha" id="HU4-fl-fgs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5u6-G4-KcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="fMH-kp-Lbx" userLabel="Exit" sceneMemberID="exit"/>
@@ -81,7 +84,7 @@
                     <navigationItem key="navigationItem" title="All Notes" id="UKL-OD-I1L">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cqg-CK-vmt">
                             <connections>
-                                <segue destination="bFf-Ky-bLY" kind="presentation" id="Ml1-k1-cGm"/>
+                                <segue destination="bFf-Ky-bLY" kind="presentation" id="6Me-hh-TVc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
