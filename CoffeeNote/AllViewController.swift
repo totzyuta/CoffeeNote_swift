@@ -40,6 +40,15 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     cell.textLabel?.text = texts[indexPath.row]
     return cell
   }
+  
+  
+  @IBAction func unwindToAllByCancel(segue: UIStoryboardSegue) {
+    NSLog("unwindToAllByCancel was called")
+  }
+
+  @IBAction func unwindToAllBySave(segue: UIStoryboardSegue) {
+        NSLog("unwindToAllBySave was called")
+  }
 
   
 }

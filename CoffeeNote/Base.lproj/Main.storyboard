@@ -16,26 +16,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name of Blend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdf-DX-LSD">
-                                <rect key="frame" x="103" y="224" width="115" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Blend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdf-DX-LSD">
+                                <rect key="frame" x="243" y="190" width="115" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="buh-KY-0ha">
-                                <rect key="frame" x="70" y="269" width="180" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="buh-KY-0ha">
+                                <rect key="frame" x="200" y="285" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="g6A-Zh-Lme"/>
+                                    <constraint firstAttribute="height" constant="30" id="yPA-HR-3n7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Jdf-DX-LSD" secondAttribute="centerX" id="Hmx-ZK-pTj"/>
+                            <constraint firstAttribute="centerY" secondItem="buh-KY-0ha" secondAttribute="centerY" id="Tc7-Tq-XID"/>
+                            <constraint firstAttribute="centerY" secondItem="Jdf-DX-LSD" secondAttribute="centerY" constant="100" id="hLa-hl-vqT"/>
+                            <constraint firstAttribute="centerX" secondItem="buh-KY-0ha" secondAttribute="centerX" id="vQJ-7e-dHx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Note" id="0CX-GX-MWl">
-                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="znq-Cq-hVc"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9Jm-CS-22r"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="znq-Cq-hVc">
+                            <connections>
+                                <segue destination="fMH-kp-Lbx" kind="unwind" unwindAction="unwindToAllByCancel:" id="D2n-GM-fbZ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9Jm-CS-22r">
+                            <connections>
+                                <segue destination="fMH-kp-Lbx" kind="unwind" unwindAction="unwindToAllBySave:" id="NmS-Ud-Sev"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5u6-G4-KcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fMH-kp-Lbx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1266" y="-531"/>
         </scene>
