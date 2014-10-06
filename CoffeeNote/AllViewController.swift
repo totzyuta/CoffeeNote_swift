@@ -26,28 +26,37 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   }
   
   // セルに表示するテキスト
-  let texts = ["House Blend", "Pike Place Roast", "Light Note", "Kenya", "Ethiopia", "Espresso Blend", "Brazil"]
+  let blendNames = ["House Blend", "Pike Place Roast", "Light Note", "Kenya", "Ethiopia", "Espresso Blend", "Brazil"]
   
   // セルの行数
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return texts.count
+    return blendNames.count
   }
   
   // セルの内容を変更
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
     
-    cell.textLabel?.text = texts[indexPath.row]
+    cell.textLabel?.text = blendNames[indexPath.row]
     return cell
   }
   
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    println("toDetailViewController was called")
+
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    appDelegate.blendName = blendNames[indexPath.row] //appDelegateの変数を操作
+    
+    performSegueWithIdentifier("toDetailViewController", sender: self)
+    
+  }
   
   @IBAction func unwindToAllByCancel(segue: UIStoryboardSegue) {
     NSLog("unwindToAllByCancel was called")
   }
 
   @IBAction func unwindToAllBySave(segue: UIStoryboardSegue) {
-        NSLog("unwindToAllBySave was called")
+    NSLog("unwindToAllBySave was called")
   }
 
   

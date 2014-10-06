@@ -10,10 +10,18 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+  @IBOutlet weak var blendName: UILabel!
+  
     override func viewDidLoad() {
-        super.viewDidLoad()
+      super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+      println("Detail View was leaded")
+      
+      var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+      var blendName = appDelegate.blendName
+      println(blendName)
+      
+      self.blendName.text = blendName
     }
 
     override func didReceiveMemoryWarning() {
