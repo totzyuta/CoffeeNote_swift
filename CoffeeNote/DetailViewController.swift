@@ -22,6 +22,8 @@ class DetailViewController: UIViewController {
       println(blendName)
       
       self.blendName.text = blendName
+      
+      
     } 
 
     override func didReceiveMemoryWarning() {

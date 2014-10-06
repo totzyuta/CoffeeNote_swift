@@ -28,7 +28,6 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     // labelに表示
     println("Saved: " + loadText)
     
-    
   }
     
   override func didReceiveMemoryWarning() {
