@@ -12,36 +12,27 @@ class DetailViewController: UIViewController {
 
   @IBOutlet weak var blendName: UILabel!
   
-    override func viewDidLoad() {
-      super.viewDidLoad()
-
-      println("Detail View was leaded")
-      
-      var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
-      var blendName = appDelegate.blendName
-      println(blendName)
-      
-      self.blendName.text = blendName
-      
-      
-      
-      
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    println("---DetailViewDidLoad---")
     
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    println("---DetailViewWillAppear---")
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegatのインスタンスを取得
+    var blendName = appDelegate.blendName
+    println(blendName)
+    
+    self.blendName.text = blendName
+    
+  }
+  
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+    
 }
