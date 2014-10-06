@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		127ACEDF19DBF1BF00B39373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACEDE19DBF1BF00B39373 /* AppDelegate.swift */; };
-		127ACEE119DBF1BF00B39373 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACEE019DBF1BF00B39373 /* ViewController.swift */; };
+		127ACEE119DBF1BF00B39373 /* AllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACEE019DBF1BF00B39373 /* AllViewController.swift */; };
 		127ACEE419DBF1BF00B39373 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 127ACEE219DBF1BF00B39373 /* Main.storyboard */; };
 		127ACEE619DBF1BF00B39373 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 127ACEE519DBF1BF00B39373 /* Images.xcassets */; };
 		127ACEE919DBF1BF00B39373 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127ACEE719DBF1BF00B39373 /* LaunchScreen.xib */; };
 		127ACEF519DBF1BF00B39373 /* CoffeeNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACEF419DBF1BF00B39373 /* CoffeeNoteTests.swift */; };
+		1285316719DC44F000CCDB50 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1285316619DC44F000CCDB50 /* DetailViewController.swift */; };
+		1285316919DC452300CCDB50 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1285316819DC452300CCDB50 /* NewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +31,15 @@
 		127ACED919DBF1BE00B39373 /* CoffeeNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		127ACEDD19DBF1BF00B39373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		127ACEDE19DBF1BF00B39373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		127ACEE019DBF1BF00B39373 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		127ACEE019DBF1BF00B39373 /* AllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViewController.swift; sourceTree = "<group>"; };
 		127ACEE319DBF1BF00B39373 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		127ACEE519DBF1BF00B39373 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		127ACEE819DBF1BF00B39373 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		127ACEEE19DBF1BF00B39373 /* CoffeeNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		127ACEF319DBF1BF00B39373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		127ACEF419DBF1BF00B39373 /* CoffeeNoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNoteTests.swift; sourceTree = "<group>"; };
+		1285316619DC44F000CCDB50 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1285316819DC452300CCDB50 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				127ACEDE19DBF1BF00B39373 /* AppDelegate.swift */,
-				127ACEE019DBF1BF00B39373 /* ViewController.swift */,
+				127ACEE019DBF1BF00B39373 /* AllViewController.swift */,
+				1285316619DC44F000CCDB50 /* DetailViewController.swift */,
+				1285316819DC452300CCDB50 /* NewViewController.swift */,
 				127ACEE219DBF1BF00B39373 /* Main.storyboard */,
 				127ACEE519DBF1BF00B39373 /* Images.xcassets */,
 				127ACEE719DBF1BF00B39373 /* LaunchScreen.xib */,
@@ -212,8 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				127ACEE119DBF1BF00B39373 /* ViewController.swift in Sources */,
+				1285316719DC44F000CCDB50 /* DetailViewController.swift in Sources */,
+				127ACEE119DBF1BF00B39373 /* AllViewController.swift in Sources */,
 				127ACEDF19DBF1BF00B39373 /* AppDelegate.swift in Sources */,
+				1285316919DC452300CCDB50 /* NewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +413,7 @@
 				127ACEFA19DBF1BF00B39373 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		127ACEFB19DBF1BF00B39373 /* Build configuration list for PBXNativeTarget "CoffeeNoteTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +422,7 @@
 				127ACEFD19DBF1BF00B39373 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
