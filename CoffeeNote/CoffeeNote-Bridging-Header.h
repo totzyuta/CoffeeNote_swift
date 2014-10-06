@@ -10,6 +10,6 @@
 #define CoffeeNote_CoffeeNote_Bridging_Header_h
 
 #import <sqlite3.h>
-#import <FMDatabase.h>
+#import "FMDatabase.h"
 
 #endif

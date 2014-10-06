@@ -29,7 +29,12 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     println("Saved: " + loadText)
     
   }
+  
+  override func viewDidAppear(animated: Bool) {
     
+  }
+  
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.

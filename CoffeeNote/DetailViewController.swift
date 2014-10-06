@@ -24,7 +24,9 @@ class DetailViewController: UIViewController {
       self.blendName.text = blendName
       
       
-    } 
+      
+      
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
