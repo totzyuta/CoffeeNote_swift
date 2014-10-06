@@ -18,6 +18,17 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     allTableView.delegate = self
     allTableView.dataSource = self
     
+    
+    // NSUserDefaultsインスタンスの生成
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
+    // キーが"saveText"のStringをとります。
+    var loadText : String! = userDefaults.stringForKey("saveText")
+    
+    // labelに表示
+    println("Saved: " + loadText)
+    
+    
   }
     
   override func didReceiveMemoryWarning() {

@@ -26,25 +26,24 @@ class NewViewController: UIViewController {
   
   
   
-  
-  @IBAction func saveNewNote(sender: AnyObject) {
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    println("prepareForSegue was called!")
     
     // NSUserDefaultsインスタンスの生成
     let userDefaults = NSUserDefaults.standardUserDefaults()
     
     // キー: "saveText" , 値: "<textFieldの入力値>" を格納。（idは任意）
     userDefaults.setObject(blendName.text?, forKey: "saveText")
-    
-    // NSUserDefaultsインスタンスの生成
-    // let userDefaults = NSUserDefaults.standardUserDefaults()
-    
+        
     // キーが"saveText"のStringをとります。
     var loadText : String! = userDefaults.stringForKey("saveText")
     
     // labelに表示
-    println(loadText)
+    println("Saved: " + loadText)
+
     
   }
+  
     
     /*
     // MARK: - Navigation
