@@ -15,6 +15,12 @@
 		127ACEF519DBF1BF00B39373 /* CoffeeNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACEF419DBF1BF00B39373 /* CoffeeNoteTests.swift */; };
 		1285316719DC44F000CCDB50 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1285316619DC44F000CCDB50 /* DetailViewController.swift */; };
 		1285316919DC452300CCDB50 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1285316819DC452300CCDB50 /* NewViewController.swift */; };
+		129D3E1219E2C61900180B94 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 129D3E1119E2C61900180B94 /* libsqlite3.0.dylib */; };
+		129D3E2119E2C79100180B94 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D3E1719E2C79100180B94 /* FMDatabase.m */; };
+		129D3E2219E2C79100180B94 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D3E1919E2C79100180B94 /* FMDatabaseAdditions.m */; };
+		129D3E2319E2C79100180B94 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D3E1B19E2C79100180B94 /* FMDatabasePool.m */; };
+		129D3E2419E2C79100180B94 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D3E1D19E2C79100180B94 /* FMDatabaseQueue.m */; };
+		129D3E2519E2C79100180B94 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D3E2019E2C79100180B94 /* FMResultSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,19 @@
 		127ACEF419DBF1BF00B39373 /* CoffeeNoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNoteTests.swift; sourceTree = "<group>"; };
 		1285316619DC44F000CCDB50 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1285316819DC452300CCDB50 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		129D3E1119E2C61900180B94 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		129D3E1319E2C64B00180B94 /* CoffeeNote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoffeeNote-Bridging-Header.h"; sourceTree = "<group>"; };
+		129D3E1619E2C79100180B94 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		129D3E1719E2C79100180B94 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		129D3E1819E2C79100180B94 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		129D3E1919E2C79100180B94 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		129D3E1A19E2C79100180B94 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		129D3E1B19E2C79100180B94 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		129D3E1C19E2C79100180B94 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		129D3E1D19E2C79100180B94 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		129D3E1E19E2C79100180B94 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		129D3E1F19E2C79100180B94 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		129D3E2019E2C79100180B94 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				129D3E1219E2C61900180B94 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +83,8 @@
 		127ACED019DBF1BE00B39373 = {
 			isa = PBXGroup;
 			children = (
+				129D3E1419E2C75100180B94 /* lib */,
+				129D3E1119E2C61900180B94 /* libsqlite3.0.dylib */,
 				127ACEDB19DBF1BE00B39373 /* CoffeeNote */,
 				127ACEF119DBF1BF00B39373 /* CoffeeNoteTests */,
 				127ACEDA19DBF1BE00B39373 /* Products */,
@@ -89,6 +111,7 @@
 				127ACEE519DBF1BF00B39373 /* Images.xcassets */,
 				127ACEE719DBF1BF00B39373 /* LaunchScreen.xib */,
 				127ACEDC19DBF1BF00B39373 /* Supporting Files */,
+				129D3E1319E2C64B00180B94 /* CoffeeNote-Bridging-Header.h */,
 			);
 			path = CoffeeNote;
 			sourceTree = "<group>";
@@ -116,6 +139,33 @@
 				127ACEF319DBF1BF00B39373 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		129D3E1419E2C75100180B94 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				129D3E1519E2C79000180B94 /* fmdb */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		129D3E1519E2C79000180B94 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				129D3E1619E2C79100180B94 /* FMDatabase.h */,
+				129D3E1719E2C79100180B94 /* FMDatabase.m */,
+				129D3E1819E2C79100180B94 /* FMDatabaseAdditions.h */,
+				129D3E1919E2C79100180B94 /* FMDatabaseAdditions.m */,
+				129D3E1A19E2C79100180B94 /* FMDatabasePool.h */,
+				129D3E1B19E2C79100180B94 /* FMDatabasePool.m */,
+				129D3E1C19E2C79100180B94 /* FMDatabaseQueue.h */,
+				129D3E1D19E2C79100180B94 /* FMDatabaseQueue.m */,
+				129D3E1E19E2C79100180B94 /* FMDB.h */,
+				129D3E1F19E2C79100180B94 /* FMResultSet.h */,
+				129D3E2019E2C79100180B94 /* FMResultSet.m */,
+			);
+			name = fmdb;
+			path = "../../Downloads/fmdb-master/src/fmdb";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +269,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1285316719DC44F000CCDB50 /* DetailViewController.swift in Sources */,
+				129D3E2419E2C79100180B94 /* FMDatabaseQueue.m in Sources */,
 				127ACEE119DBF1BF00B39373 /* AllViewController.swift in Sources */,
 				127ACEDF19DBF1BF00B39373 /* AppDelegate.swift in Sources */,
+				129D3E2119E2C79100180B94 /* FMDatabase.m in Sources */,
+				129D3E2319E2C79100180B94 /* FMDatabasePool.m in Sources */,
+				129D3E2519E2C79100180B94 /* FMResultSet.m in Sources */,
 				1285316919DC452300CCDB50 /* NewViewController.swift in Sources */,
+				129D3E2219E2C79100180B94 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +402,7 @@
 				INFOPLIST_FILE = CoffeeNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/CoffeeNote-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -357,6 +413,7 @@
 				INFOPLIST_FILE = CoffeeNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/CoffeeNote-Bridging-Header.h";
 			};
 			name = Release;
 		};

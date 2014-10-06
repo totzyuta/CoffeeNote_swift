@@ -18,29 +18,59 @@ class NewViewController: UIViewController {
 
     // Do any additional setup after loading the view.
   }
-
+  
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
   
   
-  
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     println("prepareForSegue was called!")
     
-    // NSUserDefaultsインスタンスの生成
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    // sqlite from here
+    let _dbfile:NSString = "sqlite.db"
+    let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
+      NSSearchPathDirectory.DocumentDirectory,
+      NSSearchPathDomainMask.UserDomainMask,
+      true)[0]
+    let fileManager:NSFileManager = NSFileManager.defaultManager()
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
     
-    // キー: "saveText" , 値: "<textFieldの入力値>" を格納。（idは任意）
-    userDefaults.setObject(blendName.text?, forKey: "saveText")
-        
-    // キーが"saveText"のStringをとります。
-    var loadText : String! = userDefaults.stringForKey("saveText")
+    // println(_path)
     
-    // labelに表示
-    println("Saved: " + loadText)
-
+    let _db = FMDatabase(path: _path)
+    
+    _db.open()
+    
+    let db = FMDatabase(path: _path)
+    
+    let sql_insert = "INSERT INTO notes (blendName) values (?);"
+    
+    var _result_insert = _db.executeUpdate(sql_insert, withArgumentsInArray: [self.blendName.text])
+    
+    
+    
+    // Debug for comfirm the inserted data
+    
+    let sql_select = "SELECT nid, blendName FROM notes ORDER BY nid;"
+    
+    // var rows = _db.executeQuery(sql_select, withArgumentsInArray: [2])
+    var rows = _db.executeQuery(sql_select, withArgumentsInArray: nil)
+    
+    while rows.next() {
+      // カラム名を指定して値を取得
+      let nid = rows.intForColumn("nid")
+      // カラムのインデックスを指定して取得
+      let blendName = rows.stringForColumnIndex(1)
+      
+      println("nid = \(nid), blendName = \(blendName)")
+    }
+    
+    _db.close()
+    
+    
     
   }
   
