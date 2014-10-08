@@ -44,8 +44,6 @@ class NewViewController: UIViewController {
     
     _db.open()
     
-    let db = FMDatabase(path: _path)
-    
     let sql_insert = "INSERT INTO notes (blendName) values (?);"
     
     var _result_insert = _db.executeUpdate(sql_insert, withArgumentsInArray: [self.blendName.text])

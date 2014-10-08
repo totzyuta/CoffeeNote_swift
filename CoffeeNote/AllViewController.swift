@@ -60,13 +60,14 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     let db = FMDatabase(path: _path)
     
     
-    let sql_select = "SELECT nid, blendName FROM notes ORDER BY nid;"
+    let sql_select = "SELECT * FROM notes ORDER BY nid;"
     
     db.open()
     
     // var rows = _db.executeQuery(sql_select, withArgumentsInArray: [2])
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
+    var notes: [String] = []
     var blendNames: [String] = []
     
     while rows.next() {
@@ -75,6 +76,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       // カラムのインデックスを指定して取得
       //let blendNames = rows.stringForColumnIndex(1)
       blendNames.append(rows.stringForColumn("blendName"))
+      
     }
     
     db.close()
@@ -118,7 +120,9 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       let nid = rows.intForColumn("nid")
       // カラムのインデックスを指定して取得
       //let blendNames = rows.stringForColumnIndex(1)
-      blendNames.append(rows.stringForColumn("blendName"))
+      //blendNames.append(rows.stringForColumn("blendName"))
+      
+      var blendName = rows.stringForColumn("blendName")
     }
     
     db.close()
@@ -177,7 +181,8 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     let db = FMDatabase(path: _path)
     
-    var cellNumber = indexPath.row + 1
+    var cellNumber = indexPath.row
+    
     
     let sql_select = "SELECT * FROM notes WHERE nid=\(cellNumber);"
     
@@ -186,9 +191,11 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
     while rows.next() {
-      var blendName: String = rows.stringForColumn("blendName")
+      var nid: Int = Int(rows.intForColumn("nid"))
+      // var blendName: String = rows.stringForColumn("blendName")
       var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
-      appDelegate.blendName = blendName
+      appDelegate.nid = nid
+      // appDelegate.blendName = blendName
     }
     
     
