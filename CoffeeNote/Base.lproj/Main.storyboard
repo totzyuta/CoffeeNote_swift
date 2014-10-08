@@ -73,9 +73,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AcH-GG-mHJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AcH-GG-mHJ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="664"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="MV5-RW-ByM">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MV5-RW-ByM" id="GtJ-Hr-V16">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <sections/>
                             </tableView>
                         </subviews>
@@ -95,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="947.99999999999989" y="129"/>
+            <point key="canvasLocation" x="947" y="129"/>
         </scene>
         <!--Detail-->
         <scene sceneID="cjN-pL-dDb">
@@ -129,21 +138,42 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJT-wQ-efH">
+                                <rect key="frame" x="158" y="418" width="284" height="45"/>
+                                <color key="backgroundColor" white="0.82075352822580661" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="284" id="ASC-es-axR"/>
+                                    <constraint firstAttribute="height" constant="45" id="kjZ-2x-NmH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Delete This Note">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushedDeleteButton:" destination="Iv7-iO-dKm" eventType="touchUpInside" id="TCW-tn-p8Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="Lf0-ak-BhH" secondAttribute="centerY" constant="100" id="0nI-Z3-aCM"/>
                             <constraint firstAttribute="centerX" secondItem="wX0-5Q-CxU" secondAttribute="centerX" id="7Dw-TX-TF6"/>
+                            <constraint firstAttribute="centerX" secondItem="dJT-wQ-efH" secondAttribute="centerX" id="8BA-Uy-9dR"/>
+                            <constraint firstAttribute="centerY" secondItem="dJT-wQ-efH" secondAttribute="centerY" constant="-140" id="TeZ-AU-7UN"/>
                             <constraint firstAttribute="centerY" secondItem="wX0-5Q-CxU" secondAttribute="centerY" constant="50" id="Vhg-bj-9et"/>
                             <constraint firstAttribute="centerX" secondItem="Lf0-ak-BhH" secondAttribute="centerX" id="hd6-xf-a3I"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="yV1-qN-IGE"/>
+                    <navigationItem key="navigationItem" title="Detail" id="yV1-qN-IGE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="IRn-0s-MML"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="blendName" destination="wX0-5Q-CxU" id="kG4-t0-RhW"/>
+                        <outlet property="blendNameLabel" destination="wX0-5Q-CxU" id="03f-Ln-BU8"/>
+                        <segue destination="itJ-1X-W0k" kind="unwind" identifier="unwindFromDetail" unwindAction="unwindFromDetail:" id="8ql-g6-dHL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5h-eD-AhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="itJ-1X-W0k" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1618" y="135"/>
         </scene>

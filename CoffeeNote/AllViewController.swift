@@ -46,6 +46,8 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   }
   
   override func viewWillAppear(animated: Bool) {
+    println("---DetailViewWillAppear---")
+    
     let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
     
     // sql from here
@@ -60,13 +62,14 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     let db = FMDatabase(path: _path)
     
     
-    let sql_select = "SELECT nid, blendName FROM notes ORDER BY nid;"
+    let sql_select = "SELECT * FROM notes ORDER BY nid;"
     
     db.open()
     
     // var rows = _db.executeQuery(sql_select, withArgumentsInArray: [2])
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
+    var notes: [String] = []
     var blendNames: [String] = []
     
     while rows.next() {
@@ -75,6 +78,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       // カラムのインデックスを指定して取得
       //let blendNames = rows.stringForColumnIndex(1)
       blendNames.append(rows.stringForColumn("blendName"))
+      
     }
     
     db.close()
@@ -88,7 +92,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   }
   
   
-  // セルの内容を変更
+  // セルの内容を返す
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
     
@@ -104,7 +108,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     let db = FMDatabase(path: _path)
     
     
-    let sql_select = "SELECT nid, blendName FROM notes ORDER BY nid;"
+    let sql_select = "SELECT * FROM notes ORDER BY nid;"
     
     db.open()
     
@@ -160,6 +164,31 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     return blendNames.count
   }
 
+    
+  func fetchCellNumber(cellNumber: Int) ->Int {
+    // sql from here
+    // fetch the nid of the cell tapped
+    let _dbfile:NSString = "sqlite.db"
+    let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
+      NSSearchPathDirectory.DocumentDirectory,
+      NSSearchPathDomainMask.UserDomainMask,
+      true)[0]
+    let fileManager:NSFileManager = NSFileManager.defaultManager()
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    
+    let db = FMDatabase(path: _path)
+    let sql = "SELECT * FROM notes LIMIT 1 OFFSET \(cellNumber)"
+    
+    db.open()
+    
+    var rows = db.executeQuery(sql, withArgumentsInArray: nil)
+    var nid = 1
+    
+    while rows.next() {
+      nid = Int(rows.intForColumn("nid"))
+    }
+    return nid
+  }
   
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -177,7 +206,8 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     let db = FMDatabase(path: _path)
     
-    var cellNumber = indexPath.row + 1
+    
+    var cellNumber = fetchCellNumber(indexPath.row)
     
     let sql_select = "SELECT * FROM notes WHERE nid=\(cellNumber);"
     
@@ -186,9 +216,11 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
     while rows.next() {
-      var blendName: String = rows.stringForColumn("blendName")
+      var nid: Int = Int(rows.intForColumn("nid"))
+      // var blendName: String = rows.stringForColumn("blendName")
       var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
-      appDelegate.blendName = blendName
+      appDelegate.nid = nid
+      // appDelegate.blendName = blendName
     }
     
     
@@ -208,6 +240,10 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
 
   @IBAction func unwindToAllBySave(segue: UIStoryboardSegue) {
     NSLog("unwindToAllBySave was called")
+  }
+  
+  @IBAction func unwindFromDetail(segue: UIStoryboardSegue) {
+    NSLog("---unwindFromDetail---")
   }
 
   
