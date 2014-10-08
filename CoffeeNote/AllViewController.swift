@@ -223,10 +223,8 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       // appDelegate.blendName = blendName
     }
     
-    
     db.close()
- 
-
+    
     
     performSegueWithIdentifier("toDetailViewController", sender: self)
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1212F69A19E570B300F14F7C /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1212F69919E570B300F14F7C /* EditViewController.swift */; };
 		127ACEDF19DBF1BF00B39373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACEDE19DBF1BF00B39373 /* AppDelegate.swift */; };
 		127ACEE119DBF1BF00B39373 /* AllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACEE019DBF1BF00B39373 /* AllViewController.swift */; };
 		127ACEE419DBF1BF00B39373 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 127ACEE219DBF1BF00B39373 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1212F69919E570B300F14F7C /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		127ACED919DBF1BE00B39373 /* CoffeeNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		127ACEDD19DBF1BF00B39373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		127ACEDE19DBF1BF00B39373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,8 +107,9 @@
 			children = (
 				127ACEDE19DBF1BF00B39373 /* AppDelegate.swift */,
 				127ACEE019DBF1BF00B39373 /* AllViewController.swift */,
-				1285316619DC44F000CCDB50 /* DetailViewController.swift */,
 				1285316819DC452300CCDB50 /* NewViewController.swift */,
+				1285316619DC44F000CCDB50 /* DetailViewController.swift */,
+				1212F69919E570B300F14F7C /* EditViewController.swift */,
 				127ACEE219DBF1BF00B39373 /* Main.storyboard */,
 				127ACEE519DBF1BF00B39373 /* Images.xcassets */,
 				127ACEE719DBF1BF00B39373 /* LaunchScreen.xib */,
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1212F69A19E570B300F14F7C /* EditViewController.swift in Sources */,
 				1285316719DC44F000CCDB50 /* DetailViewController.swift in Sources */,
 				129D3E2419E2C79100180B94 /* FMDatabaseQueue.m in Sources */,
 				127ACEE119DBF1BF00B39373 /* AllViewController.swift in Sources */,

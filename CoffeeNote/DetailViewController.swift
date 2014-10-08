@@ -55,10 +55,14 @@ class DetailViewController: UIViewController {
     
   }
   
-  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  
+  @IBAction func pushedEditButton(sender: AnyObject) {
+    
   }
   
   
@@ -70,9 +74,9 @@ class DetailViewController: UIViewController {
       println("Cancel button tapped.")
     }
     
+    
     let okAction = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
       println("OK button tapped.")
-      
       
       /* Delete Note */
       
@@ -111,8 +115,14 @@ class DetailViewController: UIViewController {
   }
   
   
+  @IBAction func unwindToDetailByCancel(segue: UIStoryboardSegue) {
+    NSLog("unwindToAllByCancel was called")
+  }
   
   
+  @IBAction func unwindToDetailBySave(segue: UIStoryboardSegue) {
+    NSLog("unwindToAllBySave was called")
+  }
   
   
   

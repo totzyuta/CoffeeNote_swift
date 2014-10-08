@@ -59,7 +59,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5u6-G4-KcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="fMH-kp-Lbx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1266" y="-531"/>
+            <point key="canvasLocation" x="1218" y="-531"/>
+        </scene>
+        <!--Edit-->
+        <scene sceneID="ZGK-Ul-QBC">
+            <objects>
+                <viewController title="Edit" id="txB-KV-omt" customClass="EditViewController" customModule="CoffeeNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z1U-wf-ihu"/>
+                        <viewControllerLayoutGuide type="bottom" id="z6G-AH-AMD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wVX-5T-kgX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8hz-SX-cxj">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="en4-Qj-2Ou">
+                            <connections>
+                                <segue destination="NiY-8i-l3w" kind="unwind" unwindAction="unwindToDetailByCancel:" id="WFA-qN-cUJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="JYi-2C-Osn">
+                            <connections>
+                                <segue destination="NiY-8i-l3w" kind="unwind" unwindAction="unwindToDetailBySave:" id="rUS-MA-J7y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eLg-Rl-UV5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="NiY-8i-l3w" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2740" y="-531"/>
         </scene>
         <!--All Notes-->
         <scene sceneID="ufC-wZ-h7g">
@@ -165,7 +196,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="yV1-qN-IGE">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="IRn-0s-MML"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="IRn-0s-MML">
+                            <connections>
+                                <action selector="pushedEditButton:" destination="Iv7-iO-dKm" id="CXZ-MH-ECK"/>
+                                <segue destination="mRC-wp-Axi" kind="presentation" id="hL6-eq-nwQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="blendNameLabel" destination="wX0-5Q-CxU" id="03f-Ln-BU8"/>
@@ -175,7 +211,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5h-eD-AhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="itJ-1X-W0k" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1618" y="135"/>
+            <point key="canvasLocation" x="1724" y="129"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nYN-sN-cGL">
@@ -212,6 +248,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOP-le-XQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="544" y="-531"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5A7-DZ-FyP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mRC-wp-Axi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NYU-3U-EBX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="txB-KV-omt" kind="relationship" relationship="rootViewController" id="BlK-9h-jYg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IZB-8U-Yrv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2024" y="-531"/>
         </scene>
     </scenes>
 </document>
