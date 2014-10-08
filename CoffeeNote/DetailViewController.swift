@@ -22,9 +22,8 @@ class DetailViewController: UIViewController {
 
     var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegatのインスタンスを取得
     var nid = Int(appDelegate.nid!)
-    println("nid: ")
-    println(nid)
-    
+    println("nid: \(nid)")
+
     // sql from here
     let _dbfile:NSString = "sqlite.db"
     let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
@@ -100,6 +99,8 @@ class DetailViewController: UIViewController {
       }
       db.close()
       
+      self.performSegueWithIdentifier("unwindFromDetail", sender: self)
+      
     }
     
     alertController.addAction(cancelAction)
@@ -108,6 +109,9 @@ class DetailViewController: UIViewController {
     presentViewController(alertController, animated: true, completion: nil)
     
   }
+  
+  
+  
   
   
   
