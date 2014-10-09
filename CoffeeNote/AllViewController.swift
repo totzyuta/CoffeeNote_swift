@@ -82,6 +82,8 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     db.close()
+    
+    self.allTableView.reloadData()
 
   }
   
@@ -128,6 +130,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     db.close()
     
     cell.textLabel?.text = blendNames[indexPath.row]
+        
     return cell
   }
   

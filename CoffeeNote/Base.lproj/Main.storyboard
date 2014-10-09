@@ -72,7 +72,34 @@
                     <view key="view" contentMode="scaleToFill" id="wVX-5T-kgX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blend Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2y-nE-hyI">
+                                <rect key="frame" x="239" y="190" width="123" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="jtL-DL-mce"/>
+                                    <constraint firstAttribute="width" constant="123" id="mKG-IM-6To"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="plv-wb-dMk">
+                                <rect key="frame" x="175" y="285" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Wxc-Mv-sKu"/>
+                                    <constraint firstAttribute="height" constant="30" id="upw-bG-f7Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="plv-wb-dMk" secondAttribute="centerX" id="Cyh-eJ-qbS"/>
+                            <constraint firstAttribute="centerY" secondItem="W2y-nE-hyI" secondAttribute="centerY" constant="100" id="TCa-gr-NTT"/>
+                            <constraint firstAttribute="centerX" secondItem="W2y-nE-hyI" secondAttribute="centerX" id="kI7-SY-guG"/>
+                            <constraint firstAttribute="centerY" secondItem="plv-wb-dMk" secondAttribute="centerY" id="qMX-PT-QZS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8hz-SX-cxj">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="en4-Qj-2Ou">
@@ -86,6 +113,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="blendNameTextField" destination="plv-wb-dMk" id="QoS-lo-n24"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLg-Rl-UV5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NiY-8i-l3w" userLabel="Exit" sceneMemberID="exit"/>
@@ -104,7 +134,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AcH-GG-mHJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="tableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AcH-GG-mHJ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="664"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
