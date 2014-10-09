@@ -82,6 +82,8 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     db.close()
+    
+    self.allTableView.reloadData()
 
   }
   
@@ -128,6 +130,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     db.close()
     
     cell.textLabel?.text = blendNames[indexPath.row]
+        
     return cell
   }
   
@@ -223,10 +226,8 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       // appDelegate.blendName = blendName
     }
     
-    
     db.close()
- 
-
+    
     
     performSegueWithIdentifier("toDetailViewController", sender: self)
     
@@ -234,16 +235,13 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   
   
   @IBAction func unwindToAllByCancel(segue: UIStoryboardSegue) {
-    NSLog("unwindToAllByCancel was called")
   }
   
 
   @IBAction func unwindToAllBySave(segue: UIStoryboardSegue) {
-    NSLog("unwindToAllBySave was called")
   }
   
   @IBAction func unwindFromDetail(segue: UIStoryboardSegue) {
-    NSLog("---unwindFromDetail---")
   }
 
   
