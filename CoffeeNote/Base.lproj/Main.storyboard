@@ -43,7 +43,7 @@
                     <navigationItem key="navigationItem" title="New Note" id="0CX-GX-MWl">
                         <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="znq-Cq-hVc">
                             <connections>
-                                <segue destination="fMH-kp-Lbx" kind="unwind" unwindAction="unwindToAllByCancel:" id="D2n-GM-fbZ"/>
+                                <segue destination="fMH-kp-Lbx" kind="unwind" identifier="unwindToAllByCancel" unwindAction="unwindToAllByCancel:" id="D2n-GM-fbZ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="9Jm-CS-22r">
@@ -77,12 +77,12 @@
                     <navigationItem key="navigationItem" id="8hz-SX-cxj">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="en4-Qj-2Ou">
                             <connections>
-                                <segue destination="NiY-8i-l3w" kind="unwind" unwindAction="unwindToDetailByCancel:" id="WFA-qN-cUJ"/>
+                                <segue destination="NiY-8i-l3w" kind="unwind" identifier="unwindToDetailByCancel" unwindAction="unwindToDetailByCancel:" id="WFA-qN-cUJ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="JYi-2C-Osn">
                             <connections>
-                                <segue destination="NiY-8i-l3w" kind="unwind" unwindAction="unwindToDetailBySave:" id="rUS-MA-J7y"/>
+                                <segue destination="NiY-8i-l3w" kind="unwind" identifier="unwindToDetailBySave" unwindAction="unwindToDetailBySave:" id="rUS-MA-J7y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

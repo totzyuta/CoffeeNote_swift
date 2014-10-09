@@ -116,12 +116,10 @@ class DetailViewController: UIViewController {
   
   
   @IBAction func unwindToDetailByCancel(segue: UIStoryboardSegue) {
-    NSLog("unwindToAllByCancel was called")
   }
   
   
   @IBAction func unwindToDetailBySave(segue: UIStoryboardSegue) {
-    NSLog("unwindToAllBySave was called")
   }
   
   

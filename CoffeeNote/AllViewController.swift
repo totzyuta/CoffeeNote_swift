@@ -232,16 +232,13 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   
   
   @IBAction func unwindToAllByCancel(segue: UIStoryboardSegue) {
-    NSLog("unwindToAllByCancel was called")
   }
   
 
   @IBAction func unwindToAllBySave(segue: UIStoryboardSegue) {
-    NSLog("unwindToAllBySave was called")
   }
   
   @IBAction func unwindFromDetail(segue: UIStoryboardSegue) {
-    NSLog("---unwindFromDetail---")
   }
 
   
