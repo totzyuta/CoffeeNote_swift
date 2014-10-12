@@ -452,8 +452,21 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="aciditySegment" destination="ZWn-yb-UWV" id="srD-Va-oXX"/>
+                        <outlet property="aftertasteSegment" destination="KF0-be-VtH" id="JEY-Ao-PQM"/>
+                        <outlet property="blendNameTextField" destination="8mS-0G-Q3g" id="vQt-HP-A8g"/>
+                        <outlet property="bodySegment" destination="xYp-IN-658" id="jQh-QL-eN0"/>
+                        <outlet property="cleanCupSegment" destination="d80-Ti-a0n" id="YpJ-ZU-Q2O"/>
+                        <outlet property="commentTextField" destination="3kM-3g-Bbr" id="4yZ-VG-iGM"/>
+                        <outlet property="darkSegment" destination="Arm-SL-0OS" id="PnC-6i-7FF"/>
+                        <outlet property="flavorSegment" destination="lxG-u1-iCo" id="8lH-aK-PrC"/>
                         <outlet property="mainView" destination="Fof-5S-Dje" id="fIR-A2-zfr"/>
+                        <outlet property="originTextField" destination="PGe-M9-WAQ" id="xH6-jB-Dix"/>
+                        <outlet property="overallSegment" destination="aXa-Mm-2dV" id="FhJ-Zw-Ikk"/>
+                        <outlet property="placeTextField" destination="lEQ-3J-svQ" id="xWl-kN-nhL"/>
+                        <outlet property="roastSegment" destination="7NW-j3-cwR" id="Wir-HE-bXS"/>
                         <outlet property="scrollView" destination="YEG-I8-N9D" id="L9O-AU-RFq"/>
+                        <outlet property="sweetnessSegment" destination="JeS-2K-RxE" id="pTk-ey-lG7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5u6-G4-KcY" userLabel="First Responder" sceneMemberID="firstResponder"/>

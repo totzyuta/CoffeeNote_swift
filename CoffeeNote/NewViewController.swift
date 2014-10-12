@@ -10,10 +10,24 @@ import UIKit
 
 class NewViewController: UIViewController {
   
-
-  @IBOutlet weak var blendName: UITextField!
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var mainView: UIView!
+  
+  
+  @IBOutlet weak var blendNameTextField: UITextField!
+  @IBOutlet weak var originTextField: UITextField!
+  @IBOutlet weak var placeTextField: UITextField!
+  @IBOutlet weak var roastSegment: UISegmentedControl!
+  @IBOutlet weak var darkSegment: UISegmentedControl!
+  @IBOutlet weak var bodySegment: UISegmentedControl!
+  @IBOutlet weak var aciditySegment: UISegmentedControl!
+  @IBOutlet weak var flavorSegment: UISegmentedControl!
+  @IBOutlet weak var sweetnessSegment: UISegmentedControl!
+  @IBOutlet weak var cleanCupSegment: UISegmentedControl!
+  @IBOutlet weak var aftertasteSegment: UISegmentedControl!
+  @IBOutlet weak var overallSegment: UISegmentedControl!
+  @IBOutlet weak var commentTextField: UITextView!
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,7 +40,6 @@ class NewViewController: UIViewController {
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   
@@ -34,7 +47,6 @@ class NewViewController: UIViewController {
     println("prepareForSegue was called!")
     
     println(segue.identifier)
-    
     
     if (segue.identifier == "unwindToAllBySave") {
     
@@ -53,26 +65,33 @@ class NewViewController: UIViewController {
       
       _db.open()
       
-      let sql_insert = "INSERT INTO notes (blendName) values (?);"
+      let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment) VALUES ('\(blendNameTextField.text)', '\(originTextField.text)', '\(placeTextField.text)', \(roastSegment.selectedSegmentIndex+1), \(darkSegment.selectedSegmentIndex+1), \(bodySegment.selectedSegmentIndex+1), \(aciditySegment.selectedSegmentIndex+1), \(flavorSegment.selectedSegmentIndex+1), \(sweetnessSegment.selectedSegmentIndex+1), \(cleanCupSegment.selectedSegmentIndex+1), \(aftertasteSegment.selectedSegmentIndex+1), \(overallSegment.selectedSegmentIndex+1), '\(commentTextField.text)');"
       
-      var _result_insert = _db.executeUpdate(sql_insert, withArgumentsInArray: [self.blendName.text])
-      
-      
+      var _result_insert = _db.executeUpdate(sql_insert, withArgumentsInArray:nil)
       
       // Debug for comfirm the inserted data
       
-      let sql_select = "SELECT nid, blendName FROM notes ORDER BY nid;"
+      let sql_select = "SELECT * FROM notes ORDER BY nid;"
       
-      // var rows = _db.executeQuery(sql_select, withArgumentsInArray: [2])
       var rows = _db.executeQuery(sql_select, withArgumentsInArray: nil)
       
       while rows.next() {
-        // カラム名を指定して値を取得
         let nid = rows.intForColumn("nid")
-        // カラムのインデックスを指定して取得
-        let blendName = rows.stringForColumnIndex(1)
+        let blendName = rows.stringForColumn("blendName")
+        let origin = rows.stringForColumn("origin")
+        let place = rows.stringForColumn("place")
+        let roast = rows.intForColumn("roast")
+        let dark = rows.intForColumn("dark")
+        let body = rows.intForColumn("body")
+        let acidity = rows.intForColumn("acidity")
+        let flavor = rows.intForColumn("flavor")
+        let sweetness = rows.intForColumn("sweetness")
+        let cleancup = rows.intForColumn("cleancup")
+        let aftertaste = rows.intForColumn("aftertaste")
+        let overall = rows.intForColumn("overall")
+        let comment = rows.stringForColumn("comment")
         
-        println("nid = \(nid), blendName = \(blendName)")
+        println("nid: \(nid), blendName: \(blendName), origin: \(origin), place: \(place), roast: \(roast), dark: \(dark), body: \(body), acidity: \(acidity), flavor: \(flavor), sweetness: \(sweetness), cleancup: \(cleancup), aftertaste: \(aftertaste), overall: \(overall), comment: \(comment)")
       }
       
       _db.close()

@@ -18,7 +18,6 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     allTableView.delegate = self
     allTableView.dataSource = self
 
-    
     // Create a notes table if not exists
     let _dbfile:NSString = "sqlite.db"
     let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
@@ -31,7 +30,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     let db = FMDatabase(path: _path)
     
     // Create a query to create a notes table
-    let sql_create_table = "CREATE TABLE IF NOT EXISTS notes (nid INTEGER PRIMARY KEY AUTOINCREMENT, blendName TEXT);"
+    let sql_create_table = "CREATE TABLE IF NOT EXISTS notes (nid INTEGER PRIMARY KEY AUTOINCREMENT, blendName TEXT, origin TEXT, place TEXT, roast INTEGER, dark INTEGER, body INTEGER, acidity INTEGER, flavor INTEGER, sweetness INTEGER, cleancup INTEGER, aftertaste, INTEGER, overall INTEGER, comment TEXTd);"
     
     db.open()
     
@@ -46,7 +45,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   }
   
   override func viewWillAppear(animated: Bool) {
-    println("---DetailViewWillAppear---")
+    println("---AllViewWillAppear---")
     
     let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
     
@@ -66,19 +65,13 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     db.open()
     
-    // var rows = _db.executeQuery(sql_select, withArgumentsInArray: [2])
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
-    var notes: [String] = []
     var blendNames: [String] = []
     
     while rows.next() {
-      // カラム名を指定して値を取得
       let nid = rows.intForColumn("nid")
-      // カラムのインデックスを指定して取得
-      //let blendNames = rows.stringForColumnIndex(1)
       blendNames.append(rows.stringForColumn("blendName"))
-      
     }
     
     db.close()
