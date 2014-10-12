@@ -17,7 +17,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     allTableView.delegate = self
     allTableView.dataSource = self
-    
+
     
     // Create a notes table if not exists
     let _dbfile:NSString = "sqlite.db"
