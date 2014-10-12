@@ -12,10 +12,14 @@ class NewViewController: UIViewController {
   
 
   @IBOutlet weak var blendName: UITextField!
+  @IBOutlet weak var scrollView: UIScrollView!
+  @IBOutlet weak var mainView: UIView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
+    self.scrollView.contentSize = self.mainView.bounds.size
+    
     // Do any additional setup after loading the view.
   }
   
