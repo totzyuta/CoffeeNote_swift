@@ -12,8 +12,19 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   
   @IBOutlet weak var allTableView: UITableView!
   
+  var arrayOfPersons: [Person] = [Person]()
+  
+  func setUpPersons() {
+    var person1 = Person(name: "Anna", number: 16, imageName: "img1.jpg")
+    var person2 = Person(name: "John", number: 35, imageName: "img2.jpg")
+    
+    arrayOfPersons.append(person1)
+    arrayOfPersons.append(person2)
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     
     allTableView.delegate = self
     allTableView.dataSource = self
@@ -30,7 +41,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     let db = FMDatabase(path: _path)
     
     // Create a query to create a notes table
-    let sql_create_table = "CREATE TABLE IF NOT EXISTS notes (nid INTEGER PRIMARY KEY AUTOINCREMENT, blendName TEXT, origin TEXT, place TEXT, roast INTEGER, dark INTEGER, body INTEGER, acidity INTEGER, flavor INTEGER, sweetness INTEGER, cleancup INTEGER, aftertaste, INTEGER, overall INTEGER, comment TEXTd);"
+    let sql_create_table = "CREATE TABLE IF NOT EXISTS notes (nid INTEGER PRIMARY KEY AUTOINCREMENT, blendName TEXT, origin TEXT, place TEXT, roast INTEGER, dark INTEGER, body INTEGER, acidity INTEGER, flavor INTEGER, sweetness INTEGER, cleancup INTEGER, aftertaste, INTEGER, overall INTEGER, comment TEXT, date TEXT);"
     
     db.open()
     
@@ -89,7 +100,9 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   
   // セルの内容を返す
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+    
+    // let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "noteCell")
+    let cell: CustomCell = tableView.dequeueReusableCellWithIdentifier("Cell") as CustomCell
     
     // sql from here
     let _dbfile:NSString = "sqlite.db"
@@ -107,23 +120,24 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     db.open()
     
-    // var rows = _db.executeQuery(sql_select, withArgumentsInArray: [2])
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
     var blendNames: [String] = []
     
     while rows.next() {
-      // カラム名を指定して値を取得
       let nid = rows.intForColumn("nid")
-      // カラムのインデックスを指定して取得
-      //let blendNames = rows.stringForColumnIndex(1)
       blendNames.append(rows.stringForColumn("blendName"))
     }
     
     db.close()
     
-    cell.textLabel?.text = blendNames[indexPath.row]
-        
+    // let person = arrayOfPersons[indexPath.row]
+    
+    // cell.textLabel?.text = blendNames[indexPath.row]
+    // cell.titleLabel.text = person.name
+    // cell.setCell(person.name, imageName: person.imageName)
+    cell.titleLabel.text = "TESTTESTTEST"
+    
     return cell
   }
   
@@ -157,7 +171,11 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     db.close()
     
-    return blendNames.count
+    println("arrayOfPersons:\(arrayOfPersons.count)")
+    
+    // return blendNames.count
+    // return arrayOfPersons.count
+    return 5
   }
 
     

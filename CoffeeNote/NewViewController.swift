@@ -65,7 +65,15 @@ class NewViewController: UIViewController {
       
       _db.open()
       
-      let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment) VALUES ('\(blendNameTextField.text)', '\(originTextField.text)', '\(placeTextField.text)', \(roastSegment.selectedSegmentIndex+1), \(darkSegment.selectedSegmentIndex+1), \(bodySegment.selectedSegmentIndex+1), \(aciditySegment.selectedSegmentIndex+1), \(flavorSegment.selectedSegmentIndex+1), \(sweetnessSegment.selectedSegmentIndex+1), \(cleanCupSegment.selectedSegmentIndex+1), \(aftertasteSegment.selectedSegmentIndex+1), \(overallSegment.selectedSegmentIndex+1), '\(commentTextField.text)');"
+      let now = NSDate()
+      
+      let dateFormatter = NSDateFormatter()
+
+      dateFormatter.timeStyle = .ShortStyle
+      dateFormatter.dateStyle = .ShortStyle
+      println(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
+      
+      let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('\(blendNameTextField.text)', '\(originTextField.text)', '\(placeTextField.text)', \(roastSegment.selectedSegmentIndex+1), \(darkSegment.selectedSegmentIndex+1), \(bodySegment.selectedSegmentIndex+1), \(aciditySegment.selectedSegmentIndex+1), \(flavorSegment.selectedSegmentIndex+1), \(sweetnessSegment.selectedSegmentIndex+1), \(cleanCupSegment.selectedSegmentIndex+1), \(aftertasteSegment.selectedSegmentIndex+1), \(overallSegment.selectedSegmentIndex+1), '\(commentTextField.text)', '\(dateFormatter.stringFromDate(now))');"
       
       var _result_insert = _db.executeUpdate(sql_insert, withArgumentsInArray:nil)
       
@@ -90,8 +98,9 @@ class NewViewController: UIViewController {
         let aftertaste = rows.intForColumn("aftertaste")
         let overall = rows.intForColumn("overall")
         let comment = rows.stringForColumn("comment")
+        let date = rows.stringForColumn("date")
         
-        println("nid: \(nid), blendName: \(blendName), origin: \(origin), place: \(place), roast: \(roast), dark: \(dark), body: \(body), acidity: \(acidity), flavor: \(flavor), sweetness: \(sweetness), cleancup: \(cleancup), aftertaste: \(aftertaste), overall: \(overall), comment: \(comment)")
+        println("nid: \(nid), blendName: \(blendName), origin: \(origin), place: \(place), roast: \(roast), dark: \(dark), body: \(body), acidity: \(acidity), flavor: \(flavor), sweetness: \(sweetness), cleancup: \(cleancup), aftertaste: \(aftertaste), overall: \(overall), comment: \(comment), date: \(date)")
       }
       
       _db.close()
