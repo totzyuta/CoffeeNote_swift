@@ -134,9 +134,10 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     // let person = arrayOfPersons[indexPath.row]
     
     // cell.textLabel?.text = blendNames[indexPath.row]
+    cell.titleLabel.text = blendNames[indexPath.row]
     // cell.titleLabel.text = person.name
     // cell.setCell(person.name, imageName: person.imageName)
-    cell.titleLabel.text = "TESTTESTTEST"
+    cell.backImage.image = UIImage(named: "img\(indexPath.row+1).jpg")
     
     return cell
   }
@@ -173,9 +174,8 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     println("arrayOfPersons:\(arrayOfPersons.count)")
     
-    // return blendNames.count
+    return blendNames.count
     // return arrayOfPersons.count
-    return 5
   }
 
     
