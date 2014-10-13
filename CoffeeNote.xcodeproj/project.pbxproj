@@ -25,7 +25,6 @@
 		12AD799719EB7EB100A320D4 /* img1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12AD799519EB7EB100A320D4 /* img1.jpg */; };
 		12AD799819EB7EB100A320D4 /* img4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12AD799619EB7EB100A320D4 /* img4.jpg */; };
 		12CD442719EBE24A00FE07AE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CD442619EBE24A00FE07AE /* CustomCell.swift */; };
-		12CD442919EBE50300FE07AE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CD442819EBE50300FE07AE /* Person.swift */; };
 		12CD442C19EC101000FE07AE /* img2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12CD442B19EC101000FE07AE /* img2.jpg */; };
 		12CD442E19EC102C00FE07AE /* img3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12CD442D19EC102C00FE07AE /* img3.jpg */; };
 /* End PBXBuildFile section */
@@ -70,7 +69,6 @@
 		12AD799519EB7EB100A320D4 /* img1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img1.jpg; path = ../../../Dropbox/images/img1.jpg; sourceTree = "<group>"; };
 		12AD799619EB7EB100A320D4 /* img4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img4.jpg; path = ../../../Dropbox/images/img4.jpg; sourceTree = "<group>"; };
 		12CD442619EBE24A00FE07AE /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		12CD442819EBE50300FE07AE /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		12CD442B19EC101000FE07AE /* img2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img2.jpg; path = ../../../Dropbox/images/img2.jpg; sourceTree = "<group>"; };
 		12CD442D19EC102C00FE07AE /* img3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img3.jpg; path = ../../../Dropbox/images/Picture/img3.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,7 +117,6 @@
 			children = (
 				127ACEDE19DBF1BF00B39373 /* AppDelegate.swift */,
 				127ACEE019DBF1BF00B39373 /* AllViewController.swift */,
-				12CD442819EBE50300FE07AE /* Person.swift */,
 				12CD442619EBE24A00FE07AE /* CustomCell.swift */,
 				1285316819DC452300CCDB50 /* NewViewController.swift */,
 				1285316619DC44F000CCDB50 /* DetailViewController.swift */,
@@ -307,7 +304,6 @@
 				129D3E2419E2C79100180B94 /* FMDatabaseQueue.m in Sources */,
 				127ACEE119DBF1BF00B39373 /* AllViewController.swift in Sources */,
 				127ACEDF19DBF1BF00B39373 /* AppDelegate.swift in Sources */,
-				12CD442919EBE50300FE07AE /* Person.swift in Sources */,
 				129D3E2119E2C79100180B94 /* FMDatabase.m in Sources */,
 				129D3E2319E2C79100180B94 /* FMDatabasePool.m in Sources */,
 				129D3E2519E2C79100180B94 /* FMResultSet.m in Sources */,

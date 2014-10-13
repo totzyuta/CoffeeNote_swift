@@ -69,13 +69,18 @@ class NewViewController: UIViewController {
       
       let dateFormatter = NSDateFormatter()
 
+      // dateFormatter.dateFormat = "dd/MM"
+      
       dateFormatter.timeStyle = .ShortStyle
       dateFormatter.dateStyle = .ShortStyle
       println(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
+
+      
       
       let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('\(blendNameTextField.text)', '\(originTextField.text)', '\(placeTextField.text)', \(roastSegment.selectedSegmentIndex+1), \(darkSegment.selectedSegmentIndex+1), \(bodySegment.selectedSegmentIndex+1), \(aciditySegment.selectedSegmentIndex+1), \(flavorSegment.selectedSegmentIndex+1), \(sweetnessSegment.selectedSegmentIndex+1), \(cleanCupSegment.selectedSegmentIndex+1), \(aftertasteSegment.selectedSegmentIndex+1), \(overallSegment.selectedSegmentIndex+1), '\(commentTextField.text)', '\(dateFormatter.stringFromDate(now))');"
       
       var _result_insert = _db.executeUpdate(sql_insert, withArgumentsInArray:nil)
+      
       
       // Debug for comfirm the inserted data
       

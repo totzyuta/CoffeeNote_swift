@@ -12,16 +12,6 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   
   @IBOutlet weak var allTableView: UITableView!
   
-  var arrayOfPersons: [Person] = [Person]()
-  
-  func setUpPersons() {
-    var person1 = Person(name: "Anna", number: 16, imageName: "img1.jpg")
-    var person2 = Person(name: "John", number: 35, imageName: "img2.jpg")
-    
-    arrayOfPersons.append(person1)
-    arrayOfPersons.append(person2)
-  }
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -122,21 +112,24 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
-    var blendNames: [String] = []
+    var blendNameArray: [String] = []
+    var placesArray: [String] = []
+    var dateArray: [String] = []
     
     while rows.next() {
       let nid = rows.intForColumn("nid")
-      blendNames.append(rows.stringForColumn("blendName"))
+      blendNameArray.append(rows.stringForColumn("blendName"))
+      placesArray.append(rows.stringForColumn("place"))
+      var tmp_datewords = split(rows.stringForColumn("date"), { $0 == "," })
+      var datewords = split(tmp_datewords[0], { $0 == "/" })
+      dateArray.append(datewords[0]+"/"+datewords[1])
     }
     
     db.close()
     
-    // let person = arrayOfPersons[indexPath.row]
-    
-    // cell.textLabel?.text = blendNames[indexPath.row]
-    cell.titleLabel.text = blendNames[indexPath.row]
-    // cell.titleLabel.text = person.name
-    // cell.setCell(person.name, imageName: person.imageName)
+    cell.titleLabel.text = blendNameArray[indexPath.row]
+    cell.placeLabel.text = placesArray[indexPath.row]
+    cell.dateLabel.text = dateArray[indexPath.row]
     cell.backImage.image = UIImage(named: "img\(indexPath.row+1).jpg")
     
     return cell
@@ -172,10 +165,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     db.close()
     
-    println("arrayOfPersons:\(arrayOfPersons.count)")
-    
     return blendNames.count
-    // return arrayOfPersons.count
   }
 
     

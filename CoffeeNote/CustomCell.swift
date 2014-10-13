@@ -11,6 +11,8 @@ import UIKit
 class CustomCell: UITableViewCell {
 
   @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var dateLabel: UILabel!
+  @IBOutlet weak var placeLabel: UILabel!
   @IBOutlet weak var backImage: UIImageView!
   
     override func awakeFromNib() {

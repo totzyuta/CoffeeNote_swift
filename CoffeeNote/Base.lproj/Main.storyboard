@@ -512,18 +512,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="Cell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="121" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AcH-GG-mHJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="Cell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AcH-GG-mHJ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="670"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier=" Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="120" id="MV5-RW-ByM" customClass="CustomCell" customModule="CoffeeNote" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier=" Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="130" id="MV5-RW-ByM" customClass="CustomCell" customModule="CoffeeNote" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" tableViewCell="MV5-RW-ByM" id="GtJ-Hr-V16">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999973" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZu-0T-bW3">
-                                                    <rect key="frame" x="0.0" y="-1" width="321" height="120"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="321" height="130"/>
                                                     <color key="backgroundColor" white="0.80364793346774199" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J45-rW-nvg">
@@ -533,8 +533,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1A-9V-mev">
-                                                    <rect key="frame" x="122" y="85" width="190" height="28"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="28"/>
+                                                    <rect key="frame" x="122" y="103" width="190" height="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4J-ZT-eLb">
+                                                    <rect key="frame" x="23" y="60" width="289" height="28"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -543,6 +549,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="backImage" destination="pZu-0T-bW3" id="tFe-Sg-qEj"/>
+                                            <outlet property="dateLabel" destination="e1A-9V-mev" id="7fX-Tz-vWh"/>
+                                            <outlet property="placeLabel" destination="J4J-ZT-eLb" id="oTg-Ix-fip"/>
                                             <outlet property="titleLabel" destination="J45-rW-nvg" id="eVm-ih-BhR"/>
                                         </connections>
                                     </tableViewCell>
@@ -570,7 +578,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="505" y="105"/>
+            <point key="canvasLocation" x="505" y="103"/>
         </scene>
         <!--Detail-->
         <scene sceneID="cjN-pL-dDb">
