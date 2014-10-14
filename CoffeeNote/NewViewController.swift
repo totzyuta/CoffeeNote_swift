@@ -143,14 +143,21 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
       dateFormatter.dateStyle = .ShortStyle
       println(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
       
+      var blendNameTextFieldModified = blendNameTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
+      var originTextFieldModified = originTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
+      var placeTextFieldModified = placeTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
+      var commentTextFieldModified = commentTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
       
-      let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('\(blendNameTextField.text)', '\(originTextField.text)', '\(placeTextField.text)', \(roastSegment.selectedSegmentIndex+1), \(darkSegment.selectedSegmentIndex+1), \(bodySegment.selectedSegmentIndex+1), \(aciditySegment.selectedSegmentIndex+1), \(flavorSegment.selectedSegmentIndex+1), \(sweetnessSegment.selectedSegmentIndex+1), \(cleanCupSegment.selectedSegmentIndex+1), \(aftertasteSegment.selectedSegmentIndex+1), \(overallSegment.selectedSegmentIndex+1), '\(commentTextField.text)', '\(dateFormatter.stringFromDate(now))');"
+      let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('\(blendNameTextFieldModified)', '\(originTextFieldModified)', '\(placeTextFieldModified)', \(roastSegment.selectedSegmentIndex+1), \(darkSegment.selectedSegmentIndex+1), \(bodySegment.selectedSegmentIndex+1), \(aciditySegment.selectedSegmentIndex+1), \(flavorSegment.selectedSegmentIndex+1), \(sweetnessSegment.selectedSegmentIndex+1), \(cleanCupSegment.selectedSegmentIndex+1), \(aftertasteSegment.selectedSegmentIndex+1), \(overallSegment.selectedSegmentIndex+1), '\(commentTextFieldModified)', '\(dateFormatter.stringFromDate(now))');"
       
       var _result_insert = _db.executeUpdate(sql_insert, withArgumentsInArray:nil)
       
       
       // Debug and save photo
-      let sql_select = "SELECT * FROM notes ORDER BY nid;"
+      
+      var lastInsertId: Int = Int(_db.lastInsertRowId())
+    
+      let sql_select = "SELECT * FROM notes WHERE nid=\(lastInsertId);"
       var rows = _db.executeQuery(sql_select, withArgumentsInArray: nil)
       
       while rows.next() {
@@ -175,8 +182,8 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         // save image in DocumentDirectory
         var data: NSData = UIImagePNGRepresentation(imageView.image)
         let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        if (data.writeToFile(filePath+"\(nid).png", atomically: true)) {
-          println("Save Photo Suceeded(filePath: \(filePath)")
+        if (data.writeToFile("\(filePath)/img\(nid).png", atomically: true)) {
+          println("Save Photo Suceeded(filePath: \(filePath)/img\(nid).png")
         }else {
           println("Failed to save photo")
         }

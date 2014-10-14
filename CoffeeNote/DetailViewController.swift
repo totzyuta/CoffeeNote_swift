@@ -10,19 +10,39 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+  @IBOutlet weak var scrollView: UIScrollView!
+  @IBOutlet weak var mainView: UIView!
+  
+  @IBOutlet weak var coffeeImage: UIImageView!
+  @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var blendNameLabel: UILabel!
+  @IBOutlet weak var placeLabel: UILabel!
+  @IBOutlet weak var roastLabel: UILabel!
+  @IBOutlet weak var darkLabel: UILabel!
+  @IBOutlet weak var bodyLabel: UILabel!
+  @IBOutlet weak var flavorLabel: UILabel!
+  @IBOutlet weak var acidityLabel: UILabel!
+  @IBOutlet weak var sweetnessLabel: UILabel!
+  @IBOutlet weak var cleanCupLabel: UILabel!
+  @IBOutlet weak var aftertasteLabel: UILabel!
+  @IBOutlet weak var commentText: UITextView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    println("---DetailViewDidLoad---")
+    
+    self.scrollView.contentSize = self.mainView.bounds.size
+    // scrollView.pagingEnabled = true
   }
   
   override func viewWillAppear(animated: Bool) {
-    println("---DetailViewWillAppear---")
 
     var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegatのインスタンスを取得
     var nid = Int(appDelegate.nid!)
     println("nid: \(nid)")
+    
+    // set image
+    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    coffeeImage.image = UIImage(named: filePath+"/img\(nid).png")
 
     // sql from here
     let _dbfile:NSString = "sqlite.db"
@@ -44,11 +64,47 @@ class DetailViewController: UIViewController {
     
     // fetch data and put data into label
     while rows.next() {
-      // let blendNames = rows.stringForColumnIndex(1)
-      var blendName: String = rows.stringForColumn("blendName")
       // Put data to label
-      self.blendNameLabel.text = blendName
-      println(blendName)
+      self.blendNameLabel.text = rows.stringForColumn("blendName")
+      self.dateLabel.text = rows.stringForColumn("date")
+      self.placeLabel.text = rows.stringForColumn("place")
+      switch rows.intForColumn("roast") {
+      case 1:
+        self.roastLabel.text = "Light"
+      case 2:
+        self.roastLabel.text = "Medium"
+      case 3:
+        self.roastLabel.text = "Dark"
+      default:
+        self.roastLabel.text = "Unknown"
+      }
+      switch rows.intForColumn("dark") {
+      case 1:
+        self.darkLabel.text = "Light"
+      case 2:
+        self.darkLabel.text = "Medium"
+      case 3:
+        self.darkLabel.text = "Full"
+      default:
+        self.darkLabel.text = "Unknown"
+      }
+      switch rows.intForColumn("body") {
+      case 1:
+        self.bodyLabel.text = "Light"
+      case 2:
+        self.bodyLabel.text = "Medium"
+      case 3:
+        self.bodyLabel.text = "Dark"
+      default:
+        self.bodyLabel.text = "Unknown"
+      }
+      self.flavorLabel.text = rows.stringForColumn("flavor")
+      self.acidityLabel.text = rows.stringForColumn("acidity")
+      self.sweetnessLabel.text = rows.stringForColumn("sweetness")
+      self.cleanCupLabel.text = rows.stringForColumn("cleanCup")
+      self.aftertasteLabel.text = rows.stringForColumn("aftertaste")
+      self.commentText.text = rows.stringForColumn("comment")
+      self.commentText.textColor = UIColor.grayColor()
     }
     
     db.close()
@@ -65,54 +121,6 @@ class DetailViewController: UIViewController {
     
   }
   
-  
-  @IBAction func pushedDeleteButton(sender: AnyObject) {
-    
-    let alertController = UIAlertController(title: "Deleting This Note", message: "Are you sure to delete?", preferredStyle: .ActionSheet)
-
-    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
-      println("Cancel button tapped.")
-    }
-    
-    
-    let okAction = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
-      println("OK button tapped.")
-      
-      /* Delete Note */
-      
-      var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegatのインスタンスを取得
-      var nid = Int(appDelegate.nid!)
-      
-      // sql from here
-      let _dbfile:NSString = "sqlite.db"
-      let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
-        NSSearchPathDirectory.DocumentDirectory,
-        NSSearchPathDomainMask.UserDomainMask,
-        true)[0]
-      let fileManager:NSFileManager = NSFileManager.defaultManager()
-      let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
-      
-      let db = FMDatabase(path: _path)
-      
-      let sql_delete = "DELETE FROM notes WHERE nid=\(nid);"
-      
-      db.open()
-      
-      if db.executeUpdate(sql_delete, withArgumentsInArray: nil) {
-        println("Delete notes nid: \(nid)")
-      }
-      db.close()
-      
-      self.performSegueWithIdentifier("unwindFromDetail", sender: self)
-      
-    }
-    
-    alertController.addAction(cancelAction)
-    alertController.addAction(okAction)
-    
-    presentViewController(alertController, animated: true, completion: nil)
-    
-  }
   
   
   @IBAction func unwindToDetailByCancel(segue: UIStoryboardSegue) {

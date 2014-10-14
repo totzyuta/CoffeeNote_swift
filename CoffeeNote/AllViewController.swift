@@ -72,7 +72,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     while rows.next() {
       let nid = rows.intForColumn("nid")
-      blendNames.append(rows.stringForColumn("blendName"))
+    blendNames.append(rows.stringForColumn("blendName"))
     }
     
     db.close()
@@ -112,13 +112,14 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
-    var nidArray: [Int] = []
+    var nidArray: [String] = []
     var blendNameArray: [String] = []
     var placesArray: [String] = []
     var dateArray: [String] = []
     
     while rows.next() {
-      nidArray.append(Int(rows.intForColumn("nid")))
+      // nidArray.append(Int(rows.intForColumn("nid")))
+      nidArray.append(rows.stringForColumn("nid"))
       blendNameArray.append(rows.stringForColumn("blendName"))
       placesArray.append(rows.stringForColumn("place"))
       var tmp_datewords = split(rows.stringForColumn("date"), { $0 == "," })
@@ -131,9 +132,9 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     cell.titleLabel.text = blendNameArray[indexPath.row]
     cell.placeLabel.text = placesArray[indexPath.row]
     cell.dateLabel.text = dateArray[indexPath.row]
-    // cell.backImage.image = UIImage(named: "img\(indexPath.row+1).jpg")
+    // set image
     let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    cell.backImage.image = UIImage(named: filePath+"\(nidArray[indexPath.row]).png")
+    cell.backImage.image = UIImage(named: "\(filePath)/img\(nidArray[indexPath.row]).png")
     
     return cell
   }
@@ -199,7 +200,6 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    println("---cell was tapped---")
     
     // sql from here
     // fetch the nid of the cell tapped
@@ -224,10 +224,8 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     while rows.next() {
       var nid: Int = Int(rows.intForColumn("nid"))
-      // var blendName: String = rows.stringForColumn("blendName")
       var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
       appDelegate.nid = nid
-      // appDelegate.blendName = blendName
     }
     
     db.close()
@@ -245,7 +243,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   @IBAction func unwindToAllBySave(segue: UIStoryboardSegue) {
   }
   
-  @IBAction func unwindFromDetail(segue: UIStoryboardSegue) {
+  @IBAction func unwindFromEditByDeleteButton(segue: UIStoryboardSegue) {
   }
 
   
