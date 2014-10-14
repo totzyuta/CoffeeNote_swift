@@ -8,10 +8,53 @@
 
 import UIKit
 
-class NewViewController: UIViewController {
+class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var mainView: UIView!
+  
+  @IBOutlet weak var imageView: UIImageView!
+  
+  @IBAction func takePhoto(sender: AnyObject) {
+    
+    var picker = UIImagePickerController()
+    picker.delegate = self
+    picker.allowsEditing = true
+    picker.sourceType = UIImagePickerControllerSourceType.Camera
+    self.presentViewController(picker, animated: true, completion: nil)
+    
+  }
+  
+  @IBAction func selectPhoto(sender: AnyObject) {
+    
+    // UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    var picker = UIImagePickerController()
+    picker.delegate = self
+    picker.allowsEditing = true
+    picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+    
+    self.presentViewController(picker, animated: true, completion: nil)
+    
+  }
+  
+  func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    
+    // UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    var chosenImage = info[UIImagePickerControllerEditedImage] as UIImage
+    
+    // self.imageView.image = chosenImage;
+    self.imageView.image = chosenImage
+    
+    // [picker dismissViewControllerAnimated:YES completion:NULL];
+    picker.dismissViewControllerAnimated(true, completion: nil)
+    
+  }
+  
+  func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+    // [picker dismissViewControllerAnimated:YES completion:NULL];
+    picker.dismissViewControllerAnimated(true, completion: nil)
+  }
+
   
   
   @IBOutlet weak var blendNameTextField: UITextField!
@@ -34,7 +77,29 @@ class NewViewController: UIViewController {
     
     self.scrollView.contentSize = self.mainView.bounds.size
     
-    // Do any additional setup after loading the view.
+    /*
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+    
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"Device has no camera"
+                                                        delegate:nil
+                                                        cancelButtonTitle:@"OK"
+                                                        otherButtonTitles: nil];
+        
+        [myAlertView show];
+        
+    } 
+    */
+    
+    if (!UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
+      var myAlertView = UIAlertView()
+      
+      myAlertView.title = "Alert"
+      myAlertView.message = "There's no camera on this device."
+      myAlertView.addButtonWithTitle("Okay")
+      myAlertView.show()
+      
+    }
   }
   
   
