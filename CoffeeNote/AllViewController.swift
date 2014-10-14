@@ -112,12 +112,13 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
+    var nidArray: [Int] = []
     var blendNameArray: [String] = []
     var placesArray: [String] = []
     var dateArray: [String] = []
     
     while rows.next() {
-      let nid = rows.intForColumn("nid")
+      nidArray.append(Int(rows.intForColumn("nid")))
       blendNameArray.append(rows.stringForColumn("blendName"))
       placesArray.append(rows.stringForColumn("place"))
       var tmp_datewords = split(rows.stringForColumn("date"), { $0 == "," })
@@ -130,7 +131,9 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     cell.titleLabel.text = blendNameArray[indexPath.row]
     cell.placeLabel.text = placesArray[indexPath.row]
     cell.dateLabel.text = dateArray[indexPath.row]
-    cell.backImage.image = UIImage(named: "img\(indexPath.row+1).jpg")
+    // cell.backImage.image = UIImage(named: "img\(indexPath.row+1).jpg")
+    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    cell.backImage.image = UIImage(named: filePath+"\(nidArray[indexPath.row]).png")
     
     return cell
   }

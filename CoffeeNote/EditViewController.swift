@@ -39,7 +39,6 @@ class EditViewController: UIViewController {
     _db.open()
     
     let sql_select = "SELECT * FROM notes WHERE nid=\(nid);"
-    // var rows = _db.executeQuery(sql_select, withArgumentsInArray: [2])
     var rows = _db.executeQuery(sql_select, withArgumentsInArray: nil)
     while rows.next() {
       self.blendNameTextField.text = rows.stringForColumn("blendName")
@@ -77,12 +76,9 @@ class EditViewController: UIViewController {
         /* Debug for comfirm the inserted data */
         
         let sql_select = "SELECT * FROM notes WHERE nid=\(nid);"
-        // var rows = _db.executeQuery(sql_select, withArgumentsInArray: [2])
         var rows = _db.executeQuery(sql_select, withArgumentsInArray: nil)
         while rows.next() {
-          // カラム名を指定して値を取得
           let nid = rows.intForColumn("nid")
-          // カラムのインデックスを指定して取得
           let blendName = rows.stringForColumn("blendName")
           println("UPDATED: nid = \(nid), blendName = \(blendName)")
         }
