@@ -1018,9 +1018,24 @@
                                                 <color key="textColor" white="0.35000000000000003" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="vMu-bc-zl9" userLabel="star1.png">
+                                                <rect key="frame" x="68" y="250" width="30" height="30"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star.png" translatesAutoresizingMaskIntoConstraints="NO" id="ydk-hA-9i9">
+                                                <rect key="frame" x="106" y="250" width="30" height="30"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star.png" translatesAutoresizingMaskIntoConstraints="NO" id="nde-BE-hhy" userLabel="star3.png">
+                                                <rect key="frame" x="144" y="250" width="30" height="30"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star.png" translatesAutoresizingMaskIntoConstraints="NO" id="R85-my-6tJ" userLabel="star4.png">
+                                                <rect key="frame" x="182" y="250" width="30" height="30"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star.png" translatesAutoresizingMaskIntoConstraints="NO" id="H1m-Ek-WNy" userLabel="star5.png">
+                                                <rect key="frame" x="220" y="250" width="30" height="30"/>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yn1-fE-M0v">
-                                                <rect key="frame" x="0.0" y="284" width="319" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <rect key="frame" x="1" y="293" width="319" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
                                             </label>
@@ -1170,7 +1185,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.97999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
@@ -1201,6 +1216,11 @@
                         <outlet property="placeLabel" destination="yn1-fE-M0v" id="8uW-Ln-3hw"/>
                         <outlet property="roastLabel" destination="2hr-mV-foI" id="cOb-1g-9LY"/>
                         <outlet property="scrollView" destination="Efd-zO-vPw" id="g5K-q5-ssC"/>
+                        <outlet property="star1Image" destination="vMu-bc-zl9" id="J6A-Vw-zL6"/>
+                        <outlet property="star2Image" destination="ydk-hA-9i9" id="rcQ-le-lop"/>
+                        <outlet property="star3Image" destination="nde-BE-hhy" id="8CF-zp-tc0"/>
+                        <outlet property="star4Image" destination="R85-my-6tJ" id="tXb-7W-Rgf"/>
+                        <outlet property="star5Image" destination="H1m-Ek-WNy" id="yhn-Kz-mNA"/>
                         <outlet property="sweetnessLabel" destination="G8C-6V-Y42" id="8Tz-u6-31y"/>
                         <segue destination="itJ-1X-W0k" kind="unwind" identifier="unwindFromDetail" unwindAction="unwindFromDetail:" id="8ql-g6-dHL"/>
                     </connections>
@@ -1284,8 +1304,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gray-circle.png" width="256" height="256"/>
         <image name="icon_camera.png" width="60" height="60"/>
         <image name="img1.jpg" width="4608" height="3072"/>
+        <image name="star.png" width="235" height="215"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

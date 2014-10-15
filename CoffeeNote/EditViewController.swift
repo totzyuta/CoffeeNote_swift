@@ -41,10 +41,13 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     let filePath = appDelegate.filePath
     // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
     let imageFilePath = filePath!+"/img\(nid).png"
-    
     var imgfileManager = NSFileManager()
+    
     if (imgfileManager.fileExistsAtPath(imageFilePath)) {
       coffeeImageView.image = UIImage(named: imageFilePath)
+      println(imageFilePath)
+    }else{
+      coffeeImageView.image = UIImage(named: "img1.jpg")
     }
     
     // to show aleart when not to have camera in device
@@ -66,6 +69,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     println("viewWillAppear called!!")
     var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
     var nid = Int(appDelegate.nid!)
+    
     
     // sqlite from here
     let _dbfile:NSString = "sqlite.db"

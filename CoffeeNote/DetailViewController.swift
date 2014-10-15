@@ -16,6 +16,13 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var coffeeImage: UIImageView!
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var blendNameLabel: UILabel!
+  
+  @IBOutlet weak var star1Image: UIImageView!
+  @IBOutlet weak var star2Image: UIImageView!
+  @IBOutlet weak var star3Image: UIImageView!
+  @IBOutlet weak var star4Image: UIImageView!
+  @IBOutlet weak var star5Image: UIImageView!
+  
   @IBOutlet weak var placeLabel: UILabel!
   @IBOutlet weak var roastLabel: UILabel!
   @IBOutlet weak var darkLabel: UILabel!
@@ -52,7 +59,7 @@ class DetailViewController: UIViewController {
     }else{
       coffeeImage.image = UIImage(named: "img1.jpg")
     }
-
+    
     // sql from here
     let _dbfile:NSString = "sqlite.db"
     let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
@@ -73,9 +80,45 @@ class DetailViewController: UIViewController {
     
     // fetch data and put data into label
     while rows.next() {
-      // Put data to label
       self.blendNameLabel.text = rows.stringForColumn("blendName")
       self.dateLabel.text = rows.stringForColumn("date")
+      
+      // set start images
+      switch (rows.intForColumn("overall")){
+      case 1:
+        self.star1Image.image = UIImage(named: "gray-circle.png")
+        self.star2Image.image = UIImage(named: "gray-circle.png")
+        self.star3Image.image = UIImage(named: "gray-circle.png")
+        self.star4Image.image = UIImage(named: "gray-circle.png")
+        self.star5Image.image = UIImage(named: "star.png")
+      case 2:
+        self.star1Image.image = UIImage(named: "gray-circle.png")
+        self.star2Image.image = UIImage(named: "gray-circle.png")
+        self.star3Image.image = UIImage(named: "gray-circle.png")
+        self.star4Image.image = UIImage(named: "star.png")
+        self.star5Image.image = UIImage(named: "star.png")
+      case 3:
+        self.star1Image.image = UIImage(named: "gray-circle.png")
+        self.star2Image.image = UIImage(named: "gray-circle.png")
+        self.star3Image.image = UIImage(named: "star.png")
+        self.star4Image.image = UIImage(named: "star.png")
+        self.star5Image.image = UIImage(named: "star.png")
+      case 4:
+        self.star1Image.image = UIImage(named: "gray-circle.png")
+        self.star2Image.image = UIImage(named: "star.png")
+        self.star3Image.image = UIImage(named: "star.png")
+        self.star4Image.image = UIImage(named: "star.png")
+        self.star5Image.image = UIImage(named: "star.png")
+      case 5:
+        self.star1Image.image = UIImage(named: "star.png")
+        self.star2Image.image = UIImage(named: "star.png")
+        self.star3Image.image = UIImage(named: "star.png")
+        self.star4Image.image = UIImage(named: "star.png")
+        self.star5Image.image = UIImage(named: "star.png")
+      default:
+        println("Error of overall parametor")
+      }
+      
       self.placeLabel.text = rows.stringForColumn("place")
       switch rows.intForColumn("roast") {
       case 1:

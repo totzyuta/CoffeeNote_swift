@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1212F69A19E570B300F14F7C /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1212F69919E570B300F14F7C /* EditViewController.swift */; };
+		123D904119EE7AE300BDC598 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 123D904019EE7AE300BDC598 /* star.png */; };
+		123D904319EE7C2B00BDC598 /* gray-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 123D904219EE7C2B00BDC598 /* gray-circle.png */; };
 		127ACEDF19DBF1BF00B39373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACEDE19DBF1BF00B39373 /* AppDelegate.swift */; };
 		127ACEE119DBF1BF00B39373 /* AllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACEE019DBF1BF00B39373 /* AllViewController.swift */; };
 		127ACEE419DBF1BF00B39373 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 127ACEE219DBF1BF00B39373 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		1212F69919E570B300F14F7C /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		123D904019EE7AE300BDC598 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = Images.xcassets/star.png; sourceTree = "<group>"; };
+		123D904219EE7C2B00BDC598 /* gray-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gray-circle.png"; path = "Images.xcassets/gray-circle.png"; sourceTree = "<group>"; };
 		127ACED919DBF1BE00B39373 /* CoffeeNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		127ACEDD19DBF1BF00B39373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		127ACEDE19DBF1BF00B39373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 				12AD799619EB7EB100A320D4 /* img4.jpg */,
 				12D8EC4119EE5FAD00BC8521 /* blue-coffee-icon.jpeg */,
 				12D6706B19ED310E0079F550 /* icon_camera.png */,
+				123D904019EE7AE300BDC598 /* star.png */,
+				123D904219EE7C2B00BDC598 /* gray-circle.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -286,6 +292,8 @@
 				127ACEE419DBF1BF00B39373 /* Main.storyboard in Resources */,
 				127ACEE919DBF1BF00B39373 /* LaunchScreen.xib in Resources */,
 				12AD799719EB7EB100A320D4 /* img1.jpg in Resources */,
+				123D904119EE7AE300BDC598 /* star.png in Resources */,
+				123D904319EE7C2B00BDC598 /* gray-circle.png in Resources */,
 				127ACEE619DBF1BF00B39373 /* Images.xcassets in Resources */,
 				12D6706C19ED310E0079F550 /* icon_camera.png in Resources */,
 				12D8EC4219EE5FAD00BC8521 /* blue-coffee-icon.jpeg in Resources */,
