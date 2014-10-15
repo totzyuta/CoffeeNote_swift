@@ -10,11 +10,29 @@ import UIKit
 
 class EditViewController: UIViewController {
 
+  @IBOutlet weak var scrollView: UIScrollView!
+  @IBOutlet weak var mainView: UIView!
+  
+  @IBOutlet weak var coffeeImageView: UIImageView!
+  @IBOutlet weak var cameraButtonImageView: UIButton!
   @IBOutlet weak var blendNameTextField: UITextField!
+  @IBOutlet weak var originTextField: UITextField!
+  @IBOutlet weak var placeTextField: UITextField!
+  @IBOutlet weak var roastSegmentedControl: UISegmentedControl!
+  @IBOutlet weak var darkSegmentedControl: UISegmentedControl!
+  @IBOutlet weak var bodySegmentedControl: UISegmentedControl!
+  @IBOutlet weak var aciditySegmentedControl: UISegmentedControl!
+  @IBOutlet weak var flavorSegmentedControl: UISegmentedControl!
+  @IBOutlet weak var sweetnessSegmentedControl: UISegmentedControl!
+  @IBOutlet weak var cleanCupSegmentedControl: UISegmentedControl!
+  @IBOutlet weak var aftertasteSegmentedControl: UISegmentedControl!
+  @IBOutlet weak var overallSegmentedControl: UISegmentedControl!
+  @IBOutlet weak var commentTextView: UITextView!
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.scrollView.contentSize = self.mainView.bounds.size
   }
   
   override func didReceiveMemoryWarning() {
@@ -25,6 +43,16 @@ class EditViewController: UIViewController {
   override func viewWillAppear(animated: Bool) {
     var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
     var nid = Int(appDelegate.nid!)
+    
+    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    let imageFilePath = filePath+"/img\(nid).png"
+    
+    var imgfileManager = NSFileManager()
+    if (imgfileManager.fileExistsAtPath(imageFilePath)) {
+      coffeeImageView.image = UIImage(named: imageFilePath)
+      cameraButtonImageView.hidden = true
+    }
+    
     
     // sqlite from here
     let _dbfile:NSString = "sqlite.db"
@@ -42,6 +70,18 @@ class EditViewController: UIViewController {
     var rows = _db.executeQuery(sql_select, withArgumentsInArray: nil)
     while rows.next() {
       self.blendNameTextField.text = rows.stringForColumn("blendName")
+      self.originTextField.text = rows.stringForColumn("origin")
+      self.placeTextField.text = rows.stringForColumn("place")
+      self.roastSegmentedControl.selectedSegmentIndex = Int(rows.intForColumn("roast")-1)
+      self.darkSegmentedControl.selectedSegmentIndex = Int(rows.intForColumn("dark")-1)
+      self.bodySegmentedControl.selectedSegmentIndex = Int(rows.intForColumn("body")-1)
+      self.aciditySegmentedControl.selectedSegmentIndex = Int(rows.intForColumn("acidity")-1)
+      self.flavorSegmentedControl.selectedSegmentIndex = Int(rows.intForColumn("flavor")-1)
+      self.sweetnessSegmentedControl.selectedSegmentIndex = Int(rows.intForColumn("sweetness")-1)
+      self.cleanCupSegmentedControl.selectedSegmentIndex = Int(rows.intForColumn("cleanCup")-1)
+      self.aftertasteSegmentedControl.selectedSegmentIndex = Int(rows.intForColumn("aftertaste")-1)
+      self.overallSegmentedControl.selectedSegmentIndex = Int(rows.intForColumn("overall")-1)
+      self.commentTextView.text = rows.stringForColumn("comment")
     }
     
   }
@@ -82,10 +122,6 @@ class EditViewController: UIViewController {
       if db.executeUpdate(sql_delete, withArgumentsInArray: nil) {
         println("Delete notes nid: \(nid)")
         
-        // remove image file
-        // - (BOOL)removeFilePath:(NSString*)path;
-        // NSFileManager *fileManager = [[NSFileManager alloc] init];
-        // return [fileManager removeItemAtPath:path error:NULL];
         var fileManager = NSFileManager()
         let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         if fileManager.removeItemAtPath(filePath+"/img\(nid).png", error: nil) {
@@ -129,6 +165,7 @@ class EditViewController: UIViewController {
       var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
       var nid = Int(appDelegate.nid!)
       
+      /*
       if (self.blendNameTextField.text != nil) {
         let sql_update = "UPDATE notes SET blendName='\(self.blendNameTextField.text)' WHERE nid=\(nid);"
         var _result_insert = _db.executeUpdate(sql_update, withArgumentsInArray: nil)
@@ -145,6 +182,7 @@ class EditViewController: UIViewController {
       }else {
         println("Not Updated")
       }
+      */
 
       _db.close()
       

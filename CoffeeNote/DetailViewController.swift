@@ -122,7 +122,6 @@ class DetailViewController: UIViewController {
   }
   
   
-  
   @IBAction func unwindToDetailByCancel(segue: UIStoryboardSegue) {
   }
   
