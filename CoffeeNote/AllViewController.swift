@@ -43,6 +43,12 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       println("notes table already exists")
     }
     
+    
+    // share one filePath
+    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    appDelegate.filePath = filePath
+    
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -135,18 +141,16 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     
     // set image
-    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    var imageFilePath = filePath+"/img\(nidArray[indexPath.row]).png"
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    let filePath = appDelegate.filePath
+    // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    var imageFilePath = filePath!+"/img\(nidArray[indexPath.row]).png"
     var imgfileManager = NSFileManager()
     if (imgfileManager.fileExistsAtPath(imageFilePath)) {
       cell.backImage.image = UIImage(named: imageFilePath)
     }else{
       cell.backImage.image = UIImage(named: "img1.jpg")
     }
-    
-    // set image
-    // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    // cell.backImage.image = UIImage(named: "\(filePath)/img\(nidArray[indexPath.row]).png")
     
     return cell
   }

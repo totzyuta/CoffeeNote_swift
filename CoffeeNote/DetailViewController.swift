@@ -35,17 +35,20 @@ class DetailViewController: UIViewController {
   }
   
   override func viewWillAppear(animated: Bool) {
+    println("viewwillAppear in DetailView called")
 
     var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegatのインスタンスを取得
     var nid = Int(appDelegate.nid!)
     println("nid: \(nid)")
     
     // set image
-    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    let filePath = appDelegate.filePath!
+    // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
     var imageFilePath = filePath+"/img\(nid).png"
     var imgfileManager = NSFileManager()
     if (imgfileManager.fileExistsAtPath(imageFilePath)) {
-      coffeeImage.image = UIImage(named: filePath+"/img\(nid).png")
+      coffeeImage.image = UIImage(named: imageFilePath)
+      println(imageFilePath)
     }else{
       coffeeImage.image = UIImage(named: "img1.jpg")
     }

@@ -481,13 +481,14 @@
                                                     <constraint firstAttribute="width" constant="113" id="nyz-QJ-Epm"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vuf-Cn-o66" userLabel="Camera Button">
+                                            <button opaque="NO" alpha="0.49999999999999961" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vuf-Cn-o66" userLabel="Camera Button">
                                                 <rect key="frame" x="162" y="71" width="115" height="60"/>
                                                 <state key="normal" image="icon_camera.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="pushCameraButton:" destination="ZAN-w2-coa" eventType="touchUpInside" id="JzH-H5-L8T"/>
+                                                    <action selector="pushCameraButton:" destination="txB-KV-omt" eventType="touchUpInside" id="MhH-52-8yt"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Blend" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zXX-9P-iLk">
