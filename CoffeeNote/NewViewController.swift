@@ -143,6 +143,7 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
       dateFormatter.dateStyle = .ShortStyle
       println(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
       
+      // To avoid error of single quotation
       var blendNameTextFieldModified = blendNameTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
       var originTextFieldModified = originTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
       var placeTextFieldModified = placeTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
@@ -179,13 +180,15 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         println("nid: \(nid), blendName: \(blendName), origin: \(origin), place: \(place), roast: \(roast), dark: \(dark), body: \(body), acidity: \(acidity), flavor: \(flavor), sweetness: \(sweetness), cleancup: \(cleancup), aftertaste: \(aftertaste), overall: \(overall), comment: \(comment), date: \(date)")
         
-        // save image in DocumentDirectory
-        var data: NSData = UIImagePNGRepresentation(imageView.image)
-        let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        if (data.writeToFile("\(filePath)/img\(nid).png", atomically: true)) {
-          println("Save Photo Suceeded(filePath: \(filePath)/img\(nid).png")
-        }else {
-          println("Failed to save photo")
+        if ((imageView.image) != nil) {
+          // save image in DocumentDirectory
+          var data: NSData = UIImagePNGRepresentation(imageView.image)
+          let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+          if (data.writeToFile("\(filePath)/img\(nid).png", atomically: true)) {
+            println("Save Photo Suceeded(filePath: \(filePath)/img\(nid).png")
+          }else {
+            println("Failed to save photo")
+          }
         }
         
       }

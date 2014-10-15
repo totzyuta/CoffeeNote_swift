@@ -28,6 +28,7 @@
 		12CD442C19EC101000FE07AE /* img2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12CD442B19EC101000FE07AE /* img2.jpg */; };
 		12CD442E19EC102C00FE07AE /* img3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12CD442D19EC102C00FE07AE /* img3.jpg */; };
 		12D6706C19ED310E0079F550 /* icon_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D6706B19ED310E0079F550 /* icon_camera.png */; };
+		12D8EC4219EE5FAD00BC8521 /* blue-coffee-icon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 12D8EC4119EE5FAD00BC8521 /* blue-coffee-icon.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		12CD442B19EC101000FE07AE /* img2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img2.jpg; path = ../../../Dropbox/images/img2.jpg; sourceTree = "<group>"; };
 		12CD442D19EC102C00FE07AE /* img3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img3.jpg; path = ../../../Dropbox/images/Picture/img3.jpg; sourceTree = "<group>"; };
 		12D6706B19ED310E0079F550 /* icon_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_camera.png; path = Images.xcassets/icon_camera.png; sourceTree = "<group>"; };
+		12D8EC4119EE5FAD00BC8521 /* blue-coffee-icon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "blue-coffee-icon.jpeg"; path = "Images.xcassets/blue-coffee-icon.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 				12CD442B19EC101000FE07AE /* img2.jpg */,
 				12CD442D19EC102C00FE07AE /* img3.jpg */,
 				12AD799619EB7EB100A320D4 /* img4.jpg */,
+				12D8EC4119EE5FAD00BC8521 /* blue-coffee-icon.jpeg */,
 				12D6706B19ED310E0079F550 /* icon_camera.png */,
 			);
 			name = images;
@@ -285,6 +288,7 @@
 				12AD799719EB7EB100A320D4 /* img1.jpg in Resources */,
 				127ACEE619DBF1BF00B39373 /* Images.xcassets in Resources */,
 				12D6706C19ED310E0079F550 /* icon_camera.png in Resources */,
+				12D8EC4219EE5FAD00BC8521 /* blue-coffee-icon.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -78,7 +78,7 @@ class EditViewController: UIViewController {
       self.aciditySegmentedControl.selectedSegmentIndex = Int(rows.intForColumn("acidity")-1)
       self.flavorSegmentedControl.selectedSegmentIndex = Int(rows.intForColumn("flavor")-1)
       self.sweetnessSegmentedControl.selectedSegmentIndex = Int(rows.intForColumn("sweetness")-1)
-      self.cleanCupSegmentedControl.selectedSegmentIndex = Int(rows.intForColumn("cleanCup")-1)
+      self.cleanCupSegmentedControl.selectedSegmentIndex = Int(rows.intForColumn("cleancup")-1)
       self.aftertasteSegmentedControl.selectedSegmentIndex = Int(rows.intForColumn("aftertaste")-1)
       self.overallSegmentedControl.selectedSegmentIndex = Int(rows.intForColumn("overall")-1)
       self.commentTextView.text = rows.stringForColumn("comment")
@@ -165,26 +165,30 @@ class EditViewController: UIViewController {
       var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
       var nid = Int(appDelegate.nid!)
       
-      /*
-      if (self.blendNameTextField.text != nil) {
-        let sql_update = "UPDATE notes SET blendName='\(self.blendNameTextField.text)' WHERE nid=\(nid);"
-        var _result_insert = _db.executeUpdate(sql_update, withArgumentsInArray: nil)
-        
-        /* Debug for comfirm the inserted data */
-        
-        let sql_select = "SELECT * FROM notes WHERE nid=\(nid);"
-        var rows = _db.executeQuery(sql_select, withArgumentsInArray: nil)
-        while rows.next() {
-          let nid = rows.intForColumn("nid")
-          let blendName = rows.stringForColumn("blendName")
-          println("UPDATED: nid = \(nid), blendName = \(blendName)")
-        }
-      }else {
-        println("Not Updated")
-      }
-      */
+      
+      // To avoid error of single quotation
+      var blendNameTextFieldModified = blendNameTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
+      var originTextFieldModified = originTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
+      var placeTextFieldModified = placeTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
+      var commentTextFieldModified = commentTextView.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
+      
+      // let sql_update = "UPDATE notes SET blendName='\(self.blendNameTextField.text)' WHERE nid=\(nid);"
+      let sql_update = "UPDATE notes SET blendName='\(blendNameTextFieldModified)', origin='\(originTextFieldModified)', place='\(placeTextFieldModified)', roast='\(roastSegmentedControl.selectedSegmentIndex+1)', dark=\(darkSegmentedControl.selectedSegmentIndex+1), body=\(bodySegmentedControl.selectedSegmentIndex+1), acidity=\(aciditySegmentedControl.selectedSegmentIndex+1), flavor=\(flavorSegmentedControl.selectedSegmentIndex+1), sweetness=\(sweetnessSegmentedControl.selectedSegmentIndex+1), cleancup=\(cleanCupSegmentedControl.selectedSegmentIndex+1), aftertaste=\(aftertasteSegmentedControl.selectedSegmentIndex+1), overall=\(overallSegmentedControl.selectedSegmentIndex+1), comment='\(commentTextFieldModified)' WHERE nid=\(nid);"
+      var _result_insert = _db.executeUpdate(sql_update, withArgumentsInArray: nil)
+      
+      
+      /* Debug to comfirm the inserted data */
+      
+      let sql_select = "SELECT * FROM notes WHERE nid=\(nid);"
+      var rows = _db.executeQuery(sql_select, withArgumentsInArray: nil)
+      while rows.next() {
+        let nid = rows.intForColumn("nid")
+        let blendName = rows.stringForColumn("blendName")
+        println("UPDATED: nid = \(nid), blendName = \(blendName)")
 
       _db.close()
+        
+      }
       
     }
     

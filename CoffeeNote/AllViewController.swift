@@ -132,9 +132,21 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     cell.titleLabel.text = blendNameArray[indexPath.row]
     cell.placeLabel.text = placesArray[indexPath.row]
     cell.dateLabel.text = dateArray[indexPath.row]
+    
+    
     // set image
     let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    cell.backImage.image = UIImage(named: "\(filePath)/img\(nidArray[indexPath.row]).png")
+    var imageFilePath = filePath+"/img\(nidArray[indexPath.row]).png"
+    var imgfileManager = NSFileManager()
+    if (imgfileManager.fileExistsAtPath(imageFilePath)) {
+      cell.backImage.image = UIImage(named: imageFilePath)
+    }else{
+      cell.backImage.image = UIImage(named: "img1.jpg")
+    }
+    
+    // set image
+    // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    // cell.backImage.image = UIImage(named: "\(filePath)/img\(nidArray[indexPath.row]).png")
     
     return cell
   }

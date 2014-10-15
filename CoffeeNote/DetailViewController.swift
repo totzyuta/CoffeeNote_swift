@@ -42,7 +42,13 @@ class DetailViewController: UIViewController {
     
     // set image
     let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    coffeeImage.image = UIImage(named: filePath+"/img\(nid).png")
+    var imageFilePath = filePath+"/img\(nid).png"
+    var imgfileManager = NSFileManager()
+    if (imgfileManager.fileExistsAtPath(imageFilePath)) {
+      coffeeImage.image = UIImage(named: filePath+"/img\(nid).png")
+    }else{
+      coffeeImage.image = UIImage(named: "img1.jpg")
+    }
 
     // sql from here
     let _dbfile:NSString = "sqlite.db"
