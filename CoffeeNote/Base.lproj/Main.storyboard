@@ -780,10 +780,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dkq-Pn-VXV" userLabel="Delete Button View">
-                                                <rect key="frame" x="188" y="1180" width="225" height="29"/>
+                                                <rect key="frame" x="213" y="1180" width="180" height="29"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Duz-lE-V0s">
-                                                        <rect key="frame" x="3" y="2" width="219" height="25"/>
+                                                        <rect key="frame" x="3" y="2" width="174" height="25"/>
                                                         <color key="backgroundColor" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                                         <state key="normal" title="Delete This Note">
                                                             <color key="titleColor" red="1" green="0.46110736768944427" blue="0.40450843290836236" alpha="1" colorSpace="calibratedRGB"/>
@@ -1097,12 +1097,21 @@
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBM-4S-rbi">
-                                                <rect key="frame" x="218" y="452" width="83" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" white="0.34999999999999998" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="PMA-QG-4ar" userLabel="star5.png">
+                                                <rect key="frame" x="210" y="452" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="VWe-Zo-a2u" userLabel="star4.png">
+                                                <rect key="frame" x="230" y="452" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="sQf-Mk-JIF" userLabel="star3.png">
+                                                <rect key="frame" x="249" y="452" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="pSZ-CK-tjY" userLabel="star2.png">
+                                                <rect key="frame" x="267" y="452" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999964" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="1gW-IQ-aAV" userLabel="star1.png">
+                                                <rect key="frame" x="287" y="452" width="20" height="20"/>
+                                            </imageView>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yoR-no-waO">
                                                 <rect key="frame" x="10" y="481" width="300" height="2"/>
                                                 <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
@@ -1113,12 +1122,21 @@
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppq-6P-q1l" userLabel="2">
-                                                <rect key="frame" x="218" y="491" width="83" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" white="0.34999999999999998" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="8MW-bx-DIW" userLabel="star5.png">
+                                                <rect key="frame" x="210" y="492" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="HCt-nz-YBO" userLabel="star4.png">
+                                                <rect key="frame" x="230" y="492" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wwh-ff-Uuq" userLabel="star3.png">
+                                                <rect key="frame" x="249" y="492" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="wHC-Pd-7ml" userLabel="star2.png">
+                                                <rect key="frame" x="267" y="492" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="rMi-qc-g7N" userLabel="star1.png">
+                                                <rect key="frame" x="287" y="492" width="20" height="20"/>
+                                            </imageView>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NLv-01-GRc">
                                                 <rect key="frame" x="10" y="520" width="300" height="2"/>
                                                 <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
@@ -1129,12 +1147,21 @@
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8C-6V-Y42" userLabel="5">
-                                                <rect key="frame" x="218" y="530" width="83" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" white="0.34999999999999998" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wi5-8h-19I" userLabel="star5.png">
+                                                <rect key="frame" x="210" y="531" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="f12-b6-rGY" userLabel="star4.png">
+                                                <rect key="frame" x="230" y="531" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="c0p-Hp-Qwj" userLabel="star3.png">
+                                                <rect key="frame" x="249" y="531" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="YuG-bl-iIt" userLabel="star2.png">
+                                                <rect key="frame" x="267" y="531" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="18p-I8-Ykk" userLabel="star1.png">
+                                                <rect key="frame" x="287" y="531" width="20" height="20"/>
+                                            </imageView>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BbZ-pw-P9N">
                                                 <rect key="frame" x="10" y="559" width="300" height="2"/>
                                                 <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
@@ -1145,12 +1172,21 @@
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ri-gr-tvi" userLabel="1">
-                                                <rect key="frame" x="218" y="569" width="83" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" white="0.34999999999999998" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="V4x-r1-vt8" userLabel="star5.png">
+                                                <rect key="frame" x="210" y="571" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="4K1-KB-Huh" userLabel="star4.png">
+                                                <rect key="frame" x="230" y="571" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="rtn-F4-KkT" userLabel="star3.png">
+                                                <rect key="frame" x="249" y="571" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="d6d-In-Jbg" userLabel="star2.png">
+                                                <rect key="frame" x="267" y="571" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gxf-hB-bUy" userLabel="star1.png">
+                                                <rect key="frame" x="287" y="571" width="20" height="20"/>
+                                            </imageView>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fkz-la-QYb">
                                                 <rect key="frame" x="10" y="598" width="300" height="2"/>
                                                 <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
@@ -1161,12 +1197,21 @@
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuz-8W-KjY">
-                                                <rect key="frame" x="218" y="608" width="83" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" white="0.34999999999999998" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="bHY-nZ-0DC" userLabel="star5.png">
+                                                <rect key="frame" x="210" y="611" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="rVW-fs-3RT" userLabel="star4.png">
+                                                <rect key="frame" x="230" y="611" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Wc-Ri-wmS" userLabel="star3.png">
+                                                <rect key="frame" x="249" y="611" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="EsT-8K-AEP" userLabel="star2.png">
+                                                <rect key="frame" x="267" y="611" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray-star.png" translatesAutoresizingMaskIntoConstraints="NO" id="pEJ-HH-0xv" userLabel="star1.png">
+                                                <rect key="frame" x="287" y="611" width="20" height="20"/>
+                                            </imageView>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YCr-Iz-cMk">
                                                 <rect key="frame" x="10" y="637" width="300" height="2"/>
                                                 <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
@@ -1185,7 +1230,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.97999999999999998" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
@@ -1202,16 +1247,32 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="acidityLabel" destination="Ppq-6P-q1l" id="dST-e4-s6V"/>
-                        <outlet property="aftertasteLabel" destination="tuz-8W-KjY" id="pJN-Rc-Byj"/>
+                        <outlet property="acidityStar1" destination="rMi-qc-g7N" id="GCe-R4-WeP"/>
+                        <outlet property="acidityStar2" destination="wHC-Pd-7ml" id="pun-mv-eo5"/>
+                        <outlet property="acidityStar3" destination="Wwh-ff-Uuq" id="S4M-Ux-VKJ"/>
+                        <outlet property="acidityStar4" destination="HCt-nz-YBO" id="jmC-4X-MQr"/>
+                        <outlet property="acidityStar5" destination="8MW-bx-DIW" id="GdK-mE-ZDH"/>
+                        <outlet property="aftertasteStar1" destination="pEJ-HH-0xv" id="T4e-wY-5Cs"/>
+                        <outlet property="aftertasteStar2" destination="EsT-8K-AEP" id="9FN-Ol-7hr"/>
+                        <outlet property="aftertasteStar3" destination="5Wc-Ri-wmS" id="0wN-aH-PXL"/>
+                        <outlet property="aftertasteStar4" destination="rVW-fs-3RT" id="9lp-5F-WFk"/>
+                        <outlet property="aftertasteStar5" destination="bHY-nZ-0DC" id="yYc-5r-InB"/>
                         <outlet property="blendNameLabel" destination="M2f-FM-LYZ" id="j4i-hR-NQR"/>
                         <outlet property="bodyLabel" destination="oug-Za-y3Y" id="tQz-NL-HEr"/>
-                        <outlet property="cleanCupLabel" destination="3Ri-gr-tvi" id="J4B-9c-dxk"/>
+                        <outlet property="cleancupStar1" destination="Gxf-hB-bUy" id="UWR-vw-qNo"/>
+                        <outlet property="cleancupStar2" destination="d6d-In-Jbg" id="gA0-Nl-cPz"/>
+                        <outlet property="cleancupStar3" destination="rtn-F4-KkT" id="uJA-fI-dPy"/>
+                        <outlet property="cleancupStar4" destination="4K1-KB-Huh" id="eEL-bf-B63"/>
+                        <outlet property="cleancupStar5" destination="V4x-r1-vt8" id="diu-eC-YiD"/>
                         <outlet property="coffeeImage" destination="96A-VO-Fvq" id="YfT-gD-BnY"/>
                         <outlet property="commentText" destination="UGn-8P-P4a" id="XW9-4J-0FC"/>
                         <outlet property="darkLabel" destination="aOM-cE-owu" id="8ls-xc-qSK"/>
                         <outlet property="dateLabel" destination="3yn-QD-EkD" id="RcS-HX-hL4"/>
-                        <outlet property="flavorLabel" destination="wBM-4S-rbi" id="2LW-L6-sru"/>
+                        <outlet property="flavorStar1" destination="1gW-IQ-aAV" id="UMo-2d-cQJ"/>
+                        <outlet property="flavorStar2" destination="pSZ-CK-tjY" id="g5c-gm-kIx"/>
+                        <outlet property="flavorStar3" destination="sQf-Mk-JIF" id="nZW-qk-BcE"/>
+                        <outlet property="flavorStar4" destination="VWe-Zo-a2u" id="raI-x6-w62"/>
+                        <outlet property="flavorStar5" destination="PMA-QG-4ar" id="Vjh-19-o3b"/>
                         <outlet property="mainView" destination="vDf-n2-VYd" id="eHW-97-cye"/>
                         <outlet property="placeLabel" destination="yn1-fE-M0v" id="8uW-Ln-3hw"/>
                         <outlet property="roastLabel" destination="2hr-mV-foI" id="cOb-1g-9LY"/>
@@ -1221,7 +1282,11 @@
                         <outlet property="star3Image" destination="nde-BE-hhy" id="8CF-zp-tc0"/>
                         <outlet property="star4Image" destination="R85-my-6tJ" id="tXb-7W-Rgf"/>
                         <outlet property="star5Image" destination="H1m-Ek-WNy" id="yhn-Kz-mNA"/>
-                        <outlet property="sweetnessLabel" destination="G8C-6V-Y42" id="8Tz-u6-31y"/>
+                        <outlet property="sweetnessStar1" destination="18p-I8-Ykk" id="mct-ki-Dcg"/>
+                        <outlet property="sweetnessStar2" destination="YuG-bl-iIt" id="I0x-bV-2Fp"/>
+                        <outlet property="sweetnessStar3" destination="c0p-Hp-Qwj" id="7sz-PQ-E4z"/>
+                        <outlet property="sweetnessStar4" destination="f12-b6-rGY" id="5AO-mW-xjZ"/>
+                        <outlet property="sweetnessStar5" destination="Wi5-8h-19I" id="zY0-Qt-e4E"/>
                         <segue destination="itJ-1X-W0k" kind="unwind" identifier="unwindFromDetail" unwindAction="unwindFromDetail:" id="8ql-g6-dHL"/>
                     </connections>
                 </viewController>
@@ -1305,6 +1370,7 @@
     </scenes>
     <resources>
         <image name="gray-circle.png" width="256" height="256"/>
+        <image name="gray-star.png" width="512" height="512"/>
         <image name="icon_camera.png" width="60" height="60"/>
         <image name="img1.jpg" width="4608" height="3072"/>
         <image name="star.png" width="235" height="215"/>
