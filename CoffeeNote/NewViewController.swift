@@ -35,6 +35,16 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     self.scrollView.contentSize = self.mainView.bounds.size
     
+    // change title of navigation bar
+    var title = UILabel()
+    title.font = UIFont.boldSystemFontOfSize(16)
+    // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
+    title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
+    title.text = "New Coffee Note"
+    title.sizeToFit()
+    self.navigationItem.titleView = title;
+
+    
     // to show aleart when not to have camera in device
     if (!UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
       var myAlertView = UIAlertView()

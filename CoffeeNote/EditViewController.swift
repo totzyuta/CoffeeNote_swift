@@ -35,6 +35,15 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     self.scrollView.contentSize = self.mainView.bounds.size
     
+    // change title of navigation bar
+    var title = UILabel()
+    title.font = UIFont.boldSystemFontOfSize(16)
+    // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
+    title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
+    title.text = "Edit Coffee Note"
+    title.sizeToFit()
+    self.navigationItem.titleView = title;
+    
     // set image
     var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
     var nid = Int(appDelegate.nid!)

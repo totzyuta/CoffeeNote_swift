@@ -15,9 +15,17 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    
     allTableView.delegate = self
     allTableView.dataSource = self
+    
+    // change title of navigation bar
+    var title = UILabel()
+    title.font = UIFont.boldSystemFontOfSize(16)
+    // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
+    title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
+    title.text = "All Coffee Notes"
+    title.sizeToFit()
+    self.navigationItem.titleView = title;
 
     // Create a notes table if not exists
     let _dbfile:NSString = "sqlite.db"
@@ -93,10 +101,15 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     // Dispose of any resources that can be recreated.
   }
   
+  func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    // change the backgound color of tableView
+    self.allTableView.backgroundView = nil
+    self.allTableView.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+  }
   
   // セルの内容を返す
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    
+
     // let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "noteCell")
     let cell: CustomCell = tableView.dequeueReusableCellWithIdentifier("Cell") as CustomCell
     
