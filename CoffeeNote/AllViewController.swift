@@ -15,10 +15,10 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    
     allTableView.delegate = self
     allTableView.dataSource = self
-    
-    
+
     // Create a notes table if not exists
     let _dbfile:NSString = "sqlite.db"
     let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
@@ -31,7 +31,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     let db = FMDatabase(path: _path)
     
     // Create a query to create a notes table
-    let sql_create_table = "CREATE TABLE IF NOT EXISTS notes (nid INTEGER PRIMARY KEY AUTOINCREMENT, blendName TEXT);"
+    let sql_create_table = "CREATE TABLE IF NOT EXISTS notes (nid INTEGER PRIMARY KEY AUTOINCREMENT, blendName TEXT, origin TEXT, place TEXT, roast INTEGER, dark INTEGER, body INTEGER, acidity INTEGER, flavor INTEGER, sweetness INTEGER, cleancup INTEGER, aftertaste, INTEGER, overall INTEGER, comment TEXT, date TEXT);"
     
     db.open()
     
@@ -43,10 +43,16 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       println("notes table already exists")
     }
     
+    
+    // share one filePath
+    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    appDelegate.filePath = filePath
+    
   }
   
   override func viewWillAppear(animated: Bool) {
-    println("---DetailViewWillAppear---")
+    println("---AllViewWillAppear---")
     
     let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
     
@@ -66,19 +72,13 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     db.open()
     
-    // var rows = _db.executeQuery(sql_select, withArgumentsInArray: [2])
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
-    var notes: [String] = []
     var blendNames: [String] = []
     
     while rows.next() {
-      // カラム名を指定して値を取得
       let nid = rows.intForColumn("nid")
-      // カラムのインデックスを指定して取得
-      //let blendNames = rows.stringForColumnIndex(1)
-      blendNames.append(rows.stringForColumn("blendName"))
-      
+    blendNames.append(rows.stringForColumn("blendName"))
     }
     
     db.close()
@@ -96,7 +96,9 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   
   // セルの内容を返す
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+    
+    // let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "noteCell")
+    let cell: CustomCell = tableView.dequeueReusableCellWithIdentifier("Cell") as CustomCell
     
     // sql from here
     let _dbfile:NSString = "sqlite.db"
@@ -114,23 +116,42 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     db.open()
     
-    // var rows = _db.executeQuery(sql_select, withArgumentsInArray: [2])
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
-    var blendNames: [String] = []
+    var nidArray: [String] = []
+    var blendNameArray: [String] = []
+    var placesArray: [String] = []
+    var dateArray: [String] = []
     
     while rows.next() {
-      // カラム名を指定して値を取得
-      let nid = rows.intForColumn("nid")
-      // カラムのインデックスを指定して取得
-      //let blendNames = rows.stringForColumnIndex(1)
-      blendNames.append(rows.stringForColumn("blendName"))
+      // nidArray.append(Int(rows.intForColumn("nid")))
+      nidArray.append(rows.stringForColumn("nid"))
+      blendNameArray.append(rows.stringForColumn("blendName"))
+      placesArray.append(rows.stringForColumn("place"))
+      var tmp_datewords = split(rows.stringForColumn("date"), { $0 == "," })
+      var datewords = split(tmp_datewords[0], { $0 == "/" })
+      dateArray.append(datewords[0]+"/"+datewords[1])
     }
     
     db.close()
     
-    cell.textLabel?.text = blendNames[indexPath.row]
-        
+    cell.titleLabel.text = blendNameArray[indexPath.row]
+    cell.placeLabel.text = placesArray[indexPath.row]
+    cell.dateLabel.text = dateArray[indexPath.row]
+    
+    
+    // set image
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    let filePath = appDelegate.filePath
+    // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    var imageFilePath = filePath!+"/img\(nidArray[indexPath.row]).png"
+    var imgfileManager = NSFileManager()
+    if (imgfileManager.fileExistsAtPath(imageFilePath)) {
+      cell.backImage.image = UIImage(named: imageFilePath)
+    }else{
+      cell.backImage.image = UIImage(named: "img1.jpg")
+    }
+    
     return cell
   }
   
@@ -195,7 +216,6 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    println("---cell was tapped---")
     
     // sql from here
     // fetch the nid of the cell tapped
@@ -220,10 +240,8 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     while rows.next() {
       var nid: Int = Int(rows.intForColumn("nid"))
-      // var blendName: String = rows.stringForColumn("blendName")
       var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
       appDelegate.nid = nid
-      // appDelegate.blendName = blendName
     }
     
     db.close()
@@ -241,7 +259,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   @IBAction func unwindToAllBySave(segue: UIStoryboardSegue) {
   }
   
-  @IBAction func unwindFromDetail(segue: UIStoryboardSegue) {
+  @IBAction func unwindFromEditByDeleteButton(segue: UIStoryboardSegue) {
   }
 
   
