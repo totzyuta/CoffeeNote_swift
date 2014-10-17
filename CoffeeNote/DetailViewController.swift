@@ -62,7 +62,7 @@ class DetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.scrollView.contentSize = self.mainView.bounds.size
+    // self.scrollView.contentSize = self.mainView.bounds.size
     // scrollView.pagingEnabled = true
     
     
