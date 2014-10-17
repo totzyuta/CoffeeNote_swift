@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate {
 
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var mainView: UIView!
@@ -151,87 +151,112 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   
   
   @IBAction func pushCameraButton(sender: AnyObject) {
+    var sheetCamera = UIActionSheet()
+    sheetCamera.title = "Set Photo of Coffee"
+    sheetCamera.delegate = self
+    sheetCamera.addButtonWithTitle("Take Photo by Camera")
+    sheetCamera.addButtonWithTitle("Select Photo from Cameraroll")
+    sheetCamera.addButtonWithTitle("Cancel")
+    sheetCamera.cancelButtonIndex = 2
     
-    // ActionMethod
-    let alertController = UIAlertController(title: "Set Photo of Coffee", message: "Chose Action", preferredStyle: .ActionSheet)
+    sheetCamera.tag = 0
     
-    let takePhotoAction = UIAlertAction(title: "Take Photo by Camera", style: .Default) { (action) -> Void in
-      self.takePhoto(self)
-    }
-    
-    let selectPhotoAction = UIAlertAction(title: "Select Photo from Cameraroll", style: .Default) { (action) -> Void in
-      self.selectPhoto(self)
-    }
-    
-    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
-      println("cancelAction")
-    }
-    alertController.addAction(takePhotoAction)
-    alertController.addAction(selectPhotoAction)
-    alertController.addAction(cancelAction)
-    
-    presentViewController(alertController, animated: true, completion: nil)
-    
+    sheetCamera.showInView(self.view)
   }
   
+
+  
+  // MARK: Delete Button
   
   @IBAction func pushedDeleteButton(sender: AnyObject) {
+    var sheet = UIActionSheet()
+    sheet.title = "Deleting This Note"
+    sheet.delegate = self
+    sheet.addButtonWithTitle("OK")
+    sheet.addButtonWithTitle("Cancel")
+    sheet.cancelButtonIndex = 1
     
-    let alertController = UIAlertController(title: "Deleting This Note", message: "Are you sure to delete?", preferredStyle: .ActionSheet)
+    sheet.tag = 1
     
-    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
-      println("Cancel button tapped.")
-    }
-    
-    
-    let okAction = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
-      println("OK button tapped.")
-      
-      /* Delete Note */
-      
-      var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegatのインスタンスを取得
-      var nid = Int(appDelegate.nid!)
-      
-      // sql from here
-      let _dbfile:NSString = "sqlite.db"
-      let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
-        NSSearchPathDirectory.DocumentDirectory,
-        NSSearchPathDomainMask.UserDomainMask,
-        true)[0]
-      let fileManager:NSFileManager = NSFileManager.defaultManager()
-      let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
-      
-      let db = FMDatabase(path: _path)
-      
-      let sql_delete = "DELETE FROM notes WHERE nid=\(nid);"
-      
-      db.open()
-      
-      if db.executeUpdate(sql_delete, withArgumentsInArray: nil) {
-        println("Delete notes nid: \(nid)")
-        
-        var fileManager = NSFileManager()
-        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
-        var filePath = appDelegate.filePath
-        // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        if fileManager.removeItemAtPath(filePath!+"/img\(nid).png", error: nil) {
-          println("Deleted img file (Path: \(filePath)/img\(nid).png")
-        }
+    sheet.showInView(self.view)
+  }
+  
+  
+  func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+    switch (actionSheet.tag) {
+    case 0:
+      /* Photo ActionSheet */
+      if (buttonIndex==0) {
+        // take photo
+        self.takePhoto(self)
+      }else if(buttonIndex==1) {
+        // select photo
+        self.selectPhoto(self)
+      }else {
+        // cancel
+      }
+      break
+    case 1:
+      /* Delete ActionSheet */
+      if (buttonIndex==0) {
+        self.takePhoto(self)
+      }else if(buttonIndex==1){
+        self.selectPhoto(self)
+      }else {
+        // Cancel Button
       }
       
-      db.close()
-      
-      self.performSegueWithIdentifier("unwindFromEditByDeleteButton", sender: self)
-      
+      if (buttonIndex==1) {
+        // Cancel Button
+        println("Cancel button tapped.")
+      }else{
+        // OK Button
+        println("OK button tapped.")
+        
+        /* Delete Note */
+        
+        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegatのインスタンスを取得
+        var nid = Int(appDelegate.nid!)
+        
+        // sql from here
+        let _dbfile:NSString = "sqlite.db"
+        let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
+          NSSearchPathDirectory.DocumentDirectory,
+          NSSearchPathDomainMask.UserDomainMask,
+          true)[0]
+        let fileManager:NSFileManager = NSFileManager.defaultManager()
+        let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+        
+        let db = FMDatabase(path: _path)
+        
+        let sql_delete = "DELETE FROM notes WHERE nid=\(nid);"
+        
+        db.open()
+        
+        if db.executeUpdate(sql_delete, withArgumentsInArray: nil) {
+          println("Delete notes nid: \(nid)")
+          
+          var fileManager = NSFileManager()
+          var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+          var filePath = appDelegate.filePath
+          // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+          if fileManager.removeItemAtPath(filePath!+"/img\(nid).png", error: nil) {
+            println("Deleted img file (Path: \(filePath)/img\(nid).png")
+          }
+        }
+        
+        db.close()
+        
+        self.performSegueWithIdentifier("unwindFromEditByDeleteButton", sender: self)
+        
+        break
+      }
+    default:
+      break
     }
     
-    alertController.addAction(cancelAction)
-    alertController.addAction(okAction)
-    
-    presentViewController(alertController, animated: true, completion: nil)
-    
   }
-
+  
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     println("prepareForSegue was called!")

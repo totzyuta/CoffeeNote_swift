@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate {
   
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var mainView: UIView!
@@ -95,29 +95,28 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     // [picker dismissViewControllerAnimated:YES completion:NULL];
     picker.dismissViewControllerAnimated(true, completion: nil)
   }
+ 
+  
+  func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+    if (buttonIndex==0) {
+      self.takePhoto(self)
+    }else if(buttonIndex==1){
+      self.selectPhoto(self)
+    }else {
+      // Cancel Button
+    }
+  }
   
   @IBAction func pushCameraButton(sender: AnyObject) {
+    var sheet = UIActionSheet()
+    sheet.title = "Set Photo of Coffee"
+    sheet.delegate = self
+    sheet.addButtonWithTitle("Take Photo by Camera")
+    sheet.addButtonWithTitle("Select Photo from Cameraroll")
+    sheet.addButtonWithTitle("Cancel")
+    sheet.cancelButtonIndex = 2
     
-    // ActionMethod
-    let alertController = UIAlertController(title: "Set Photo of Coffee", message: "Chose Action", preferredStyle: .ActionSheet)
-    
-    let takePhotoAction = UIAlertAction(title: "Take Photo by Camera", style: .Default) { (action) -> Void in
-      self.takePhoto(self)
-    }
-    let selectPhotoAction = UIAlertAction(title: "Select Photo from Cameraroll", style: .Default) { (action) -> Void in
-      self.selectPhoto(self)
-    }
-    
-    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
-      println("cancelAction")
-    }
-    
-    alertController.addAction(takePhotoAction)
-    alertController.addAction(selectPhotoAction)
-    alertController.addAction(cancelAction)
-    
-    presentViewController(alertController, animated: true, completion: nil)
-    
+    sheet.showInView(self.view)
   }
   
   
