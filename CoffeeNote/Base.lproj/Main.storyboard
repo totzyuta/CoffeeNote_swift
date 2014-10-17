@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4N8-cX-hNQ">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--New Note-->
@@ -921,7 +923,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLg-Rl-UV5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NiY-8i-l3w" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1461" y="-503"/>
+            <point key="canvasLocation" x="1461" y="-502.99999999999994"/>
         </scene>
         <!--All Notes-->
         <scene sceneID="ufC-wZ-h7g">
@@ -936,8 +938,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="Cell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AcH-GG-mHJ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="670"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="670"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Note" id="vJz-jR-jpJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="vXZ-lx-hvc" id="8L5-dD-GIT"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier=" Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="130" id="MV5-RW-ByM" customClass="CustomCell" customModule="CoffeeNote" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -996,12 +1006,31 @@
                     </navigationItem>
                     <connections>
                         <outlet property="allTableView" destination="AcH-GG-mHJ" id="tIp-UY-PYi"/>
+                        <outlet property="searchBar" destination="vJz-jR-jpJ" id="cLK-o6-X34"/>
+                        <outlet property="searchDisplayController" destination="clQ-kY-T2w" id="fhp-J1-bCq"/>
                         <segue destination="Iv7-iO-dKm" kind="push" identifier="toDetailViewController" id="213-q0-YA6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="dda-74-DvV">
+                    <connections>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="Hyn-xM-fSR"/>
+                        <outlet property="searchContentsController" destination="vXZ-lx-hvc" id="JFQ-Tf-4ch"/>
+                        <outlet property="searchResultsDataSource" destination="vXZ-lx-hvc" id="P24-s6-WJW"/>
+                        <outlet property="searchResultsDelegate" destination="vXZ-lx-hvc" id="EX5-N3-t2F"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="clQ-kY-T2w">
+                    <connections>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="dFW-L9-Djp"/>
+                        <outlet property="searchBar" destination="vJz-jR-jpJ" id="bu7-Cv-WQE"/>
+                        <outlet property="searchContentsController" destination="vXZ-lx-hvc" id="r5S-yi-Qqx"/>
+                        <outlet property="searchResultsDataSource" destination="vXZ-lx-hvc" id="fo8-je-i4y"/>
+                        <outlet property="searchResultsDelegate" destination="vXZ-lx-hvc" id="WyB-kg-YAt"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="531" y="127"/>
+            <point key="canvasLocation" x="531" y="126.99999999999999"/>
         </scene>
         <!--Detail-->
         <scene sceneID="cjN-pL-dDb">
@@ -1012,13 +1041,13 @@
                         <viewControllerLayoutGuide type="bottom" id="6er-Jw-hOS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="C7c-JI-mqt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Efd-zO-vPw">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efd-zO-vPw">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vDf-n2-VYd">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vDf-n2-VYd">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="760"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="96A-VO-Fvq">
@@ -1249,12 +1278,28 @@
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.96999999999999997" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="760" id="A8v-Gv-vtG"/>
+                                            <constraint firstAttribute="width" constant="320" id="m2c-wh-TL0"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.99000000953674316" green="0.9011078056723314" blue="0.51855274236914228" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="vDf-n2-VYd" firstAttribute="leading" secondItem="Efd-zO-vPw" secondAttribute="leading" id="7rS-lF-6Np"/>
+                                    <constraint firstAttribute="bottom" secondItem="vDf-n2-VYd" secondAttribute="bottom" id="NRi-KQ-NSM"/>
+                                    <constraint firstAttribute="trailing" secondItem="vDf-n2-VYd" secondAttribute="trailing" id="US7-Z0-yTe"/>
+                                    <constraint firstItem="vDf-n2-VYd" firstAttribute="top" secondItem="Efd-zO-vPw" secondAttribute="top" id="ygb-em-NE2"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Efd-zO-vPw" firstAttribute="top" secondItem="C7c-JI-mqt" secondAttribute="topMargin" id="2dI-fk-WEd"/>
+                            <constraint firstItem="6er-Jw-hOS" firstAttribute="top" secondItem="Efd-zO-vPw" secondAttribute="bottom" id="QnB-h9-LNE"/>
+                            <constraint firstItem="Efd-zO-vPw" firstAttribute="leading" secondItem="C7c-JI-mqt" secondAttribute="leadingMargin" constant="-16" id="cV1-yU-dO8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Efd-zO-vPw" secondAttribute="trailing" constant="-16" id="u9l-jp-jrN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="yV1-qN-IGE">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="IRn-0s-MML">
@@ -1264,6 +1309,8 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="640"/>
                     <connections>
                         <outlet property="acidityStar1" destination="rMi-qc-g7N" id="GCe-R4-WeP"/>
                         <outlet property="acidityStar2" destination="wHC-Pd-7ml" id="pun-mv-eo5"/>
@@ -1311,7 +1358,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5h-eD-AhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="itJ-1X-W0k" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="930" y="127"/>
+            <point key="canvasLocation" x="936" y="163"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nYN-sN-cGL">
@@ -1384,6 +1431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZT-WU-HbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="136"/>
         </scene>
     </scenes>
     <resources>

@@ -33,7 +33,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.scrollView.contentSize = self.mainView.bounds.size
+    // self.scrollView.contentSize = self.mainView.bounds.size
     
     // change title of navigation bar
     var title = UILabel()

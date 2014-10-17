@@ -8,9 +8,11 @@
 
 import UIKit
 
-class AllViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+class AllViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate  {
   
   @IBOutlet weak var allTableView: UITableView!
+  @IBOutlet weak var searchBar: UISearchBar!
+  // var fileteredNotes: Array = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -106,8 +108,19 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     self.allTableView.backgroundView = nil
     self.allTableView.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
   }
+  /*
+  // for searching
+  func filterContentForSearchText(searchText: String) {
+    // Filter the array using the filter method
+    self.filteredNotes = self.candies.filter({( candy: Candy) -> Bool in
+      let categoryMatch = (scope == "All") || (candy.category == scope)
+      let stringMatch = candy.name.rangeOfString(searchText)
+      return categoryMatch && (stringMatch != nil)
+    })
+  }
+  */
   
-  // セルの内容を返す
+  // Set the contents of cells
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
     // let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "noteCell")
