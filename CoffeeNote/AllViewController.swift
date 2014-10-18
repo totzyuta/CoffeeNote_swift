@@ -17,6 +17,9 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    var obj = for_image_files()
+    println(obj.joinString("testestste", withNumber: 2313213))
+    
     allTableView.delegate = self
     allTableView.dataSource = self
     
@@ -167,22 +170,28 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     
     // set image
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
-    let filePath = appDelegate.filePath
-    // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    var imageFilePath = filePath!+"/img\(nidArray[indexPath.row]).png"
+    // var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    // let filePath = appDelegate.filePath
+    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    var imageFilePath = filePath+"/img\(nidArray[indexPath.row]).jpg"
+    // var imageFilePath = filePath!+"/img\(nidArray[indexPath.row]).png"
     var imgfileManager = NSFileManager()
+    println("imageFilePath: \(imageFilePath)")
     if (imgfileManager.fileExistsAtPath(imageFilePath)) {
-      cell.backImage.image = UIImage(named: imageFilePath)
+      // use class and method of Obejctive-C
+      var obj = for_image_files()
+      cell.backImage.image = obj.loadImage(imageFilePath)
+      println("imageFilepath is there!")
     }else{
       cell.backImage.image = UIImage(named: "img1.jpg")
+      println("NO imageFilepath")
     }
     
     return cell
   }
   
   
-  // セルの行数
+  // return number of cell
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
     // sql from here

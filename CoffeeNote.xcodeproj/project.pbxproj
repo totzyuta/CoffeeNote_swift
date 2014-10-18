@@ -32,6 +32,7 @@
 		12CD442E19EC102C00FE07AE /* img3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12CD442D19EC102C00FE07AE /* img3.jpg */; };
 		12D6706C19ED310E0079F550 /* icon_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D6706B19ED310E0079F550 /* icon_camera.png */; };
 		12D8EC4219EE5FAD00BC8521 /* blue-coffee-icon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 12D8EC4119EE5FAD00BC8521 /* blue-coffee-icon.jpeg */; };
+		12FFE5EB19F2B108003C1263 /* for-image-files.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FFE5EA19F2B108003C1263 /* for-image-files.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		12CD442D19EC102C00FE07AE /* img3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img3.jpg; path = ../../../Dropbox/images/Picture/img3.jpg; sourceTree = "<group>"; };
 		12D6706B19ED310E0079F550 /* icon_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_camera.png; path = Images.xcassets/icon_camera.png; sourceTree = "<group>"; };
 		12D8EC4119EE5FAD00BC8521 /* blue-coffee-icon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "blue-coffee-icon.jpeg"; path = "Images.xcassets/blue-coffee-icon.jpeg"; sourceTree = "<group>"; };
+		12FFE5E919F2B108003C1263 /* for-image-files.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "for-image-files.h"; sourceTree = "<group>"; };
+		12FFE5EA19F2B108003C1263 /* for-image-files.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "for-image-files.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,11 +135,13 @@
 				1285316619DC44F000CCDB50 /* DetailViewController.swift */,
 				1212F69919E570B300F14F7C /* EditViewController.swift */,
 				127ACEE219DBF1BF00B39373 /* Main.storyboard */,
+				129D3E1319E2C64B00180B94 /* CoffeeNote-Bridging-Header.h */,
+				12FFE5E919F2B108003C1263 /* for-image-files.h */,
+				12FFE5EA19F2B108003C1263 /* for-image-files.m */,
 				12CD442A19EC019500FE07AE /* images */,
 				127ACEE519DBF1BF00B39373 /* Images.xcassets */,
 				127ACEE719DBF1BF00B39373 /* LaunchScreen.xib */,
 				127ACEDC19DBF1BF00B39373 /* Supporting Files */,
-				129D3E1319E2C64B00180B94 /* CoffeeNote-Bridging-Header.h */,
 			);
 			path = CoffeeNote;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				129D3E2519E2C79100180B94 /* FMResultSet.m in Sources */,
 				1285316919DC452300CCDB50 /* NewViewController.swift in Sources */,
 				129D3E2219E2C79100180B94 /* FMDatabaseAdditions.m in Sources */,
+				12FFE5EB19F2B108003C1263 /* for-image-files.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

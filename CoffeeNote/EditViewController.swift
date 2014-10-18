@@ -49,7 +49,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     var nid = Int(appDelegate.nid!)
     let filePath = appDelegate.filePath
     // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    let imageFilePath = filePath!+"/img\(nid).png"
+    let imageFilePath = filePath!+"/img\(nid).jpg"
     var imgfileManager = NSFileManager()
     
     if (imgfileManager.fileExistsAtPath(imageFilePath)) {
