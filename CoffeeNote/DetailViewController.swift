@@ -96,9 +96,9 @@ class DetailViewController: UIViewController {
       // use class and method of Obejctive-C
       var obj = for_image_files()
       coffeeImage.image = obj.loadImage(imageFilePath)
-      println("imagefile exists(filePath: \(imageFilePath))")
+      println("imagefile exists(imageFilePath: \(imageFilePath))")
     }else{
-      println("imagefile NOT exists")
+      println("imagefile NOT exists(imagefilePath: \(imageFilePath)")
       coffeeImage.image = UIImage(named: "img1.jpg")
     }
     

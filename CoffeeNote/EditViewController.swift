@@ -75,7 +75,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   }
   
   override func viewWillAppear(animated: Bool) {
-    println("viewWillAppear called!!")
+    println("--- EditView --- viewWillAppear called!!")
     var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
     var nid = Int(appDelegate.nid!)
     
@@ -274,7 +274,6 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
       var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
       var nid = Int(appDelegate.nid!)
       
-      
       // To avoid error of single quotation
       var blendNameTextFieldModified = blendNameTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
       var originTextFieldModified = originTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
@@ -292,14 +291,14 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
         let filePath = appDelegate.filePath!
         // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        var imageFilePath = filePath+"/img\(nid).png"
+        var imageFilePath = filePath+"/img\(nid).jpg"
         if (fileManager.removeItemAtPath(imageFilePath, error: nil)) {
           println("Delete old photo")
         }
         if (data.writeToFile(imageFilePath, atomically: true)) {
-          println("Save Photo Suceeded(filePath: \(filePath)/img\(nid).png")
+          println("Save Photo Suceeded(filePath: \(imageFilePath))")
         }else {
-          println("Failed to save photo")
+          println("Failed to save photo(filePath: \(imageFilePath))")
         }
       }
       

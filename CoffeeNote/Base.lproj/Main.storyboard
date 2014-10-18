@@ -724,7 +724,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="Cell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AcH-GG-mHJ">
-                                <rect key="frame" x="0.0" y="-10" width="320" height="640"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Note" id="vJz-jR-jpJ">
                                     <rect key="frame" x="0.0" y="64" width="320" height="44"/>
