@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate {
+class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate {
   
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var mainView: UIView!
@@ -30,10 +30,13 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
   @IBOutlet weak var commentTextField: UITextView!
   
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     self.scrollView.contentSize = self.mainView.bounds.size
+    
+    placeTextField.delegate = self
     
     // change title of navigation bar
     var title = UILabel()
@@ -53,6 +56,8 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
       myAlertView.addButtonWithTitle("Okay")
       myAlertView.show()
     }
+    
+    
   }
   
   
@@ -61,7 +66,24 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
   }
   
   
-  /* Photo */
+  
+  // MARK: HideTextField
+  
+  @IBAction func blendNameTextField_finishEditing(sender: AnyObject) {
+    self.originTextField.becomeFirstResponder()
+  }
+  
+  @IBAction func originTextFiled_finishEditing(sender: AnyObject) {
+    self.placeTextField.becomeFirstResponder()
+  }
+  
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+  }
+
+  
+  // MARK: Photo
   
   func takePhoto(sender: AnyObject) {
     var picker = UIImagePickerController()
@@ -118,7 +140,6 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     sheet.showInView(self.view)
   }
-  
   
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

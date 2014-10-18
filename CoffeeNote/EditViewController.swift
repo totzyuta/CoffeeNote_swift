@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate {
+class EditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate {
 
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var mainView: UIView!
@@ -34,6 +34,9 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     super.viewDidLoad()
     
     // self.scrollView.contentSize = self.mainView.bounds.size
+    
+    // to hide keyboard
+    self.placeTextField.delegate = self
     
     // change title of navigation bar
     var title = UILabel()
@@ -115,6 +118,21 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   }
   
   
+  // MARK: HideTextField
+  
+  @IBAction func blendNameTextField_finishEditing(sender: AnyObject) {
+    self.originTextField.becomeFirstResponder()
+  }
+  
+  @IBAction func originTextField_finishEditing(sender: AnyObject) {
+    self.placeTextField.becomeFirstResponder()
+  }
+  
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+  }
+
   
   // MARK: - Photo
   
