@@ -198,14 +198,6 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
       break
     case 1:
       /* Delete ActionSheet */
-      if (buttonIndex==0) {
-        self.takePhoto(self)
-      }else if(buttonIndex==1){
-        self.selectPhoto(self)
-      }else {
-        // Cancel Button
-      }
-      
       if (buttonIndex==1) {
         // Cancel Button
         println("Cancel button tapped.")
