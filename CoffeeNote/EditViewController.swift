@@ -47,20 +47,6 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     title.sizeToFit()
     self.navigationItem.titleView = title;
     
-    // set image
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-    var nid = Int(appDelegate.nid!)
-    let filePath = appDelegate.filePath
-    // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    let imageFilePath = filePath!+"/img\(nid).jpg"
-    var imgfileManager = NSFileManager()
-    
-    if (imgfileManager.fileExistsAtPath(imageFilePath)) {
-      coffeeImageView.image = UIImage(named: imageFilePath)
-      println(imageFilePath)
-    }else{
-      coffeeImageView.image = UIImage(named: "img1.jpg")
-    }
     
     // to show aleart when not to have camera in device
     if (!UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
@@ -117,6 +103,33 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
   }
   
+  override func viewDidAppear(animated: Bool) {
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    var nid = Int(appDelegate.nid!)
+    // set image
+    if ((appDelegate.editImage) != nil) {
+      // set new image (editImage)
+      coffeeImageView.image = appDelegate.editImage
+      println("appDelegate.editImage exists. New image set")
+    }else {
+      // set old image
+      println("appDelegate.editImage NOT exists")
+      let filePath = appDelegate.filePath
+      // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+      let imageFilePath = filePath!+"/img\(nid).jpg"
+      var imgfileManager = NSFileManager()
+      var obj = for_image_files()
+      if (imgfileManager.fileExistsAtPath(imageFilePath)) {
+        // coffeeImageView.image = UIImage(named: imageFilePath)
+        coffeeImageView.image = obj.loadImage(imageFilePath)
+        println(imageFilePath)
+      }else{
+        coffeeImageView.image = UIImage(named: "img1.jpg")
+      }
+    }
+
+  }
+  
   
   // MARK: HideTextField
   
@@ -156,9 +169,14 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     // set image to imageView
     var chosenImage = info[UIImagePickerControllerEditedImage] as UIImage
-    self.coffeeImageView.image = chosenImage
     picker.dismissViewControllerAnimated(true, completion: nil)
-    
+    // save the image to appDelegate.editImage
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    println(appDelegate.editImage)
+    appDelegate.editImage = chosenImage
+    println("Saved appDelegate.editImage")
+    println(appDelegate.editImage)
+   
     self.cameraButtonImageView.alpha = 0.5
   }
   
@@ -199,7 +217,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     sheet.showInView(self.view)
   }
   
-  
+  // 0: CameraButton / 1: DeleteButton
   func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
     switch (actionSheet.tag) {
     case 0:
@@ -250,8 +268,8 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
           var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
           var filePath = appDelegate.filePath
           // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-          if fileManager.removeItemAtPath(filePath!+"/img\(nid).png", error: nil) {
-            println("Deleted img file (Path: \(filePath)/img\(nid).png")
+          if fileManager.removeItemAtPath(filePath!+"/img\(nid).img", error: nil) {
+            println("Deleted img file (Path: \(filePath)/img\(nid).img")
           }
         }
         
@@ -303,21 +321,22 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
       var _result_insert = _db.executeUpdate(sql_update, withArgumentsInArray: nil)
       
       // save photo
-      if ((coffeeImageView.image) != nil) {
+      if (appDelegate.editImage != nil) {
         // save image in DocumentDirectory
-        var data: NSData = UIImagePNGRepresentation(coffeeImageView.image)
-        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+        // var data: NSData = UIImagePNGRepresentation(coffeeImageView.image)
+        var data: NSData = UIImageJPEGRepresentation(coffeeImageView.image, 1.0)
         let filePath = appDelegate.filePath!
         // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         var imageFilePath = filePath+"/img\(nid).jpg"
-        if (fileManager.removeItemAtPath(imageFilePath, error: nil)) {
+        /*if (fileManager.removeItemAtPath(imageFilePath, error: nil)) {
           println("Delete old photo")
-        }
+        }*/
         if (data.writeToFile(imageFilePath, atomically: true)) {
           println("Save Photo Suceeded(filePath: \(imageFilePath))")
         }else {
           println("Failed to save photo(filePath: \(imageFilePath))")
         }
+        appDelegate.editImage = nil
       }
       
       
