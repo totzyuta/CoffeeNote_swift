@@ -11,14 +11,11 @@ import UIKit
 class AllViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate  {
   
   @IBOutlet weak var allTableView: UITableView!
-  @IBOutlet weak var searchBar: UISearchBar!
+  // @IBOutlet weak var searchBar: UISearchBar!
   // var fileteredNotes: Array = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    var obj = for_image_files()
-    println(obj.joinString("testestste", withNumber: 2313213))
     
     allTableView.delegate = self
     allTableView.dataSource = self
@@ -43,7 +40,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     let db = FMDatabase(path: _path)
     
-    // Create a query to create a notes table
+    // Query to create a notes table
     let sql_create_table = "CREATE TABLE IF NOT EXISTS notes (nid INTEGER PRIMARY KEY AUTOINCREMENT, blendName TEXT, origin TEXT, place TEXT, roast INTEGER, dark INTEGER, body INTEGER, acidity INTEGER, flavor INTEGER, sweetness INTEGER, cleancup INTEGER, aftertaste, INTEGER, overall INTEGER, comment TEXT, date TEXT);"
     
     db.open()
@@ -111,6 +108,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     self.allTableView.backgroundView = nil
     self.allTableView.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
   }
+  
   /*
   // for searching
   func filterContentForSearchText(searchText: String) {

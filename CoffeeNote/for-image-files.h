@@ -11,7 +11,6 @@
 
 @interface for_image_files : NSObject
 
-- (NSString *)joinString:(NSString *)string withNumber:(NSNumber *)number;
 - (UIImage *)loadImage:(NSString *)filePath;
 
 @end

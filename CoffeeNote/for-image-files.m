@@ -10,12 +10,6 @@
 
 @implementation for_image_files
 
-- (NSString *)joinString:(NSString *)string withNumber:(NSNumber *)number
-{
-  return [NSString stringWithFormat:@"%@, %@", string, number];
-}
-
-
 - (UIImage *)loadImage:(NSString *)filePath
 {
   // ファイルから画像データを読み込み、UIImageオブジェクトを作成
