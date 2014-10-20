@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate {
   
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var mainView: UIView!
@@ -30,10 +30,23 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
   @IBOutlet weak var commentTextField: UITextView!
   
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     self.scrollView.contentSize = self.mainView.bounds.size
+    
+    placeTextField.delegate = self
+    
+    // change title of navigation bar
+    var title = UILabel()
+    title.font = UIFont.boldSystemFontOfSize(16)
+    // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
+    title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
+    title.text = "New Coffee Note"
+    title.sizeToFit()
+    self.navigationItem.titleView = title;
+
     
     // to show aleart when not to have camera in device
     if (!UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
@@ -43,6 +56,8 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
       myAlertView.addButtonWithTitle("Okay")
       myAlertView.show()
     }
+    
+    
   }
   
   
@@ -51,7 +66,24 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
   }
   
   
-  /* Photo */
+  
+  // MARK: HideTextField
+  
+  @IBAction func blendNameTextField_finishEditing(sender: AnyObject) {
+    self.originTextField.becomeFirstResponder()
+  }
+  
+  @IBAction func originTextFiled_finishEditing(sender: AnyObject) {
+    self.placeTextField.becomeFirstResponder()
+  }
+  
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+  }
+
+  
+  // MARK: Photo
   
   func takePhoto(sender: AnyObject) {
     var picker = UIImagePickerController()
@@ -85,31 +117,29 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     // [picker dismissViewControllerAnimated:YES completion:NULL];
     picker.dismissViewControllerAnimated(true, completion: nil)
   }
+ 
   
-  @IBAction func pushCameraButton(sender: AnyObject) {
-    
-    // ActionMethod
-    let alertController = UIAlertController(title: "Set Photo of Coffee", message: "Chose Action", preferredStyle: .ActionSheet)
-    
-    let takePhotoAction = UIAlertAction(title: "Take Photo by Camera", style: .Default) { (action) -> Void in
+  func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+    if (buttonIndex==0) {
       self.takePhoto(self)
-    }
-    let selectPhotoAction = UIAlertAction(title: "Select Photo from Cameraroll", style: .Default) { (action) -> Void in
+    }else if(buttonIndex==1){
       self.selectPhoto(self)
+    }else {
+      // Cancel Button
     }
-    
-    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
-      println("cancelAction")
-    }
-    
-    alertController.addAction(takePhotoAction)
-    alertController.addAction(selectPhotoAction)
-    alertController.addAction(cancelAction)
-    
-    presentViewController(alertController, animated: true, completion: nil)
-    
   }
   
+  @IBAction func pushCameraButton(sender: AnyObject) {
+    var sheet = UIActionSheet()
+    sheet.title = "Set Photo of Coffee"
+    sheet.delegate = self
+    sheet.addButtonWithTitle("Take Photo by Camera")
+    sheet.addButtonWithTitle("Select Photo from Cameraroll")
+    sheet.addButtonWithTitle("Cancel")
+    sheet.cancelButtonIndex = 2
+    
+    sheet.showInView(self.view)
+  }
   
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -179,13 +209,15 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         println("nid: \(nid), blendName: \(blendName), origin: \(origin), place: \(place), roast: \(roast), dark: \(dark), body: \(body), acidity: \(acidity), flavor: \(flavor), sweetness: \(sweetness), cleancup: \(cleancup), aftertaste: \(aftertaste), overall: \(overall), comment: \(comment), date: \(date)")
         
+        // save photo
         if ((imageView.image) != nil) {
           // save image in DocumentDirectory
-          var data: NSData = UIImagePNGRepresentation(imageView.image)
+          // var data: NSData = UIImagePNGRepresentation(imageView.image)
+          var data: NSData = UIImageJPEGRepresentation(imageView.image, 0.5)
           var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
           let filePath = appDelegate.filePath!
           // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-          if (data.writeToFile("\(filePath)/img\(nid).png", atomically: true)) {
+          if (data.writeToFile("\(filePath)/img\(nid).jpg", atomically: true)) {
             println("Save Photo Suceeded(filePath: \(filePath)/img\(nid).png")
           }else {
             println("Failed to save photo")

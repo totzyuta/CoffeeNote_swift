@@ -8,16 +8,26 @@
 
 import UIKit
 
-class AllViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+class AllViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate  {
   
   @IBOutlet weak var allTableView: UITableView!
+  // @IBOutlet weak var searchBar: UISearchBar!
+  // var fileteredNotes: Array = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    
     allTableView.delegate = self
     allTableView.dataSource = self
+    
+    // change title of navigation bar
+    var title = UILabel()
+    title.font = UIFont.boldSystemFontOfSize(16)
+    // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
+    title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
+    title.text = "All Coffee Notes"
+    title.sizeToFit()
+    self.navigationItem.titleView = title;
 
     // Create a notes table if not exists
     let _dbfile:NSString = "sqlite.db"
@@ -30,7 +40,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     let db = FMDatabase(path: _path)
     
-    // Create a query to create a notes table
+    // Query to create a notes table
     let sql_create_table = "CREATE TABLE IF NOT EXISTS notes (nid INTEGER PRIMARY KEY AUTOINCREMENT, blendName TEXT, origin TEXT, place TEXT, roast INTEGER, dark INTEGER, body INTEGER, acidity INTEGER, flavor INTEGER, sweetness INTEGER, cleancup INTEGER, aftertaste, INTEGER, overall INTEGER, comment TEXT, date TEXT);"
     
     db.open()
@@ -93,10 +103,27 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     // Dispose of any resources that can be recreated.
   }
   
+  func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    // change the backgound color of tableView
+    self.allTableView.backgroundView = nil
+    self.allTableView.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+  }
   
-  // セルの内容を返す
+  /*
+  // for searching
+  func filterContentForSearchText(searchText: String) {
+    // Filter the array using the filter method
+    self.filteredNotes = self.candies.filter({( candy: Candy) -> Bool in
+      let categoryMatch = (scope == "All") || (candy.category == scope)
+      let stringMatch = candy.name.rangeOfString(searchText)
+      return categoryMatch && (stringMatch != nil)
+    })
+  }
+  */
+  
+  // Set the contents of cells
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    
+
     // let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "noteCell")
     let cell: CustomCell = tableView.dequeueReusableCellWithIdentifier("Cell") as CustomCell
     
@@ -141,22 +168,28 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     
     // set image
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
-    let filePath = appDelegate.filePath
-    // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    var imageFilePath = filePath!+"/img\(nidArray[indexPath.row]).png"
+    // var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    // let filePath = appDelegate.filePath
+    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    var imageFilePath = filePath+"/img\(nidArray[indexPath.row]).jpg"
+    // var imageFilePath = filePath!+"/img\(nidArray[indexPath.row]).png"
     var imgfileManager = NSFileManager()
+    println("imageFilePath: \(imageFilePath)")
     if (imgfileManager.fileExistsAtPath(imageFilePath)) {
-      cell.backImage.image = UIImage(named: imageFilePath)
+      // use class and method of Obejctive-C
+      var obj = for_image_files()
+      cell.backImage.image = obj.loadImage(imageFilePath)
+      println("imageFilepath is there!")
     }else{
       cell.backImage.image = UIImage(named: "img1.jpg")
+      println("NO imageFilepath")
     }
     
     return cell
   }
   
   
-  // セルの行数
+  // return number of cell
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
     // sql from here

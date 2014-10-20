@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate {
 
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var mainView: UIView!
@@ -33,22 +33,20 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.scrollView.contentSize = self.mainView.bounds.size
+    // self.scrollView.contentSize = self.mainView.bounds.size
     
-    // set image
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-    var nid = Int(appDelegate.nid!)
-    let filePath = appDelegate.filePath
-    // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    let imageFilePath = filePath!+"/img\(nid).png"
-    var imgfileManager = NSFileManager()
+    // to hide keyboard
+    self.placeTextField.delegate = self
     
-    if (imgfileManager.fileExistsAtPath(imageFilePath)) {
-      coffeeImageView.image = UIImage(named: imageFilePath)
-      println(imageFilePath)
-    }else{
-      coffeeImageView.image = UIImage(named: "img1.jpg")
-    }
+    // change title of navigation bar
+    var title = UILabel()
+    title.font = UIFont.boldSystemFontOfSize(16)
+    // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
+    title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
+    title.text = "Edit Coffee Note"
+    title.sizeToFit()
+    self.navigationItem.titleView = title;
+    
     
     // to show aleart when not to have camera in device
     if (!UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
@@ -66,7 +64,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   }
   
   override func viewWillAppear(animated: Bool) {
-    println("viewWillAppear called!!")
+    println("--- EditView --- viewWillAppear called!!")
     var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
     var nid = Int(appDelegate.nid!)
     
@@ -105,7 +103,49 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
   }
   
+  override func viewDidAppear(animated: Bool) {
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    var nid = Int(appDelegate.nid!)
+    // set image
+    if ((appDelegate.editImage) != nil) {
+      // set new image (editImage)
+      coffeeImageView.image = appDelegate.editImage
+      println("appDelegate.editImage exists. New image set")
+    }else {
+      // set old image
+      println("appDelegate.editImage NOT exists")
+      let filePath = appDelegate.filePath
+      // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+      let imageFilePath = filePath!+"/img\(nid).jpg"
+      var imgfileManager = NSFileManager()
+      var obj = for_image_files()
+      if (imgfileManager.fileExistsAtPath(imageFilePath)) {
+        // coffeeImageView.image = UIImage(named: imageFilePath)
+        coffeeImageView.image = obj.loadImage(imageFilePath)
+        println(imageFilePath)
+      }else{
+        coffeeImageView.image = UIImage(named: "img1.jpg")
+      }
+    }
+
+  }
   
+  
+  // MARK: HideTextField
+  
+  @IBAction func blendNameTextField_finishEditing(sender: AnyObject) {
+    self.originTextField.becomeFirstResponder()
+  }
+  
+  @IBAction func originTextField_finishEditing(sender: AnyObject) {
+    self.placeTextField.becomeFirstResponder()
+  }
+  
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+  }
+
   
   // MARK: - Photo
   
@@ -129,9 +169,14 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     // set image to imageView
     var chosenImage = info[UIImagePickerControllerEditedImage] as UIImage
-    self.coffeeImageView.image = chosenImage
     picker.dismissViewControllerAnimated(true, completion: nil)
-    
+    // save the image to appDelegate.editImage
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    println(appDelegate.editImage)
+    appDelegate.editImage = chosenImage
+    println("Saved appDelegate.editImage")
+    println(appDelegate.editImage)
+   
     self.cameraButtonImageView.alpha = 0.5
   }
   
@@ -142,87 +187,104 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   
   
   @IBAction func pushCameraButton(sender: AnyObject) {
+    var sheetCamera = UIActionSheet()
+    sheetCamera.title = "Set Photo of Coffee"
+    sheetCamera.delegate = self
+    sheetCamera.addButtonWithTitle("Take Photo by Camera")
+    sheetCamera.addButtonWithTitle("Select Photo from Cameraroll")
+    sheetCamera.addButtonWithTitle("Cancel")
+    sheetCamera.cancelButtonIndex = 2
     
-    // ActionMethod
-    let alertController = UIAlertController(title: "Set Photo of Coffee", message: "Chose Action", preferredStyle: .ActionSheet)
+    sheetCamera.tag = 0
     
-    let takePhotoAction = UIAlertAction(title: "Take Photo by Camera", style: .Default) { (action) -> Void in
-      self.takePhoto(self)
-    }
-    
-    let selectPhotoAction = UIAlertAction(title: "Select Photo from Cameraroll", style: .Default) { (action) -> Void in
-      self.selectPhoto(self)
-    }
-    
-    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
-      println("cancelAction")
-    }
-    alertController.addAction(takePhotoAction)
-    alertController.addAction(selectPhotoAction)
-    alertController.addAction(cancelAction)
-    
-    presentViewController(alertController, animated: true, completion: nil)
-    
+    sheetCamera.showInView(self.view)
   }
   
+
+  
+  // MARK: Delete Button
   
   @IBAction func pushedDeleteButton(sender: AnyObject) {
+    var sheet = UIActionSheet()
+    sheet.title = "Deleting This Note"
+    sheet.delegate = self
+    sheet.addButtonWithTitle("OK")
+    sheet.addButtonWithTitle("Cancel")
+    sheet.cancelButtonIndex = 1
     
-    let alertController = UIAlertController(title: "Deleting This Note", message: "Are you sure to delete?", preferredStyle: .ActionSheet)
+    sheet.tag = 1
     
-    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
-      println("Cancel button tapped.")
-    }
-    
-    
-    let okAction = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
-      println("OK button tapped.")
-      
-      /* Delete Note */
-      
-      var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegatのインスタンスを取得
-      var nid = Int(appDelegate.nid!)
-      
-      // sql from here
-      let _dbfile:NSString = "sqlite.db"
-      let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
-        NSSearchPathDirectory.DocumentDirectory,
-        NSSearchPathDomainMask.UserDomainMask,
-        true)[0]
-      let fileManager:NSFileManager = NSFileManager.defaultManager()
-      let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
-      
-      let db = FMDatabase(path: _path)
-      
-      let sql_delete = "DELETE FROM notes WHERE nid=\(nid);"
-      
-      db.open()
-      
-      if db.executeUpdate(sql_delete, withArgumentsInArray: nil) {
-        println("Delete notes nid: \(nid)")
-        
-        var fileManager = NSFileManager()
-        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
-        var filePath = appDelegate.filePath
-        // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        if fileManager.removeItemAtPath(filePath!+"/img\(nid).png", error: nil) {
-          println("Deleted img file (Path: \(filePath)/img\(nid).png")
-        }
+    sheet.showInView(self.view)
+  }
+  
+  // 0: CameraButton / 1: DeleteButton
+  func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+    switch (actionSheet.tag) {
+    case 0:
+      /* Photo ActionSheet */
+      if (buttonIndex==0) {
+        // take photo
+        self.takePhoto(self)
+      }else if(buttonIndex==1) {
+        // select photo
+        self.selectPhoto(self)
+      }else {
+        // cancel
       }
-      
-      db.close()
-      
-      self.performSegueWithIdentifier("unwindFromEditByDeleteButton", sender: self)
-      
+      break
+    case 1:
+      /* Delete ActionSheet */
+      if (buttonIndex==1) {
+        // Cancel Button
+        println("Cancel button tapped.")
+      }else{
+        // OK Button
+        println("OK button tapped.")
+        
+        /* Delete Note */
+        
+        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegatのインスタンスを取得
+        var nid = Int(appDelegate.nid!)
+        
+        // sql from here
+        let _dbfile:NSString = "sqlite.db"
+        let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
+          NSSearchPathDirectory.DocumentDirectory,
+          NSSearchPathDomainMask.UserDomainMask,
+          true)[0]
+        let fileManager:NSFileManager = NSFileManager.defaultManager()
+        let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+        
+        let db = FMDatabase(path: _path)
+        
+        let sql_delete = "DELETE FROM notes WHERE nid=\(nid);"
+        
+        db.open()
+        
+        if db.executeUpdate(sql_delete, withArgumentsInArray: nil) {
+          println("Delete notes nid: \(nid)")
+          
+          var fileManager = NSFileManager()
+          var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+          var filePath = appDelegate.filePath
+          // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+          if fileManager.removeItemAtPath(filePath!+"/img\(nid).img", error: nil) {
+            println("Deleted img file (Path: \(filePath)/img\(nid).img")
+          }
+        }
+        
+        db.close()
+        
+        self.performSegueWithIdentifier("unwindFromEditByDeleteButton", sender: self)
+        
+        break
+      }
+    default:
+      break
     }
-    
-    alertController.addAction(cancelAction)
-    alertController.addAction(okAction)
-    
-    presentViewController(alertController, animated: true, completion: nil)
     
   }
-
+  
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     println("prepareForSegue was called!")
@@ -248,7 +310,6 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
       var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
       var nid = Int(appDelegate.nid!)
       
-      
       // To avoid error of single quotation
       var blendNameTextFieldModified = blendNameTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
       var originTextFieldModified = originTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
@@ -260,21 +321,22 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
       var _result_insert = _db.executeUpdate(sql_update, withArgumentsInArray: nil)
       
       // save photo
-      if ((coffeeImageView.image) != nil) {
+      if (appDelegate.editImage != nil) {
         // save image in DocumentDirectory
-        var data: NSData = UIImagePNGRepresentation(coffeeImageView.image)
-        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+        // var data: NSData = UIImagePNGRepresentation(coffeeImageView.image)
+        var data: NSData = UIImageJPEGRepresentation(coffeeImageView.image, 1.0)
         let filePath = appDelegate.filePath!
         // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        var imageFilePath = filePath+"/img\(nid).png"
-        if (fileManager.removeItemAtPath(imageFilePath, error: nil)) {
+        var imageFilePath = filePath+"/img\(nid).jpg"
+        /*if (fileManager.removeItemAtPath(imageFilePath, error: nil)) {
           println("Delete old photo")
-        }
+        }*/
         if (data.writeToFile(imageFilePath, atomically: true)) {
-          println("Save Photo Suceeded(filePath: \(filePath)/img\(nid).png")
+          println("Save Photo Suceeded(filePath: \(imageFilePath))")
         }else {
-          println("Failed to save photo")
+          println("Failed to save photo(filePath: \(imageFilePath))")
         }
+        appDelegate.editImage = nil
       }
       
       
