@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4N8-cX-hNQ">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -23,316 +24,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fof-5S-Dje">
                                         <rect key="frame" x="0.0" y="8" width="320" height="1150"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ORt-fJ-E54">
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ORt-fJ-E54">
                                                 <rect key="frame" x="9" y="8" width="300" height="2"/>
                                                 <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="IEn-O9-Tdj"/>
-                                                    <constraint firstAttribute="height" constant="2" id="ksj-xa-Ygd"/>
-                                                </constraints>
                                             </view>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xCz-hN-gcC">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xCz-hN-gcC">
                                                 <rect key="frame" x="22" y="20" width="113" height="113"/>
                                                 <color key="backgroundColor" white="0.83653603830645173" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="113" id="hfk-jM-IwD"/>
-                                                    <constraint firstAttribute="height" constant="113" id="pmm-yf-kb9"/>
-                                                </constraints>
                                             </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Blend" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8mS-0G-Q3g">
-                                                <rect key="frame" x="149" y="20" width="150" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="31S-IB-vm4"/>
-                                                    <constraint firstAttribute="height" constant="30" id="sq7-YL-K3e"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                <connections>
-                                                    <action selector="blendNameTextField_finishEditing:" destination="ZAN-w2-coa" eventType="editingDidEndOnExit" id="zEO-fE-BST"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Origin" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PGe-M9-WAQ">
-                                                <rect key="frame" x="149" y="60" width="150" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="249-yO-xQY"/>
-                                                    <constraint firstAttribute="height" constant="30" id="90z-D3-QAo"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                <connections>
-                                                    <action selector="originTextFiled_finishEditing:" destination="ZAN-w2-coa" eventType="editingDidEndOnExit" id="p0b-am-12J"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Place to Drink" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lEQ-3J-svQ">
-                                                <rect key="frame" x="149" y="103" width="150" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="SdU-85-xml"/>
-                                                    <constraint firstAttribute="height" constant="30" id="wKd-gW-i3V"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                            </textField>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rtf-XM-5yT">
-                                                <rect key="frame" x="9" y="153" width="300" height="2"/>
-                                                <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="asi-UO-Uhp"/>
-                                                    <constraint firstAttribute="height" constant="2" id="ejw-Sa-PTb"/>
-                                                </constraints>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Roast" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7e-lo-XOD">
-                                                <rect key="frame" x="137" y="165" width="45" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="KXd-4O-pJG"/>
-                                                    <constraint firstAttribute="width" constant="45" id="LIu-6o-fD8"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7NW-j3-cwR">
-                                                <rect key="frame" x="19" y="194" width="280" height="29"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="28" id="rjO-Vm-O3D"/>
-                                                    <constraint firstAttribute="width" constant="280" id="uVu-fn-6DW"/>
-                                                </constraints>
-                                                <segments>
-                                                    <segment title="Light"/>
-                                                    <segment title="Medium"/>
-                                                    <segment title="Dark"/>
-                                                </segments>
-                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Dark" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1W-lA-vTU">
-                                                <rect key="frame" x="141" y="232" width="36" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="cJI-qC-nHQ"/>
-                                                    <constraint firstAttribute="width" constant="36" id="ush-ox-T56"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Arm-SL-0OS">
-                                                <rect key="frame" x="21" y="263" width="276" height="29"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="276" id="Dqo-NY-Hlw"/>
-                                                    <constraint firstAttribute="height" constant="28" id="g6M-yi-3qs"/>
-                                                </constraints>
-                                                <segments>
-                                                    <segment title="Light"/>
-                                                    <segment title="Medium"/>
-                                                    <segment title="Full"/>
-                                                </segments>
-                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Body" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geR-tE-Oas">
-                                                <rect key="frame" x="139" y="301" width="41" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="41" id="iJv-dF-g3n"/>
-                                                    <constraint firstAttribute="height" constant="21" id="kjH-cY-VKK"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xYp-IN-658">
-                                                <rect key="frame" x="19" y="332" width="281" height="29"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="28" id="LVN-cr-hJ3"/>
-                                                    <constraint firstAttribute="width" constant="281" id="TKF-5C-iM3"/>
-                                                </constraints>
-                                                <segments>
-                                                    <segment title="Light"/>
-                                                    <segment title="Medium"/>
-                                                    <segment title="Dark"/>
-                                                </segments>
-                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Flavor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZO-hQ-BGg">
-                                                <rect key="frame" x="136" y="392" width="47" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="IST-jj-czT"/>
-                                                    <constraint firstAttribute="width" constant="47" id="zuJ-iJ-2G8"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lxG-u1-iCo">
-                                                <rect key="frame" x="21" y="423" width="276" height="29"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="28" id="2K6-tx-f1G"/>
-                                                    <constraint firstAttribute="width" constant="276" id="Adl-J7-ev4"/>
-                                                </constraints>
-                                                <segments>
-                                                    <segment title="1"/>
-                                                    <segment title="2"/>
-                                                    <segment title="3"/>
-                                                    <segment title="4"/>
-                                                    <segment title="5"/>
-                                                </segments>
-                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Acidity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfD-yk-eKi">
-                                                <rect key="frame" x="133" y="461" width="53" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="53" id="5ir-me-1Xt"/>
-                                                    <constraint firstAttribute="height" constant="21" id="W0r-Nb-eDu"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZWn-yb-UWV">
-                                                <rect key="frame" x="21" y="492" width="276" height="29"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="28" id="4ZG-6M-lQN"/>
-                                                    <constraint firstAttribute="width" constant="276" id="4fF-6O-6le"/>
-                                                </constraints>
-                                                <segments>
-                                                    <segment title="1"/>
-                                                    <segment title="2"/>
-                                                    <segment title="3"/>
-                                                    <segment title="4"/>
-                                                    <segment title="5"/>
-                                                </segments>
-                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Sweatness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57x-Zv-nKH">
-                                                <rect key="frame" x="117" y="530" width="84" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="84" id="6i1-HC-DTw"/>
-                                                    <constraint firstAttribute="height" constant="21" id="a1L-ZI-NCn"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JeS-2K-RxE">
-                                                <rect key="frame" x="21" y="561" width="276" height="29"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="28" id="cqI-fS-dcx"/>
-                                                    <constraint firstAttribute="width" constant="276" id="cuO-u3-HtS"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="276" id="vOs-sV-gPT"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="vyq-xV-uPS"/>
-                                                </constraints>
-                                                <segments>
-                                                    <segment title="1"/>
-                                                    <segment title="2"/>
-                                                    <segment title="3"/>
-                                                    <segment title="4"/>
-                                                    <segment title="5"/>
-                                                </segments>
-                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Clean Cup" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RD9-cK-KGX">
-                                                <rect key="frame" x="119" y="599" width="81" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="5Q9-87-cRu"/>
-                                                    <constraint firstAttribute="width" constant="81" id="Gqq-d0-aGh"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d80-Ti-a0n">
-                                                <rect key="frame" x="21" y="630" width="276" height="29"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="276" id="ZtX-iT-ZOC"/>
-                                                    <constraint firstAttribute="height" constant="28" id="pos-WN-ayQ"/>
-                                                </constraints>
-                                                <segments>
-                                                    <segment title="1"/>
-                                                    <segment title="2"/>
-                                                    <segment title="3"/>
-                                                    <segment title="4"/>
-                                                    <segment title="5"/>
-                                                </segments>
-                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Aftertaste" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8V-t5-os9">
-                                                <rect key="frame" x="122" y="668" width="81" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="81" id="IOj-gK-B5z"/>
-                                                    <constraint firstAttribute="height" constant="21" id="YNa-I3-5od"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KF0-be-VtH">
-                                                <rect key="frame" x="21" y="699" width="276" height="29"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="28" id="bg7-ja-Cz4"/>
-                                                    <constraint firstAttribute="width" constant="276" id="v1g-in-Gj2"/>
-                                                </constraints>
-                                                <segments>
-                                                    <segment title="1"/>
-                                                    <segment title="2"/>
-                                                    <segment title="3"/>
-                                                    <segment title="4"/>
-                                                    <segment title="5"/>
-                                                </segments>
-                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </segmentedControl>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Im0-5x-ZfV">
-                                                <rect key="frame" x="9" y="742" width="300" height="2"/>
-                                                <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="JHL-hA-SEV"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="Vx2-4f-5sA"/>
-                                                    <constraint firstAttribute="height" constant="2" id="moF-cc-4yC"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="ncx-GS-xyZ"/>
-                                                </constraints>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Overall" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNz-lX-nQq">
-                                                <rect key="frame" x="119" y="754" width="81" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="CO5-bv-lIX"/>
-                                                    <constraint firstAttribute="width" constant="81" id="FwD-7a-JV2"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aXa-Mm-2dV">
-                                                <rect key="frame" x="21" y="785" width="276" height="29"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="276" id="DUI-K4-CNV"/>
-                                                    <constraint firstAttribute="height" constant="28" id="hhH-EW-fZY"/>
-                                                </constraints>
-                                                <segments>
-                                                    <segment title="1"/>
-                                                    <segment title="2"/>
-                                                    <segment title="3"/>
-                                                    <segment title="4"/>
-                                                    <segment title="5"/>
-                                                </segments>
-                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Comment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ab-Gr-18P">
-                                                <rect key="frame" x="118" y="823" width="81" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="81" id="Pw8-R9-67G"/>
-                                                    <constraint firstAttribute="height" constant="21" id="kcN-eC-C1N"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
-                                            </label>
-                                            <textView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3kM-3g-Bbr">
-                                                <rect key="frame" x="19" y="854" width="281" height="280"/>
-                                                <color key="backgroundColor" white="0.95888986895161288" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="280" id="2Nx-pb-YCn"/>
-                                                    <constraint firstAttribute="width" constant="281" id="Jsk-yn-w8O"/>
-                                                </constraints>
-                                                <color key="textColor" white="0.43239667338709675" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
-                                            </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lab-HB-JXN">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lab-HB-JXN" userLabel="cameraButton">
                                                 <rect key="frame" x="21" y="45" width="115" height="60"/>
                                                 <state key="normal" image="icon_camera.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -341,15 +41,198 @@
                                                     <action selector="pushCameraButton:" destination="ZAN-w2-coa" eventType="touchUpInside" id="foC-9X-mT8"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ta-PF-pPF">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Blend" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8mS-0G-Q3g">
+                                                <rect key="frame" x="149" y="20" width="150" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="blendNameTextField_finishEditing:" destination="ZAN-w2-coa" eventType="editingDidEndOnExit" id="zEO-fE-BST"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Origin" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PGe-M9-WAQ">
+                                                <rect key="frame" x="149" y="60" width="150" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="originTextFiled_finishEditing:" destination="ZAN-w2-coa" eventType="editingDidEndOnExit" id="p0b-am-12J"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Place to Drink" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lEQ-3J-svQ">
+                                                <rect key="frame" x="149" y="103" width="150" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rtf-XM-5yT">
+                                                <rect key="frame" x="9" y="153" width="300" height="2"/>
+                                                <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Roast" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7e-lo-XOD">
+                                                <rect key="frame" x="60" y="165" width="200" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7NW-j3-cwR">
+                                                <rect key="frame" x="19" y="194" width="280" height="29"/>
+                                                <segments>
+                                                    <segment title="Light"/>
+                                                    <segment title="Medium"/>
+                                                    <segment title="Dark"/>
+                                                </segments>
+                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1W-lA-vTU">
+                                                <rect key="frame" x="100" y="234" width="125" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Arm-SL-0OS">
+                                                <rect key="frame" x="21" y="263" width="276" height="29"/>
+                                                <segments>
+                                                    <segment title="Light"/>
+                                                    <segment title="Medium"/>
+                                                    <segment title="Full"/>
+                                                </segments>
+                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Body" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geR-tE-Oas">
+                                                <rect key="frame" x="101" y="303" width="123" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xYp-IN-658">
+                                                <rect key="frame" x="19" y="332" width="281" height="29"/>
+                                                <segments>
+                                                    <segment title="Light"/>
+                                                    <segment title="Medium"/>
+                                                    <segment title="Dark"/>
+                                                </segments>
+                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flavor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZO-hQ-BGg">
+                                                <rect key="frame" x="101" y="394" width="122" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lxG-u1-iCo">
+                                                <rect key="frame" x="21" y="423" width="276" height="29"/>
+                                                <segments>
+                                                    <segment title="1"/>
+                                                    <segment title="2"/>
+                                                    <segment title="3"/>
+                                                    <segment title="4"/>
+                                                    <segment title="5"/>
+                                                </segments>
+                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Acidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfD-yk-eKi">
+                                                <rect key="frame" x="95" y="463" width="134" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZWn-yb-UWV">
+                                                <rect key="frame" x="21" y="492" width="276" height="29"/>
+                                                <segments>
+                                                    <segment title="1"/>
+                                                    <segment title="2"/>
+                                                    <segment title="3"/>
+                                                    <segment title="4"/>
+                                                    <segment title="5"/>
+                                                </segments>
+                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sweatness" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57x-Zv-nKH">
+                                                <rect key="frame" x="84" y="532" width="157" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JeS-2K-RxE">
+                                                <rect key="frame" x="21" y="561" width="276" height="29"/>
+                                                <segments>
+                                                    <segment title="1"/>
+                                                    <segment title="2"/>
+                                                    <segment title="3"/>
+                                                    <segment title="4"/>
+                                                    <segment title="5"/>
+                                                </segments>
+                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clean Cup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RD9-cK-KGX">
+                                                <rect key="frame" x="85" y="601" width="150" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d80-Ti-a0n">
+                                                <rect key="frame" x="21" y="630" width="276" height="29"/>
+                                                <segments>
+                                                    <segment title="1"/>
+                                                    <segment title="2"/>
+                                                    <segment title="3"/>
+                                                    <segment title="4"/>
+                                                    <segment title="5"/>
+                                                </segments>
+                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aftertaste" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8V-t5-os9">
+                                                <rect key="frame" x="85" y="668" width="150" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KF0-be-VtH">
+                                                <rect key="frame" x="21" y="699" width="276" height="29"/>
+                                                <segments>
+                                                    <segment title="1"/>
+                                                    <segment title="2"/>
+                                                    <segment title="3"/>
+                                                    <segment title="4"/>
+                                                    <segment title="5"/>
+                                                </segments>
+                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </segmentedControl>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Im0-5x-ZfV">
+                                                <rect key="frame" x="9" y="742" width="300" height="2"/>
+                                                <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overall" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNz-lX-nQq">
+                                                <rect key="frame" x="85" y="754" width="150" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aXa-Mm-2dV">
+                                                <rect key="frame" x="21" y="785" width="276" height="29"/>
+                                                <segments>
+                                                    <segment title="1"/>
+                                                    <segment title="2"/>
+                                                    <segment title="3"/>
+                                                    <segment title="4"/>
+                                                    <segment title="5"/>
+                                                </segments>
+                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ab-Gr-18P">
+                                                <rect key="frame" x="85" y="823" width="150" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3kM-3g-Bbr">
+                                                <rect key="frame" x="19" y="854" width="281" height="280"/>
+                                                <color key="backgroundColor" white="0.95888986895161288" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" white="0.43239667338709675" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                            </textView>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ta-PF-pPF">
                                                 <rect key="frame" x="12" y="382" width="300" height="2"/>
                                                 <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="3yd-oA-Wi9"/>
-                                                    <constraint firstAttribute="height" constant="2" id="5aC-az-u5w"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Qwy-8x-p8p"/>
-                                                    <constraint firstAttribute="width" constant="300" id="Tz5-F9-aDW"/>
-                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
@@ -389,22 +272,32 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="640"/>
                     <connections>
+                        <outlet property="acidityLabel" destination="gfD-yk-eKi" id="heN-Oh-w3o"/>
                         <outlet property="aciditySegment" destination="ZWn-yb-UWV" id="srD-Va-oXX"/>
+                        <outlet property="aftertasteLabel" destination="s8V-t5-os9" id="djB-ZV-G13"/>
                         <outlet property="aftertasteSegment" destination="KF0-be-VtH" id="JEY-Ao-PQM"/>
                         <outlet property="blendNameTextField" destination="8mS-0G-Q3g" id="vQt-HP-A8g"/>
+                        <outlet property="bodyLabel" destination="geR-tE-Oas" id="mN1-eo-VPx"/>
                         <outlet property="bodySegment" destination="xYp-IN-658" id="jQh-QL-eN0"/>
                         <outlet property="cameraButton" destination="lab-HB-JXN" id="h6F-iX-TgH"/>
                         <outlet property="cleanCupSegment" destination="d80-Ti-a0n" id="YpJ-ZU-Q2O"/>
+                        <outlet property="cleancupLabel" destination="RD9-cK-KGX" id="wfb-RS-E0N"/>
+                        <outlet property="commentLabel" destination="4ab-Gr-18P" id="W0r-BY-geT"/>
                         <outlet property="commentTextField" destination="3kM-3g-Bbr" id="4yZ-VG-iGM"/>
+                        <outlet property="darkLabel" destination="b1W-lA-vTU" id="eOX-ID-mQq"/>
                         <outlet property="darkSegment" destination="Arm-SL-0OS" id="PnC-6i-7FF"/>
+                        <outlet property="flavorLabel" destination="YZO-hQ-BGg" id="stP-hD-ftN"/>
                         <outlet property="flavorSegment" destination="lxG-u1-iCo" id="8lH-aK-PrC"/>
                         <outlet property="imageView" destination="xCz-hN-gcC" id="NC1-za-mfD"/>
                         <outlet property="mainView" destination="Fof-5S-Dje" id="fIR-A2-zfr"/>
                         <outlet property="originTextField" destination="PGe-M9-WAQ" id="xH6-jB-Dix"/>
+                        <outlet property="overallLabel" destination="jNz-lX-nQq" id="TXx-my-gJH"/>
                         <outlet property="overallSegment" destination="aXa-Mm-2dV" id="FhJ-Zw-Ikk"/>
                         <outlet property="placeTextField" destination="lEQ-3J-svQ" id="xWl-kN-nhL"/>
+                        <outlet property="roastLabel" destination="s7e-lo-XOD" id="fuu-HA-oPx"/>
                         <outlet property="roastSegment" destination="7NW-j3-cwR" id="Wir-HE-bXS"/>
                         <outlet property="scrollView" destination="YEG-I8-N9D" id="L9O-AU-RFq"/>
+                        <outlet property="sweetnessLabel" destination="57x-Zv-nKH" id="6pu-SY-q1r"/>
                         <outlet property="sweetnessSegment" destination="JeS-2K-RxE" id="pTk-ey-lG7"/>
                     </connections>
                 </viewController>

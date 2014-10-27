@@ -19,6 +19,8 @@
 		127ACEF519DBF1BF00B39373 /* CoffeeNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACEF419DBF1BF00B39373 /* CoffeeNoteTests.swift */; };
 		1285316719DC44F000CCDB50 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1285316619DC44F000CCDB50 /* DetailViewController.swift */; };
 		1285316919DC452300CCDB50 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1285316819DC452300CCDB50 /* NewViewController.swift */; };
+		129411E819FE947F00074D62 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 129411EA19FE947F00074D62 /* InfoPlist.strings */; };
+		129411EF19FE951000074D62 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 129411F119FE951000074D62 /* Localizable.strings */; };
 		129D3E1219E2C61900180B94 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 129D3E1119E2C61900180B94 /* libsqlite3.0.dylib */; };
 		129D3E2119E2C79100180B94 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D3E1719E2C79100180B94 /* FMDatabase.m */; };
 		129D3E2219E2C79100180B94 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 129D3E1919E2C79100180B94 /* FMDatabaseAdditions.m */; };
@@ -61,6 +63,12 @@
 		127ACEF419DBF1BF00B39373 /* CoffeeNoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNoteTests.swift; sourceTree = "<group>"; };
 		1285316619DC44F000CCDB50 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1285316819DC452300CCDB50 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		129411E419FE93FF00074D62 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		129411E519FE940000074D62 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		129411EB19FE948100074D62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		129411EC19FE948200074D62 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		129411F219FE951100074D62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		129411F319FE951200074D62 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		129D3E1119E2C61900180B94 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		129D3E1319E2C64B00180B94 /* CoffeeNote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoffeeNote-Bridging-Header.h"; sourceTree = "<group>"; };
 		129D3E1619E2C79100180B94 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -145,6 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				127ACEDD19DBF1BF00B39373 /* Info.plist */,
+				129411EA19FE947F00074D62 /* InfoPlist.strings */,
+				129411F119FE951000074D62 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -273,6 +283,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 127ACED019DBF1BE00B39373;
 			productRefGroup = 127ACEDA19DBF1BE00B39373 /* Products */;
@@ -293,6 +304,8 @@
 				12CD442C19EC101000FE07AE /* img2.jpg in Resources */,
 				12AD799819EB7EB100A320D4 /* img4.jpg in Resources */,
 				121567B619EE9441001802D5 /* gray-star.png in Resources */,
+				129411EF19FE951000074D62 /* Localizable.strings in Resources */,
+				129411E819FE947F00074D62 /* InfoPlist.strings in Resources */,
 				12CD442E19EC102C00FE07AE /* img3.jpg in Resources */,
 				127ACEE419DBF1BF00B39373 /* Main.storyboard in Resources */,
 				127ACEE919DBF1BF00B39373 /* LaunchScreen.xib in Resources */,
@@ -356,6 +369,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				127ACEE319DBF1BF00B39373 /* Base */,
+				129411E419FE93FF00074D62 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -364,8 +378,27 @@
 			isa = PBXVariantGroup;
 			children = (
 				127ACEE819DBF1BF00B39373 /* Base */,
+				129411E519FE940000074D62 /* ja */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		129411EA19FE947F00074D62 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				129411EB19FE948100074D62 /* en */,
+				129411EC19FE948200074D62 /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		129411F119FE951000074D62 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				129411F219FE951100074D62 /* en */,
+				129411F319FE951200074D62 /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

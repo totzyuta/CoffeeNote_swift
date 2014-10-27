@@ -25,7 +25,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     title.font = UIFont.boldSystemFontOfSize(16)
     // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
     title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
-    title.text = "All Coffee Notes"
+    title.text = NSLocalizedString("titleAllView", comment: "comment")
     title.sizeToFit()
     self.navigationItem.titleView = title;
 

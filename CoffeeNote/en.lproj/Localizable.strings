@@ -1,0 +1,44 @@
+/* 
+  Localizable.strings
+  CoffeeNote
+
+  Created by totz on 10/27/14.
+  Copyright (c) 2014 totz. All rights reserved.
+*/
+
+
+// titles
+"titleAllView" = "All Coffee Notes";
+"titleNewView" = "New Note";
+"titleDetailView" = "Detail";
+"titleEditView" = "Edit";
+
+"blendName" = "Name of Blend";
+"origin" = "Origin";
+"place" = "Place to Drink";
+
+// elements of coffee note
+"roast" = "Roast";
+"dark" = "Dark";
+"body" = "Body";
+"flavor" = "Flavor";
+"acidity" = "Acidity";
+"sweetness" = "Sweetness";
+"cleancup" = "Clean Cup";
+"aftertaste" = "Aftertaste";
+"overall" = "Overall";
+"comment" = "Comment";
+
+"light" = "Light";
+"medium" = "Medium";
+"full" = "Full";
+"dark" = "Dark";
+
+// Camera
+"setPhoto" = "Set Photo of Coffee";
+"takePhoto" = "Take Photo by Camera";
+"selectPhoto" = "Select Photo from Camera Roll";
+"cancel" = "Cancel";
+
+// Edit
+"deleteNote" = "Delete This Note";

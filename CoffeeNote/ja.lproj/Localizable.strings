@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  CoffeeNote
+
+  Created by totz on 10/27/14.
+  Copyright (c) 2014 totz. All rights reserved.
+*/
+
+// titles
+"titleAllView" = "全てのノート";
+"titleNewView" = "新しいノート";
+"titleDetailView" = "詳細";
+"titleEditView" = "編集";
+
+"blendName" = "ブレンド名";
+"origin" = "オリジン";
+"place" = "飲んだ場所";
+
+// parametors of coffee note
+"roast" = "ロースト";
+"dark" = "ダーク";
+"body" = "ボディ";
+"flavor" = "香り";
+"acidity" = "酸味";
+"sweetness" = "甘み";
+"cleancup" = "クリーンカップ";
+"aftertaste" = "後味";
+"overall" = "総合";
+"comment" = "コメント";
+
+"light" = "ライト";
+"medium" = "ミディアム";
+"full" = "フル";
+"dark" = "ダーク";
+
+// Camera
+"setPhoto" = "写真を設定してください";
+"takePhoto" = "カメラで撮る";
+"selectPhoto" = "カメラロールから選ぶ";
+"cancel" = "キャンセル";
+
+// Edit
+"deleteNote" = "ノートを削除";

@@ -30,6 +30,17 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
   @IBOutlet weak var commentTextField: UITextView!
   
   
+  @IBOutlet weak var roastLabel: UILabel!
+  @IBOutlet weak var darkLabel: UILabel!
+  @IBOutlet weak var bodyLabel: UILabel!
+  @IBOutlet weak var flavorLabel: UILabel!
+  @IBOutlet weak var acidityLabel: UILabel!
+  @IBOutlet weak var sweetnessLabel: UILabel!
+  @IBOutlet weak var cleancupLabel: UILabel!
+  @IBOutlet weak var aftertasteLabel: UILabel!
+  @IBOutlet weak var overallLabel: UILabel!
+  @IBOutlet weak var commentLabel: UILabel!
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,10 +54,26 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     title.font = UIFont.boldSystemFontOfSize(16)
     // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
     title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
-    title.text = "New Coffee Note"
+    title.text = NSLocalizedString("titleNewView", comment: "comment")
     title.sizeToFit()
     self.navigationItem.titleView = title;
-
+    
+    
+    // set localized value
+    blendNameTextField.placeholder = NSLocalizedString("blendName", comment: "comment")
+    originTextField.placeholder = NSLocalizedString("origin", comment: "comment")
+    placeTextField.placeholder = NSLocalizedString("place", comment: "comment")
+    roastLabel.text = NSLocalizedString("roast", comment: "comment")
+    darkLabel.text = NSLocalizedString("dark", comment: "comment")
+    bodyLabel.text = NSLocalizedString("body", comment: "comment")
+    flavorLabel.text = NSLocalizedString("flavor", comment: "comment")
+    acidityLabel.text = NSLocalizedString("acidity", comment: "comment")
+    sweetnessLabel.text = NSLocalizedString("sweetness", comment: "comment")
+    cleancupLabel.text = NSLocalizedString("cleancup", comment: "comment")
+    aftertasteLabel.text = NSLocalizedString("aftertaste", comment: "comment")
+    overallLabel.text = NSLocalizedString("overall", comment: "comment")
+    commentLabel.text = NSLocalizedString("comment", comment: "comment")
+    
     
     // to show aleart when not to have camera in device
     if (!UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
@@ -131,11 +158,15 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
   
   @IBAction func pushCameraButton(sender: AnyObject) {
     var sheet = UIActionSheet()
-    sheet.title = "Set Photo of Coffee"
+    // sheet.title = "Set Photo of Coffee"
+    sheet.title = NSLocalizedString("setPhoto", comment: "comment")
     sheet.delegate = self
-    sheet.addButtonWithTitle("Take Photo by Camera")
-    sheet.addButtonWithTitle("Select Photo from Cameraroll")
-    sheet.addButtonWithTitle("Cancel")
+    // sheet.addButtonWithTitle("Take Photo by Camera")
+    sheet.addButtonWithTitle(NSLocalizedString("takePhoto", comment: "comment"))
+    // sheet.addButtonWithTitle("Select Photo from Cameraroll")
+    sheet.addButtonWithTitle(NSLocalizedString("selectPhoto", comment: "comment"))
+    // sheet.addButtonWithTitle("Cancel")
+    sheet.addButtonWithTitle(NSLocalizedString("cancel", comment: "comment"))
     sheet.cancelButtonIndex = 2
     
     sheet.showInView(self.view)
