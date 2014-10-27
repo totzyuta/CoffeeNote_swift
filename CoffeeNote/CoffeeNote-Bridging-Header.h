@@ -11,6 +11,5 @@
 
 #import <sqlite3.h>
 #import "FMDatabase.h"
-#import "for-image-files.h"
 
 #endif

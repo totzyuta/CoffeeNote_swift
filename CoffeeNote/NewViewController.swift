@@ -212,11 +212,9 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         // save photo
         if ((imageView.image) != nil) {
           // save image in DocumentDirectory
-          // var data: NSData = UIImagePNGRepresentation(imageView.image)
           var data: NSData = UIImageJPEGRepresentation(imageView.image, 0.5)
           var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
           let filePath = appDelegate.filePath!
-          // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
           if (data.writeToFile("\(filePath)/img\(nid).jpg", atomically: true)) {
             println("Save Photo Suceeded(filePath: \(filePath)/img\(nid).png")
           }else {

@@ -115,13 +115,10 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
       // set old image
       println("appDelegate.editImage NOT exists")
       let filePath = appDelegate.filePath
-      // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
       let imageFilePath = filePath!+"/img\(nid).jpg"
       var imgfileManager = NSFileManager()
-      var obj = for_image_files()
       if (imgfileManager.fileExistsAtPath(imageFilePath)) {
-        // coffeeImageView.image = UIImage(named: imageFilePath)
-        coffeeImageView.image = obj.loadImage(imageFilePath)
+        coffeeImageView.image = UIImage(contentsOfFile: imageFilePath)
         println(imageFilePath)
       }else{
         coffeeImageView.image = UIImage(named: "img1.jpg")

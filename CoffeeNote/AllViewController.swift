@@ -168,17 +168,13 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     
     // set image
-    // var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
-    // let filePath = appDelegate.filePath
-    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    var imageFilePath = filePath+"/img\(nidArray[indexPath.row]).jpg"
-    // var imageFilePath = filePath!+"/img\(nidArray[indexPath.row]).png"
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    let filePath = appDelegate.filePath
+    var imageFilePath = filePath!+"/img\(nidArray[indexPath.row]).jpg"
     var imgfileManager = NSFileManager()
     println("imageFilePath: \(imageFilePath)")
     if (imgfileManager.fileExistsAtPath(imageFilePath)) {
-      // use class and method of Obejctive-C
-      var obj = for_image_files()
-      cell.backImage.image = obj.loadImage(imageFilePath)
+      cell.backImage.image = UIImage(contentsOfFile: imageFilePath)
       println("imageFilepath is there!")
     }else{
       cell.backImage.image = UIImage(named: "img1.jpg")

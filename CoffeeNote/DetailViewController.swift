@@ -85,17 +85,10 @@ class DetailViewController: UIViewController {
     
     // set image
     let filePath = appDelegate.filePath!
-    // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
     var imageFilePath = filePath+"/img\(nid).jpg"
     var imgfileManager = NSFileManager()
     if (imgfileManager.fileExistsAtPath(imageFilePath)) {
-      // var tmp_img = UIImage(named: imageFilePath)
-      // var test_path = NSBundle.mainBundle()
-      // var path = test_path.pathForResource("img\(nid)", ofType: "png")
-      // coffeeImage.image = UIImage(named: "\(filePath)/img\(nid).jpg")
-      // use class and method of Obejctive-C
-      var obj = for_image_files()
-      coffeeImage.image = obj.loadImage(imageFilePath)
+      coffeeImage.image = UIImage(contentsOfFile: imageFilePath)
       println("imagefile exists(imageFilePath: \(imageFilePath))")
     }else{
       println("imagefile NOT exists(imagefilePath: \(imageFilePath)")
