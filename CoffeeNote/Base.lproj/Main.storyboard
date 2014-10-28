@@ -367,12 +367,6 @@
                                                 <rect key="frame" x="9" y="158" width="300" height="2"/>
                                                 <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Roast" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keG-Yl-PIt">
-                                                <rect key="frame" x="137" y="170" width="45" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
-                                            </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xwd-2k-Dei">
                                                 <rect key="frame" x="19" y="199" width="280" height="29"/>
                                                 <segments>
@@ -382,8 +376,8 @@
                                                 </segments>
                                                 <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgR-tg-OVa">
-                                                <rect key="frame" x="141" y="237" width="36" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgR-tg-OVa">
+                                                <rect key="frame" x="85" y="237" width="150" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
@@ -397,8 +391,8 @@
                                                 </segments>
                                                 <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Body" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9m-XJ-9bt">
-                                                <rect key="frame" x="139" y="306" width="41" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Body" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9m-XJ-9bt">
+                                                <rect key="frame" x="85" y="306" width="150" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
@@ -412,25 +406,8 @@
                                                 </segments>
                                                 <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Acidity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVF-e6-Vvg">
-                                                <rect key="frame" x="133" y="466" width="53" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I8E-Gi-92w">
-                                                <rect key="frame" x="21" y="497" width="276" height="29"/>
-                                                <segments>
-                                                    <segment title="1"/>
-                                                    <segment title="2"/>
-                                                    <segment title="3"/>
-                                                    <segment title="4"/>
-                                                    <segment title="5"/>
-                                                </segments>
-                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flavor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9Q-wh-XuS">
-                                                <rect key="frame" x="136" y="397" width="47" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flavor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9Q-wh-XuS">
+                                                <rect key="frame" x="85" y="397" width="150" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
@@ -446,8 +423,25 @@
                                                 </segments>
                                                 <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sweatness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDv-Fj-atc">
-                                                <rect key="frame" x="117" y="535" width="84" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Acidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVF-e6-Vvg">
+                                                <rect key="frame" x="85" y="466" width="150" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I8E-Gi-92w">
+                                                <rect key="frame" x="21" y="497" width="276" height="29"/>
+                                                <segments>
+                                                    <segment title="1"/>
+                                                    <segment title="2"/>
+                                                    <segment title="3"/>
+                                                    <segment title="4"/>
+                                                    <segment title="5"/>
+                                                </segments>
+                                                <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sweatness" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDv-Fj-atc">
+                                                <rect key="frame" x="85" y="535" width="150" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
@@ -463,8 +457,8 @@
                                                 </segments>
                                                 <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clean Cup" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTr-6g-WIW">
-                                                <rect key="frame" x="119" y="604" width="81" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clean Cup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTr-6g-WIW">
+                                                <rect key="frame" x="85" y="604" width="150" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
@@ -481,7 +475,7 @@
                                                 <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aftertaste" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpV-Fo-bEt">
-                                                <rect key="frame" x="122" y="673" width="81" height="21"/>
+                                                <rect key="frame" x="85" y="673" width="150" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
@@ -502,7 +496,7 @@
                                                 <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overall" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihZ-Pk-4uO">
-                                                <rect key="frame" x="119" y="759" width="81" height="21"/>
+                                                <rect key="frame" x="85" y="759" width="150" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
@@ -518,8 +512,8 @@
                                                 </segments>
                                                 <color key="tintColor" red="1" green="0.46110736769999999" blue="0.40450843289999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTL-IV-V3U">
-                                                <rect key="frame" x="118" y="828" width="81" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTL-IV-V3U">
+                                                <rect key="frame" x="85" y="828" width="150" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
@@ -536,12 +530,12 @@
                                                 <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dkq-Pn-VXV" userLabel="Delete Button View">
-                                                <rect key="frame" x="72" y="1159" width="180" height="29"/>
+                                                <rect key="frame" x="72" y="1160" width="180" height="29"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Duz-lE-V0s">
+                                                    <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Duz-lE-V0s">
                                                         <rect key="frame" x="3" y="2" width="174" height="25"/>
                                                         <color key="backgroundColor" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <state key="normal" title="Delete This Note">
+                                                        <state key="normal" title="Deleting This Note">
                                                             <color key="titleColor" red="1" green="0.46110736768944427" blue="0.40450843290836236" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
@@ -552,6 +546,12 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.56621052066455557" blue="0.57256591528925915" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Roast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keG-Yl-PIt">
+                                                <rect key="frame" x="85" y="170" width="150" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -590,22 +590,33 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="640"/>
                     <connections>
+                        <outlet property="acidityLabel" destination="FVF-e6-Vvg" id="dBy-QV-J2p"/>
                         <outlet property="aciditySegmentedControl" destination="I8E-Gi-92w" id="RQT-ut-fTu"/>
+                        <outlet property="aftertasteLabel" destination="GpV-Fo-bEt" id="xIM-rx-poD"/>
                         <outlet property="aftertasteSegmentedControl" destination="SpP-D0-2la" id="MsF-wJ-rL0"/>
                         <outlet property="blendNameTextField" destination="zXX-9P-iLk" id="5LT-Ha-HjR"/>
+                        <outlet property="bodyLabel" destination="L9m-XJ-9bt" id="GDa-aX-bBo"/>
                         <outlet property="bodySegmentedControl" destination="hqR-37-I7m" id="wMt-2Q-Uky"/>
                         <outlet property="cameraButtonImageView" destination="Vuf-Cn-o66" id="rgG-rI-f2s"/>
                         <outlet property="cleanCupSegmentedControl" destination="lE4-cg-Xaf" id="jDE-24-XvF"/>
+                        <outlet property="cleancupLabel" destination="gTr-6g-WIW" id="juT-15-4qK"/>
                         <outlet property="coffeeImageView" destination="tIM-V9-vEu" id="225-zr-anG"/>
+                        <outlet property="commentLabel" destination="VTL-IV-V3U" id="UU9-7u-Qmp"/>
                         <outlet property="commentTextView" destination="rTY-s9-De6" id="Gh8-lb-km2"/>
+                        <outlet property="darkLabel" destination="zgR-tg-OVa" id="xsE-mz-JTy"/>
                         <outlet property="darkSegmentedControl" destination="S5y-5n-fKx" id="gmb-vU-3uC"/>
+                        <outlet property="deleteButton" destination="Duz-lE-V0s" id="9nb-qN-MZO"/>
+                        <outlet property="flavorLabel" destination="F9Q-wh-XuS" id="K5X-tz-T48"/>
                         <outlet property="flavorSegmentedControl" destination="FYr-XU-3Cz" id="vpP-Ue-bt3"/>
                         <outlet property="mainView" destination="ATE-75-L4c" id="AzJ-uo-mn9"/>
                         <outlet property="originTextField" destination="XKe-ha-JGL" id="CYw-MR-vwn"/>
+                        <outlet property="overallLabel" destination="ihZ-Pk-4uO" id="mfA-uD-7oj"/>
                         <outlet property="overallSegmentedControl" destination="goC-XX-H4s" id="TpE-md-3iL"/>
                         <outlet property="placeTextField" destination="p9F-PH-vXK" id="D4L-yE-Joa"/>
+                        <outlet property="roastLabel" destination="keG-Yl-PIt" id="ZSr-6b-pG3"/>
                         <outlet property="roastSegmentedControl" destination="Xwd-2k-Dei" id="D2d-bo-ll4"/>
                         <outlet property="scrollView" destination="ALc-VO-aXN" id="cZl-pN-6ED"/>
+                        <outlet property="sweetnessLabel" destination="DDv-Fj-atc" id="OPp-3J-zq3"/>
                         <outlet property="sweetnessSegmentedControl" destination="nTD-SU-U2Z" id="cXg-Qx-6Zy"/>
                         <segue destination="NiY-8i-l3w" kind="unwind" identifier="unwindFromEditByDeleteButton" unwindAction="unwindFromEditByDeleteButton:" id="bTb-bX-ErD"/>
                     </connections>

@@ -40,5 +40,8 @@
 "selectPhoto" = "Select Photo from Camera Roll";
 "cancel" = "Cancel";
 
+// delete
+"deleteTitle" = "Deleting This Note";
+
 // Edit
 "deleteNote" = "Delete This Note";

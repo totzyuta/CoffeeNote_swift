@@ -12,6 +12,17 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var mainView: UIView!
+  @IBOutlet weak var roastLabel: UILabel!
+  @IBOutlet weak var darkLabel: UILabel!
+  @IBOutlet weak var bodyLabel: UILabel!
+  @IBOutlet weak var flavorLabel: UILabel!
+  @IBOutlet weak var acidityLabel: UILabel!
+  @IBOutlet weak var sweetnessLabel: UILabel!
+  @IBOutlet weak var cleancupLabel: UILabel!
+  @IBOutlet weak var aftertasteLabel: UILabel!
+  @IBOutlet weak var overallLabel: UILabel!
+  @IBOutlet weak var commentLabel: UILabel!
+  @IBOutlet weak var deleteButton: UIButton!
   
   @IBOutlet weak var coffeeImageView: UIImageView!
   @IBOutlet weak var cameraButtonImageView: UIButton!
@@ -46,7 +57,24 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     title.text = NSLocalizedString("titleEditView", comment: "comment")
     title.sizeToFit()
     self.navigationItem.titleView = title;
-    
+   
+    // set localized value
+    blendNameTextField.placeholder = NSLocalizedString("blendName", comment: "comment")
+    originTextField.placeholder = NSLocalizedString("origin", comment: "comment")
+    placeTextField.placeholder = NSLocalizedString("place", comment: "comment")
+    roastLabel.text = NSLocalizedString("roast", comment: "comment")
+    darkLabel.text = NSLocalizedString("dark", comment: "comment")
+    bodyLabel.text = NSLocalizedString("body", comment: "comment")
+    flavorLabel.text = NSLocalizedString("flavor", comment: "comment")
+    acidityLabel.text = NSLocalizedString("acidity", comment: "comment")
+    sweetnessLabel.text = NSLocalizedString("sweetness", comment: "comment")
+    cleancupLabel.text = NSLocalizedString("cleancup", comment: "comment")
+    aftertasteLabel.text = NSLocalizedString("aftertaste", comment: "comment")
+    overallLabel.text = NSLocalizedString("overall", comment: "comment")
+    commentLabel.text = NSLocalizedString("comment", comment: "comment")
+    deleteButton.titleLabel?.text = NSLocalizedString("deleteNote", comment: "comment")
+    // deleteButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
+
     
     // to show aleart when not to have camera in device
     if (!UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
@@ -185,11 +213,11 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   
   @IBAction func pushCameraButton(sender: AnyObject) {
     var sheetCamera = UIActionSheet()
-    sheetCamera.title = "Set Photo of Coffee"
+    sheetCamera.title = NSLocalizedString("setPhoto", comment: "comment")
     sheetCamera.delegate = self
-    sheetCamera.addButtonWithTitle("Take Photo by Camera")
-    sheetCamera.addButtonWithTitle("Select Photo from Cameraroll")
-    sheetCamera.addButtonWithTitle("Cancel")
+    sheetCamera.addButtonWithTitle(NSLocalizedString("takePhoto", comment: "comment"))
+    sheetCamera.addButtonWithTitle(NSLocalizedString("selectPhoto", comment: "comment"))
+    sheetCamera.addButtonWithTitle(NSLocalizedString("cancel", comment: "comment"))
     sheetCamera.cancelButtonIndex = 2
     
     sheetCamera.tag = 0
@@ -203,10 +231,10 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   
   @IBAction func pushedDeleteButton(sender: AnyObject) {
     var sheet = UIActionSheet()
-    sheet.title = "Deleting This Note"
+    sheet.title = NSLocalizedString("deleteTitle", comment: "comment")
     sheet.delegate = self
     sheet.addButtonWithTitle("OK")
-    sheet.addButtonWithTitle("Cancel")
+    sheet.addButtonWithTitle(NSLocalizedString("cancel", comment: "comment"))
     sheet.cancelButtonIndex = 1
     
     sheet.tag = 1
