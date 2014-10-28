@@ -16,6 +16,16 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var coffeeImage: UIImageView!
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var blendNameLabel: UILabel!
+ 
+  @IBOutlet weak var roastTitleLabel: UILabel!
+  @IBOutlet weak var darkTitleLabel: UILabel!
+  @IBOutlet weak var bodyTitleLabel: UILabel!
+  @IBOutlet weak var flavorTitleLabel: UILabel!
+  @IBOutlet weak var acidityTitleLabel: UILabel!
+  @IBOutlet weak var sweetnessTitleLabel: UILabel!
+  @IBOutlet weak var cleancupTitleLabel: UILabel!
+  @IBOutlet weak var aftertasteTitleLabel: UILabel!
+  @IBOutlet weak var commentTitleLabel: UILabel!
   
   @IBOutlet weak var star1Image: UIImageView!
   @IBOutlet weak var star2Image: UIImageView!
@@ -74,6 +84,17 @@ class DetailViewController: UIViewController {
     title.text = NSLocalizedString("titleDetailView", comment: "comment")
     title.sizeToFit()
     self.navigationItem.titleView = title;
+    
+    // set localized value
+    roastTitleLabel.text = NSLocalizedString("roast", comment: "comment")
+    darkTitleLabel.text = NSLocalizedString("dark", comment: "comment")
+    bodyTitleLabel.text = NSLocalizedString("body", comment: "comment")
+    flavorTitleLabel.text = NSLocalizedString("flavor", comment: "comment")
+    acidityTitleLabel.text = NSLocalizedString("acidity", comment: "comment")
+    sweetnessTitleLabel.text = NSLocalizedString("sweetness", comment: "comment")
+    cleancupTitleLabel.text = NSLocalizedString("cleancup", comment: "comment")
+    aftertasteTitleLabel.text = NSLocalizedString("aftertaste", comment: "comment")
+    commentTitleLabel.text = NSLocalizedString("comment", comment: "comment")
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -157,31 +178,31 @@ class DetailViewController: UIViewController {
       self.placeLabel.text = rows.stringForColumn("place")
       switch rows.intForColumn("roast") {
       case 1:
-        self.roastLabel.text = "Light"
+        self.roastLabel.text = NSLocalizedString("light", comment: "comment")
       case 2:
-        self.roastLabel.text = "Medium"
+        self.roastLabel.text = NSLocalizedString("medium", comment: "comment")
       case 3:
-        self.roastLabel.text = "Dark"
+        self.roastLabel.text = NSLocalizedString("dark", comment: "comment")
       default:
         self.roastLabel.text = "Unknown"
       }
       switch rows.intForColumn("dark") {
       case 1:
-        self.darkLabel.text = "Light"
+        self.darkLabel.text = NSLocalizedString("light", comment: "comment")
       case 2:
-        self.darkLabel.text = "Medium"
+        self.darkLabel.text = NSLocalizedString("medium", comment: "comment")
       case 3:
-        self.darkLabel.text = "Full"
+        self.darkLabel.text = NSLocalizedString("full", comment: "comment")
       default:
         self.darkLabel.text = "Unknown"
       }
       switch rows.intForColumn("body") {
       case 1:
-        self.bodyLabel.text = "Light"
+        self.bodyLabel.text = NSLocalizedString("light", comment: "comment")
       case 2:
-        self.bodyLabel.text = "Medium"
+        self.bodyLabel.text = NSLocalizedString("medium", comment: "comment")
       case 3:
-        self.bodyLabel.text = "Dark"
+        self.bodyLabel.text = NSLocalizedString("dark", comment: "comment")
       default:
         self.bodyLabel.text = "Unknown"
       }

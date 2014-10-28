@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4N8-cX-hNQ">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -535,7 +534,7 @@
                                                     <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Duz-lE-V0s">
                                                         <rect key="frame" x="3" y="2" width="174" height="25"/>
                                                         <color key="backgroundColor" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <state key="normal" title="Deleting This Note">
+                                                        <state key="normal" title="Delete This Note">
                                                             <color key="titleColor" red="1" green="0.46110736768944427" blue="0.40450843290836236" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
@@ -777,13 +776,13 @@
                                                 <rect key="frame" x="10" y="325" width="300" height="2"/>
                                                 <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Roast" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqF-ha-svd">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Roast" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqF-ha-svd" userLabel="RoastTitle">
                                                 <rect key="frame" x="15" y="335" width="53" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hr-mV-foI">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hr-mV-foI" userLabel="Roast">
                                                 <rect key="frame" x="218" y="335" width="83" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" white="0.35000000000000003" alpha="1" colorSpace="calibratedWhite"/>
@@ -793,13 +792,13 @@
                                                 <rect key="frame" x="10" y="364" width="300" height="2"/>
                                                 <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1JP-IQ-AGe">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1JP-IQ-AGe" userLabel="DarkTitle">
                                                 <rect key="frame" x="15" y="374" width="53" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Medium" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOM-cE-owu">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Medium" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOM-cE-owu" userLabel="Dark">
                                                 <rect key="frame" x="218" y="374" width="83" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" white="0.34999999999999998" alpha="1" colorSpace="calibratedWhite"/>
@@ -809,13 +808,13 @@
                                                 <rect key="frame" x="10" y="403" width="300" height="2"/>
                                                 <color key="backgroundColor" white="0.9288999496" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Body" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxf-tm-8dL">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Body" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxf-tm-8dL" userLabel="BodyTitle">
                                                 <rect key="frame" x="15" y="413" width="53" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" white="0.5466859879" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Light" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oug-Za-y3Y">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Light" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oug-Za-y3Y" userLabel="Body">
                                                 <rect key="frame" x="218" y="413" width="83" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" white="0.34999999999999998" alpha="1" colorSpace="calibratedWhite"/>
@@ -1010,30 +1009,38 @@
                         <outlet property="acidityStar3" destination="Wwh-ff-Uuq" id="S4M-Ux-VKJ"/>
                         <outlet property="acidityStar4" destination="HCt-nz-YBO" id="jmC-4X-MQr"/>
                         <outlet property="acidityStar5" destination="8MW-bx-DIW" id="GdK-mE-ZDH"/>
+                        <outlet property="acidityTitleLabel" destination="1kv-dO-YII" id="1zR-hm-iHb"/>
                         <outlet property="aftertasteStar1" destination="pEJ-HH-0xv" id="T4e-wY-5Cs"/>
                         <outlet property="aftertasteStar2" destination="EsT-8K-AEP" id="9FN-Ol-7hr"/>
                         <outlet property="aftertasteStar3" destination="5Wc-Ri-wmS" id="0wN-aH-PXL"/>
                         <outlet property="aftertasteStar4" destination="rVW-fs-3RT" id="9lp-5F-WFk"/>
                         <outlet property="aftertasteStar5" destination="bHY-nZ-0DC" id="yYc-5r-InB"/>
+                        <outlet property="aftertasteTitleLabel" destination="VgT-26-aPO" id="DmG-XA-e8e"/>
                         <outlet property="blendNameLabel" destination="M2f-FM-LYZ" id="j4i-hR-NQR"/>
                         <outlet property="bodyLabel" destination="oug-Za-y3Y" id="tQz-NL-HEr"/>
+                        <outlet property="bodyTitleLabel" destination="Mxf-tm-8dL" id="qo5-7c-ZNq"/>
                         <outlet property="cleancupStar1" destination="Gxf-hB-bUy" id="UWR-vw-qNo"/>
                         <outlet property="cleancupStar2" destination="d6d-In-Jbg" id="gA0-Nl-cPz"/>
                         <outlet property="cleancupStar3" destination="rtn-F4-KkT" id="uJA-fI-dPy"/>
                         <outlet property="cleancupStar4" destination="4K1-KB-Huh" id="eEL-bf-B63"/>
                         <outlet property="cleancupStar5" destination="V4x-r1-vt8" id="diu-eC-YiD"/>
+                        <outlet property="cleancupTitleLabel" destination="Hg7-95-JwJ" id="f4J-LG-d1d"/>
                         <outlet property="coffeeImage" destination="96A-VO-Fvq" id="YfT-gD-BnY"/>
                         <outlet property="commentText" destination="UGn-8P-P4a" id="XW9-4J-0FC"/>
+                        <outlet property="commentTitleLabel" destination="daX-hy-ypZ" id="TkW-X5-gxu"/>
                         <outlet property="darkLabel" destination="aOM-cE-owu" id="8ls-xc-qSK"/>
+                        <outlet property="darkTitleLabel" destination="1JP-IQ-AGe" id="i7k-zg-FBz"/>
                         <outlet property="dateLabel" destination="3yn-QD-EkD" id="RcS-HX-hL4"/>
                         <outlet property="flavorStar1" destination="1gW-IQ-aAV" id="UMo-2d-cQJ"/>
                         <outlet property="flavorStar2" destination="pSZ-CK-tjY" id="g5c-gm-kIx"/>
                         <outlet property="flavorStar3" destination="sQf-Mk-JIF" id="nZW-qk-BcE"/>
                         <outlet property="flavorStar4" destination="VWe-Zo-a2u" id="raI-x6-w62"/>
                         <outlet property="flavorStar5" destination="PMA-QG-4ar" id="Vjh-19-o3b"/>
+                        <outlet property="flavorTitleLabel" destination="ndl-zi-cKu" id="VUb-Q9-QBs"/>
                         <outlet property="mainView" destination="vDf-n2-VYd" id="eHW-97-cye"/>
                         <outlet property="placeLabel" destination="yn1-fE-M0v" id="8uW-Ln-3hw"/>
-                        <outlet property="roastLabel" destination="2hr-mV-foI" id="cOb-1g-9LY"/>
+                        <outlet property="roastLabel" destination="2hr-mV-foI" id="95b-nL-eMX"/>
+                        <outlet property="roastTitleLabel" destination="lqF-ha-svd" id="Wg0-Ie-OHK"/>
                         <outlet property="scrollView" destination="Efd-zO-vPw" id="g5K-q5-ssC"/>
                         <outlet property="star1Image" destination="vMu-bc-zl9" id="J6A-Vw-zL6"/>
                         <outlet property="star2Image" destination="ydk-hA-9i9" id="rcQ-le-lop"/>
@@ -1045,6 +1052,7 @@
                         <outlet property="sweetnessStar3" destination="c0p-Hp-Qwj" id="7sz-PQ-E4z"/>
                         <outlet property="sweetnessStar4" destination="f12-b6-rGY" id="5AO-mW-xjZ"/>
                         <outlet property="sweetnessStar5" destination="Wi5-8h-19I" id="zY0-Qt-e4E"/>
+                        <outlet property="sweetnessTitleLabel" destination="qlg-Jx-DK0" id="vgG-Gr-8Lp"/>
                         <segue destination="itJ-1X-W0k" kind="unwind" identifier="unwindFromDetail" unwindAction="unwindFromDetail:" id="8ql-g6-dHL"/>
                     </connections>
                 </viewController>
