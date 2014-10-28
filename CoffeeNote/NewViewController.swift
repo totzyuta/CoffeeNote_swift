@@ -73,6 +73,15 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     aftertasteLabel.text = NSLocalizedString("aftertaste", comment: "comment")
     overallLabel.text = NSLocalizedString("overall", comment: "comment")
     commentLabel.text = NSLocalizedString("comment", comment: "comment")
+    roastSegment.setTitle(NSLocalizedString("light", comment: "comment"), forSegmentAtIndex: 0)
+    roastSegment.setTitle(NSLocalizedString("medium", comment: "comment"), forSegmentAtIndex: 1)
+    roastSegment.setTitle(NSLocalizedString("dark", comment: "comment"), forSegmentAtIndex: 2)
+    darkSegment.setTitle(NSLocalizedString("light", comment: "comment"), forSegmentAtIndex: 0)
+    darkSegment.setTitle(NSLocalizedString("medium", comment: "comment"), forSegmentAtIndex: 1)
+    darkSegment.setTitle(NSLocalizedString("full", comment: "comment"), forSegmentAtIndex: 2)
+    bodySegment.setTitle(NSLocalizedString("light", comment: "comment"), forSegmentAtIndex: 0)
+    bodySegment.setTitle(NSLocalizedString("medium", comment: "comment"), forSegmentAtIndex: 1)
+    bodySegment.setTitle(NSLocalizedString("dark", comment: "comment"), forSegmentAtIndex: 2)
     
     
     // to show aleart when not to have camera in device

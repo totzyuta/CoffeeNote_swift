@@ -76,14 +76,6 @@ class DetailViewController: UIViewController {
     // scrollView.pagingEnabled = true
     
     
-    // change title of navigation bar
-    var title = UILabel()
-    title.font = UIFont.boldSystemFontOfSize(16)
-    // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
-    title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
-    title.text = NSLocalizedString("titleDetailView", comment: "comment")
-    title.sizeToFit()
-    self.navigationItem.titleView = title;
     
     // set localized value
     roastTitleLabel.text = NSLocalizedString("roast", comment: "comment")
@@ -95,6 +87,7 @@ class DetailViewController: UIViewController {
     cleancupTitleLabel.text = NSLocalizedString("cleancup", comment: "comment")
     aftertasteTitleLabel.text = NSLocalizedString("aftertaste", comment: "comment")
     commentTitleLabel.text = NSLocalizedString("comment", comment: "comment")
+    
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -133,9 +126,10 @@ class DetailViewController: UIViewController {
     db.open()
     
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
-    
+    var blendName: String
     // fetch data and put data into label
     while rows.next() {
+      blendName = rows.stringForColumn("blendName")
       self.blendNameLabel.text = rows.stringForColumn("blendName")
       self.dateLabel.text = rows.stringForColumn("date")
       
@@ -174,6 +168,16 @@ class DetailViewController: UIViewController {
       default:
         println("Error of overall parametor")
       }
+      
+      // change title of navigation bar
+      var title = UILabel()
+      title.font = UIFont.boldSystemFontOfSize(16)
+      // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
+      title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
+      title.text = blendName
+      title.sizeToFit()
+      // title.text = NSLocalizedString("titleDetailView", comment: "comment")
+      self.navigationItem.titleView = title;
       
       self.placeLabel.text = rows.stringForColumn("place")
       switch rows.intForColumn("roast") {

@@ -13,8 +13,8 @@
 "titleEditView" = "編集";
 
 "blendName" = "ブレンド名";
-"origin" = "オリジン";
-"place" = "飲んだ場所";
+"origin" = "産地";
+"place" = "場所";
 
 // parametors of coffee note
 "roast" = "ロースト";

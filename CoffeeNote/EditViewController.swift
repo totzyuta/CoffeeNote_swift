@@ -73,7 +73,15 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     overallLabel.text = NSLocalizedString("overall", comment: "comment")
     commentLabel.text = NSLocalizedString("comment", comment: "comment")
     deleteButton.titleLabel?.text = NSLocalizedString("deleteNote", comment: "comment")
-    // deleteButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
+    roastSegmentedControl.setTitle(NSLocalizedString("light", comment: "comment"), forSegmentAtIndex: 0)
+    roastSegmentedControl.setTitle(NSLocalizedString("medium", comment: "comment"), forSegmentAtIndex: 1)
+    roastSegmentedControl.setTitle(NSLocalizedString("dark", comment: "comment"), forSegmentAtIndex: 2)
+    darkSegmentedControl.setTitle(NSLocalizedString("light", comment: "comment"), forSegmentAtIndex: 0)
+    darkSegmentedControl.setTitle(NSLocalizedString("medium", comment: "comment"), forSegmentAtIndex: 1)
+    darkSegmentedControl.setTitle(NSLocalizedString("full", comment: "comment"), forSegmentAtIndex: 2)
+    bodySegmentedControl.setTitle(NSLocalizedString("light", comment: "comment"), forSegmentAtIndex: 0)
+    bodySegmentedControl.setTitle(NSLocalizedString("medium", comment: "comment"), forSegmentAtIndex: 1)
+    bodySegmentedControl.setTitle(NSLocalizedString("dark", comment: "comment"), forSegmentAtIndex: 2)
 
     
     // to show aleart when not to have camera in device
@@ -231,7 +239,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   
   @IBAction func pushedDeleteButton(sender: AnyObject) {
     var sheet = UIActionSheet()
-    sheet.title = NSLocalizedString("deleteTitle", comment: "comment")
+    sheet.title = NSLocalizedString("deleteNote", comment: "comment")
     sheet.delegate = self
     sheet.addButtonWithTitle("OK")
     sheet.addButtonWithTitle(NSLocalizedString("cancel", comment: "comment"))
