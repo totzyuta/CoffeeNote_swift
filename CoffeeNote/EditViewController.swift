@@ -82,7 +82,11 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     bodySegmentedControl.setTitle(NSLocalizedString("light", comment: "comment"), forSegmentAtIndex: 0)
     bodySegmentedControl.setTitle(NSLocalizedString("medium", comment: "comment"), forSegmentAtIndex: 1)
     bodySegmentedControl.setTitle(NSLocalizedString("dark", comment: "comment"), forSegmentAtIndex: 2)
-
+    
+    // textField from Capital letter
+    blendNameTextField.autocapitalizationType = UITextAutocapitalizationType.Sentences
+    originTextField.autocapitalizationType = UITextAutocapitalizationType.Sentences
+    placeTextField.autocapitalizationType = UITextAutocapitalizationType.Sentences
     
     // to show aleart when not to have camera in device
     if (!UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
