@@ -41,3 +41,6 @@
 
 // Edit
 "deleteNote" = "ノートを削除";
+
+// Tweet
+"tweetText" = "[コーヒーノート] %@ at %@ (%@) via #CoffeeNote @CoffeeNote_info";

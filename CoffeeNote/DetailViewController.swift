@@ -431,17 +431,33 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     var blendName: String = ""
     var place: String = ""
+    var overall: String = ""
     // fetch data and put data into label
     while rows.next() {
       blendName = rows.stringForColumn("blendName")
       place = rows.stringForColumn("place")
+      overall = rows.stringForColumn("overall")
     }
     
     db.close()
     
     if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
       var composeSelect = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-      composeSelect.setInitialText("[Note] A Cup of Coffee, \(blendName) at \(place) via #CoffeeNote @CoffeeNote_ios")
+      switch overall {
+      case "1":
+        composeSelect.setInitialText(String(format: NSLocalizedString("tweetText", comment: "comment"), blendName, place, "★"))
+      case "2":
+        composeSelect.setInitialText(String(format: NSLocalizedString("tweetText", comment: "comment"), blendName, place, "★★"))
+      case "3":
+        composeSelect.setInitialText(String(format: NSLocalizedString("tweetText", comment: "comment"), blendName, place, "★★★"))
+      case "4":
+        composeSelect.setInitialText(String(format: NSLocalizedString("tweetText", comment: "comment"), blendName, place, "★★★★"))
+      case "5":
+        composeSelect.setInitialText(String(format: NSLocalizedString("tweetText", comment: "comment"), blendName, place, "★★★★★"))
+      default :
+        composeSelect.setInitialText(String(format: NSLocalizedString("tweetText", comment: "comment"), blendName, place, ""))
+        
+      }
       
       let filePath = appDelegate.filePath!
       var imageFilePath = filePath+"/img\(nid).jpg"

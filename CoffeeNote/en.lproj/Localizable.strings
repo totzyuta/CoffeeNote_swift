@@ -45,3 +45,6 @@
 
 // Edit
 "deleteNote" = "Delete This Note";
+
+// Tweet
+"tweetText" = "[Note] A Cup of Coffee, %@ at %@ (%@) via #CoffeeNote @CoffeeNote_info";
