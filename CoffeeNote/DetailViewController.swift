@@ -441,7 +441,16 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
     
     if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
       var composeSelect = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-      composeSelect.setInitialText("A Cup of Coffee, \(blendName) at \(place) via #CoffeeNote @CoffeeNote_ios")
+      composeSelect.setInitialText("[Note] A Cup of Coffee, \(blendName) at \(place) via #CoffeeNote @CoffeeNote_ios")
+      
+      let filePath = appDelegate.filePath!
+      var imageFilePath = filePath+"/img\(nid).jpg"
+      var imgfileManager = NSFileManager()
+      if (imgfileManager.fileExistsAtPath(imageFilePath)) {
+        composeSelect.addImage(UIImage(contentsOfFile: imageFilePath))
+        // coffeeImage.image = UIImage(contentsOfFile: imageFilePath)
+        println("imagefile exists(imageFilePath: \(imageFilePath))")
+      }
       
       self.presentViewController(composeSelect, animated: true, completion: nil)
     }
