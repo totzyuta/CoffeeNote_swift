@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Social
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIActionSheetDelegate {
 
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var mainView: UIView!
@@ -395,8 +396,78 @@ class DetailViewController: UIViewController {
   
   
   @IBAction func pushedEditButton(sender: AnyObject) {
+    var sheet = UIActionSheet()
+    sheet.title = NSLocalizedString("Action", comment: "comment")
+    sheet.delegate = self
+    sheet.addButtonWithTitle("Edit This Note")
+    sheet.addButtonWithTitle("Share on Twitter")
+    sheet.addButtonWithTitle(NSLocalizedString("cancel", comment: "comment"))
+    sheet.cancelButtonIndex = 2
+    
+    sheet.tag = 0
+    
+    sheet.showInView(self.view)
+  }
+  
+  
+  func postToTwitter() {
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegatのインスタンスを取得
+    var nid = Int(appDelegate.nid!)
+    // sql from here
+    let _dbfile:NSString = "sqlite.db"
+    let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
+      NSSearchPathDirectory.DocumentDirectory,
+      NSSearchPathDomainMask.UserDomainMask,
+      true)[0]
+    let fileManager:NSFileManager = NSFileManager.defaultManager()
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    
+    let db = FMDatabase(path: _path)
+    
+    let sql_select = "SELECT * FROM notes WHERE nid=\(nid)"
+    
+    db.open()
+    
+    var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
+    var blendName: String = ""
+    var place: String = ""
+    // fetch data and put data into label
+    while rows.next() {
+      blendName = rows.stringForColumn("blendName")
+      place = rows.stringForColumn("place")
+    }
+    
+    db.close()
+    
+    if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
+      var composeSelect = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+      composeSelect.setInitialText("A Cup of Coffee, \(blendName) at \(place) via #CoffeeNote @CoffeeNote_ios")
+      
+      self.presentViewController(composeSelect, animated: true, completion: nil)
+    }
+  }
+  
+  func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+    switch (actionSheet.tag) {
+    case 0:
+      /* Action Sheet */
+      if (buttonIndex==0) {
+        // Edit Note
+        performSegueWithIdentifier("segueFromDetailToEdit", sender: self)
+      }else if(buttonIndex==1) {
+        // Share on Twitter
+        postToTwitter()
+      }else if(buttonIndex==2) {
+      }else {
+        // cancel
+      }
+      break
+    default:
+      break
+    }
     
   }
+
   
   
   @IBAction func unwindToDetailByCancel(segue: UIStoryboardSegue) {

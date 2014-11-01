@@ -34,6 +34,7 @@
 		12CD442E19EC102C00FE07AE /* img3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12CD442D19EC102C00FE07AE /* img3.jpg */; };
 		12D6706C19ED310E0079F550 /* icon_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D6706B19ED310E0079F550 /* icon_camera.png */; };
 		12D8EC4219EE5FAD00BC8521 /* blue-coffee-icon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 12D8EC4119EE5FAD00BC8521 /* blue-coffee-icon.jpeg */; };
+		12F12D761A045D49004877D9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F12D751A045D49004877D9 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		12CD442D19EC102C00FE07AE /* img3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img3.jpg; path = ../../../Dropbox/images/Picture/img3.jpg; sourceTree = "<group>"; };
 		12D6706B19ED310E0079F550 /* icon_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_camera.png; path = Images.xcassets/icon_camera.png; sourceTree = "<group>"; };
 		12D8EC4119EE5FAD00BC8521 /* blue-coffee-icon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "blue-coffee-icon.jpeg"; path = "Images.xcassets/blue-coffee-icon.jpeg"; sourceTree = "<group>"; };
+		12F12D751A045D49004877D9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12F12D761A045D49004877D9 /* Social.framework in Frameworks */,
 				129D3E1219E2C61900180B94 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +116,7 @@
 		127ACED019DBF1BE00B39373 = {
 			isa = PBXGroup;
 			children = (
+				12F12D751A045D49004877D9 /* Social.framework */,
 				129D3E1419E2C75100180B94 /* lib */,
 				129D3E1119E2C61900180B94 /* libsqlite3.0.dylib */,
 				127ACEDB19DBF1BE00B39373 /* CoffeeNote */,
