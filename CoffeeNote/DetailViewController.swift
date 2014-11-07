@@ -409,7 +409,7 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
     sheet.showInView(self.view)
   }
   
-  
+  // Tweet
   func postToTwitter() {
     var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegatのインスタンスを取得
     var nid = Int(appDelegate.nid!)

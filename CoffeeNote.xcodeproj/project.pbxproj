@@ -32,6 +32,20 @@
 		12CD442719EBE24A00FE07AE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CD442619EBE24A00FE07AE /* CustomCell.swift */; };
 		12CD442C19EC101000FE07AE /* img2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12CD442B19EC101000FE07AE /* img2.jpg */; };
 		12CD442E19EC102C00FE07AE /* img3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12CD442D19EC102C00FE07AE /* img3.jpg */; };
+		12D35D211A0CD41C00EE87D0 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D35D1F1A0CD41C00EE87D0 /* libGoogleAdMobAds.a */; };
+		12D35D221A0CD41C00EE87D0 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 12D35D201A0CD41C00EE87D0 /* README.txt */; };
+		12D35D261A0CD42500EE87D0 /* libAdapterIAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D35D241A0CD42500EE87D0 /* libAdapterIAd.a */; };
+		12D35D271A0CD42500EE87D0 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 12D35D251A0CD42500EE87D0 /* README.txt */; };
+		12D35D2A1A0CD4E700EE87D0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D35D291A0CD4E700EE87D0 /* AudioToolbox.framework */; };
+		12D35D2C1A0CD4F500EE87D0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D35D2B1A0CD4F500EE87D0 /* AdSupport.framework */; };
+		12D35D2E1A0CD50A00EE87D0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D35D2D1A0CD50A00EE87D0 /* AVFoundation.framework */; };
+		12D35D301A0CD51400EE87D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D35D2F1A0CD51400EE87D0 /* CoreGraphics.framework */; };
+		12D35D321A0CD51E00EE87D0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D35D311A0CD51E00EE87D0 /* MessageUI.framework */; };
+		12D35D341A0CD52400EE87D0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D35D331A0CD52400EE87D0 /* StoreKit.framework */; };
+		12D35D361A0CD53000EE87D0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D35D351A0CD53000EE87D0 /* SystemConfiguration.framework */; };
+		12D35D381A0CD53900EE87D0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D35D371A0CD53900EE87D0 /* CoreTelephony.framework */; };
+		12D35D3A1A0CD54400EE87D0 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D35D391A0CD54400EE87D0 /* iAd.framework */; };
+		12D35D3C1A0CD54C00EE87D0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D35D3B1A0CD54C00EE87D0 /* Security.framework */; };
 		12D6706C19ED310E0079F550 /* icon_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D6706B19ED310E0079F550 /* icon_camera.png */; };
 		12D8EC4219EE5FAD00BC8521 /* blue-coffee-icon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 12D8EC4119EE5FAD00BC8521 /* blue-coffee-icon.jpeg */; };
 		12F12D761A045D49004877D9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F12D751A045D49004877D9 /* Social.framework */; };
@@ -88,6 +102,47 @@
 		12CD442619EBE24A00FE07AE /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		12CD442B19EC101000FE07AE /* img2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img2.jpg; path = ../../../Dropbox/images/img2.jpg; sourceTree = "<group>"; };
 		12CD442D19EC102C00FE07AE /* img3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img3.jpg; path = ../../../Dropbox/images/Picture/img3.jpg; sourceTree = "<group>"; };
+		12D35D021A0CD41C00EE87D0 /* DFPBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPBannerView.h; sourceTree = "<group>"; };
+		12D35D031A0CD41C00EE87D0 /* DFPExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPExtras.h; sourceTree = "<group>"; };
+		12D35D041A0CD41C00EE87D0 /* DFPInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPInterstitial.h; sourceTree = "<group>"; };
+		12D35D051A0CD41C00EE87D0 /* DFPSwipeableBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPSwipeableBannerView.h; sourceTree = "<group>"; };
+		12D35D061A0CD41C00EE87D0 /* GADAdSizeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSizeDelegate.h; sourceTree = "<group>"; };
+		12D35D071A0CD41C00EE87D0 /* GADAppEventDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAppEventDelegate.h; sourceTree = "<group>"; };
+		12D35D081A0CD41C00EE87D0 /* GADSwipeableBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADSwipeableBannerViewDelegate.h; sourceTree = "<group>"; };
+		12D35D0A1A0CD41C00EE87D0 /* GADCustomEventBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADCustomEventBanner.h; sourceTree = "<group>"; };
+		12D35D0B1A0CD41C00EE87D0 /* GADCustomEventBannerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADCustomEventBannerDelegate.h; sourceTree = "<group>"; };
+		12D35D0C1A0CD41C00EE87D0 /* GADCustomEventExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADCustomEventExtras.h; sourceTree = "<group>"; };
+		12D35D0D1A0CD41C00EE87D0 /* GADCustomEventInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADCustomEventInterstitial.h; sourceTree = "<group>"; };
+		12D35D0E1A0CD41C00EE87D0 /* GADCustomEventInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADCustomEventInterstitialDelegate.h; sourceTree = "<group>"; };
+		12D35D0F1A0CD41C00EE87D0 /* GADCustomEventRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADCustomEventRequest.h; sourceTree = "<group>"; };
+		12D35D111A0CD41C00EE87D0 /* GADSearchBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADSearchBannerView.h; sourceTree = "<group>"; };
+		12D35D121A0CD41C00EE87D0 /* GADSearchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADSearchRequest.h; sourceTree = "<group>"; };
+		12D35D131A0CD41C00EE87D0 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
+		12D35D141A0CD41C00EE87D0 /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
+		12D35D151A0CD41C00EE87D0 /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
+		12D35D161A0CD41C00EE87D0 /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
+		12D35D171A0CD41C00EE87D0 /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewDelegate.h; sourceTree = "<group>"; };
+		12D35D181A0CD41C00EE87D0 /* GADInAppPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInAppPurchase.h; sourceTree = "<group>"; };
+		12D35D191A0CD41C00EE87D0 /* GADInAppPurchaseDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInAppPurchaseDelegate.h; sourceTree = "<group>"; };
+		12D35D1A1A0CD41C00EE87D0 /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitial.h; sourceTree = "<group>"; };
+		12D35D1B1A0CD41C00EE87D0 /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitialDelegate.h; sourceTree = "<group>"; };
+		12D35D1C1A0CD41C00EE87D0 /* GADModules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADModules.h; sourceTree = "<group>"; };
+		12D35D1D1A0CD41C00EE87D0 /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
+		12D35D1E1A0CD41C00EE87D0 /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
+		12D35D1F1A0CD41C00EE87D0 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
+		12D35D201A0CD41C00EE87D0 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		12D35D241A0CD42500EE87D0 /* libAdapterIAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdapterIAd.a; sourceTree = "<group>"; };
+		12D35D251A0CD42500EE87D0 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		12D35D291A0CD4E700EE87D0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		12D35D2B1A0CD4F500EE87D0 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		12D35D2D1A0CD50A00EE87D0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		12D35D2F1A0CD51400EE87D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		12D35D311A0CD51E00EE87D0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		12D35D331A0CD52400EE87D0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		12D35D351A0CD53000EE87D0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		12D35D371A0CD53900EE87D0 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		12D35D391A0CD54400EE87D0 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		12D35D3B1A0CD54C00EE87D0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		12D6706B19ED310E0079F550 /* icon_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_camera.png; path = Images.xcassets/icon_camera.png; sourceTree = "<group>"; };
 		12D8EC4119EE5FAD00BC8521 /* blue-coffee-icon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "blue-coffee-icon.jpeg"; path = "Images.xcassets/blue-coffee-icon.jpeg"; sourceTree = "<group>"; };
 		12F12D751A045D49004877D9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -98,8 +153,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12D35D3C1A0CD54C00EE87D0 /* Security.framework in Frameworks */,
+				12D35D3A1A0CD54400EE87D0 /* iAd.framework in Frameworks */,
+				12D35D381A0CD53900EE87D0 /* CoreTelephony.framework in Frameworks */,
+				12D35D361A0CD53000EE87D0 /* SystemConfiguration.framework in Frameworks */,
+				12D35D341A0CD52400EE87D0 /* StoreKit.framework in Frameworks */,
+				12D35D321A0CD51E00EE87D0 /* MessageUI.framework in Frameworks */,
+				12D35D301A0CD51400EE87D0 /* CoreGraphics.framework in Frameworks */,
+				12D35D2E1A0CD50A00EE87D0 /* AVFoundation.framework in Frameworks */,
+				12D35D2C1A0CD4F500EE87D0 /* AdSupport.framework in Frameworks */,
+				12D35D2A1A0CD4E700EE87D0 /* AudioToolbox.framework in Frameworks */,
+				12D35D261A0CD42500EE87D0 /* libAdapterIAd.a in Frameworks */,
 				12F12D761A045D49004877D9 /* Social.framework in Frameworks */,
 				129D3E1219E2C61900180B94 /* libsqlite3.0.dylib in Frameworks */,
+				12D35D211A0CD41C00EE87D0 /* libGoogleAdMobAds.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +183,6 @@
 		127ACED019DBF1BE00B39373 = {
 			isa = PBXGroup;
 			children = (
-				12F12D751A045D49004877D9 /* Social.framework */,
 				129D3E1419E2C75100180B94 /* lib */,
 				129D3E1119E2C61900180B94 /* libsqlite3.0.dylib */,
 				127ACEDB19DBF1BE00B39373 /* CoffeeNote */,
@@ -145,6 +211,8 @@
 				1212F69919E570B300F14F7C /* EditViewController.swift */,
 				127ACEE219DBF1BF00B39373 /* Main.storyboard */,
 				129D3E1319E2C64B00180B94 /* CoffeeNote-Bridging-Header.h */,
+				12D35D3D1A0CD5B400EE87D0 /* frameworks */,
+				12D35D281A0CD46A00EE87D0 /* Ad */,
 				12CD442A19EC019500FE07AE /* images */,
 				127ACEE519DBF1BF00B39373 /* Images.xcassets */,
 				127ACEE719DBF1BF00B39373 /* LaunchScreen.xib */,
@@ -221,6 +289,113 @@
 				123D904219EE7C2B00BDC598 /* gray-circle.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		12D35CFF1A0CD41C00EE87D0 /* GoogleMobileAdsSdkiOS-6.12.2 */ = {
+			isa = PBXGroup;
+			children = (
+				12D35D001A0CD41C00EE87D0 /* Add-ons */,
+				12D35D131A0CD41C00EE87D0 /* GADAdMobExtras.h */,
+				12D35D141A0CD41C00EE87D0 /* GADAdNetworkExtras.h */,
+				12D35D151A0CD41C00EE87D0 /* GADAdSize.h */,
+				12D35D161A0CD41C00EE87D0 /* GADBannerView.h */,
+				12D35D171A0CD41C00EE87D0 /* GADBannerViewDelegate.h */,
+				12D35D181A0CD41C00EE87D0 /* GADInAppPurchase.h */,
+				12D35D191A0CD41C00EE87D0 /* GADInAppPurchaseDelegate.h */,
+				12D35D1A1A0CD41C00EE87D0 /* GADInterstitial.h */,
+				12D35D1B1A0CD41C00EE87D0 /* GADInterstitialDelegate.h */,
+				12D35D1C1A0CD41C00EE87D0 /* GADModules.h */,
+				12D35D1D1A0CD41C00EE87D0 /* GADRequest.h */,
+				12D35D1E1A0CD41C00EE87D0 /* GADRequestError.h */,
+				12D35D1F1A0CD41C00EE87D0 /* libGoogleAdMobAds.a */,
+				12D35D201A0CD41C00EE87D0 /* README.txt */,
+			);
+			name = "GoogleMobileAdsSdkiOS-6.12.2";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		12D35D001A0CD41C00EE87D0 /* Add-ons */ = {
+			isa = PBXGroup;
+			children = (
+				12D35D011A0CD41C00EE87D0 /* DoubleClick */,
+				12D35D091A0CD41C00EE87D0 /* Mediation */,
+				12D35D101A0CD41C00EE87D0 /* Search */,
+			);
+			path = "Add-ons";
+			sourceTree = "<group>";
+		};
+		12D35D011A0CD41C00EE87D0 /* DoubleClick */ = {
+			isa = PBXGroup;
+			children = (
+				12D35D021A0CD41C00EE87D0 /* DFPBannerView.h */,
+				12D35D031A0CD41C00EE87D0 /* DFPExtras.h */,
+				12D35D041A0CD41C00EE87D0 /* DFPInterstitial.h */,
+				12D35D051A0CD41C00EE87D0 /* DFPSwipeableBannerView.h */,
+				12D35D061A0CD41C00EE87D0 /* GADAdSizeDelegate.h */,
+				12D35D071A0CD41C00EE87D0 /* GADAppEventDelegate.h */,
+				12D35D081A0CD41C00EE87D0 /* GADSwipeableBannerViewDelegate.h */,
+			);
+			path = DoubleClick;
+			sourceTree = "<group>";
+		};
+		12D35D091A0CD41C00EE87D0 /* Mediation */ = {
+			isa = PBXGroup;
+			children = (
+				12D35D0A1A0CD41C00EE87D0 /* GADCustomEventBanner.h */,
+				12D35D0B1A0CD41C00EE87D0 /* GADCustomEventBannerDelegate.h */,
+				12D35D0C1A0CD41C00EE87D0 /* GADCustomEventExtras.h */,
+				12D35D0D1A0CD41C00EE87D0 /* GADCustomEventInterstitial.h */,
+				12D35D0E1A0CD41C00EE87D0 /* GADCustomEventInterstitialDelegate.h */,
+				12D35D0F1A0CD41C00EE87D0 /* GADCustomEventRequest.h */,
+			);
+			path = Mediation;
+			sourceTree = "<group>";
+		};
+		12D35D101A0CD41C00EE87D0 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				12D35D111A0CD41C00EE87D0 /* GADSearchBannerView.h */,
+				12D35D121A0CD41C00EE87D0 /* GADSearchRequest.h */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		12D35D231A0CD42500EE87D0 /* LibAdapterIAd-1.0.0 */ = {
+			isa = PBXGroup;
+			children = (
+				12D35D241A0CD42500EE87D0 /* libAdapterIAd.a */,
+				12D35D251A0CD42500EE87D0 /* README.txt */,
+			);
+			name = "LibAdapterIAd-1.0.0";
+			sourceTree = "<group>";
+		};
+		12D35D281A0CD46A00EE87D0 /* Ad */ = {
+			isa = PBXGroup;
+			children = (
+				12D35CFF1A0CD41C00EE87D0 /* GoogleMobileAdsSdkiOS-6.12.2 */,
+				12D35D231A0CD42500EE87D0 /* LibAdapterIAd-1.0.0 */,
+			);
+			name = Ad;
+			path = "GoogleMobileAdsSdkiOS-6.12.2/LibAdapterIAd-1.0.0";
+			sourceTree = "<group>";
+		};
+		12D35D3D1A0CD5B400EE87D0 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12D35D3B1A0CD54C00EE87D0 /* Security.framework */,
+				12D35D391A0CD54400EE87D0 /* iAd.framework */,
+				12D35D371A0CD53900EE87D0 /* CoreTelephony.framework */,
+				12D35D351A0CD53000EE87D0 /* SystemConfiguration.framework */,
+				12D35D331A0CD52400EE87D0 /* StoreKit.framework */,
+				12D35D311A0CD51E00EE87D0 /* MessageUI.framework */,
+				12D35D2F1A0CD51400EE87D0 /* CoreGraphics.framework */,
+				12D35D2D1A0CD50A00EE87D0 /* AVFoundation.framework */,
+				12D35D2B1A0CD4F500EE87D0 /* AdSupport.framework */,
+				12D35D291A0CD4E700EE87D0 /* AudioToolbox.framework */,
+				12F12D751A045D49004877D9 /* Social.framework */,
+			);
+			name = frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,7 +484,9 @@
 				12AD799819EB7EB100A320D4 /* img4.jpg in Resources */,
 				121567B619EE9441001802D5 /* gray-star.png in Resources */,
 				129411EF19FE951000074D62 /* Localizable.strings in Resources */,
+				12D35D221A0CD41C00EE87D0 /* README.txt in Resources */,
 				129411E819FE947F00074D62 /* InfoPlist.strings in Resources */,
+				12D35D271A0CD42500EE87D0 /* README.txt in Resources */,
 				12CD442E19EC102C00FE07AE /* img3.jpg in Resources */,
 				127ACEE419DBF1BF00B39373 /* Main.storyboard in Resources */,
 				127ACEE919DBF1BF00B39373 /* LaunchScreen.xib in Resources */,
@@ -445,6 +622,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -480,6 +658,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -495,6 +674,11 @@
 				INFOPLIST_FILE = CoffeeNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CoffeeNote/GoogleMobileAdsSdkiOS-6.12.2",
+					"$(PROJECT_DIR)/CoffeeNote/GoogleMobileAdsSdkiOS-6.12.2/LibAdapterIAd-1.0.0",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/CoffeeNote-Bridging-Header.h";
@@ -512,6 +696,11 @@
 				INFOPLIST_FILE = CoffeeNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CoffeeNote/GoogleMobileAdsSdkiOS-6.12.2",
+					"$(PROJECT_DIR)/CoffeeNote/GoogleMobileAdsSdkiOS-6.12.2/LibAdapterIAd-1.0.0",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/CoffeeNote-Bridging-Header.h";

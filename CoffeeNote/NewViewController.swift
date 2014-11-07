@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate {
+class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate, GADBannerViewDelegate {
   
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var mainView: UIView!
@@ -101,12 +101,25 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
   }
   
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+
+    var origin = CGPointMake(0.0,
+        self.view.frame.size.height -
+            CGSizeFromGADAdSize(kGADAdSizeBanner).height); // place at bottom of view
+
+    var size = GADAdSizeFullWidthPortraitWithHeight(50) // set size to 50
+    var adB = GADBannerView(adSize: size, origin: origin) // create the banner
+    adB.adUnitID = "ca-app-pub-4052843231042111/7994489581"  //"ca-app-pub-XXXXXXXX/XXXXXXX"
+    adB.delegate = self // ??
+    adB.rootViewController = self // ??
+    self.view.addSubview(adB) // ??
+    var request = GADRequest() // create request
+    request.testDevices = [ GAD_SIMULATOR_ID ]; // set it to "test" request
+    adB.loadRequest(request) // actually load it (?
+    
   }
-  
-  
+ 
   
   // MARK: HideTextField
   
