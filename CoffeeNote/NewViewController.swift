@@ -98,12 +98,7 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
       myAlertView.show()
     }
     
-    
-  }
-  
-  override func viewDidAppear(animated: Bool) {
-    super.viewDidAppear(animated)
-
+    /* Ad Setting */
     var origin = CGPointMake(0.0,
         self.view.frame.size.height -
             CGSizeFromGADAdSize(kGADAdSizeBanner).height); // place at bottom of view
@@ -119,7 +114,7 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     adB.loadRequest(request) // actually load it (?
     
   }
- 
+  
   
   // MARK: HideTextField
   
