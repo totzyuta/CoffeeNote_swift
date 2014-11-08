@@ -8,9 +8,7 @@
 
 import UIKit
 
-class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate, GADBannerViewDelegate, NADViewDelegate {
-  
-  private var nadView: NADView!
+class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate, GADBannerViewDelegate {
   
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var mainView: UIView!
@@ -107,7 +105,8 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 
     var size = GADAdSizeFullWidthPortraitWithHeight(50) // set size to 50
     var adB = GADBannerView(adSize: size, origin: origin) // create the banner
-    adB.adUnitID = "ca-app-pub-4052843231042111/7994489581"  //"ca-app-pub-XXXXXXXX/XXXXXXX"
+    var config = Config()
+    adB.adUnitID = config.setAdUnitId()
     adB.delegate = self // ??
     adB.rootViewController = self // ??
     self.view.addSubview(adB) // ??

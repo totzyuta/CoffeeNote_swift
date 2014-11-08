@@ -24,6 +24,7 @@
 		128871451A0E1B6D007F3027 /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 128871081A0E1B6C007F3027 /* libNendAd.a */; };
 		128871471A0E1B6D007F3027 /* nendSDKiOS2.5.5_manual.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 128871101A0E1B6C007F3027 /* nendSDKiOS2.5.5_manual.pdf */; };
 		1288716D1A0E1CFF007F3027 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1288716C1A0E1CFF007F3027 /* ImageIO.framework */; };
+		128871711A0E295D007F3027 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128871701A0E295D007F3027 /* Config.swift */; };
 		129411E819FE947F00074D62 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 129411EA19FE947F00074D62 /* InfoPlist.strings */; };
 		129411EF19FE951000074D62 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 129411F119FE951000074D62 /* Localizable.strings */; };
 		129D3E1219E2C61900180B94 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 129D3E1119E2C61900180B94 /* libsqlite3.0.dylib */; };
@@ -94,6 +95,7 @@
 		1288710F1A0E1B6C007F3027 /* NendAd-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NendAd-Bridging-Header.h"; sourceTree = "<group>"; };
 		128871101A0E1B6C007F3027 /* nendSDKiOS2.5.5_manual.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = nendSDKiOS2.5.5_manual.pdf; sourceTree = "<group>"; };
 		1288716C1A0E1CFF007F3027 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		128871701A0E295D007F3027 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		129411E419FE93FF00074D62 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		129411E519FE940000074D62 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		129411EB19FE948100074D62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				127ACEDE19DBF1BF00B39373 /* AppDelegate.swift */,
+				128871701A0E295D007F3027 /* Config.swift */,
 				127ACEE019DBF1BF00B39373 /* AllViewController.swift */,
 				12CD442619EBE24A00FE07AE /* CustomCell.swift */,
 				1285316819DC452300CCDB50 /* NewViewController.swift */,
@@ -579,6 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1212F69A19E570B300F14F7C /* EditViewController.swift in Sources */,
+				128871711A0E295D007F3027 /* Config.swift in Sources */,
 				1285316719DC44F000CCDB50 /* DetailViewController.swift in Sources */,
 				12CD442719EBE24A00FE07AE /* CustomCell.swift in Sources */,
 				129D3E2419E2C79100180B94 /* FMDatabaseQueue.m in Sources */,
