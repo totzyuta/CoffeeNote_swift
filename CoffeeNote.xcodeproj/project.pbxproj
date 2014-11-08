@@ -19,6 +19,11 @@
 		127ACEF519DBF1BF00B39373 /* CoffeeNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACEF419DBF1BF00B39373 /* CoffeeNoteTests.swift */; };
 		1285316719DC44F000CCDB50 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1285316619DC44F000CCDB50 /* DetailViewController.swift */; };
 		1285316919DC452300CCDB50 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1285316819DC452300CCDB50 /* NewViewController.swift */; };
+		128871431A0E1B6D007F3027 /* libAdapterNend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 128871041A0E1B6C007F3027 /* libAdapterNend.a */; };
+		128871441A0E1B6D007F3027 /* libAdapterNend_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 128871051A0E1B6C007F3027 /* libAdapterNend_readme.txt */; };
+		128871451A0E1B6D007F3027 /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 128871081A0E1B6C007F3027 /* libNendAd.a */; };
+		128871471A0E1B6D007F3027 /* nendSDKiOS2.5.5_manual.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 128871101A0E1B6C007F3027 /* nendSDKiOS2.5.5_manual.pdf */; };
+		1288716D1A0E1CFF007F3027 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1288716C1A0E1CFF007F3027 /* ImageIO.framework */; };
 		129411E819FE947F00074D62 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 129411EA19FE947F00074D62 /* InfoPlist.strings */; };
 		129411EF19FE951000074D62 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 129411F119FE951000074D62 /* Localizable.strings */; };
 		129D3E1219E2C61900180B94 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 129D3E1119E2C61900180B94 /* libsqlite3.0.dylib */; };
@@ -78,6 +83,17 @@
 		127ACEF419DBF1BF00B39373 /* CoffeeNoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNoteTests.swift; sourceTree = "<group>"; };
 		1285316619DC44F000CCDB50 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1285316819DC452300CCDB50 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		128871041A0E1B6C007F3027 /* libAdapterNend.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdapterNend.a; sourceTree = "<group>"; };
+		128871051A0E1B6C007F3027 /* libAdapterNend_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = libAdapterNend_readme.txt; sourceTree = "<group>"; };
+		128871081A0E1B6C007F3027 /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
+		128871091A0E1B6C007F3027 /* NADIconArrayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconArrayView.h; sourceTree = "<group>"; };
+		1288710A1A0E1B6C007F3027 /* NADIconLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconLoader.h; sourceTree = "<group>"; };
+		1288710B1A0E1B6C007F3027 /* NADIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconView.h; sourceTree = "<group>"; };
+		1288710C1A0E1B6C007F3027 /* NADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADInterstitial.h; sourceTree = "<group>"; };
+		1288710D1A0E1B6C007F3027 /* NADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADView.h; sourceTree = "<group>"; };
+		1288710F1A0E1B6C007F3027 /* NendAd-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NendAd-Bridging-Header.h"; sourceTree = "<group>"; };
+		128871101A0E1B6C007F3027 /* nendSDKiOS2.5.5_manual.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = nendSDKiOS2.5.5_manual.pdf; sourceTree = "<group>"; };
+		1288716C1A0E1CFF007F3027 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		129411E419FE93FF00074D62 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		129411E519FE940000074D62 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		129411EB19FE948100074D62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -153,8 +169,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1288716D1A0E1CFF007F3027 /* ImageIO.framework in Frameworks */,
 				12D35D3C1A0CD54C00EE87D0 /* Security.framework in Frameworks */,
 				12D35D3A1A0CD54400EE87D0 /* iAd.framework in Frameworks */,
+				128871431A0E1B6D007F3027 /* libAdapterNend.a in Frameworks */,
 				12D35D381A0CD53900EE87D0 /* CoreTelephony.framework in Frameworks */,
 				12D35D361A0CD53000EE87D0 /* SystemConfiguration.framework in Frameworks */,
 				12D35D341A0CD52400EE87D0 /* StoreKit.framework in Frameworks */,
@@ -163,6 +181,7 @@
 				12D35D2E1A0CD50A00EE87D0 /* AVFoundation.framework in Frameworks */,
 				12D35D2C1A0CD4F500EE87D0 /* AdSupport.framework in Frameworks */,
 				12D35D2A1A0CD4E700EE87D0 /* AudioToolbox.framework in Frameworks */,
+				128871451A0E1B6D007F3027 /* libNendAd.a in Frameworks */,
 				12D35D261A0CD42500EE87D0 /* libAdapterIAd.a in Frameworks */,
 				12F12D761A045D49004877D9 /* Social.framework in Frameworks */,
 				129D3E1219E2C61900180B94 /* libsqlite3.0.dylib in Frameworks */,
@@ -246,6 +265,48 @@
 				127ACEF319DBF1BF00B39373 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		128871021A0E1B6C007F3027 /* NendSDK_iOS-2.5.5 */ = {
+			isa = PBXGroup;
+			children = (
+				128871031A0E1B6C007F3027 /* AdMobMediationAdapter */,
+				128871061A0E1B6C007F3027 /* Nend */,
+			);
+			name = "NendSDK_iOS-2.5.5";
+			path = "Externals/NendSDK_iOS-2.5.5";
+			sourceTree = SOURCE_ROOT;
+		};
+		128871031A0E1B6C007F3027 /* AdMobMediationAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				128871041A0E1B6C007F3027 /* libAdapterNend.a */,
+				128871051A0E1B6C007F3027 /* libAdapterNend_readme.txt */,
+			);
+			path = AdMobMediationAdapter;
+			sourceTree = "<group>";
+		};
+		128871061A0E1B6C007F3027 /* Nend */ = {
+			isa = PBXGroup;
+			children = (
+				128871071A0E1B6C007F3027 /* NendAd */,
+				1288710F1A0E1B6C007F3027 /* NendAd-Bridging-Header.h */,
+				128871101A0E1B6C007F3027 /* nendSDKiOS2.5.5_manual.pdf */,
+			);
+			path = Nend;
+			sourceTree = "<group>";
+		};
+		128871071A0E1B6C007F3027 /* NendAd */ = {
+			isa = PBXGroup;
+			children = (
+				128871081A0E1B6C007F3027 /* libNendAd.a */,
+				128871091A0E1B6C007F3027 /* NADIconArrayView.h */,
+				1288710A1A0E1B6C007F3027 /* NADIconLoader.h */,
+				1288710B1A0E1B6C007F3027 /* NADIconView.h */,
+				1288710C1A0E1B6C007F3027 /* NADInterstitial.h */,
+				1288710D1A0E1B6C007F3027 /* NADView.h */,
+			);
+			path = NendAd;
 			sourceTree = "<group>";
 		};
 		129D3E1419E2C75100180B94 /* lib */ = {
@@ -372,6 +433,7 @@
 		12D35D281A0CD46A00EE87D0 /* Ad */ = {
 			isa = PBXGroup;
 			children = (
+				128871021A0E1B6C007F3027 /* NendSDK_iOS-2.5.5 */,
 				12D35CFF1A0CD41C00EE87D0 /* GoogleMobileAdsSdkiOS-6.12.2 */,
 				12D35D231A0CD42500EE87D0 /* LibAdapterIAd-1.0.0 */,
 			);
@@ -382,6 +444,7 @@
 		12D35D3D1A0CD5B400EE87D0 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1288716C1A0E1CFF007F3027 /* ImageIO.framework */,
 				12D35D3B1A0CD54C00EE87D0 /* Security.framework */,
 				12D35D391A0CD54400EE87D0 /* iAd.framework */,
 				12D35D371A0CD53900EE87D0 /* CoreTelephony.framework */,
@@ -494,8 +557,10 @@
 				123D904119EE7AE300BDC598 /* star.png in Resources */,
 				123D904319EE7C2B00BDC598 /* gray-circle.png in Resources */,
 				127ACEE619DBF1BF00B39373 /* Images.xcassets in Resources */,
+				128871471A0E1B6D007F3027 /* nendSDKiOS2.5.5_manual.pdf in Resources */,
 				12D6706C19ED310E0079F550 /* icon_camera.png in Resources */,
 				12D8EC4219EE5FAD00BC8521 /* blue-coffee-icon.jpeg in Resources */,
+				128871441A0E1B6D007F3027 /* libAdapterNend_readme.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +743,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/CoffeeNote/GoogleMobileAdsSdkiOS-6.12.2",
 					"$(PROJECT_DIR)/CoffeeNote/GoogleMobileAdsSdkiOS-6.12.2/LibAdapterIAd-1.0.0",
+					"$(PROJECT_DIR)/Externals/NendSDK_iOS-2.5.5/AdMobMediationAdapter",
+					"$(PROJECT_DIR)/Externals/NendSDK_iOS-2.5.5/Nend/NendAd",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -700,6 +767,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/CoffeeNote/GoogleMobileAdsSdkiOS-6.12.2",
 					"$(PROJECT_DIR)/CoffeeNote/GoogleMobileAdsSdkiOS-6.12.2/LibAdapterIAd-1.0.0",
+					"$(PROJECT_DIR)/Externals/NendSDK_iOS-2.5.5/AdMobMediationAdapter",
+					"$(PROJECT_DIR)/Externals/NendSDK_iOS-2.5.5/Nend/NendAd",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
