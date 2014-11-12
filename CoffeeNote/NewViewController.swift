@@ -45,7 +45,7 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.scrollView.contentSize = self.mainView.bounds.size
+    // self.scrollView.contentSize = self.mainView.bounds.size
     
     placeTextField.delegate = self
     
