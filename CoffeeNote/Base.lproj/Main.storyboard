@@ -26,7 +26,7 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORt-fJ-E54">
                                                 <rect key="frame" x="20" y="10" width="280" height="2"/>
-                                                <color key="backgroundColor" white="0.96999999999999997" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.93000000000000005" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="jte-ph-DQO"/>
                                                 </constraints>
@@ -288,7 +288,7 @@
                                             </label>
                                             <textView clipsSubviews="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="3kM-3g-Bbr">
                                                 <rect key="frame" x="25" y="895" width="270" height="250"/>
-                                                <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.92000000000000004" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="Gd2-A3-asx"/>
                                                 </constraints>
@@ -382,6 +382,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.96999999999999997" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="Fof-5S-Dje" secondAttribute="centerX" id="26A-cL-hj1"/>
                                     <constraint firstAttribute="trailing" secondItem="Fof-5S-Dje" secondAttribute="trailing" id="KPo-ac-rfz"/>
@@ -391,7 +392,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.96999999999999997" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fhz-C2-LbY" firstAttribute="top" secondItem="YEG-I8-N9D" secondAttribute="bottom" id="fSs-ce-P4k"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YEG-I8-N9D" secondAttribute="trailing" constant="-16" id="sMU-J6-D6e"/>
@@ -722,7 +723,7 @@
                                             </label>
                                             <textView clipsSubviews="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="rTY-s9-De6">
                                                 <rect key="frame" x="25" y="890" width="270" height="250"/>
-                                                <color key="backgroundColor" white="0.95888986899999995" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.92000000000000004" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="thI-LB-PwX"/>
                                                 </constraints>
@@ -851,6 +852,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.96999999999999997" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="ATE-75-L4c" secondAttribute="centerX" id="3mB-6h-lhk"/>
                                     <constraint firstItem="ATE-75-L4c" firstAttribute="top" secondItem="ALc-VO-aXN" secondAttribute="topMargin" constant="-8" id="DUo-zB-jFg"/>
@@ -860,7 +862,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.96999999999999997" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ALc-VO-aXN" firstAttribute="leading" secondItem="wVX-5T-kgX" secondAttribute="leadingMargin" constant="-16" id="41z-5K-XHn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ALc-VO-aXN" secondAttribute="trailing" constant="-16" id="BMV-ke-jvc"/>
@@ -935,6 +937,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AcH-GG-mHJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier=" Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="130" id="MV5-RW-ByM" customClass="CustomCell" customModule="CoffeeNote" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -1003,7 +1006,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="AcH-GG-mHJ" secondAttribute="trailing" constant="-16" id="4tf-wT-kOd"/>
                             <constraint firstItem="AcH-GG-mHJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="RdJ-qm-d7M"/>
@@ -1470,7 +1473,7 @@
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGn-8P-P4a">
                                                 <rect key="frame" x="20" y="706" width="280" height="120"/>
-                                                <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.92000000000000004" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="bii-DW-uH8"/>
                                                 </constraints>
@@ -1736,7 +1739,67 @@
                     <view key="view" contentMode="scaleToFill" id="wI0-QO-AR1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CoffeeNote" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23s-Yg-eeG">
+                                <rect key="frame" x="83" y="90" width="154" height="40"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                <color key="textColor" white="0.35000000000000003" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="cup of moment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgA-RM-rB1">
+                                <rect key="frame" x="83" y="138" width="154" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.55000000000000004" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkQ-PE-5PQ">
+                                <rect key="frame" x="16" y="182" width="154" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.89608065642458101" green="0.47741802069642558" blue="0.48178309057832036" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="version 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5g-3I-qJQ">
+                                <rect key="frame" x="83" y="480" width="154" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.55000000000000004" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="© 2014 totz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jau-BT-nYg">
+                                <rect key="frame" x="83" y="536" width="154" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.55000000000000004" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Developed by totz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdA-cy-Ptb">
+                                <rect key="frame" x="83" y="508" width="154" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.55000000000000004" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmn-JR-GNx">
+                                <rect key="frame" x="0.0" y="211" width="320" height="43"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mdo-FA-nSb">
+                                <rect key="frame" x="0.0" y="358" width="320" height="43"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qd8-U7-eye">
+                                <rect key="frame" x="0.0" y="255" width="320" height="43"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Support" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myz-qq-Elo">
+                                <rect key="frame" x="16" y="327" width="154" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.89608065640000001" green="0.4774180207" blue="0.48178309060000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FsR-wf-09A">
+                                <rect key="frame" x="0.0" y="402" width="320" height="43"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="FRE-eI-dII">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="6lc-b0-sh7">
