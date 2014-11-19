@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120105201A1C48FD00868167 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1201051F1A1C48FD00868167 /* setting@2x.png */; };
 		1212F69A19E570B300F14F7C /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1212F69919E570B300F14F7C /* EditViewController.swift */; };
 		121567B619EE9441001802D5 /* gray-star.png in Resources */ = {isa = PBXBuildFile; fileRef = 121567B519EE9441001802D5 /* gray-star.png */; };
 		123D904119EE7AE300BDC598 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 123D904019EE7AE300BDC598 /* star.png */; };
@@ -55,6 +56,7 @@
 		12D6706C19ED310E0079F550 /* icon_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D6706B19ED310E0079F550 /* icon_camera.png */; };
 		12D8EC4219EE5FAD00BC8521 /* blue-coffee-icon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 12D8EC4119EE5FAD00BC8521 /* blue-coffee-icon.jpeg */; };
 		12F12D761A045D49004877D9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F12D751A045D49004877D9 /* Social.framework */; };
+		12F7187E1A1B826C003E6FF8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7187D1A1B826C003E6FF8 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1201051F1A1C48FD00868167 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "setting@2x.png"; path = "Images.xcassets/setting@2x.png"; sourceTree = "<group>"; };
 		1212F69919E570B300F14F7C /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		121567B519EE9441001802D5 /* gray-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gray-star.png"; path = "Images.xcassets/gray-star.png"; sourceTree = "<group>"; };
 		123D904019EE7AE300BDC598 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = Images.xcassets/star.png; sourceTree = "<group>"; };
@@ -164,6 +167,7 @@
 		12D6706B19ED310E0079F550 /* icon_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_camera.png; path = Images.xcassets/icon_camera.png; sourceTree = "<group>"; };
 		12D8EC4119EE5FAD00BC8521 /* blue-coffee-icon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "blue-coffee-icon.jpeg"; path = "Images.xcassets/blue-coffee-icon.jpeg"; sourceTree = "<group>"; };
 		12F12D751A045D49004877D9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		12F7187D1A1B826C003E6FF8 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +231,7 @@
 				127ACEDE19DBF1BF00B39373 /* AppDelegate.swift */,
 				128871701A0E295D007F3027 /* Config.swift */,
 				127ACEE019DBF1BF00B39373 /* AllViewController.swift */,
+				12F7187D1A1B826C003E6FF8 /* SettingViewController.swift */,
 				12CD442619EBE24A00FE07AE /* CustomCell.swift */,
 				1285316819DC452300CCDB50 /* NewViewController.swift */,
 				1285316619DC44F000CCDB50 /* DetailViewController.swift */,
@@ -351,6 +356,7 @@
 				123D904019EE7AE300BDC598 /* star.png */,
 				121567B519EE9441001802D5 /* gray-star.png */,
 				123D904219EE7C2B00BDC598 /* gray-circle.png */,
+				1201051F1A1C48FD00868167 /* setting@2x.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -550,6 +556,7 @@
 				12AD799819EB7EB100A320D4 /* img4.jpg in Resources */,
 				121567B619EE9441001802D5 /* gray-star.png in Resources */,
 				129411EF19FE951000074D62 /* Localizable.strings in Resources */,
+				120105201A1C48FD00868167 /* setting@2x.png in Resources */,
 				12D35D221A0CD41C00EE87D0 /* README.txt in Resources */,
 				129411E819FE947F00074D62 /* InfoPlist.strings in Resources */,
 				12D35D271A0CD42500EE87D0 /* README.txt in Resources */,
@@ -584,6 +591,7 @@
 				1212F69A19E570B300F14F7C /* EditViewController.swift in Sources */,
 				128871711A0E295D007F3027 /* Config.swift in Sources */,
 				1285316719DC44F000CCDB50 /* DetailViewController.swift in Sources */,
+				12F7187E1A1B826C003E6FF8 /* SettingViewController.swift in Sources */,
 				12CD442719EBE24A00FE07AE /* CustomCell.swift in Sources */,
 				129D3E2419E2C79100180B94 /* FMDatabaseQueue.m in Sources */,
 				127ACEE119DBF1BF00B39373 /* AllViewController.swift in Sources */,

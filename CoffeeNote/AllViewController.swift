@@ -280,10 +280,11 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
   }
   
+  @IBAction func unwindToAllFromSetting(segue: UIStoryboardSegue) {
+  }
   
   @IBAction func unwindToAllByCancel(segue: UIStoryboardSegue) {
   }
-  
 
   @IBAction func unwindToAllBySave(segue: UIStoryboardSegue) {
   }

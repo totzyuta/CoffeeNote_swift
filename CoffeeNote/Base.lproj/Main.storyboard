@@ -447,7 +447,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5u6-G4-KcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="fMH-kp-Lbx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="322" y="-419"/>
+            <point key="canvasLocation" x="854" y="-419"/>
         </scene>
         <!--Edit-->
         <scene sceneID="ZGK-Ul-QBC">
@@ -762,7 +762,7 @@
                                                 <color key="highlightedColor" white="0.75340221770000004" alpha="1" colorSpace="calibratedWhite"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.98999999999999999" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.96999999999999997" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="centerX" secondItem="Xwd-2k-Dei" secondAttribute="centerX" id="0yF-hD-5iP"/>
                                             <constraint firstAttribute="trailing" secondItem="Xwd-2k-Dei" secondAttribute="trailing" constant="25" id="1cJ-Rt-x5o"/>
@@ -918,7 +918,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLg-Rl-UV5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NiY-8i-l3w" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="774" y="-419"/>
+            <point key="canvasLocation" x="1306" y="-419"/>
         </scene>
         <!--All Notes-->
         <scene sceneID="ufC-wZ-h7g">
@@ -1013,6 +1013,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="All Notes" id="UKL-OD-I1L">
+                        <barButtonItem key="leftBarButtonItem" image="setting.png" id="ydL-0N-exM">
+                            <connections>
+                                <segue destination="LIp-nd-2Wp" kind="modal" id="Avb-h1-3Kh"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cqg-CK-vmt">
                             <connections>
                                 <segue destination="bFf-Ky-bLY" kind="modal" id="6Me-hh-TVc"/>
@@ -1045,7 +1050,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="70" y="288"/>
+            <point key="canvasLocation" x="646" y="260"/>
         </scene>
         <!--Detail-->
         <scene sceneID="cjN-pL-dDb">
@@ -1700,7 +1705,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5h-eD-AhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="itJ-1X-W0k" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="473" y="324"/>
+            <point key="canvasLocation" x="1085" y="304"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nYN-sN-cGL">
@@ -1718,7 +1723,33 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gHU-hM-C22" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="242"/>
+            <point key="canvasLocation" x="604" y="213"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="gfR-zt-cdz">
+            <objects>
+                <viewController title="Settings" id="hFO-y1-cdB" customClass="SettingViewController" customModule="CoffeeNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gpY-c4-xMo"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ia3-BJ-Ti8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wI0-QO-AR1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="FRE-eI-dII">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="6lc-b0-sh7">
+                            <connections>
+                                <segue destination="AdG-nD-eRZ" kind="unwind" unwindAction="unwindToAllFromSetting:" id="uOD-dR-nZL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eoV-y1-gLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="AdG-nD-eRZ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="366" y="-419"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MqN-hB-Z8k">
@@ -1736,7 +1767,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOP-le-XQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="290.13333333333333" y="-502.68000000000001"/>
+            <point key="canvasLocation" x="822" y="-503"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5A7-DZ-FyP">
@@ -1754,7 +1785,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZB-8U-Yrv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="744" y="-503"/>
+            <point key="canvasLocation" x="1276" y="-503"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="kWi-MA-HK0">
+            <objects>
+                <navigationController title="Settings" automaticallyAdjustsScrollViewInsets="NO" id="LIp-nd-2Wp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tWN-hY-itM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hFO-y1-cdB" kind="relationship" relationship="rootViewController" id="1QM-nr-vfg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9xM-nw-f8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="297" y="-475"/>
         </scene>
     </scenes>
     <resources>
@@ -1762,6 +1811,7 @@
         <image name="gray-star.png" width="512" height="512"/>
         <image name="icon_camera.png" width="60" height="60"/>
         <image name="img1.jpg" width="4608" height="3072"/>
+        <image name="setting.png" width="22" height="22"/>
         <image name="star.png" width="235" height="215"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
