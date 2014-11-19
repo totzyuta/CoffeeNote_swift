@@ -10,6 +10,7 @@
 		120105201A1C48FD00868167 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1201051F1A1C48FD00868167 /* setting@2x.png */; };
 		1212F69A19E570B300F14F7C /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1212F69919E570B300F14F7C /* EditViewController.swift */; };
 		121567B619EE9441001802D5 /* gray-star.png in Resources */ = {isa = PBXBuildFile; fileRef = 121567B519EE9441001802D5 /* gray-star.png */; };
+		1224CABA1A1CB31800750AD6 /* triangle-arrow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1224CAB91A1CB31700750AD6 /* triangle-arrow.jpg */; };
 		123D904119EE7AE300BDC598 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 123D904019EE7AE300BDC598 /* star.png */; };
 		123D904319EE7C2B00BDC598 /* gray-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 123D904219EE7C2B00BDC598 /* gray-circle.png */; };
 		127ACEDF19DBF1BF00B39373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACEDE19DBF1BF00B39373 /* AppDelegate.swift */; };
@@ -73,6 +74,7 @@
 		1201051F1A1C48FD00868167 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "setting@2x.png"; path = "Images.xcassets/setting@2x.png"; sourceTree = "<group>"; };
 		1212F69919E570B300F14F7C /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		121567B519EE9441001802D5 /* gray-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gray-star.png"; path = "Images.xcassets/gray-star.png"; sourceTree = "<group>"; };
+		1224CAB91A1CB31700750AD6 /* triangle-arrow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "triangle-arrow.jpg"; path = "Images.xcassets/triangle-arrow.jpg"; sourceTree = "<group>"; };
 		123D904019EE7AE300BDC598 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = Images.xcassets/star.png; sourceTree = "<group>"; };
 		123D904219EE7C2B00BDC598 /* gray-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gray-circle.png"; path = "Images.xcassets/gray-circle.png"; sourceTree = "<group>"; };
 		127ACED919DBF1BE00B39373 /* CoffeeNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -357,6 +359,7 @@
 				121567B519EE9441001802D5 /* gray-star.png */,
 				123D904219EE7C2B00BDC598 /* gray-circle.png */,
 				1201051F1A1C48FD00868167 /* setting@2x.png */,
+				1224CAB91A1CB31700750AD6 /* triangle-arrow.jpg */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				12D6706C19ED310E0079F550 /* icon_camera.png in Resources */,
 				12D8EC4219EE5FAD00BC8521 /* blue-coffee-icon.jpeg in Resources */,
 				128871441A0E1B6D007F3027 /* libAdapterNend_readme.txt in Resources */,
+				1224CABA1A1CB31800750AD6 /* triangle-arrow.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
