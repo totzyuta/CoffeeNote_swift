@@ -42,5 +42,12 @@
 // Edit
 "deleteNote" = "ノートを削除";
 
+// SettingView
+"titleSettingView" = "このアプリについて";
+"Support" = "サポート";
+"TwitterSupport" = "サポートアカウント";
+"SayHi" = "開発者にこんにちはを言う";
+
 // Tweet
 "tweetText" = "[コーヒーノート] %@ at %@ (%@) via #CoffeeNote @CoffeeNote_info";
+"twitterURL" = "https://twitter.com/totu_iy/";

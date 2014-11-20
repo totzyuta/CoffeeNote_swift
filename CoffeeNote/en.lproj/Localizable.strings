@@ -46,5 +46,12 @@
 // Edit
 "deleteNote" = "Delete This Note";
 
+// SettingView
+"titleSettingView" = "About";
+"Support" = "Support";
+"TwitterSupport" = "Twitter Support";
+"SayHi" = "Say Hi to Developer";
+
 // Tweet
 "tweetText" = "[Note] A Cup of Coffee, %@ at %@ (%@) via #CoffeeNote @CoffeeNote_info";
+"twitterURL" = "https://twitter.com/totzYuta/";

@@ -11,11 +11,21 @@ import UIKit
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet weak var settingTableview: UITableView!
+  @IBOutlet weak var supportLabel: UILabel!
   
     override func viewDidLoad() {
-        super.viewDidLoad()
+      super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+      self.supportLabel.text = NSLocalizedString("Support", comment: "comment")
+      
+      // change title of navigation bar
+      var title = UILabel()
+      title.font = UIFont.boldSystemFontOfSize(16)
+      // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
+      title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
+      title.text = NSLocalizedString("titleSettingView", comment: "comment")
+      title.sizeToFit()
+      self.navigationItem.titleView = title;
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,10 +51,10 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     switch(indexPath.row) {
     case 0:
-      cell.settingLabel.text = "Twitter Support"
+      cell.settingLabel.text = NSLocalizedString("TwitterSupport", comment: "comment")
       break
     case 1:
-      cell.settingLabel.text = "Say Hi to Developer"
+      cell.settingLabel.text = NSLocalizedString("SayHi", comment: "comment")
       break
     default:
       cell.settingLabel.text = "Hello"
@@ -61,7 +71,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
       UIApplication.sharedApplication().openURL(NSURL(string: "https://twitter.com/CoffeeNote_info/")!)
       break
     case 1:
-      UIApplication.sharedApplication().openURL(NSURL(string: "https://twitter.com/totu_iy/")!)
+      UIApplication.sharedApplication().openURL(NSURL(string: NSLocalizedString("twitterURL", comment: "comment"))!)
       break
     default:
       break
