@@ -49,6 +49,17 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     if result_create_table {
       println("notes table created")
       println(_path)
+      // Create sample data
+      // set data when to create this note
+      let now = NSDate()
+      let dateFormatter = NSDateFormatter()
+      // dateFormatter.dateFormat = "dd/MM"
+      dateFormatter.timeStyle = .ShortStyle
+      dateFormatter.dateStyle = .ShortStyle
+      println(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
+      let sample_comment = NSLocalizedString("sampleComment", comment: "comment")
+      let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('House Blend', 'Brazil', 'CoffeeNote Cafe', 2, 3, 2, 1, 4, 2, 5, 4, 4, \(sample_comment), '\(dateFormatter.stringFromDate(now))');"
+      db.executeUpdate(sql_insert, withArgumentsInArray: nil)
     }else {
       println("notes table already exists")
     }

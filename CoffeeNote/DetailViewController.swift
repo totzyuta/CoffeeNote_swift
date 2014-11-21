@@ -406,6 +406,7 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
     
     sheet.tag = 0
     
+    
     sheet.showInView(self.view)
   }
   

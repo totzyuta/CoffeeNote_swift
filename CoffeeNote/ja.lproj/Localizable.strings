@@ -51,3 +51,6 @@
 // Tweet
 "tweetText" = "[コーヒーノート] %@ at %@ (%@) via #CoffeeNote @CoffeeNote_info";
 "twitterURL" = "https://twitter.com/totu_iy/";
+
+// sample data
+"sampleComment" = "ここのカフェに来るのは初めて。とてもおいしいコーヒーだった。";
