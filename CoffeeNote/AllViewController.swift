@@ -28,6 +28,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     title.text = NSLocalizedString("titleAllView", comment: "comment")
     title.sizeToFit()
     self.navigationItem.titleView = title;
+    
 
     // Create a notes table if not exists
     let _dbfile:NSString = "sqlite.db"
@@ -69,6 +70,8 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
     var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
     appDelegate.filePath = filePath
+    
+    self.allTableView.reloadData()
     
   }
   
@@ -190,6 +193,21 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }else{
       cell.backImage.image = UIImage(named: "img1.jpg")
       println("NO imageFilepath")
+    }
+    
+    // set propety font for title
+    if ((cell.titleLabel.text?.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)) != nil) {
+      cell.titleLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 42.0)
+    }else {
+      cell.titleLabel.font = UIFont(name: "HiraKakuProN-W3", size: 32.0)
+      cell.titleLabel.alpha = 0.8
+    }
+    // set propety font for place
+    if ((cell.placeLabel.text?.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)) != nil) {
+      cell.placeLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 25.0)
+    }else {
+      cell.placeLabel.font = UIFont(name: "HiraKakuProN-W3", size: 18.0)
+      cell.placeLabel.alpha = 0.6
     }
     
     return cell
