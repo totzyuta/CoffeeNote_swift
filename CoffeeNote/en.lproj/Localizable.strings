@@ -59,7 +59,7 @@
 
 // Tweet
 "tweetText" = "[Note] A Cup of Coffee, %@ at %@ (%@) via #CoffeeNote @CoffeeNote_info";
-"twitterURL" = "https://twitter.com/totzYuta/";
+"twitterURL" = "https://twitter.com/yutaTotz/";
 
 // sample data
 "sampleComment" = "It was first time to come to this cafe. And it was a nice cup of coffee.";
