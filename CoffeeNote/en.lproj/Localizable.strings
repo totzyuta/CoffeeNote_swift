@@ -53,6 +53,9 @@
 
 // SettingView
 "titleSettingView" = "About";
+"Phrase" = "Log Your Favorite Coffee";
+"Information" = "Information";
+"AllNotes" = "AllNotes";
 "Support" = "Support";
 "TwitterSupport" = "Twitter Support";
 "SayHi" = "Say Hi to Developer";

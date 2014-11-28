@@ -48,6 +48,9 @@
 
 // SettingView
 "titleSettingView" = "このアプリについて";
+"Phrase" = "大好きな一杯を、書きとめる";
+"Information" = "インフォ";
+"AllNotes" = "ノートの数";
 "Support" = "サポート";
 "TwitterSupport" = "サポートアカウント";
 "SayHi" = "開発者にこんにちはを言う";

@@ -11,7 +11,12 @@ import UIKit
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet weak var settingTableview: UITableView!
+  @IBOutlet weak var phraseLabel: UILabel!
+  @IBOutlet weak var informationLabel: UILabel!
+  @IBOutlet weak var allNotesLabel: UILabel!
   @IBOutlet weak var supportLabel: UILabel!
+  
+  @IBOutlet weak var numberNotes: UILabel!
   
     override func viewDidLoad() {
       super.viewDidLoad()
@@ -26,7 +31,42 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
       title.text = NSLocalizedString("titleSettingView", comment: "comment")
       title.sizeToFit()
       self.navigationItem.titleView = title;
+      
+      phraseLabel.text = NSLocalizedString("Phrase",comment: "comment")
+      informationLabel.text = NSLocalizedString("Information", comment: "comment")
+      allNotesLabel.text = NSLocalizedString("AllNotes", comment: "comment")
+      
     }
+  
+  override func viewWillAppear(animated: Bool) {
+    // sql from here
+    let _dbfile:NSString = "sqlite.db"
+    let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
+      NSSearchPathDirectory.DocumentDirectory,
+      NSSearchPathDomainMask.UserDomainMask,
+      true)[0]
+    let fileManager:NSFileManager = NSFileManager.defaultManager()
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    
+    let db = FMDatabase(path: _path)
+    
+    
+    let sql_select = "SELECT * FROM notes"
+    
+    db.open()
+    
+    var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
+    var flg = 0
+    // fetch data and put data into label
+    while rows.next() {
+      flg = flg + 1
+    }
+    
+    numberNotes.text = String(flg)
+    
+    db.close()
+    
+  }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
