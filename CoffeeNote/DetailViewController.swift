@@ -183,6 +183,7 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
       // title.text = NSLocalizedString("titleDetailView", comment: "comment")
       self.navigationItem.titleView = title;
       
+      self.originLabel.text = rows.stringForColumn("origin")
       self.placeLabel.text = rows.stringForColumn("place")
       switch rows.intForColumn("roast") {
       case 1:

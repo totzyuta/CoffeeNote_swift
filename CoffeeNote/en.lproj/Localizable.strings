@@ -19,6 +19,7 @@
 
 // elements of coffee note
 "roast" = "Roast";
+"roast" = "Roast";
 "dark" = "Dark";
 "body" = "Body";
 "flavor" = "Flavor";
