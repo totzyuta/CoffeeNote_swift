@@ -14,10 +14,12 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var mainView: UIView!
   
+  @IBOutlet weak var originLabel: UILabel!
   @IBOutlet weak var coffeeImage: UIImageView!
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var blendNameLabel: UILabel!
  
+  @IBOutlet weak var originTitleLabel: UILabel!
   @IBOutlet weak var roastTitleLabel: UILabel!
   @IBOutlet weak var darkTitleLabel: UILabel!
   @IBOutlet weak var bodyTitleLabel: UILabel!
@@ -79,6 +81,7 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
     
     
     // set localized value
+    originTitleLabel.text = NSLocalizedString("origin", comment: "comment")
     roastTitleLabel.text = NSLocalizedString("roast", comment: "comment")
     darkTitleLabel.text = NSLocalizedString("dark", comment: "comment")
     bodyTitleLabel.text = NSLocalizedString("body", comment: "comment")

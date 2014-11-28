@@ -40,6 +40,10 @@
 "selectPhoto" = "Select Photo from Camera Roll";
 "cancel" = "Cancel";
 
+// new
+"alertTitleNewTexts" = "Some Information Missing";
+"alertNewTexts" = "Fill the information of Blend Name/Origin/Place";
+
 // delete
 "deleteTitle" = "Deleting This Note";
 

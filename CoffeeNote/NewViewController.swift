@@ -196,89 +196,115 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
   }
   
   
+  @IBAction func saveButtonPushed(sender: AnyObject) {
+    // NULL check
+    if (blendNameTextField.text == "" || placeTextField.text == "" || originTextField.text == "") {
+      var myAlertView = UIAlertView()
+      myAlertView.title = NSLocalizedString("alertTitleNewTexts", comment: "comment")
+      myAlertView.message = NSLocalizedString("alertNewTexts", comment: "comment")
+      myAlertView.addButtonWithTitle("Okay")
+      myAlertView.show()
+    }else {
+      performSegueWithIdentifier("unwindToAllBySave", sender: self)
+    }
+    
+  }
+  
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     println("prepareForSegue was called!")
     
     println(segue.identifier)
     
+    
     if (segue.identifier == "unwindToAllBySave") {
-    
-      // sqlite from here
-      let _dbfile:NSString = "sqlite.db"
-      let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
-        NSSearchPathDirectory.DocumentDirectory,
-        NSSearchPathDomainMask.UserDomainMask,
-        true)[0]
-      let fileManager:NSFileManager = NSFileManager.defaultManager()
-      let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
       
-      // println(_path)
-      
-      let _db = FMDatabase(path: _path)
-      
-      _db.open()
-      
-      // set data when to create this note
-      let now = NSDate()
-      let dateFormatter = NSDateFormatter()
-      // dateFormatter.dateFormat = "dd/MM"
-      dateFormatter.timeStyle = .ShortStyle
-      dateFormatter.dateStyle = .ShortStyle
-      println(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
-      
-      // To avoid error of single quotation
-      var blendNameTextFieldModified = blendNameTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
-      var originTextFieldModified = originTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
-      var placeTextFieldModified = placeTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
-      var commentTextFieldModified = commentTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
-      
-      let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('\(blendNameTextFieldModified)', '\(originTextFieldModified)', '\(placeTextFieldModified)', \(roastSegment.selectedSegmentIndex+1), \(darkSegment.selectedSegmentIndex+1), \(bodySegment.selectedSegmentIndex+1), \(aciditySegment.selectedSegmentIndex+1), \(flavorSegment.selectedSegmentIndex+1), \(sweetnessSegment.selectedSegmentIndex+1), \(cleanCupSegment.selectedSegmentIndex+1), \(aftertasteSegment.selectedSegmentIndex+1), \(overallSegment.selectedSegmentIndex+1), '\(commentTextFieldModified)', '\(dateFormatter.stringFromDate(now))');"
-      
-      var _result_insert = _db.executeUpdate(sql_insert, withArgumentsInArray:nil)
-      
-      
-      // Debug and save photo
-      
-      var lastInsertId: Int = Int(_db.lastInsertRowId())
-    
-      let sql_select = "SELECT * FROM notes WHERE nid=\(lastInsertId);"
-      var rows = _db.executeQuery(sql_select, withArgumentsInArray: nil)
-      
-      while rows.next() {
-        let nid = rows.intForColumn("nid")
-        let blendName = rows.stringForColumn("blendName")
-        let origin = rows.stringForColumn("origin")
-        let place = rows.stringForColumn("place")
-        let roast = rows.intForColumn("roast")
-        let dark = rows.intForColumn("dark")
-        let body = rows.intForColumn("body")
-        let acidity = rows.intForColumn("acidity")
-        let flavor = rows.intForColumn("flavor")
-        let sweetness = rows.intForColumn("sweetness")
-        let cleancup = rows.intForColumn("cleancup")
-        let aftertaste = rows.intForColumn("aftertaste")
-        let overall = rows.intForColumn("overall")
-        let comment = rows.stringForColumn("comment")
-        let date = rows.stringForColumn("date")
+      // NULL CHECK
+      if (blendNameTextField.text == "" || originTextField.text == "" || placeTextField.text == "") {
+        let alert = UIAlertView()
+        alert.title = "Title"
+        alert.message = "My message"
+        alert.addButtonWithTitle("Ok")
+        alert.show()
+      }else {
+        // sqlite from here
+        let _dbfile:NSString = "sqlite.db"
+        let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
+          NSSearchPathDirectory.DocumentDirectory,
+          NSSearchPathDomainMask.UserDomainMask,
+          true)[0]
+        let fileManager:NSFileManager = NSFileManager.defaultManager()
+        let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
         
-        println("nid: \(nid), blendName: \(blendName), origin: \(origin), place: \(place), roast: \(roast), dark: \(dark), body: \(body), acidity: \(acidity), flavor: \(flavor), sweetness: \(sweetness), cleancup: \(cleancup), aftertaste: \(aftertaste), overall: \(overall), comment: \(comment), date: \(date)")
+        // println(_path)
         
-        // save photo
-        if ((imageView.image) != nil) {
-          // save image in DocumentDirectory
-          var data: NSData = UIImageJPEGRepresentation(imageView.image, 0.5)
-          var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
-          let filePath = appDelegate.filePath!
-          if (data.writeToFile("\(filePath)/img\(nid).jpg", atomically: true)) {
-            println("Save Photo Suceeded(filePath: \(filePath)/img\(nid).png")
-          }else {
-            println("Failed to save photo")
+        let _db = FMDatabase(path: _path)
+        
+        _db.open()
+        
+        // set data when to create this note
+        let now = NSDate()
+        let dateFormatter = NSDateFormatter()
+        // dateFormatter.dateFormat = "dd/MM"
+        dateFormatter.timeStyle = .ShortStyle
+        dateFormatter.dateStyle = .ShortStyle
+        println(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
+        
+        // To avoid error of single quotation
+        var blendNameTextFieldModified = blendNameTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
+        var originTextFieldModified = originTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
+        var placeTextFieldModified = placeTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
+        var commentTextFieldModified = commentTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
+        
+        let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('\(blendNameTextFieldModified)', '\(originTextFieldModified)', '\(placeTextFieldModified)', \(roastSegment.selectedSegmentIndex+1), \(darkSegment.selectedSegmentIndex+1), \(bodySegment.selectedSegmentIndex+1), \(aciditySegment.selectedSegmentIndex+1), \(flavorSegment.selectedSegmentIndex+1), \(sweetnessSegment.selectedSegmentIndex+1), \(cleanCupSegment.selectedSegmentIndex+1), \(aftertasteSegment.selectedSegmentIndex+1), \(overallSegment.selectedSegmentIndex+1), '\(commentTextFieldModified)', '\(dateFormatter.stringFromDate(now))');"
+        
+        var _result_insert = _db.executeUpdate(sql_insert, withArgumentsInArray:nil)
+        
+        
+        // Debug and save photo
+        
+        var lastInsertId: Int = Int(_db.lastInsertRowId())
+      
+        let sql_select = "SELECT * FROM notes WHERE nid=\(lastInsertId);"
+        var rows = _db.executeQuery(sql_select, withArgumentsInArray: nil)
+        
+        while rows.next() {
+          let nid = rows.intForColumn("nid")
+          let blendName = rows.stringForColumn("blendName")
+          let origin = rows.stringForColumn("origin")
+          let place = rows.stringForColumn("place")
+          let roast = rows.intForColumn("roast")
+          let dark = rows.intForColumn("dark")
+          let body = rows.intForColumn("body")
+          let acidity = rows.intForColumn("acidity")
+          let flavor = rows.intForColumn("flavor")
+          let sweetness = rows.intForColumn("sweetness")
+          let cleancup = rows.intForColumn("cleancup")
+          let aftertaste = rows.intForColumn("aftertaste")
+          let overall = rows.intForColumn("overall")
+          let comment = rows.stringForColumn("comment")
+          let date = rows.stringForColumn("date")
+          
+          println("nid: \(nid), blendName: \(blendName), origin: \(origin), place: \(place), roast: \(roast), dark: \(dark), body: \(body), acidity: \(acidity), flavor: \(flavor), sweetness: \(sweetness), cleancup: \(cleancup), aftertaste: \(aftertaste), overall: \(overall), comment: \(comment), date: \(date)")
+          
+          // save photo
+          if ((imageView.image) != nil) {
+            // save image in DocumentDirectory
+            var data: NSData = UIImageJPEGRepresentation(imageView.image, 0.5)
+            var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+            let filePath = appDelegate.filePath!
+            if (data.writeToFile("\(filePath)/img\(nid).jpg", atomically: true)) {
+              println("Save Photo Suceeded(filePath: \(filePath)/img\(nid).png")
+            }else {
+              println("Failed to save photo")
+            }
           }
+          
         }
         
+        _db.close()
       }
       
-      _db.close()
+    
       
     }
     

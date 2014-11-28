@@ -39,6 +39,10 @@
 "selectPhoto" = "カメラロールから選ぶ";
 "cancel" = "キャンセル";
 
+// new
+"alertTitleNewTexts" = "アラート";
+"alertNewTexts" = "ブレンド名／産地／飲んだ場所の情報を入力してください";
+
 // Edit
 "deleteNote" = "ノートを削除";
 

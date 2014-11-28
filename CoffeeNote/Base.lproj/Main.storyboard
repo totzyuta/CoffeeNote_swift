@@ -412,7 +412,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="9Jm-CS-22r">
                             <connections>
-                                <segue destination="fMH-kp-Lbx" kind="unwind" identifier="unwindToAllBySave" unwindAction="unwindToAllBySave:" id="irg-fU-sHa"/>
+                                <action selector="saveButtonPushed:" destination="ZAN-w2-coa" id="kFQ-sQ-Asg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -446,6 +446,7 @@
                         <outlet property="scrollView" destination="YEG-I8-N9D" id="L9O-AU-RFq"/>
                         <outlet property="sweetnessLabel" destination="57x-Zv-nKH" id="6pu-SY-q1r"/>
                         <outlet property="sweetnessSegment" destination="JeS-2K-RxE" id="pTk-ey-lG7"/>
+                        <segue destination="fMH-kp-Lbx" kind="unwind" identifier="unwindToAllBySave" unwindAction="unwindToAllBySave:" id="9IB-Bu-ot5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5u6-G4-KcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1725,6 +1726,8 @@
                         <outlet property="flavorStar5" destination="PMA-QG-4ar" id="Vjh-19-o3b"/>
                         <outlet property="flavorTitleLabel" destination="ndl-zi-cKu" id="VUb-Q9-QBs"/>
                         <outlet property="mainView" destination="vDf-n2-VYd" id="eHW-97-cye"/>
+                        <outlet property="originLabel" destination="MKo-2I-pwI" id="2sT-dO-F7z"/>
+                        <outlet property="originTitleLabel" destination="qtq-Zt-T6Y" id="rln-p5-Hza"/>
                         <outlet property="placeLabel" destination="yn1-fE-M0v" id="8uW-Ln-3hw"/>
                         <outlet property="roastLabel" destination="2hr-mV-foI" id="95b-nL-eMX"/>
                         <outlet property="roastTitleLabel" destination="lqF-ha-svd" id="Wg0-Ie-OHK"/>
