@@ -52,13 +52,14 @@
 "deleteNote" = "Delete This Note";
 
 // SettingView
+"AppName" = "CoffeeNote";
 "titleSettingView" = "About";
 "Phrase" = "Log Your Favorite Coffee";
 "Information" = "Information";
-"AllNotes" = "AllNotes";
+"AllNotes" = "All Notes";
 "Support" = "Support";
 "TwitterSupport" = "Twitter Support";
-"SayHi" = "Say Hi to Developer";
+"SayHi" = "Contact";
 
 // Tweet
 "tweetText" = "[Note] A Cup of Coffee, %@ at %@ (%@) via #CoffeeNote @CoffeeNote_info";

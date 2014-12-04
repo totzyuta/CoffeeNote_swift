@@ -11,6 +11,7 @@ import UIKit
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet weak var settingTableview: UITableView!
+  @IBOutlet weak var appNameLabel: UILabel!
   @IBOutlet weak var phraseLabel: UILabel!
   @IBOutlet weak var informationLabel: UILabel!
   @IBOutlet weak var allNotesLabel: UILabel!
@@ -32,6 +33,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
       title.sizeToFit()
       self.navigationItem.titleView = title;
       
+      appNameLabel.text = NSLocalizedString("AppName", comment: "comment")
       phraseLabel.text = NSLocalizedString("Phrase",comment: "comment")
       informationLabel.text = NSLocalizedString("Information", comment: "comment")
       allNotesLabel.text = NSLocalizedString("AllNotes", comment: "comment")

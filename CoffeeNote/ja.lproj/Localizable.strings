@@ -47,16 +47,17 @@
 "deleteNote" = "ノートを削除";
 
 // SettingView
-"titleSettingView" = "このアプリについて";
+"AppName" = "コーヒーノート";
+"titleSettingView" = "インフォメーション";
 "Phrase" = "大好きな一杯を、書きとめる";
 "Information" = "インフォ";
 "AllNotes" = "ノートの数";
 "Support" = "サポート";
 "TwitterSupport" = "サポートアカウント";
-"SayHi" = "開発者にこんにちはを言う";
+"SayHi" = "コンタクト";
 
 // Tweet
-"tweetText" = "[コーヒーノート] %@ at %@ (%@) via #CoffeeNote @CoffeeNote_info";
+"tweetText" = "[コーヒーノート] %@を飲みました＠%@ (%@) via #CoffeeNote @CoffeeNote_info";
 "twitterURL" = "https://twitter.com/totu_iy/";
 
 // sample data
