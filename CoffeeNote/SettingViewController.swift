@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet weak var settingTableview: UITableView!
@@ -93,9 +94,12 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     switch(indexPath.row) {
     case 0:
-      cell.settingLabel.text = NSLocalizedString("TwitterSupport", comment: "comment")
+      cell.settingLabel.text = "Report a Bug"
       break
     case 1:
+      cell.settingLabel.text = NSLocalizedString("TwitterSupport", comment: "comment")
+      break
+    case 2:
       cell.settingLabel.text = NSLocalizedString("SayHi", comment: "comment")
       break
     default:
@@ -110,9 +114,12 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     switch(indexPath.row) {
     case 0:
-      UIApplication.sharedApplication().openURL(NSURL(string: "https://twitter.com/CoffeeNote_info/")!)
+      // TODO: Open a mailer for but reporting system
       break
     case 1:
+      UIApplication.sharedApplication().openURL(NSURL(string: "https://twitter.com/CoffeeNote_info/")!)
+      break
+    case 2:
       UIApplication.sharedApplication().openURL(NSURL(string: NSLocalizedString("twitterURL", comment: "comment"))!)
       break
     default:
@@ -124,7 +131,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
   
   // return number of cell
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 2
+    return 3
   }
 
 }
