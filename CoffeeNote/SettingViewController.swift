@@ -12,11 +12,15 @@ import UIKit
 class SettingViewController: UIViewController {
 
   @IBOutlet weak var appNameLabel: UILabel!
+  @IBOutlet weak var appNameTextView: UITextView!
   @IBOutlet weak var phraseLabel: UILabel!
+  @IBOutlet weak var phraseTextView: UITextView!
   @IBOutlet weak var informationLabel: UILabel!
   @IBOutlet weak var allNotesLabel: UILabel!
   @IBOutlet weak var aboutLabel: UILabel!
   @IBOutlet weak var supportLabel: UILabel!
+  @IBOutlet weak var reportLabel: UILabel!
+  @IBOutlet weak var supportAccountLabel: UILabel!
   @IBOutlet weak var contactLabel: UILabel!
   
   @IBOutlet weak var numberNotes: UILabel!
@@ -37,13 +41,20 @@ class SettingViewController: UIViewController {
       
       var lang: AnyObject = NSLocale.preferredLanguages()[0]
     
-      if (lang as NSString=="en") {
-        appNameLabel.text = NSLocalizedString("AppName", comment: "comment")
-        // phraseLabel.text = NSLocalizedString("Phrase",comment: "comment")
+      if (lang as NSString=="ja") {
+        appNameLabel.hidden = true
+        phraseLabel.hidden = true
+      }else {
+        appNameTextView.hidden = true
+        phraseTextView.hidden = true
       }
+      
+      
       informationLabel.text = NSLocalizedString("Information", comment: "comment")
       allNotesLabel.text = NSLocalizedString("AllNotes", comment: "comment")
-      supportLabel.text = NSLocalizedString("TwitterSupport", comment: "comment")
+      aboutLabel.text = NSLocalizedString("aboutThisAppLabel", comment: "comment")
+      supportAccountLabel.text = NSLocalizedString("TwitterSupport", comment: "comment")
+      reportLabel.text = NSLocalizedString("ReportBug", comment: "comment")
       contactLabel.text = NSLocalizedString("SayHi", comment: "comment")
       
     }

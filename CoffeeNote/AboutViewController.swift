@@ -26,11 +26,16 @@ class AboutViewController: UIViewController {
     if (lang as NSString=="en") {
       aboutThisAppLabel.text = NSLocalizedString("aboutThisAppLabel", comment: "comment")
       aboutThisAppTextView.text = NSLocalizedString("aboutThisAppTextView", comment: "comment")
+      aboutThisAppTextView.font = UIFont(name: "HelveticaNeue", size: 20)
+      aboutThisAppTextView.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.6)
       forUsersLabel.text = NSLocalizedString("forUsersLabel", comment: "comment")
       forUsersTextView.text = NSLocalizedString("forUsersTextView", comment: "comment")
+      forUsersTextView.font = UIFont(name: "HelveticaNeue", size: 20)
+      forUsersTextView.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.6)
       urlLabel.text = NSLocalizedString("urlLabel", comment: "comment")
       forUsersTextView2.text = NSLocalizedString("forUsersTextView2", comment: "comment")
-      aboutThisAppLabel.font = UIFont(name: "HiraKakuProN-W3", size: 32.0)
+      forUsersTextView2.font = UIFont(name: "HelveticaNeue", size: 20)
+      forUsersTextView2.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.6)
     }
 
   }
