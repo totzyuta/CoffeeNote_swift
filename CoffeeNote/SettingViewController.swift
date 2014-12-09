@@ -9,14 +9,15 @@
 import UIKit
 
 
-class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SettingViewController: UIViewController {
 
-  @IBOutlet weak var settingTableview: UITableView!
   @IBOutlet weak var appNameLabel: UILabel!
   @IBOutlet weak var phraseLabel: UILabel!
   @IBOutlet weak var informationLabel: UILabel!
   @IBOutlet weak var allNotesLabel: UILabel!
+  @IBOutlet weak var aboutLabel: UILabel!
   @IBOutlet weak var supportLabel: UILabel!
+  @IBOutlet weak var contactLabel: UILabel!
   
   @IBOutlet weak var numberNotes: UILabel!
   
@@ -38,6 +39,8 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
       phraseLabel.text = NSLocalizedString("Phrase",comment: "comment")
       informationLabel.text = NSLocalizedString("Information", comment: "comment")
       allNotesLabel.text = NSLocalizedString("AllNotes", comment: "comment")
+      supportLabel.text = NSLocalizedString("TwitterSupport", comment: "comment")
+      contactLabel.text = NSLocalizedString("SayHi", comment: "comment")
       
     }
   
@@ -87,51 +90,18 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     */
   
-  // Set the contents of cells
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
-    let cell: SettingCell = tableView.dequeueReusableCellWithIdentifier("SettingCell") as SettingCell
-    
-    switch(indexPath.row) {
-    case 0:
-      cell.settingLabel.text = "Report a Bug"
-      break
-    case 1:
-      cell.settingLabel.text = NSLocalizedString("TwitterSupport", comment: "comment")
-      break
-    case 2:
-      cell.settingLabel.text = NSLocalizedString("SayHi", comment: "comment")
-      break
-    default:
-      cell.settingLabel.text = "Hello"
-      break
-    }
-    
-    return cell
+  
+  @IBAction func reportButtonPushed(sender: AnyObject) {
+    // TODO: Open Mailer
   }
   
-  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    
-    switch(indexPath.row) {
-    case 0:
-      // TODO: Open a mailer for but reporting system
-      break
-    case 1:
-      UIApplication.sharedApplication().openURL(NSURL(string: "https://twitter.com/CoffeeNote_info/")!)
-      break
-    case 2:
-      UIApplication.sharedApplication().openURL(NSURL(string: NSLocalizedString("twitterURL", comment: "comment"))!)
-      break
-    default:
-      break
-    }
-    
+  @IBAction func supportAccountButtonPushed(sender: AnyObject) {
+    UIApplication.sharedApplication().openURL(NSURL(string: "https://twitter.com/CoffeeNote_info/")!)
   }
   
-  
-  // return number of cell
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 3
+  @IBAction func contactButtonPushed(sender: AnyObject) {
+    UIApplication.sharedApplication().openURL(NSURL(string: NSLocalizedString("twitterURL", comment: "comment"))!)
   }
+  
 
 }
