@@ -35,8 +35,12 @@ class SettingViewController: UIViewController {
       title.sizeToFit()
       self.navigationItem.titleView = title;
       
-      appNameLabel.text = NSLocalizedString("AppName", comment: "comment")
-      phraseLabel.text = NSLocalizedString("Phrase",comment: "comment")
+      var lang: AnyObject = NSLocale.preferredLanguages()[0]
+    
+      if (lang as NSString=="en") {
+        appNameLabel.text = NSLocalizedString("AppName", comment: "comment")
+        // phraseLabel.text = NSLocalizedString("Phrase",comment: "comment")
+      }
       informationLabel.text = NSLocalizedString("Information", comment: "comment")
       allNotesLabel.text = NSLocalizedString("AllNotes", comment: "comment")
       supportLabel.text = NSLocalizedString("TwitterSupport", comment: "comment")

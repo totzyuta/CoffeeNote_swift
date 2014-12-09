@@ -60,6 +60,13 @@
 "Support" = "Support";
 "TwitterSupport" = "Twitter Support";
 "SayHi" = "Contact";
+// AboutView in SettingView
+"aboutThisAppLabel" = "About This App";
+"aboutThisAppTextView" = "";
+"forUsersLabel" = "Wish List";
+"forUsersTextView" = "";
+"urlLabel" = "";
+"forUsersTextView2" = "";
 
 // Tweet
 "tweetText" = "[Note] A Cup of Coffee, %@ at %@ (%@) via #CoffeeNote @CoffeeNote_info";
