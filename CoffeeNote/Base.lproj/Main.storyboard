@@ -1770,10 +1770,10 @@
             </objects>
             <point key="canvasLocation" x="604" y="213"/>
         </scene>
-        <!--Settings-->
+        <!--Setting-->
         <scene sceneID="gfR-zt-cdz">
             <objects>
-                <viewController title="Settings" id="hFO-y1-cdB" customClass="SettingViewController" customModule="CoffeeNote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Setting" id="hFO-y1-cdB" customClass="SettingViewController" customModule="CoffeeNote" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gpY-c4-xMo"/>
                         <viewControllerLayoutGuide type="bottom" id="Ia3-BJ-Ti8"/>
@@ -1815,7 +1815,7 @@
                                                     <constraint firstAttribute="width" constant="154" id="wCf-Qw-dqR"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="0.89608065640000001" green="0.4774180207" blue="0.48178309060000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.89411764705882357" green="0.47450980392156861" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3W-fw-JaD" userLabel="AllNotesView">
@@ -2140,7 +2140,7 @@
                             <constraint firstItem="Ia3-BJ-Ti8" firstAttribute="top" secondItem="t53-4F-YH2" secondAttribute="bottom" id="fJo-Vy-7n3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="About" id="FRE-eI-dII">
+                    <navigationItem key="navigationItem" title="Info" id="FRE-eI-dII">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="1RX-aC-C83">
                             <connections>
                                 <segue destination="AdG-nD-eRZ" kind="unwind" unwindAction="unwindToAllFromSetting:" id="awk-KF-DBN"/>
@@ -2176,9 +2176,126 @@
                     <view key="view" contentMode="scaleToFill" id="idp-IO-8L0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I1x-3t-Viq">
+                                <rect key="frame" x="0.0" y="64" width="320" height="576"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wr7-9Q-677">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="540"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="このアプリについて" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EuK-jB-Wpr" userLabel="AboutThisApp">
+                                                <rect key="frame" x="20" y="-35" width="300" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="WQ0-8R-aG9"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.87450980392156863" green="0.46666666666666667" blue="0.47843137254901963" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="コーヒーノート for iOSは、ふと立ち寄った喫茶店や、豆にこだわり抜いたお気に入りのカフェで飲んだ、大好きな一杯のコーヒーを書きとめていくアプリです。" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bz-rE-IjP" userLabel="AboutThisApp">
+                                                <rect key="frame" x="25" y="-4" width="270" height="93"/>
+                                                <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="93" id="DH2-v4-ejP"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.58999999999999997" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="これから追加したい機能" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3b-QA-r5A" userLabel="ForUsers">
+                                                <rect key="frame" x="20" y="104" width="300" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="pXa-Fu-9bv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.87450980389999999" green="0.46666666670000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWi-i5-9UL" userLabel="ForUsers">
+                                                <rect key="frame" x="25" y="135" width="270" height="226"/>
+                                                <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="226" id="cnK-zE-qnV"/>
+                                                </constraints>
+                                                <string key="text">もっと使いやすくて楽しいアプリにしてくために、これから追加したい機能のリストを公開しています。
+
+よろしければ、以下のWebサイトから欲しい機能や使いにくい部分のリクエストを送ってやってください。開発者は、たとえ罵倒であっても使って頂いてる方からの声をいただけるのが生きがいです...！
+
+以下から、アクセスしていただけます。</string>
+                                                <color key="textColor" white="0.58999999999999997" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="これから追加したい機能リスト" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plg-yO-BYC" userLabel="URL">
+                                                <rect key="frame" x="25" y="371" width="238" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="Zg9-re-P2n"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" red="0.44959813076394128" green="0.57785773834150689" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTe-QZ-Vwl" userLabel="ForUsers">
+                                                <rect key="frame" x="25" y="407" width="270" height="117"/>
+                                                <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="117" id="zjB-hQ-Zpj"/>
+                                                </constraints>
+                                                <string key="text">これからも、コーヒーを愛してやまない方々に使っていただけるアプリにできるよう精進いたしますので、よろしくお願いいたします。
+
+とつ</string>
+                                                <color key="textColor" white="0.58999999999999997" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="EuK-jB-Wpr" firstAttribute="leading" secondItem="wr7-9Q-677" secondAttribute="leading" constant="20" id="23h-M6-wbw"/>
+                                            <constraint firstAttribute="centerX" secondItem="cWi-i5-9UL" secondAttribute="centerX" id="4df-Ot-NPe"/>
+                                            <constraint firstItem="xTe-QZ-Vwl" firstAttribute="top" secondItem="plg-yO-BYC" secondAttribute="bottom" constant="15" id="EU3-TO-sP4"/>
+                                            <constraint firstItem="EuK-jB-Wpr" firstAttribute="top" secondItem="wr7-9Q-677" secondAttribute="top" constant="-35" id="Fzl-d2-huR"/>
+                                            <constraint firstItem="4bz-rE-IjP" firstAttribute="top" secondItem="EuK-jB-Wpr" secondAttribute="bottom" constant="10" id="Gh8-gp-IHZ"/>
+                                            <constraint firstItem="j3b-QA-r5A" firstAttribute="top" secondItem="4bz-rE-IjP" secondAttribute="bottom" constant="15" id="H69-bs-Q8H"/>
+                                            <constraint firstItem="4bz-rE-IjP" firstAttribute="leading" secondItem="wr7-9Q-677" secondAttribute="leading" constant="25" id="MRD-GE-PA2"/>
+                                            <constraint firstAttribute="centerX" secondItem="4bz-rE-IjP" secondAttribute="centerX" id="ORD-Nf-7n8"/>
+                                            <constraint firstAttribute="height" constant="540" id="QxW-go-jev"/>
+                                            <constraint firstAttribute="trailing" secondItem="cWi-i5-9UL" secondAttribute="trailing" constant="25" id="V0E-mc-sf0"/>
+                                            <constraint firstItem="xTe-QZ-Vwl" firstAttribute="leading" secondItem="wr7-9Q-677" secondAttribute="leading" constant="25" id="W8h-ZQ-5sM"/>
+                                            <constraint firstItem="j3b-QA-r5A" firstAttribute="leading" secondItem="wr7-9Q-677" secondAttribute="leading" constant="20" id="b3g-R4-1D1"/>
+                                            <constraint firstAttribute="trailing" secondItem="EuK-jB-Wpr" secondAttribute="trailing" id="cMP-gP-Zb9"/>
+                                            <constraint firstItem="cWi-i5-9UL" firstAttribute="leading" secondItem="wr7-9Q-677" secondAttribute="leading" constant="25" id="deb-dB-O9x"/>
+                                            <constraint firstAttribute="trailing" secondItem="j3b-QA-r5A" secondAttribute="trailing" id="kQ6-n0-4Pm"/>
+                                            <constraint firstAttribute="trailing" secondItem="4bz-rE-IjP" secondAttribute="trailing" constant="25" id="kdF-wL-sSu"/>
+                                            <constraint firstAttribute="trailing" secondItem="xTe-QZ-Vwl" secondAttribute="trailing" constant="25" id="mZY-dI-AKw"/>
+                                            <constraint firstItem="plg-yO-BYC" firstAttribute="top" secondItem="cWi-i5-9UL" secondAttribute="bottom" constant="10" id="pXQ-Q1-QkE"/>
+                                            <constraint firstItem="cWi-i5-9UL" firstAttribute="top" secondItem="j3b-QA-r5A" secondAttribute="bottom" constant="10" id="tBg-uw-cxc"/>
+                                            <constraint firstAttribute="width" constant="320" id="vel-xf-OGi"/>
+                                            <constraint firstItem="plg-yO-BYC" firstAttribute="leading" secondItem="wr7-9Q-677" secondAttribute="leading" constant="25" id="xH1-LJ-PHM"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="wr7-9Q-677" secondAttribute="bottom" id="0DU-Dc-Poc"/>
+                                    <constraint firstItem="wr7-9Q-677" firstAttribute="top" secondItem="I1x-3t-Viq" secondAttribute="top" id="Cyh-dx-Crq"/>
+                                    <constraint firstAttribute="centerX" secondItem="wr7-9Q-677" secondAttribute="centerX" id="MRg-Wk-5AV"/>
+                                    <constraint firstItem="wr7-9Q-677" firstAttribute="leading" secondItem="I1x-3t-Viq" secondAttribute="leading" id="aJ2-Bk-LrC"/>
+                                    <constraint firstAttribute="trailing" secondItem="wr7-9Q-677" secondAttribute="trailing" id="ffg-DG-2aG"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I1x-3t-Viq" firstAttribute="leading" secondItem="idp-IO-8L0" secondAttribute="leadingMargin" constant="-16" id="Gs6-3K-WRe"/>
+                            <constraint firstItem="I1x-3t-Viq" firstAttribute="top" secondItem="Lzm-sp-3et" secondAttribute="bottom" id="Nwu-sr-QvG"/>
+                            <constraint firstItem="3Xk-RU-U7i" firstAttribute="top" secondItem="I1x-3t-Viq" secondAttribute="bottom" id="tyu-6b-eCm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I1x-3t-Viq" secondAttribute="trailing" constant="-16" id="xnN-Bu-vn2"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bUy-PC-P7J"/>
+                    <navigationItem key="navigationItem" title="About" id="bUy-PC-P7J"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="640"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlF-Dn-sIl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
