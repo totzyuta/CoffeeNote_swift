@@ -11,6 +11,7 @@ import UIKit
 
 class SettingViewController: UIViewController {
 
+  @IBOutlet weak var mainView: UIView!
   @IBOutlet weak var appNameLabel: UILabel!
   @IBOutlet weak var appNameTextView: UITextView!
   @IBOutlet weak var phraseLabel: UILabel!
