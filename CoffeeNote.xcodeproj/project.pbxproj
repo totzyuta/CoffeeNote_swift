@@ -187,6 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12D35D321A0CD51E00EE87D0 /* MessageUI.framework in Frameworks */,
 				1288716D1A0E1CFF007F3027 /* ImageIO.framework in Frameworks */,
 				12D35D3C1A0CD54C00EE87D0 /* Security.framework in Frameworks */,
 				12D35D3A1A0CD54400EE87D0 /* iAd.framework in Frameworks */,
@@ -194,7 +195,6 @@
 				12D35D381A0CD53900EE87D0 /* CoreTelephony.framework in Frameworks */,
 				12D35D361A0CD53000EE87D0 /* SystemConfiguration.framework in Frameworks */,
 				12D35D341A0CD52400EE87D0 /* StoreKit.framework in Frameworks */,
-				12D35D321A0CD51E00EE87D0 /* MessageUI.framework in Frameworks */,
 				12D35D301A0CD51400EE87D0 /* CoreGraphics.framework in Frameworks */,
 				12D35D2E1A0CD50A00EE87D0 /* AVFoundation.framework in Frameworks */,
 				12D35D2C1A0CD4F500EE87D0 /* AdSupport.framework in Frameworks */,

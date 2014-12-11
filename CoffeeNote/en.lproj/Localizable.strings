@@ -57,6 +57,7 @@
 "Phrase" = "Log Your Favorite Coffee";
 "Information" = "Information";
 "AllNotes" = "All Notes";
+"bugReportBody" = "There is a bug like that. Please fix it";
 "Support" = "Support";
 "ReportBug" = "Report a Bug";
 "TwitterSupport" = "Twitter Support";

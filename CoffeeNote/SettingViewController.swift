@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-
-class SettingViewController: UIViewController {
+class SettingViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
   @IBOutlet weak var mainView: UIView!
   @IBOutlet weak var appNameLabel: UILabel!
@@ -108,7 +108,40 @@ class SettingViewController: UIViewController {
   
   
   @IBAction func reportButtonPushed(sender: AnyObject) {
-    // TODO: Open Mailer
+    // check if can send an email
+    if MFMailComposeViewController.canSendMail()==false {
+      println("Email Send Failed")
+      return
+    }
+    var mailViewController = MFMailComposeViewController()
+    mailViewController.mailComposeDelegate = self
+    mailViewController.setSubject("Bug Report")
+    var toRecipients = ["yuta.totz@gmail.com"]
+    mailViewController.setToRecipients(toRecipients)
+    mailViewController.setMessageBody(NSLocalizedString("bugReportBody", comment: "comment"), isHTML: false)
+    self.presentViewController(mailViewController, animated: true, completion: nil)
+  }
+  
+  func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+    
+    switch result.value {
+    case MFMailComposeResultCancelled.value:
+      println("Email Send Cancelled")
+      break
+    case MFMailComposeResultSaved.value:
+      println("Email Saved as a Draft")
+      break
+    case MFMailComposeResultSent.value:
+      println("Email Sent Successfully")
+      break
+    case MFMailComposeResultFailed.value:
+      println("Email Send Failed")
+      break
+    default:
+      break
+    }
+    
+    self.dismissViewControllerAnimated(true, completion: nil)
   }
   
   @IBAction func supportAccountButtonPushed(sender: AnyObject) {

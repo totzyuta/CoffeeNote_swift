@@ -52,6 +52,7 @@
 "Phrase" = "大好きな一杯を、書きとめる";
 "Information" = "インフォ";
 "AllNotes" = "ノートの数";
+"bugReportBody" = "以下のような不具合がありました。はやく直してください。";
 "Support" = "サポート";
 "ReportBug" = "不具合を報告";
 "TwitterSupport" = "サポートアカウント";
