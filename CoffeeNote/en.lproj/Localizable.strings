@@ -62,6 +62,7 @@
 "TwitterSupport" = "Twitter Support";
 "SayHi" = "Contact (Twitter)";
 // AboutView in SettingView
+"titleAboutView" = "About";
 "aboutThisAppLabel" = "About This App";
 "aboutThisAppTextView" = "This is an app to log your favorite cup of coffee, you drink at the sweet cafe.";
 "forUsersLabel" = "Wish List";

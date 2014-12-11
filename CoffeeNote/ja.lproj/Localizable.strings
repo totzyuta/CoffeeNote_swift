@@ -57,6 +57,7 @@
 "TwitterSupport" = "サポートアカウント";
 "SayHi" = "コンタクト (Twitter)";
 // AboutView in SettingView
+"titleAboutView" = "このアプリについて";
 "aboutThisAppLabel" = "このアプリについて";
 "aboutThisAppTextView" = "コーヒーノート for iOSは、ふと立ち寄った喫茶店や、豆にこだわり抜いたお気に入りのカフェで飲んだ、大好きな一杯のコーヒーを書きとめていくアプリです。";
 "forUsersLabel" = "これから追加したい機能";

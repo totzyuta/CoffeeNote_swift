@@ -2145,19 +2145,12 @@
                                     <constraint firstItem="HoS-nQ-uel" firstAttribute="top" secondItem="21e-EP-kkz" secondAttribute="bottom" constant="-7" id="z40-YL-rr2"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t53-4F-YH2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="iJB-ps-xN7" secondAttribute="trailing" constant="-16" id="71V-Be-fFN"/>
-                            <constraint firstItem="t53-4F-YH2" firstAttribute="top" secondItem="wI0-QO-AR1" secondAttribute="topMargin" id="I8E-Lt-2Dc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="t53-4F-YH2" secondAttribute="trailing" constant="-16" id="S3L-Pt-Jl0"/>
                             <constraint firstItem="iJB-ps-xN7" firstAttribute="top" secondItem="gpY-c4-xMo" secondAttribute="bottom" id="ZHb-5R-bQL"/>
                             <constraint firstItem="iJB-ps-xN7" firstAttribute="leading" secondItem="wI0-QO-AR1" secondAttribute="leadingMargin" constant="-16" id="cdq-mx-fxp"/>
-                            <constraint firstItem="t53-4F-YH2" firstAttribute="leading" secondItem="wI0-QO-AR1" secondAttribute="leadingMargin" constant="-16" id="eYA-PM-ay5"/>
-                            <constraint firstItem="Ia3-BJ-Ti8" firstAttribute="top" secondItem="t53-4F-YH2" secondAttribute="bottom" id="fJo-Vy-7n3"/>
                             <constraint firstItem="Ia3-BJ-Ti8" firstAttribute="top" secondItem="iJB-ps-xN7" secondAttribute="bottom" id="jJz-8x-FDN"/>
                         </constraints>
                     </view>
