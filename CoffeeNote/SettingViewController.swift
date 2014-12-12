@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import MessageUI
 
+class SettingViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
-class SettingViewController: UIViewController {
-
+  @IBOutlet weak var mainView: UIView!
   @IBOutlet weak var appNameLabel: UILabel!
+  @IBOutlet weak var appNameTextView: UITextView!
   @IBOutlet weak var phraseLabel: UILabel!
+  @IBOutlet weak var phraseTextView: UITextView!
   @IBOutlet weak var informationLabel: UILabel!
   @IBOutlet weak var allNotesLabel: UILabel!
   @IBOutlet weak var aboutLabel: UILabel!
   @IBOutlet weak var supportLabel: UILabel!
+  @IBOutlet weak var reportLabel: UILabel!
+  @IBOutlet weak var supportAccountLabel: UILabel!
   @IBOutlet weak var contactLabel: UILabel!
   
   @IBOutlet weak var numberNotes: UILabel!
@@ -35,11 +40,22 @@ class SettingViewController: UIViewController {
       title.sizeToFit()
       self.navigationItem.titleView = title;
       
-      appNameLabel.text = NSLocalizedString("AppName", comment: "comment")
-      phraseLabel.text = NSLocalizedString("Phrase",comment: "comment")
+      var lang: AnyObject = NSLocale.preferredLanguages()[0]
+    
+      if (lang as NSString=="ja") {
+        appNameLabel.hidden = true
+        phraseLabel.hidden = true
+      }else {
+        appNameTextView.hidden = true
+        phraseTextView.hidden = true
+      }
+      
+      
       informationLabel.text = NSLocalizedString("Information", comment: "comment")
       allNotesLabel.text = NSLocalizedString("AllNotes", comment: "comment")
-      supportLabel.text = NSLocalizedString("TwitterSupport", comment: "comment")
+      aboutLabel.text = NSLocalizedString("aboutThisAppLabel", comment: "comment")
+      supportAccountLabel.text = NSLocalizedString("TwitterSupport", comment: "comment")
+      reportLabel.text = NSLocalizedString("ReportBug", comment: "comment")
       contactLabel.text = NSLocalizedString("SayHi", comment: "comment")
       
     }
@@ -92,7 +108,40 @@ class SettingViewController: UIViewController {
   
   
   @IBAction func reportButtonPushed(sender: AnyObject) {
-    // TODO: Open Mailer
+    // check if can send an email
+    if MFMailComposeViewController.canSendMail()==false {
+      println("Email Send Failed")
+      return
+    }
+    var mailViewController = MFMailComposeViewController()
+    mailViewController.mailComposeDelegate = self
+    mailViewController.setSubject("Bug Report")
+    var toRecipients = ["yuta.totz@gmail.com"]
+    mailViewController.setToRecipients(toRecipients)
+    mailViewController.setMessageBody(NSLocalizedString("bugReportBody", comment: "comment"), isHTML: false)
+    self.presentViewController(mailViewController, animated: true, completion: nil)
+  }
+  
+  func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+    
+    switch result.value {
+    case MFMailComposeResultCancelled.value:
+      println("Email Send Cancelled")
+      break
+    case MFMailComposeResultSaved.value:
+      println("Email Saved as a Draft")
+      break
+    case MFMailComposeResultSent.value:
+      println("Email Sent Successfully")
+      break
+    case MFMailComposeResultFailed.value:
+      println("Email Send Failed")
+      break
+    default:
+      break
+    }
+    
+    self.dismissViewControllerAnimated(true, completion: nil)
   }
   
   @IBAction func supportAccountButtonPushed(sender: AnyObject) {

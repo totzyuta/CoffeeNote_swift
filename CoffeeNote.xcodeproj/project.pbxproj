@@ -17,6 +17,7 @@
 		1224CAC01A1CD00200750AD6 /* info-icon2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1224CABF1A1CD00200750AD6 /* info-icon2@2x.png */; };
 		123D904119EE7AE300BDC598 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 123D904019EE7AE300BDC598 /* star.png */; };
 		123D904319EE7C2B00BDC598 /* gray-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 123D904219EE7C2B00BDC598 /* gray-circle.png */; };
+		123EA4E01A37264400E539A9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123EA4DF1A37264400E539A9 /* AboutViewController.swift */; };
 		127ACEDF19DBF1BF00B39373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACEDE19DBF1BF00B39373 /* AppDelegate.swift */; };
 		127ACEE119DBF1BF00B39373 /* AllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACEE019DBF1BF00B39373 /* AllViewController.swift */; };
 		127ACEE419DBF1BF00B39373 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 127ACEE219DBF1BF00B39373 /* Main.storyboard */; };
@@ -85,6 +86,7 @@
 		1224CABF1A1CD00200750AD6 /* info-icon2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "info-icon2@2x.png"; path = "Images.xcassets/info-icon2@2x.png"; sourceTree = "<group>"; };
 		123D904019EE7AE300BDC598 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = Images.xcassets/star.png; sourceTree = "<group>"; };
 		123D904219EE7C2B00BDC598 /* gray-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gray-circle.png"; path = "Images.xcassets/gray-circle.png"; sourceTree = "<group>"; };
+		123EA4DF1A37264400E539A9 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		127ACED919DBF1BE00B39373 /* CoffeeNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		127ACEDD19DBF1BF00B39373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		127ACEDE19DBF1BF00B39373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12D35D321A0CD51E00EE87D0 /* MessageUI.framework in Frameworks */,
 				1288716D1A0E1CFF007F3027 /* ImageIO.framework in Frameworks */,
 				12D35D3C1A0CD54C00EE87D0 /* Security.framework in Frameworks */,
 				12D35D3A1A0CD54400EE87D0 /* iAd.framework in Frameworks */,
@@ -192,7 +195,6 @@
 				12D35D381A0CD53900EE87D0 /* CoreTelephony.framework in Frameworks */,
 				12D35D361A0CD53000EE87D0 /* SystemConfiguration.framework in Frameworks */,
 				12D35D341A0CD52400EE87D0 /* StoreKit.framework in Frameworks */,
-				12D35D321A0CD51E00EE87D0 /* MessageUI.framework in Frameworks */,
 				12D35D301A0CD51400EE87D0 /* CoreGraphics.framework in Frameworks */,
 				12D35D2E1A0CD50A00EE87D0 /* AVFoundation.framework in Frameworks */,
 				12D35D2C1A0CD4F500EE87D0 /* AdSupport.framework in Frameworks */,
@@ -243,6 +245,7 @@
 				127ACEE019DBF1BF00B39373 /* AllViewController.swift */,
 				12CD442619EBE24A00FE07AE /* CustomCell.swift */,
 				12F7187D1A1B826C003E6FF8 /* SettingViewController.swift */,
+				123EA4DF1A37264400E539A9 /* AboutViewController.swift */,
 				1224CABB1A1CB88500750AD6 /* SettingCell.swift */,
 				1285316819DC452300CCDB50 /* NewViewController.swift */,
 				1285316619DC44F000CCDB50 /* DetailViewController.swift */,
@@ -610,6 +613,7 @@
 				1212F69A19E570B300F14F7C /* EditViewController.swift in Sources */,
 				D6C92B331A2F4BF40073F383 /* FMDatabasePool.m in Sources */,
 				D6C92B351A2F4BF40073F383 /* FMResultSet.m in Sources */,
+				123EA4E01A37264400E539A9 /* AboutViewController.swift in Sources */,
 				128871711A0E295D007F3027 /* Config.swift in Sources */,
 				1285316719DC44F000CCDB50 /* DetailViewController.swift in Sources */,
 				D6C92B341A2F4BF40073F383 /* FMDatabaseQueue.m in Sources */,

@@ -52,9 +52,19 @@
 "Phrase" = "大好きな一杯を、書きとめる";
 "Information" = "インフォ";
 "AllNotes" = "ノートの数";
+"bugReportBody" = "以下のような不具合がありました。はやく直してください。";
 "Support" = "サポート";
+"ReportBug" = "不具合を報告";
 "TwitterSupport" = "サポートアカウント";
-"SayHi" = "コンタクト";
+"SayHi" = "コンタクト (Twitter)";
+// AboutView in SettingView
+"titleAboutView" = "このアプリについて";
+"aboutThisAppLabel" = "このアプリについて";
+"aboutThisAppTextView" = "コーヒーノート for iOSは、ふと立ち寄った喫茶店や、豆にこだわり抜いたお気に入りのカフェで飲んだ、大好きな一杯のコーヒーを書きとめていくアプリです。";
+"forUsersLabel" = "これから追加したい機能";
+"forUsersTextView" = "もっと使いやすくて楽しいアプリにしてくために、これから追加したい機能のリストを公開しています。\n\nよろしければ、以下のWebサイトから欲しい機能や使いにくい部分のリクエストを送ってやってください。開発者は、たとえ罵倒であっても使って頂いてる方からの声をいただけるのが生きがいです...！\n\n以下から、アクセスしていただけます。";
+"urlLabel" = "これから追加したい機能リスト";
+"forUsersTextView2" = "これからも、コーヒーを愛してやまない方々に使っていただけるアプリにできるよう精進いたしますので、よろしくお願いいたします。\n\nとつ";
 
 // Tweet
 "tweetText" = "[コーヒーノート] %@を飲みました＠%@ (%@) via #CoffeeNote @CoffeeNote_info";

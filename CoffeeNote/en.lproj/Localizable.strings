@@ -57,9 +57,19 @@
 "Phrase" = "Log Your Favorite Coffee";
 "Information" = "Information";
 "AllNotes" = "All Notes";
+"bugReportBody" = "There is a bug like that. Please fix it";
 "Support" = "Support";
+"ReportBug" = "Report a Bug";
 "TwitterSupport" = "Twitter Support";
-"SayHi" = "Contact";
+"SayHi" = "Contact (Twitter)";
+// AboutView in SettingView
+"titleAboutView" = "About";
+"aboutThisAppLabel" = "About This App";
+"aboutThisAppTextView" = "This is an app to log your favorite cup of coffee, you drink at the sweet cafe.";
+"forUsersLabel" = "Wish List";
+"forUsersTextView" = "To make this app more fun and interesting, please request your idea or anything you want.\n\n Wish list is opened to share what will be implemented next. It is on this site.";
+"urlLabel" = "Wish List of CoffeeNote for iOS";
+"forUsersTextView2" = "I will try to make it better for people who really love coffee.\n\ntotz";
 
 // Tweet
 "tweetText" = "[Note] A Cup of Coffee, %@ at %@ (%@) via #CoffeeNote @CoffeeNote_info";
