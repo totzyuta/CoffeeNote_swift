@@ -34,6 +34,7 @@
 "medium" = "Medium";
 "full" = "Full";
 "dark" = "Dark";
+"heavy" = "Heavy";
 
 // Camera
 "setPhoto" = "Set Photo of Coffee";

@@ -81,7 +81,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     darkSegmentedControl.setTitle(NSLocalizedString("full", comment: "comment"), forSegmentAtIndex: 2)
     bodySegmentedControl.setTitle(NSLocalizedString("light", comment: "comment"), forSegmentAtIndex: 0)
     bodySegmentedControl.setTitle(NSLocalizedString("medium", comment: "comment"), forSegmentAtIndex: 1)
-    bodySegmentedControl.setTitle(NSLocalizedString("dark", comment: "comment"), forSegmentAtIndex: 2)
+    bodySegmentedControl.setTitle(NSLocalizedString("heavy", comment: "comment"), forSegmentAtIndex: 2)
     
     // textField from Capital letter
     blendNameTextField.autocapitalizationType = UITextAutocapitalizationType.Sentences

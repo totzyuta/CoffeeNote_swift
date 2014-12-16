@@ -81,7 +81,7 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     darkSegment.setTitle(NSLocalizedString("full", comment: "comment"), forSegmentAtIndex: 2)
     bodySegment.setTitle(NSLocalizedString("light", comment: "comment"), forSegmentAtIndex: 0)
     bodySegment.setTitle(NSLocalizedString("medium", comment: "comment"), forSegmentAtIndex: 1)
-    bodySegment.setTitle(NSLocalizedString("dark", comment: "comment"), forSegmentAtIndex: 2)
+    bodySegment.setTitle(NSLocalizedString("heavy", comment: "comment"), forSegmentAtIndex: 2)
     
     // textField from Capital letter
     blendNameTextField.autocapitalizationType = UITextAutocapitalizationType.Sentences

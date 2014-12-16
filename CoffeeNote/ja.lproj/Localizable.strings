@@ -32,6 +32,7 @@
 "medium" = "ミディアム";
 "full" = "フル";
 "dark" = "ダーク";
+"heavy" = "ヘビー";
 
 // Camera
 "setPhoto" = "写真を設定してください";
