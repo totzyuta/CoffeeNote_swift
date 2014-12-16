@@ -68,9 +68,9 @@
 "aboutThisAppLabel" = "About This App";
 "aboutThisAppTextView" = "This is an app to log your favorite cup of coffee, you drink at the sweet cafe.";
 "forUsersLabel" = "Wish List";
-"forUsersTextView" = "To make this app more fun and interesting, please request your idea or anything you want.\n\n Wish list is opened to share what will be implemented next. It is on this site.";
+"forUsersTextView" = "To make this app more fun and interesting, please request your idea or anything you want.\n\nWish list is opened to share what will be implemented next. It is on this site.";
 "urlLabel" = "Wish List of CoffeeNote for iOS";
-"forUsersTextView2" = "I will try to make it better for people who really love coffee.\n\ntotz";
+"forUsersTextView2" = "I will try to make it better for people who really love coffee.\ntotz";
 
 // Tweet
 "tweetText" = "[Note] A Cup of Coffee, %@ at %@ (%@) via #CoffeeNote @CoffeeNote_info";
