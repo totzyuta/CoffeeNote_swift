@@ -14,7 +14,7 @@
 
 "blendName" = "ブレンド名";
 "origin" = "産地";
-"place" = "場所";
+"place" = "飲んだ場所";
 
 // parametors of coffee note
 "roast" = "ロースト";
@@ -33,6 +33,11 @@
 "full" = "フル";
 "dark" = "ダーク";
 "heavy" = "ヘビー";
+
+// ActionSheet of DetailView
+"action" = "アクション";
+"editThisNote" = "ノートを編集する";
+"shareOnTwitter" = "Twitterでシェア";
 
 // Camera
 "setPhoto" = "写真を設定してください";
@@ -58,6 +63,8 @@
 "ReportBug" = "不具合を報告";
 "TwitterSupport" = "サポートアカウント";
 "SayHi" = "コンタクト (Twitter)";
+"back" = "戻る";
+
 // AboutView in SettingView
 "titleAboutView" = "このアプリについて";
 "aboutThisAppLabel" = "このアプリについて";

@@ -36,6 +36,11 @@
 "dark" = "Dark";
 "heavy" = "Heavy";
 
+// ActionSheet of DetailView
+"action" = "Action";
+"editThisNote" = "Edit This Note";
+"shareOnTwitter" = "Share on Twitter";
+
 // Camera
 "setPhoto" = "Set Photo of Coffee";
 "takePhoto" = "Take Photo by Camera";
@@ -63,6 +68,8 @@
 "ReportBug" = "Report a Bug";
 "TwitterSupport" = "Twitter Support";
 "SayHi" = "Contact (Twitter)";
+"back" = "Back";
+
 // AboutView in SettingView
 "titleAboutView" = "About";
 "aboutThisAppLabel" = "About This App";

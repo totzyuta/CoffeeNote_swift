@@ -401,10 +401,10 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
   
   @IBAction func pushedEditButton(sender: AnyObject) {
     var sheet = UIActionSheet()
-    sheet.title = NSLocalizedString("Action", comment: "comment")
+    sheet.title = NSLocalizedString("action", comment: "comment")
     sheet.delegate = self
-    sheet.addButtonWithTitle("Edit This Note")
-    sheet.addButtonWithTitle("Share on Twitter")
+    sheet.addButtonWithTitle(NSLocalizedString("editThisNote", comment: "comment"))
+    sheet.addButtonWithTitle(NSLocalizedString("shareOnTwitter", comment: "comment"))
     sheet.addButtonWithTitle(NSLocalizedString("cancel", comment: "comment"))
     sheet.cancelButtonIndex = 2
     
