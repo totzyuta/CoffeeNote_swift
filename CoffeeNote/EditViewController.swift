@@ -8,10 +8,21 @@
 
 import UIKit
 
-class EditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate {
+class EditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate, GADBannerViewDelegate {
 
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var mainView: UIView!
+  @IBOutlet weak var roastLabel: UILabel!
+  @IBOutlet weak var darkLabel: UILabel!
+  @IBOutlet weak var bodyLabel: UILabel!
+  @IBOutlet weak var flavorLabel: UILabel!
+  @IBOutlet weak var acidityLabel: UILabel!
+  @IBOutlet weak var sweetnessLabel: UILabel!
+  @IBOutlet weak var cleancupLabel: UILabel!
+  @IBOutlet weak var aftertasteLabel: UILabel!
+  @IBOutlet weak var overallLabel: UILabel!
+  @IBOutlet weak var commentLabel: UILabel!
+  @IBOutlet weak var deleteButton: UIButton!
   
   @IBOutlet weak var coffeeImageView: UIImageView!
   @IBOutlet weak var cameraButtonImageView: UIButton!
@@ -43,10 +54,39 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     title.font = UIFont.boldSystemFontOfSize(16)
     // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
     title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
-    title.text = "Edit Coffee Note"
+    title.text = NSLocalizedString("titleEditView", comment: "comment")
     title.sizeToFit()
     self.navigationItem.titleView = title;
+   
+    // set localized value
+    blendNameTextField.placeholder = NSLocalizedString("blendName", comment: "comment")
+    originTextField.placeholder = NSLocalizedString("origin", comment: "comment")
+    placeTextField.placeholder = NSLocalizedString("place", comment: "comment")
+    roastLabel.text = NSLocalizedString("roast", comment: "comment")
+    darkLabel.text = NSLocalizedString("dark", comment: "comment")
+    bodyLabel.text = NSLocalizedString("body", comment: "comment")
+    flavorLabel.text = NSLocalizedString("flavor", comment: "comment")
+    acidityLabel.text = NSLocalizedString("acidity", comment: "comment")
+    sweetnessLabel.text = NSLocalizedString("sweetness", comment: "comment")
+    cleancupLabel.text = NSLocalizedString("cleancup", comment: "comment")
+    aftertasteLabel.text = NSLocalizedString("aftertaste", comment: "comment")
+    overallLabel.text = NSLocalizedString("overall", comment: "comment")
+    commentLabel.text = NSLocalizedString("comment", comment: "comment")
+    deleteButton.titleLabel?.text = NSLocalizedString("deleteNote", comment: "comment")
+    roastSegmentedControl.setTitle(NSLocalizedString("light", comment: "comment"), forSegmentAtIndex: 0)
+    roastSegmentedControl.setTitle(NSLocalizedString("medium", comment: "comment"), forSegmentAtIndex: 1)
+    roastSegmentedControl.setTitle(NSLocalizedString("dark", comment: "comment"), forSegmentAtIndex: 2)
+    darkSegmentedControl.setTitle(NSLocalizedString("light", comment: "comment"), forSegmentAtIndex: 0)
+    darkSegmentedControl.setTitle(NSLocalizedString("medium", comment: "comment"), forSegmentAtIndex: 1)
+    darkSegmentedControl.setTitle(NSLocalizedString("full", comment: "comment"), forSegmentAtIndex: 2)
+    bodySegmentedControl.setTitle(NSLocalizedString("light", comment: "comment"), forSegmentAtIndex: 0)
+    bodySegmentedControl.setTitle(NSLocalizedString("medium", comment: "comment"), forSegmentAtIndex: 1)
+    bodySegmentedControl.setTitle(NSLocalizedString("heavy", comment: "comment"), forSegmentAtIndex: 2)
     
+    // textField from Capital letter
+    blendNameTextField.autocapitalizationType = UITextAutocapitalizationType.Sentences
+    originTextField.autocapitalizationType = UITextAutocapitalizationType.Sentences
+    placeTextField.autocapitalizationType = UITextAutocapitalizationType.Sentences
     
     // to show aleart when not to have camera in device
     if (!UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
@@ -56,6 +96,22 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
       myAlertView.addButtonWithTitle("Okay")
       myAlertView.show()
     }
+    
+    /* Ad Setting */
+    var origin = CGPointMake(0.0,
+        self.view.frame.size.height -
+            CGSizeFromGADAdSize(kGADAdSizeBanner).height); // place at bottom of view
+
+    var size = GADAdSizeFullWidthPortraitWithHeight(50) // set size to 50
+    var adB = GADBannerView(adSize: size, origin: origin) // create the banner
+    var config = Config()
+    adB.adUnitID = config.setAdUnitId()
+    adB.delegate = self // ??
+    adB.rootViewController = self // ??
+    self.view.addSubview(adB) // ??
+    var request = GADRequest() // create request
+    request.testDevices = [ GAD_SIMULATOR_ID ]; // set it to "test" request
+    adB.loadRequest(request) // actually load it (?
   }
   
   override func didReceiveMemoryWarning() {
@@ -115,13 +171,10 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
       // set old image
       println("appDelegate.editImage NOT exists")
       let filePath = appDelegate.filePath
-      // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
       let imageFilePath = filePath!+"/img\(nid).jpg"
       var imgfileManager = NSFileManager()
-      var obj = for_image_files()
       if (imgfileManager.fileExistsAtPath(imageFilePath)) {
-        // coffeeImageView.image = UIImage(named: imageFilePath)
-        coffeeImageView.image = obj.loadImage(imageFilePath)
+        coffeeImageView.image = UIImage(contentsOfFile: imageFilePath)
         println(imageFilePath)
       }else{
         coffeeImageView.image = UIImage(named: "img1.jpg")
@@ -188,11 +241,11 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   
   @IBAction func pushCameraButton(sender: AnyObject) {
     var sheetCamera = UIActionSheet()
-    sheetCamera.title = "Set Photo of Coffee"
+    sheetCamera.title = NSLocalizedString("setPhoto", comment: "comment")
     sheetCamera.delegate = self
-    sheetCamera.addButtonWithTitle("Take Photo by Camera")
-    sheetCamera.addButtonWithTitle("Select Photo from Cameraroll")
-    sheetCamera.addButtonWithTitle("Cancel")
+    sheetCamera.addButtonWithTitle(NSLocalizedString("takePhoto", comment: "comment"))
+    sheetCamera.addButtonWithTitle(NSLocalizedString("selectPhoto", comment: "comment"))
+    sheetCamera.addButtonWithTitle(NSLocalizedString("cancel", comment: "comment"))
     sheetCamera.cancelButtonIndex = 2
     
     sheetCamera.tag = 0
@@ -206,10 +259,10 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   
   @IBAction func pushedDeleteButton(sender: AnyObject) {
     var sheet = UIActionSheet()
-    sheet.title = "Deleting This Note"
+    sheet.title = NSLocalizedString("deleteNote", comment: "comment")
     sheet.delegate = self
     sheet.addButtonWithTitle("OK")
-    sheet.addButtonWithTitle("Cancel")
+    sheet.addButtonWithTitle(NSLocalizedString("cancel", comment: "comment"))
     sheet.cancelButtonIndex = 1
     
     sheet.tag = 1

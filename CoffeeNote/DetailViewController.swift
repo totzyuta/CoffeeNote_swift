@@ -7,15 +7,28 @@
 //
 
 import UIKit
+import Social
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIActionSheetDelegate {
 
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var mainView: UIView!
   
+  @IBOutlet weak var originLabel: UILabel!
   @IBOutlet weak var coffeeImage: UIImageView!
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var blendNameLabel: UILabel!
+ 
+  @IBOutlet weak var originTitleLabel: UILabel!
+  @IBOutlet weak var roastTitleLabel: UILabel!
+  @IBOutlet weak var darkTitleLabel: UILabel!
+  @IBOutlet weak var bodyTitleLabel: UILabel!
+  @IBOutlet weak var flavorTitleLabel: UILabel!
+  @IBOutlet weak var acidityTitleLabel: UILabel!
+  @IBOutlet weak var sweetnessTitleLabel: UILabel!
+  @IBOutlet weak var cleancupTitleLabel: UILabel!
+  @IBOutlet weak var aftertasteTitleLabel: UILabel!
+  @IBOutlet weak var commentTitleLabel: UILabel!
   
   @IBOutlet weak var star1Image: UIImageView!
   @IBOutlet weak var star2Image: UIImageView!
@@ -66,14 +79,19 @@ class DetailViewController: UIViewController {
     // scrollView.pagingEnabled = true
     
     
-    // change title of navigation bar
-    var title = UILabel()
-    title.font = UIFont.boldSystemFontOfSize(16)
-    // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
-    title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
-    title.text = "Detail"
-    title.sizeToFit()
-    self.navigationItem.titleView = title;
+    
+    // set localized value
+    originTitleLabel.text = NSLocalizedString("origin", comment: "comment")
+    roastTitleLabel.text = NSLocalizedString("roast", comment: "comment")
+    darkTitleLabel.text = NSLocalizedString("dark", comment: "comment")
+    bodyTitleLabel.text = NSLocalizedString("body", comment: "comment")
+    flavorTitleLabel.text = NSLocalizedString("flavor", comment: "comment")
+    acidityTitleLabel.text = NSLocalizedString("acidity", comment: "comment")
+    sweetnessTitleLabel.text = NSLocalizedString("sweetness", comment: "comment")
+    cleancupTitleLabel.text = NSLocalizedString("cleancup", comment: "comment")
+    aftertasteTitleLabel.text = NSLocalizedString("aftertaste", comment: "comment")
+    commentTitleLabel.text = NSLocalizedString("comment", comment: "comment")
+    
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -85,17 +103,10 @@ class DetailViewController: UIViewController {
     
     // set image
     let filePath = appDelegate.filePath!
-    // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
     var imageFilePath = filePath+"/img\(nid).jpg"
     var imgfileManager = NSFileManager()
     if (imgfileManager.fileExistsAtPath(imageFilePath)) {
-      // var tmp_img = UIImage(named: imageFilePath)
-      // var test_path = NSBundle.mainBundle()
-      // var path = test_path.pathForResource("img\(nid)", ofType: "png")
-      // coffeeImage.image = UIImage(named: "\(filePath)/img\(nid).jpg")
-      // use class and method of Obejctive-C
-      var obj = for_image_files()
-      coffeeImage.image = obj.loadImage(imageFilePath)
+      coffeeImage.image = UIImage(contentsOfFile: imageFilePath)
       println("imagefile exists(imageFilePath: \(imageFilePath))")
     }else{
       println("imagefile NOT exists(imagefilePath: \(imageFilePath)")
@@ -119,9 +130,10 @@ class DetailViewController: UIViewController {
     db.open()
     
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
-    
+    var blendName: String
     // fetch data and put data into label
     while rows.next() {
+      blendName = rows.stringForColumn("blendName")
       self.blendNameLabel.text = rows.stringForColumn("blendName")
       self.dateLabel.text = rows.stringForColumn("date")
       
@@ -161,34 +173,45 @@ class DetailViewController: UIViewController {
         println("Error of overall parametor")
       }
       
+      // change title of navigation bar
+      var title = UILabel()
+      title.font = UIFont.boldSystemFontOfSize(16)
+      // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
+      title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
+      title.text = blendName
+      title.sizeToFit()
+      // title.text = NSLocalizedString("titleDetailView", comment: "comment")
+      self.navigationItem.titleView = title;
+      
+      self.originLabel.text = rows.stringForColumn("origin")
       self.placeLabel.text = rows.stringForColumn("place")
       switch rows.intForColumn("roast") {
       case 1:
-        self.roastLabel.text = "Light"
+        self.roastLabel.text = NSLocalizedString("light", comment: "comment")
       case 2:
-        self.roastLabel.text = "Medium"
+        self.roastLabel.text = NSLocalizedString("medium", comment: "comment")
       case 3:
-        self.roastLabel.text = "Dark"
+        self.roastLabel.text = NSLocalizedString("dark", comment: "comment")
       default:
         self.roastLabel.text = "Unknown"
       }
       switch rows.intForColumn("dark") {
       case 1:
-        self.darkLabel.text = "Light"
+        self.darkLabel.text = NSLocalizedString("light", comment: "comment")
       case 2:
-        self.darkLabel.text = "Medium"
+        self.darkLabel.text = NSLocalizedString("medium", comment: "comment")
       case 3:
-        self.darkLabel.text = "Full"
+        self.darkLabel.text = NSLocalizedString("full", comment: "comment")
       default:
         self.darkLabel.text = "Unknown"
       }
       switch rows.intForColumn("body") {
       case 1:
-        self.bodyLabel.text = "Light"
+        self.bodyLabel.text = NSLocalizedString("light", comment: "comment")
       case 2:
-        self.bodyLabel.text = "Medium"
+        self.bodyLabel.text = NSLocalizedString("medium", comment: "comment")
       case 3:
-        self.bodyLabel.text = "Dark"
+        self.bodyLabel.text = NSLocalizedString("dark", comment: "comment")
       default:
         self.bodyLabel.text = "Unknown"
       }
@@ -377,8 +400,104 @@ class DetailViewController: UIViewController {
   
   
   @IBAction func pushedEditButton(sender: AnyObject) {
+    var sheet = UIActionSheet()
+    sheet.title = NSLocalizedString("action", comment: "comment")
+    sheet.delegate = self
+    sheet.addButtonWithTitle(NSLocalizedString("editThisNote", comment: "comment"))
+    sheet.addButtonWithTitle(NSLocalizedString("shareOnTwitter", comment: "comment"))
+    sheet.addButtonWithTitle(NSLocalizedString("cancel", comment: "comment"))
+    sheet.cancelButtonIndex = 2
+    
+    sheet.tag = 0
+    
+    
+    sheet.showInView(self.view)
+  }
+  
+  // Tweet
+  func postToTwitter() {
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegatのインスタンスを取得
+    var nid = Int(appDelegate.nid!)
+    // sql from here
+    let _dbfile:NSString = "sqlite.db"
+    let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
+      NSSearchPathDirectory.DocumentDirectory,
+      NSSearchPathDomainMask.UserDomainMask,
+      true)[0]
+    let fileManager:NSFileManager = NSFileManager.defaultManager()
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    
+    let db = FMDatabase(path: _path)
+    
+    let sql_select = "SELECT * FROM notes WHERE nid=\(nid)"
+    
+    db.open()
+    
+    var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
+    var blendName: String = ""
+    var place: String = ""
+    var overall: String = ""
+    // fetch data and put data into label
+    while rows.next() {
+      blendName = rows.stringForColumn("blendName")
+      place = rows.stringForColumn("place")
+      overall = rows.stringForColumn("overall")
+    }
+    
+    db.close()
+    
+    if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
+      var composeSelect = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+      switch overall {
+      case "1":
+        composeSelect.setInitialText(String(format: NSLocalizedString("tweetText", comment: "comment"), blendName, place, "★"))
+      case "2":
+        composeSelect.setInitialText(String(format: NSLocalizedString("tweetText", comment: "comment"), blendName, place, "★★"))
+      case "3":
+        composeSelect.setInitialText(String(format: NSLocalizedString("tweetText", comment: "comment"), blendName, place, "★★★"))
+      case "4":
+        composeSelect.setInitialText(String(format: NSLocalizedString("tweetText", comment: "comment"), blendName, place, "★★★★"))
+      case "5":
+        composeSelect.setInitialText(String(format: NSLocalizedString("tweetText", comment: "comment"), blendName, place, "★★★★★"))
+      default :
+        composeSelect.setInitialText(String(format: NSLocalizedString("tweetText", comment: "comment"), blendName, place, ""))
+        
+      }
+      
+      let filePath = appDelegate.filePath!
+      var imageFilePath = filePath+"/img\(nid).jpg"
+      var imgfileManager = NSFileManager()
+      if (imgfileManager.fileExistsAtPath(imageFilePath)) {
+        composeSelect.addImage(UIImage(contentsOfFile: imageFilePath))
+        // coffeeImage.image = UIImage(contentsOfFile: imageFilePath)
+        println("imagefile exists(imageFilePath: \(imageFilePath))")
+      }
+      
+      self.presentViewController(composeSelect, animated: true, completion: nil)
+    }
+  }
+  
+  func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+    switch (actionSheet.tag) {
+    case 0:
+      /* Action Sheet */
+      if (buttonIndex==0) {
+        // Edit Note
+        performSegueWithIdentifier("segueFromDetailToEdit", sender: self)
+      }else if(buttonIndex==1) {
+        // Share on Twitter
+        postToTwitter()
+      }else if(buttonIndex==2) {
+      }else {
+        // cancel
+      }
+      break
+    default:
+      break
+    }
     
   }
+
   
   
   @IBAction func unwindToDetailByCancel(segue: UIStoryboardSegue) {

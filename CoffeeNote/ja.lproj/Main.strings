@@ -1,0 +1,390 @@
+
+/* Class = "IBUINavigationItem"; title = "New Note"; ObjectID = "0CX-GX-MWl"; */
+"0CX-GX-MWl.title" = "New Note";
+
+/* Class = "IBUILabel"; text = "Dark"; ObjectID = "1JP-IQ-AGe"; */
+"1JP-IQ-AGe.text" = "Dark";
+
+/* Class = "IBUILabel"; text = "Acidity"; ObjectID = "1kv-dO-YII"; */
+"1kv-dO-YII.text" = "Acidity";
+
+/* Class = "IBUILabel"; text = "Dark"; ObjectID = "2hr-mV-foI"; */
+"2hr-mV-foI.text" = "Dark";
+
+/* Class = "IBUILabel"; text = "Date"; ObjectID = "3yn-QD-EkD"; */
+"3yn-QD-EkD.text" = "Date";
+
+/* Class = "IBUILabel"; text = "Comment"; ObjectID = "4ab-Gr-18P"; */
+"4ab-Gr-18P.text" = "Comment";
+
+/* Class = "IBUILabel"; text = "Sweatness"; ObjectID = "57x-Zv-nKH"; */
+"57x-Zv-nKH.text" = "Sweatness";
+
+/* Class = "IBUISegmentedControl"; 7NW-j3-cwR.segmentTitles[0] = "Light"; ObjectID = "7NW-j3-cwR"; */
+"7NW-j3-cwR.segmentTitles[0]" = "Light";
+
+/* Class = "IBUISegmentedControl"; 7NW-j3-cwR.segmentTitles[1] = "Medium"; ObjectID = "7NW-j3-cwR"; */
+"7NW-j3-cwR.segmentTitles[1]" = "Medium";
+
+/* Class = "IBUISegmentedControl"; 7NW-j3-cwR.segmentTitles[2] = "Dark"; ObjectID = "7NW-j3-cwR"; */
+"7NW-j3-cwR.segmentTitles[2]" = "Dark";
+
+/* Class = "IBUITextField"; placeholder = "Name of Blend"; ObjectID = "8mS-0G-Q3g"; */
+"8mS-0G-Q3g.placeholder" = "Name of Blend";
+
+/* Class = "IBUISegmentedControl"; Arm-SL-0OS.segmentTitles[0] = "Light"; ObjectID = "Arm-SL-0OS"; */
+"Arm-SL-0OS.segmentTitles[0]" = "Light";
+
+/* Class = "IBUISegmentedControl"; Arm-SL-0OS.segmentTitles[1] = "Medium"; ObjectID = "Arm-SL-0OS"; */
+"Arm-SL-0OS.segmentTitles[1]" = "Medium";
+
+/* Class = "IBUISegmentedControl"; Arm-SL-0OS.segmentTitles[2] = "Full"; ObjectID = "Arm-SL-0OS"; */
+"Arm-SL-0OS.segmentTitles[2]" = "Full";
+
+/* Class = "IBUILabel"; text = "Sweatness"; ObjectID = "DDv-Fj-atc"; */
+"DDv-Fj-atc.text" = "Sweatness";
+
+/* Class = "IBUIButton"; normalTitle = "Delete This Note"; ObjectID = "Duz-lE-V0s"; */
+"Duz-lE-V0s.normalTitle" = "Delete This Note";
+
+/* Class = "IBUILabel"; text = "Flavor"; ObjectID = "F9Q-wh-XuS"; */
+"F9Q-wh-XuS.text" = "Flavor";
+
+/* Class = "IBUILabel"; text = "Acidity"; ObjectID = "FVF-e6-Vvg"; */
+"FVF-e6-Vvg.text" = "Acidity";
+
+/* Class = "IBUISegmentedControl"; FYr-XU-3Cz.segmentTitles[0] = "1"; ObjectID = "FYr-XU-3Cz"; */
+"FYr-XU-3Cz.segmentTitles[0]" = "1";
+
+/* Class = "IBUISegmentedControl"; FYr-XU-3Cz.segmentTitles[1] = "2"; ObjectID = "FYr-XU-3Cz"; */
+"FYr-XU-3Cz.segmentTitles[1]" = "2";
+
+/* Class = "IBUISegmentedControl"; FYr-XU-3Cz.segmentTitles[2] = "3"; ObjectID = "FYr-XU-3Cz"; */
+"FYr-XU-3Cz.segmentTitles[2]" = "3";
+
+/* Class = "IBUISegmentedControl"; FYr-XU-3Cz.segmentTitles[3] = "4"; ObjectID = "FYr-XU-3Cz"; */
+"FYr-XU-3Cz.segmentTitles[3]" = "4";
+
+/* Class = "IBUISegmentedControl"; FYr-XU-3Cz.segmentTitles[4] = "5"; ObjectID = "FYr-XU-3Cz"; */
+"FYr-XU-3Cz.segmentTitles[4]" = "5";
+
+/* Class = "IBUILabel"; text = "Aftertaste"; ObjectID = "GpV-Fo-bEt"; */
+"GpV-Fo-bEt.text" = "Aftertaste";
+
+/* Class = "IBUILabel"; text = "Clean Cup"; ObjectID = "Hg7-95-JwJ"; */
+"Hg7-95-JwJ.text" = "Clean Cup";
+
+/* Class = "IBUISegmentedControl"; I8E-Gi-92w.segmentTitles[0] = "1"; ObjectID = "I8E-Gi-92w"; */
+"I8E-Gi-92w.segmentTitles[0]" = "1";
+
+/* Class = "IBUISegmentedControl"; I8E-Gi-92w.segmentTitles[1] = "2"; ObjectID = "I8E-Gi-92w"; */
+"I8E-Gi-92w.segmentTitles[1]" = "2";
+
+/* Class = "IBUISegmentedControl"; I8E-Gi-92w.segmentTitles[2] = "3"; ObjectID = "I8E-Gi-92w"; */
+"I8E-Gi-92w.segmentTitles[2]" = "3";
+
+/* Class = "IBUISegmentedControl"; I8E-Gi-92w.segmentTitles[3] = "4"; ObjectID = "I8E-Gi-92w"; */
+"I8E-Gi-92w.segmentTitles[3]" = "4";
+
+/* Class = "IBUISegmentedControl"; I8E-Gi-92w.segmentTitles[4] = "5"; ObjectID = "I8E-Gi-92w"; */
+"I8E-Gi-92w.segmentTitles[4]" = "5";
+
+/* Class = "IBUIViewController"; title = "Detail"; ObjectID = "Iv7-iO-dKm"; */
+"Iv7-iO-dKm.title" = "Detail";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "J45-rW-nvg"; */
+"J45-rW-nvg.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Place"; ObjectID = "J4J-ZT-eLb"; */
+"J4J-ZT-eLb.text" = "Place";
+
+/* Class = "IBUISegmentedControl"; JeS-2K-RxE.segmentTitles[0] = "1"; ObjectID = "JeS-2K-RxE"; */
+"JeS-2K-RxE.segmentTitles[0]" = "1";
+
+/* Class = "IBUISegmentedControl"; JeS-2K-RxE.segmentTitles[1] = "2"; ObjectID = "JeS-2K-RxE"; */
+"JeS-2K-RxE.segmentTitles[1]" = "2";
+
+/* Class = "IBUISegmentedControl"; JeS-2K-RxE.segmentTitles[2] = "3"; ObjectID = "JeS-2K-RxE"; */
+"JeS-2K-RxE.segmentTitles[2]" = "3";
+
+/* Class = "IBUISegmentedControl"; JeS-2K-RxE.segmentTitles[3] = "4"; ObjectID = "JeS-2K-RxE"; */
+"JeS-2K-RxE.segmentTitles[3]" = "4";
+
+/* Class = "IBUISegmentedControl"; JeS-2K-RxE.segmentTitles[4] = "5"; ObjectID = "JeS-2K-RxE"; */
+"JeS-2K-RxE.segmentTitles[4]" = "5";
+
+/* Class = "IBUISegmentedControl"; KF0-be-VtH.segmentTitles[0] = "1"; ObjectID = "KF0-be-VtH"; */
+"KF0-be-VtH.segmentTitles[0]" = "1";
+
+/* Class = "IBUISegmentedControl"; KF0-be-VtH.segmentTitles[1] = "2"; ObjectID = "KF0-be-VtH"; */
+"KF0-be-VtH.segmentTitles[1]" = "2";
+
+/* Class = "IBUISegmentedControl"; KF0-be-VtH.segmentTitles[2] = "3"; ObjectID = "KF0-be-VtH"; */
+"KF0-be-VtH.segmentTitles[2]" = "3";
+
+/* Class = "IBUISegmentedControl"; KF0-be-VtH.segmentTitles[3] = "4"; ObjectID = "KF0-be-VtH"; */
+"KF0-be-VtH.segmentTitles[3]" = "4";
+
+/* Class = "IBUISegmentedControl"; KF0-be-VtH.segmentTitles[4] = "5"; ObjectID = "KF0-be-VtH"; */
+"KF0-be-VtH.segmentTitles[4]" = "5";
+
+/* Class = "IBUILabel"; text = "Body"; ObjectID = "L9m-XJ-9bt"; */
+"L9m-XJ-9bt.text" = "Body";
+
+/* Class = "IBUILabel"; text = "Blend Name"; ObjectID = "M2f-FM-LYZ"; */
+"M2f-FM-LYZ.text" = "Blend Name";
+
+/* Class = "IBUILabel"; text = "Body"; ObjectID = "Mxf-tm-8dL"; */
+"Mxf-tm-8dL.text" = "Body";
+
+/* Class = "IBUITextField"; placeholder = "Origin"; ObjectID = "PGe-M9-WAQ"; */
+"PGe-M9-WAQ.placeholder" = "Origin";
+
+/* Class = "IBUILabel"; text = "Clean Cup"; ObjectID = "RD9-cK-KGX"; */
+"RD9-cK-KGX.text" = "Clean Cup";
+
+/* Class = "IBUISegmentedControl"; S5y-5n-fKx.segmentTitles[0] = "Light"; ObjectID = "S5y-5n-fKx"; */
+"S5y-5n-fKx.segmentTitles[0]" = "Light";
+
+/* Class = "IBUISegmentedControl"; S5y-5n-fKx.segmentTitles[1] = "Medium"; ObjectID = "S5y-5n-fKx"; */
+"S5y-5n-fKx.segmentTitles[1]" = "Medium";
+
+/* Class = "IBUISegmentedControl"; S5y-5n-fKx.segmentTitles[2] = "Full"; ObjectID = "S5y-5n-fKx"; */
+"S5y-5n-fKx.segmentTitles[2]" = "Full";
+
+/* Class = "IBUISegmentedControl"; SpP-D0-2la.segmentTitles[0] = "1"; ObjectID = "SpP-D0-2la"; */
+"SpP-D0-2la.segmentTitles[0]" = "1";
+
+/* Class = "IBUISegmentedControl"; SpP-D0-2la.segmentTitles[1] = "2"; ObjectID = "SpP-D0-2la"; */
+"SpP-D0-2la.segmentTitles[1]" = "2";
+
+/* Class = "IBUISegmentedControl"; SpP-D0-2la.segmentTitles[2] = "3"; ObjectID = "SpP-D0-2la"; */
+"SpP-D0-2la.segmentTitles[2]" = "3";
+
+/* Class = "IBUISegmentedControl"; SpP-D0-2la.segmentTitles[3] = "4"; ObjectID = "SpP-D0-2la"; */
+"SpP-D0-2la.segmentTitles[3]" = "4";
+
+/* Class = "IBUISegmentedControl"; SpP-D0-2la.segmentTitles[4] = "5"; ObjectID = "SpP-D0-2la"; */
+"SpP-D0-2la.segmentTitles[4]" = "5";
+
+/* Class = "IBUINavigationItem"; title = "All Notes"; ObjectID = "UKL-OD-I1L"; */
+"UKL-OD-I1L.title" = "All Notes";
+
+/* Class = "IBUILabel"; text = "Comment"; ObjectID = "VTL-IV-V3U"; */
+"VTL-IV-V3U.text" = "Comment";
+
+/* Class = "IBUILabel"; text = "Aftertaste"; ObjectID = "VgT-26-aPO"; */
+"VgT-26-aPO.text" = "Aftertaste";
+
+/* Class = "IBUITextField"; placeholder = "Origin"; ObjectID = "XKe-ha-JGL"; */
+"XKe-ha-JGL.placeholder" = "Origin";
+
+/* Class = "IBUISegmentedControl"; Xwd-2k-Dei.segmentTitles[0] = "Light"; ObjectID = "Xwd-2k-Dei"; */
+"Xwd-2k-Dei.segmentTitles[0]" = "Light";
+
+/* Class = "IBUISegmentedControl"; Xwd-2k-Dei.segmentTitles[1] = "Medium"; ObjectID = "Xwd-2k-Dei"; */
+"Xwd-2k-Dei.segmentTitles[1]" = "Medium";
+
+/* Class = "IBUISegmentedControl"; Xwd-2k-Dei.segmentTitles[2] = "Dark"; ObjectID = "Xwd-2k-Dei"; */
+"Xwd-2k-Dei.segmentTitles[2]" = "Dark";
+
+/* Class = "IBUILabel"; text = "Flavor"; ObjectID = "YZO-hQ-BGg"; */
+"YZO-hQ-BGg.text" = "Flavor";
+
+/* Class = "IBUISegmentedControl"; ZWn-yb-UWV.segmentTitles[0] = "1"; ObjectID = "ZWn-yb-UWV"; */
+"ZWn-yb-UWV.segmentTitles[0]" = "1";
+
+/* Class = "IBUISegmentedControl"; ZWn-yb-UWV.segmentTitles[1] = "2"; ObjectID = "ZWn-yb-UWV"; */
+"ZWn-yb-UWV.segmentTitles[1]" = "2";
+
+/* Class = "IBUISegmentedControl"; ZWn-yb-UWV.segmentTitles[2] = "3"; ObjectID = "ZWn-yb-UWV"; */
+"ZWn-yb-UWV.segmentTitles[2]" = "3";
+
+/* Class = "IBUISegmentedControl"; ZWn-yb-UWV.segmentTitles[3] = "4"; ObjectID = "ZWn-yb-UWV"; */
+"ZWn-yb-UWV.segmentTitles[3]" = "4";
+
+/* Class = "IBUISegmentedControl"; ZWn-yb-UWV.segmentTitles[4] = "5"; ObjectID = "ZWn-yb-UWV"; */
+"ZWn-yb-UWV.segmentTitles[4]" = "5";
+
+/* Class = "IBUILabel"; text = "Medium"; ObjectID = "aOM-cE-owu"; */
+"aOM-cE-owu.text" = "Medium";
+
+/* Class = "IBUISegmentedControl"; aXa-Mm-2dV.segmentTitles[0] = "1"; ObjectID = "aXa-Mm-2dV"; */
+"aXa-Mm-2dV.segmentTitles[0]" = "1";
+
+/* Class = "IBUISegmentedControl"; aXa-Mm-2dV.segmentTitles[1] = "2"; ObjectID = "aXa-Mm-2dV"; */
+"aXa-Mm-2dV.segmentTitles[1]" = "2";
+
+/* Class = "IBUISegmentedControl"; aXa-Mm-2dV.segmentTitles[2] = "3"; ObjectID = "aXa-Mm-2dV"; */
+"aXa-Mm-2dV.segmentTitles[2]" = "3";
+
+/* Class = "IBUISegmentedControl"; aXa-Mm-2dV.segmentTitles[3] = "4"; ObjectID = "aXa-Mm-2dV"; */
+"aXa-Mm-2dV.segmentTitles[3]" = "4";
+
+/* Class = "IBUISegmentedControl"; aXa-Mm-2dV.segmentTitles[4] = "5"; ObjectID = "aXa-Mm-2dV"; */
+"aXa-Mm-2dV.segmentTitles[4]" = "5";
+
+/* Class = "IBUILabel"; text = "Dark"; ObjectID = "b1W-lA-vTU"; */
+"b1W-lA-vTU.text" = "Dark";
+
+/* Class = "IBUISegmentedControl"; d80-Ti-a0n.segmentTitles[0] = "1"; ObjectID = "d80-Ti-a0n"; */
+"d80-Ti-a0n.segmentTitles[0]" = "1";
+
+/* Class = "IBUISegmentedControl"; d80-Ti-a0n.segmentTitles[1] = "2"; ObjectID = "d80-Ti-a0n"; */
+"d80-Ti-a0n.segmentTitles[1]" = "2";
+
+/* Class = "IBUISegmentedControl"; d80-Ti-a0n.segmentTitles[2] = "3"; ObjectID = "d80-Ti-a0n"; */
+"d80-Ti-a0n.segmentTitles[2]" = "3";
+
+/* Class = "IBUISegmentedControl"; d80-Ti-a0n.segmentTitles[3] = "4"; ObjectID = "d80-Ti-a0n"; */
+"d80-Ti-a0n.segmentTitles[3]" = "4";
+
+/* Class = "IBUISegmentedControl"; d80-Ti-a0n.segmentTitles[4] = "5"; ObjectID = "d80-Ti-a0n"; */
+"d80-Ti-a0n.segmentTitles[4]" = "5";
+
+/* Class = "IBUILabel"; text = "Comment"; ObjectID = "daX-hy-ypZ"; */
+"daX-hy-ypZ.text" = "Comment";
+
+/* Class = "IBUILabel"; text = "Date"; ObjectID = "e1A-9V-mev"; */
+"e1A-9V-mev.text" = "Date";
+
+/* Class = "IBUILabel"; text = "Clean Cup"; ObjectID = "gTr-6g-WIW"; */
+"gTr-6g-WIW.text" = "Clean Cup";
+
+/* Class = "IBUILabel"; text = "Body"; ObjectID = "geR-tE-Oas"; */
+"geR-tE-Oas.text" = "Body";
+
+/* Class = "IBUILabel"; text = "Acidity"; ObjectID = "gfD-yk-eKi"; */
+"gfD-yk-eKi.text" = "Acidity";
+
+/* Class = "IBUISegmentedControl"; goC-XX-H4s.segmentTitles[0] = "1"; ObjectID = "goC-XX-H4s"; */
+"goC-XX-H4s.segmentTitles[0]" = "1";
+
+/* Class = "IBUISegmentedControl"; goC-XX-H4s.segmentTitles[1] = "2"; ObjectID = "goC-XX-H4s"; */
+"goC-XX-H4s.segmentTitles[1]" = "2";
+
+/* Class = "IBUISegmentedControl"; goC-XX-H4s.segmentTitles[2] = "3"; ObjectID = "goC-XX-H4s"; */
+"goC-XX-H4s.segmentTitles[2]" = "3";
+
+/* Class = "IBUISegmentedControl"; goC-XX-H4s.segmentTitles[3] = "4"; ObjectID = "goC-XX-H4s"; */
+"goC-XX-H4s.segmentTitles[3]" = "4";
+
+/* Class = "IBUISegmentedControl"; goC-XX-H4s.segmentTitles[4] = "5"; ObjectID = "goC-XX-H4s"; */
+"goC-XX-H4s.segmentTitles[4]" = "5";
+
+/* Class = "IBUISegmentedControl"; hqR-37-I7m.segmentTitles[0] = "Light"; ObjectID = "hqR-37-I7m"; */
+"hqR-37-I7m.segmentTitles[0]" = "Light";
+
+/* Class = "IBUISegmentedControl"; hqR-37-I7m.segmentTitles[1] = "Medium"; ObjectID = "hqR-37-I7m"; */
+"hqR-37-I7m.segmentTitles[1]" = "Medium";
+
+/* Class = "IBUISegmentedControl"; hqR-37-I7m.segmentTitles[2] = "Dark"; ObjectID = "hqR-37-I7m"; */
+"hqR-37-I7m.segmentTitles[2]" = "Dark";
+
+/* Class = "IBUILabel"; text = "Overall"; ObjectID = "ihZ-Pk-4uO"; */
+"ihZ-Pk-4uO.text" = "Overall";
+
+/* Class = "IBUILabel"; text = "Overall"; ObjectID = "jNz-lX-nQq"; */
+"jNz-lX-nQq.text" = "Overall";
+
+/* Class = "IBUILabel"; text = "Roast"; ObjectID = "keG-Yl-PIt"; */
+"keG-Yl-PIt.text" = "Roast";
+
+/* Class = "IBUISegmentedControl"; lE4-cg-Xaf.segmentTitles[0] = "1"; ObjectID = "lE4-cg-Xaf"; */
+"lE4-cg-Xaf.segmentTitles[0]" = "1";
+
+/* Class = "IBUISegmentedControl"; lE4-cg-Xaf.segmentTitles[1] = "2"; ObjectID = "lE4-cg-Xaf"; */
+"lE4-cg-Xaf.segmentTitles[1]" = "2";
+
+/* Class = "IBUISegmentedControl"; lE4-cg-Xaf.segmentTitles[2] = "3"; ObjectID = "lE4-cg-Xaf"; */
+"lE4-cg-Xaf.segmentTitles[2]" = "3";
+
+/* Class = "IBUISegmentedControl"; lE4-cg-Xaf.segmentTitles[3] = "4"; ObjectID = "lE4-cg-Xaf"; */
+"lE4-cg-Xaf.segmentTitles[3]" = "4";
+
+/* Class = "IBUISegmentedControl"; lE4-cg-Xaf.segmentTitles[4] = "5"; ObjectID = "lE4-cg-Xaf"; */
+"lE4-cg-Xaf.segmentTitles[4]" = "5";
+
+/* Class = "IBUITextField"; placeholder = "Place to Drink"; ObjectID = "lEQ-3J-svQ"; */
+"lEQ-3J-svQ.placeholder" = "Place to Drink";
+
+/* Class = "IBUILabel"; text = "Roast"; ObjectID = "lqF-ha-svd"; */
+"lqF-ha-svd.text" = "Roast";
+
+/* Class = "IBUISegmentedControl"; lxG-u1-iCo.segmentTitles[0] = "1"; ObjectID = "lxG-u1-iCo"; */
+"lxG-u1-iCo.segmentTitles[0]" = "1";
+
+/* Class = "IBUISegmentedControl"; lxG-u1-iCo.segmentTitles[1] = "2"; ObjectID = "lxG-u1-iCo"; */
+"lxG-u1-iCo.segmentTitles[1]" = "2";
+
+/* Class = "IBUISegmentedControl"; lxG-u1-iCo.segmentTitles[2] = "3"; ObjectID = "lxG-u1-iCo"; */
+"lxG-u1-iCo.segmentTitles[2]" = "3";
+
+/* Class = "IBUISegmentedControl"; lxG-u1-iCo.segmentTitles[3] = "4"; ObjectID = "lxG-u1-iCo"; */
+"lxG-u1-iCo.segmentTitles[3]" = "4";
+
+/* Class = "IBUISegmentedControl"; lxG-u1-iCo.segmentTitles[4] = "5"; ObjectID = "lxG-u1-iCo"; */
+"lxG-u1-iCo.segmentTitles[4]" = "5";
+
+/* Class = "IBUISegmentedControl"; nTD-SU-U2Z.segmentTitles[0] = "1"; ObjectID = "nTD-SU-U2Z"; */
+"nTD-SU-U2Z.segmentTitles[0]" = "1";
+
+/* Class = "IBUISegmentedControl"; nTD-SU-U2Z.segmentTitles[1] = "2"; ObjectID = "nTD-SU-U2Z"; */
+"nTD-SU-U2Z.segmentTitles[1]" = "2";
+
+/* Class = "IBUISegmentedControl"; nTD-SU-U2Z.segmentTitles[2] = "3"; ObjectID = "nTD-SU-U2Z"; */
+"nTD-SU-U2Z.segmentTitles[2]" = "3";
+
+/* Class = "IBUISegmentedControl"; nTD-SU-U2Z.segmentTitles[3] = "4"; ObjectID = "nTD-SU-U2Z"; */
+"nTD-SU-U2Z.segmentTitles[3]" = "4";
+
+/* Class = "IBUISegmentedControl"; nTD-SU-U2Z.segmentTitles[4] = "5"; ObjectID = "nTD-SU-U2Z"; */
+"nTD-SU-U2Z.segmentTitles[4]" = "5";
+
+/* Class = "IBUILabel"; text = "Flavor"; ObjectID = "ndl-zi-cKu"; */
+"ndl-zi-cKu.text" = "Flavor";
+
+/* Class = "IBUILabel"; text = "Light"; ObjectID = "oug-Za-y3Y"; */
+"oug-Za-y3Y.text" = "Light";
+
+/* Class = "IBUITextField"; placeholder = "Place to Drink"; ObjectID = "p9F-PH-vXK"; */
+"p9F-PH-vXK.placeholder" = "Place to Drink";
+
+/* Class = "IBUILabel"; text = "Sweetness"; ObjectID = "qlg-Jx-DK0"; */
+"qlg-Jx-DK0.text" = "Sweetness";
+
+/* Class = "IBUILabel"; text = "Roast"; ObjectID = "s7e-lo-XOD"; */
+"s7e-lo-XOD.text" = "Roast";
+
+/* Class = "IBUILabel"; text = "Aftertaste"; ObjectID = "s8V-t5-os9"; */
+"s8V-t5-os9.text" = "Aftertaste";
+
+/* Class = "IBUIViewController"; title = "Edit"; ObjectID = "txB-KV-omt"; */
+"txB-KV-omt.title" = "Edit";
+
+/* Class = "IBUIViewController"; title = "All Notes"; ObjectID = "vXZ-lx-hvc"; */
+"vXZ-lx-hvc.title" = "All Notes";
+
+/* Class = "IBUISegmentedControl"; xYp-IN-658.segmentTitles[0] = "Light"; ObjectID = "xYp-IN-658"; */
+"xYp-IN-658.segmentTitles[0]" = "Light";
+
+/* Class = "IBUISegmentedControl"; xYp-IN-658.segmentTitles[1] = "Medium"; ObjectID = "xYp-IN-658"; */
+"xYp-IN-658.segmentTitles[1]" = "Medium";
+
+/* Class = "IBUISegmentedControl"; xYp-IN-658.segmentTitles[2] = "Dark"; ObjectID = "xYp-IN-658"; */
+"xYp-IN-658.segmentTitles[2]" = "Dark";
+
+/* Class = "IBUINavigationItem"; title = "Detail"; ObjectID = "yV1-qN-IGE"; */
+"yV1-qN-IGE.title" = "Detail";
+
+/* Class = "IBUILabel"; text = "Place"; ObjectID = "yn1-fE-M0v"; */
+"yn1-fE-M0v.text" = "Place";
+
+/* Class = "IBUITextField"; placeholder = "Name of Blend"; ObjectID = "zXX-9P-iLk"; */
+"zXX-9P-iLk.placeholder" = "Name of Blend";
+
+/* Class = "IBUILabel"; text = "Dark"; ObjectID = "zgR-tg-OVa"; */
+"zgR-tg-OVa.text" = "Dark";
+
+/* Class = "IBUIBarButtonItem"; title = "Item"; ObjectID = "znq-Cq-hVc"; */
+"znq-Cq-hVc.title" = "Item";

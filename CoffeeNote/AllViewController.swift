@@ -25,9 +25,10 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     title.font = UIFont.boldSystemFontOfSize(16)
     // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
     title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
-    title.text = "All Coffee Notes"
+    title.text = NSLocalizedString("titleAllView", comment: "comment")
     title.sizeToFit()
     self.navigationItem.titleView = title;
+    
 
     // Create a notes table if not exists
     let _dbfile:NSString = "sqlite.db"
@@ -49,6 +50,17 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     if result_create_table {
       println("notes table created")
       println(_path)
+      // Create sample data
+      // set data when to create this note
+      let now = NSDate()
+      let dateFormatter = NSDateFormatter()
+      // dateFormatter.dateFormat = "dd/MM"
+      dateFormatter.timeStyle = .ShortStyle
+      dateFormatter.dateStyle = .ShortStyle
+      println(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
+      let sample_comment = NSLocalizedString("sampleComment", comment: "comment")
+      let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('House Blend', 'Brazil', 'CoffeeNote Cafe', 2, 3, 2, 1, 4, 2, 5, 4, 4, \(sample_comment), '\(dateFormatter.stringFromDate(now))');"
+      db.executeUpdate(sql_insert, withArgumentsInArray: nil)
     }else {
       println("notes table already exists")
     }
@@ -58,6 +70,8 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
     var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
     appDelegate.filePath = filePath
+    
+    self.allTableView.reloadData()
     
   }
   
@@ -168,21 +182,32 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     
     // set image
-    // var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
-    // let filePath = appDelegate.filePath
-    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    var imageFilePath = filePath+"/img\(nidArray[indexPath.row]).jpg"
-    // var imageFilePath = filePath!+"/img\(nidArray[indexPath.row]).png"
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    let filePath = appDelegate.filePath
+    var imageFilePath = filePath!+"/img\(nidArray[indexPath.row]).jpg"
     var imgfileManager = NSFileManager()
     println("imageFilePath: \(imageFilePath)")
     if (imgfileManager.fileExistsAtPath(imageFilePath)) {
-      // use class and method of Obejctive-C
-      var obj = for_image_files()
-      cell.backImage.image = obj.loadImage(imageFilePath)
+      cell.backImage.image = UIImage(contentsOfFile: imageFilePath)
       println("imageFilepath is there!")
     }else{
       cell.backImage.image = UIImage(named: "img1.jpg")
       println("NO imageFilepath")
+    }
+    
+    // set propety font for title
+    if ((cell.titleLabel.text?.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)) != nil) {
+      cell.titleLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 42.0)
+    }else {
+      cell.titleLabel.font = UIFont(name: "HiraKakuProN-W3", size: 32.0)
+      cell.titleLabel.alpha = 0.8
+    }
+    // set propety font for place
+    if ((cell.placeLabel.text?.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)) != nil) {
+      cell.placeLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 25.0)
+    }else {
+      cell.placeLabel.font = UIFont(name: "HiraKakuProN-W3", size: 18.0)
+      cell.placeLabel.alpha = 0.6
     }
     
     return cell
@@ -284,10 +309,11 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
   }
   
+  @IBAction func unwindToAllFromSetting(segue: UIStoryboardSegue) {
+  }
   
   @IBAction func unwindToAllByCancel(segue: UIStoryboardSegue) {
   }
-  
 
   @IBAction func unwindToAllBySave(segue: UIStoryboardSegue) {
   }
