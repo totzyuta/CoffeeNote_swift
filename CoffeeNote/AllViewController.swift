@@ -8,9 +8,11 @@
 
 import UIKit
 
-class AllViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+class AllViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate  {
   
   @IBOutlet weak var allTableView: UITableView!
+  // @IBOutlet weak var searchBar: UISearchBar!
+  // var fileteredNotes: Array = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -18,7 +20,16 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     allTableView.delegate = self
     allTableView.dataSource = self
     
+    // change title of navigation bar
+    var title = UILabel()
+    title.font = UIFont.boldSystemFontOfSize(16)
+    // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
+    title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
+    title.text = NSLocalizedString("titleAllView", comment: "comment")
+    title.sizeToFit()
+    self.navigationItem.titleView = title;
     
+
     // Create a notes table if not exists
     let _dbfile:NSString = "sqlite.db"
     let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
@@ -30,8 +41,8 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     let db = FMDatabase(path: _path)
     
-    // Create a query to create a notes table
-    let sql_create_table = "CREATE TABLE IF NOT EXISTS notes (nid INTEGER PRIMARY KEY AUTOINCREMENT, blendName TEXT);"
+    // Query to create a notes table
+    let sql_create_table = "CREATE TABLE IF NOT EXISTS notes (nid INTEGER PRIMARY KEY AUTOINCREMENT, blendName TEXT, origin TEXT, place TEXT, roast INTEGER, dark INTEGER, body INTEGER, acidity INTEGER, flavor INTEGER, sweetness INTEGER, cleancup INTEGER, aftertaste, INTEGER, overall INTEGER, comment TEXT, date TEXT);"
     
     db.open()
     
@@ -39,13 +50,34 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     if result_create_table {
       println("notes table created")
       println(_path)
+      // Create sample data
+      // set data when to create this note
+      let now = NSDate()
+      let dateFormatter = NSDateFormatter()
+      // dateFormatter.dateFormat = "dd/MM"
+      dateFormatter.timeStyle = .ShortStyle
+      dateFormatter.dateStyle = .ShortStyle
+      println(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
+      let sample_comment = NSLocalizedString("sampleComment", comment: "comment")
+      let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('House Blend', 'Brazil', 'CoffeeNote Cafe', 2, 3, 2, 1, 4, 2, 5, 4, 4, \(sample_comment), '\(dateFormatter.stringFromDate(now))');"
+      db.executeUpdate(sql_insert, withArgumentsInArray: nil)
     }else {
       println("notes table already exists")
     }
     
+    
+    // share one filePath
+    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    appDelegate.filePath = filePath
+    
+    self.allTableView.reloadData()
+    
   }
   
   override func viewWillAppear(animated: Bool) {
+    println("---AllViewWillAppear---")
+    
     let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
     
     // sql from here
@@ -60,24 +92,22 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     let db = FMDatabase(path: _path)
     
     
-    let sql_select = "SELECT nid, blendName FROM notes ORDER BY nid;"
+    let sql_select = "SELECT * FROM notes ORDER BY nid;"
     
     db.open()
     
-    // var rows = _db.executeQuery(sql_select, withArgumentsInArray: [2])
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
     var blendNames: [String] = []
     
     while rows.next() {
-      // カラム名を指定して値を取得
       let nid = rows.intForColumn("nid")
-      // カラムのインデックスを指定して取得
-      //let blendNames = rows.stringForColumnIndex(1)
-      blendNames.append(rows.stringForColumn("blendName"))
+    blendNames.append(rows.stringForColumn("blendName"))
     }
     
     db.close()
+    
+    self.allTableView.reloadData()
 
   }
   
@@ -87,10 +117,29 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     // Dispose of any resources that can be recreated.
   }
   
+  func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    // change the backgound color of tableView
+    self.allTableView.backgroundView = nil
+    self.allTableView.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+  }
   
-  // セルの内容を変更
+  /*
+  // for searching
+  func filterContentForSearchText(searchText: String) {
+    // Filter the array using the filter method
+    self.filteredNotes = self.candies.filter({( candy: Candy) -> Bool in
+      let categoryMatch = (scope == "All") || (candy.category == scope)
+      let stringMatch = candy.name.rangeOfString(searchText)
+      return categoryMatch && (stringMatch != nil)
+    })
+  }
+  */
+  
+  // Set the contents of cells
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+
+    // let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "noteCell")
+    let cell: CustomCell = tableView.dequeueReusableCellWithIdentifier("Cell") as CustomCell
     
     // sql from here
     let _dbfile:NSString = "sqlite.db"
@@ -104,31 +153,68 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     let db = FMDatabase(path: _path)
     
     
-    let sql_select = "SELECT nid, blendName FROM notes ORDER BY nid;"
+    let sql_select = "SELECT * FROM notes ORDER BY nid;"
     
     db.open()
     
-    // var rows = _db.executeQuery(sql_select, withArgumentsInArray: [2])
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
-    var blendNames: [String] = []
+    var nidArray: [String] = []
+    var blendNameArray: [String] = []
+    var placesArray: [String] = []
+    var dateArray: [String] = []
     
     while rows.next() {
-      // カラム名を指定して値を取得
-      let nid = rows.intForColumn("nid")
-      // カラムのインデックスを指定して取得
-      //let blendNames = rows.stringForColumnIndex(1)
-      blendNames.append(rows.stringForColumn("blendName"))
+      // nidArray.append(Int(rows.intForColumn("nid")))
+      nidArray.append(rows.stringForColumn("nid"))
+      blendNameArray.append(rows.stringForColumn("blendName"))
+      placesArray.append(rows.stringForColumn("place"))
+      var tmp_datewords = split(rows.stringForColumn("date"), { $0 == "," })
+      var datewords = split(tmp_datewords[0], { $0 == "/" })
+      dateArray.append(datewords[0]+"/"+datewords[1])
     }
     
     db.close()
     
-    cell.textLabel?.text = blendNames[indexPath.row]
+    cell.titleLabel.text = blendNameArray[indexPath.row]
+    cell.placeLabel.text = placesArray[indexPath.row]
+    cell.dateLabel.text = dateArray[indexPath.row]
+    
+    
+    // set image
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    let filePath = appDelegate.filePath
+    var imageFilePath = filePath!+"/img\(nidArray[indexPath.row]).jpg"
+    var imgfileManager = NSFileManager()
+    println("imageFilePath: \(imageFilePath)")
+    if (imgfileManager.fileExistsAtPath(imageFilePath)) {
+      cell.backImage.image = UIImage(contentsOfFile: imageFilePath)
+      println("imageFilepath is there!")
+    }else{
+      cell.backImage.image = UIImage(named: "img1.jpg")
+      println("NO imageFilepath")
+    }
+    
+    // set propety font for title
+    if ((cell.titleLabel.text?.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)) != nil) {
+      cell.titleLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 42.0)
+    }else {
+      cell.titleLabel.font = UIFont(name: "HiraKakuProN-W3", size: 32.0)
+      cell.titleLabel.alpha = 0.8
+    }
+    // set propety font for place
+    if ((cell.placeLabel.text?.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)) != nil) {
+      cell.placeLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 25.0)
+    }else {
+      cell.placeLabel.font = UIFont(name: "HiraKakuProN-W3", size: 18.0)
+      cell.placeLabel.alpha = 0.6
+    }
+    
     return cell
   }
   
   
-  // セルの行数
+  // return number of cell
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
     // sql from here
@@ -160,10 +246,34 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     return blendNames.count
   }
 
+    
+  func fetchCellNumber(cellNumber: Int) ->Int {
+    // sql from here
+    // fetch the nid of the cell tapped
+    let _dbfile:NSString = "sqlite.db"
+    let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
+      NSSearchPathDirectory.DocumentDirectory,
+      NSSearchPathDomainMask.UserDomainMask,
+      true)[0]
+    let fileManager:NSFileManager = NSFileManager.defaultManager()
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    
+    let db = FMDatabase(path: _path)
+    let sql = "SELECT * FROM notes LIMIT 1 OFFSET \(cellNumber)"
+    
+    db.open()
+    
+    var rows = db.executeQuery(sql, withArgumentsInArray: nil)
+    var nid = 1
+    
+    while rows.next() {
+      nid = Int(rows.intForColumn("nid"))
+    }
+    return nid
+  }
   
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    println("---cell was tapped---")
     
     // sql from here
     // fetch the nid of the cell tapped
@@ -177,7 +287,8 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     let db = FMDatabase(path: _path)
     
-    var cellNumber = indexPath.row + 1
+    
+    var cellNumber = fetchCellNumber(indexPath.row)
     
     let sql_select = "SELECT * FROM notes WHERE nid=\(cellNumber);"
     
@@ -186,28 +297,28 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
     while rows.next() {
-      var blendName: String = rows.stringForColumn("blendName")
+      var nid: Int = Int(rows.intForColumn("nid"))
       var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
-      appDelegate.blendName = blendName
+      appDelegate.nid = nid
     }
     
-    
     db.close()
- 
-
+    
     
     performSegueWithIdentifier("toDetailViewController", sender: self)
     
   }
   
-  
-  @IBAction func unwindToAllByCancel(segue: UIStoryboardSegue) {
-    NSLog("unwindToAllByCancel was called")
+  @IBAction func unwindToAllFromSetting(segue: UIStoryboardSegue) {
   }
   
+  @IBAction func unwindToAllByCancel(segue: UIStoryboardSegue) {
+  }
 
   @IBAction func unwindToAllBySave(segue: UIStoryboardSegue) {
-    NSLog("unwindToAllBySave was called")
+  }
+  
+  @IBAction func unwindFromEditByDeleteButton(segue: UIStoryboardSegue) {
   }
 
   

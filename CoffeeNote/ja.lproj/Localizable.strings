@@ -1,0 +1,82 @@
+/* 
+  Localizable.strings
+  CoffeeNote
+
+  Created by totz on 10/27/14.
+  Copyright (c) 2014 totz. All rights reserved.
+*/
+
+// titles
+"titleAllView" = "全てのノート";
+"titleNewView" = "新しいノート";
+"titleDetailView" = "詳細";
+"titleEditView" = "編集";
+
+"blendName" = "ブレンド名";
+"origin" = "産地";
+"place" = "飲んだ場所";
+
+// parametors of coffee note
+"roast" = "ロースト";
+"dark" = "ダーク";
+"body" = "ボディ";
+"flavor" = "香り";
+"acidity" = "酸味";
+"sweetness" = "甘み";
+"cleancup" = "クリーンカップ";
+"aftertaste" = "後味";
+"overall" = "総合";
+"comment" = "コメント";
+
+"light" = "ライト";
+"medium" = "ミディアム";
+"full" = "フル";
+"dark" = "ダーク";
+"heavy" = "ヘビー";
+
+// ActionSheet of DetailView
+"action" = "アクション";
+"editThisNote" = "ノートを編集する";
+"shareOnTwitter" = "Twitterでシェア";
+
+// Camera
+"setPhoto" = "写真を設定してください";
+"takePhoto" = "カメラで撮る";
+"selectPhoto" = "カメラロールから選ぶ";
+"cancel" = "キャンセル";
+
+// new
+"alertTitleNewTexts" = "アラート";
+"alertNewTexts" = "ブレンド名／産地／飲んだ場所の情報を入力してください";
+
+// Edit
+"deleteNote" = "ノートを削除";
+
+// SettingView
+"AppName" = "コーヒーノート";
+"titleSettingView" = "インフォメーション";
+"Phrase" = "大好きな一杯を、書きとめる";
+"Information" = "インフォ";
+"AllNotes" = "ノートの数";
+"bugReportBody" = "以下のような不具合がありました。はやく直してください。";
+"Support" = "サポート";
+"ReportBug" = "不具合を報告";
+"TwitterSupport" = "サポートアカウント";
+"SayHi" = "コンタクト (Twitter)";
+"back" = "戻る";
+
+// AboutView in SettingView
+"titleAboutView" = "このアプリについて";
+"aboutThisAppLabel" = "このアプリについて";
+"aboutThisAppTextView" = "コーヒーノート for iOSは、ふと立ち寄った喫茶店や、豆にこだわり抜いたお気に入りのカフェで飲んだ、大好きな一杯のコーヒーを書きとめていくアプリです。";
+"forUsersLabel" = "これから追加したい機能";
+"forUsersTextView" = "もっと使いやすくて楽しいアプリにしてくために、これから追加したい機能のリストを公開しています。\n\nよろしければ、以下のWebサイトから欲しい機能や使いにくい部分のリクエストを送ってやってください。開発者は、たとえ罵倒であっても使って頂いてる方からの声をいただけるのが生きがいです...！\n\n以下から、アクセスしていただけます。";
+"urlLabel" = "これから追加したい機能リスト";
+"forUsersTextView2" = "これからも、コーヒーを愛してやまない方々に使っていただけるアプリにできるよう精進いたしますので、よろしくお願いいたします。\n\nとつ";
+
+// Tweet
+"tweetText" = "[コーヒーノート] %@を飲みました＠%@ (%@) via #CoffeeNote @CoffeeNote_info";
+"twitterURL" = "https://twitter.com/totu_iy/";
+
+// sample data
+"sampleComment" = "ここのカフェに来るのは初めて。とてもおいしいコーヒーだった。";

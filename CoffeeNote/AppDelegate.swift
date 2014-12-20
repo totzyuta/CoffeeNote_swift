@@ -13,10 +13,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
   
-  var blendName: String?
+  var nid: Int?
+  var filePath: String?
+  var data: NSData?
+  var editImage: UIImage?
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    
+    // change color of navigationbar and title
+    var navBar = UINavigationBar.appearance()
+    // navBar.barTintColor = UIColor(red: 0.00, green: 0.55, blue: 0.95, alpha: 0.1)
+    navBar.barTintColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 0.1)
+    // navBar.tintColor = UIColor(red: 0.00, green: 0.55, blue: 0.95, alpha: 1.0)
+    navBar.tintColor = UIColor(red: 0.90, green: 0.35, blue: 0.35, alpha: 1.0)
+    
+    
     return true
   }
 

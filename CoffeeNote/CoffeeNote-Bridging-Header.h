@@ -11,5 +11,7 @@
 
 #import <sqlite3.h>
 #import "FMDatabase.h"
+#import "GADBannerView.h"
+#import "NADView.h"
 
 #endif

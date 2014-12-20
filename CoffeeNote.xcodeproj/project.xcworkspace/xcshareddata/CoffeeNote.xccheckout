@@ -10,6 +10,8 @@
 	<string>CoffeeNote</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>910A3B3A1D352F7A0B5C487506E17B8D6367FF66</key>
+		<string>https://github.com/nerdyc/Squeal.git</string>
 		<key>933139CFE3539FA7207E45B1E2273C0C13CAA3DC</key>
 		<string>https://github.com/totzYuta/CoffeeNote_swift.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>CoffeeNote.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>910A3B3A1D352F7A0B5C487506E17B8D6367FF66</key>
+		<string>../..Externals/Squeal</string>
 		<key>933139CFE3539FA7207E45B1E2273C0C13CAA3DC</key>
 		<string>../..</string>
 	</dict>
@@ -35,6 +39,14 @@
 			<string>933139CFE3539FA7207E45B1E2273C0C13CAA3DC</string>
 			<key>IDESourceControlWCCName</key>
 			<string>CoffeeNote</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>910A3B3A1D352F7A0B5C487506E17B8D6367FF66</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Squeal</string>
 		</dict>
 	</array>
 </dict>

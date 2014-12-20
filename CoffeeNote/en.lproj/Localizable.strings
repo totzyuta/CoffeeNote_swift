@@ -1,0 +1,87 @@
+/* 
+  Localizable.strings
+  CoffeeNote
+
+  Created by totz on 10/27/14.
+  Copyright (c) 2014 totz. All rights reserved.
+*/
+
+
+// titles
+"titleAllView" = "All Coffee Notes";
+"titleNewView" = "New Note";
+"titleDetailView" = "Detail";
+"titleEditView" = "Edit";
+
+"blendName" = "Name of Blend";
+"origin" = "Origin";
+"place" = "Place to Drink";
+
+// elements of coffee note
+"roast" = "Roast";
+"roast" = "Roast";
+"dark" = "Dark";
+"body" = "Body";
+"flavor" = "Flavor";
+"acidity" = "Acidity";
+"sweetness" = "Sweetness";
+"cleancup" = "Clean Cup";
+"aftertaste" = "Aftertaste";
+"overall" = "Overall";
+"comment" = "Comment";
+
+"light" = "Light";
+"medium" = "Medium";
+"full" = "Full";
+"dark" = "Dark";
+"heavy" = "Heavy";
+
+// ActionSheet of DetailView
+"action" = "Action";
+"editThisNote" = "Edit This Note";
+"shareOnTwitter" = "Share on Twitter";
+
+// Camera
+"setPhoto" = "Set Photo of Coffee";
+"takePhoto" = "Take Photo by Camera";
+"selectPhoto" = "Select Photo from Camera Roll";
+"cancel" = "Cancel";
+
+// new
+"alertTitleNewTexts" = "Some Information Missing";
+"alertNewTexts" = "Fill the information of Blend Name/Origin/Place";
+
+// delete
+"deleteTitle" = "Deleting This Note";
+
+// Edit
+"deleteNote" = "Delete This Note";
+
+// SettingView
+"AppName" = "CoffeeNote";
+"titleSettingView" = "About";
+"Phrase" = "Log Your Favorite Coffee";
+"Information" = "Information";
+"AllNotes" = "All Notes";
+"bugReportBody" = "There is a bug like that. Please fix it";
+"Support" = "Support";
+"ReportBug" = "Report a Bug";
+"TwitterSupport" = "Twitter Support";
+"SayHi" = "Contact (Twitter)";
+"back" = "Back";
+
+// AboutView in SettingView
+"titleAboutView" = "About";
+"aboutThisAppLabel" = "About This App";
+"aboutThisAppTextView" = "This is an app to log your favorite cup of coffee, you drink at the sweet cafe.";
+"forUsersLabel" = "Wish List";
+"forUsersTextView" = "To make this app more fun and interesting, please request your idea or anything you want.\n\nWish list is opened to share what will be implemented next. It is on this site.";
+"urlLabel" = "Wish List of CoffeeNote for iOS";
+"forUsersTextView2" = "I will try to make it better for people who really love coffee.\ntotz";
+
+// Tweet
+"tweetText" = "[Note] A Cup of Coffee, %@ at %@ (%@) via #CoffeeNote @CoffeeNote_info";
+"twitterURL" = "https://twitter.com/yutaTotz/";
+
+// sample data
+"sampleComment" = "It was first time to come to this cafe. And it was a nice cup of coffee.";
