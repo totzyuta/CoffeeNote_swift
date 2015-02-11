@@ -54,7 +54,7 @@ class AboutViewController: UIViewController {
     }
     
   @IBAction func urlButtonPushed(sender: AnyObject) {
-    UIApplication.sharedApplication().openURL(NSURL(string: "http://coffee-note.com/ios/wishlist")!)
+    UIApplication.sharedApplication().openURL(NSURL(string: "http://coffee-note.com/ios/index.html")!)
   }
 
     /*
