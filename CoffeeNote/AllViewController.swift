@@ -46,10 +46,17 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     db.open()
     
+    
+    // share one filePath
+    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    appDelegate.filePath = filePath
+    
     var result_create_table = db.executeStatements(sql_create_table)
     if result_create_table {
       println("notes table created")
       println(_path)
+        /*
       // Create sample data
       // set data when to create this note
       let now = NSDate()
@@ -59,17 +66,33 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       dateFormatter.dateStyle = .ShortStyle
       println(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
       let sample_comment = NSLocalizedString("sampleComment", comment: "comment")
-      let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('House Blend', 'Brazil', 'CoffeeNote Cafe', 2, 3, 2, 1, 4, 2, 5, 4, 4, \(sample_comment), '\(dateFormatter.stringFromDate(now))');"
+      let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('House Blend', 'Brazil', 'CoffeeNote Cafe', 2, 3, 2, 1, 4, 2, 5, 4, 4, '\(sample_comment)', '\(dateFormatter.stringFromDate(now))');"
       db.executeUpdate(sql_insert, withArgumentsInArray: nil)
+        
+      var lastInsertId: Int = Int(db.lastInsertRowId())
+        
+      let sql_select = "SELECT * FROM notes WHERE nid=\(lastInsertId);"
+      var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
+        
+      while rows.next() {
+          let nid = rows.intForColumn("nid")
+          println("nid is: \(nid)")
+          // save sample image in DocumentDirectory
+          // var data: NSData = UIImageJPEGRepresentation(imageView.image, 0.5)
+          var data: NSData = UIImageJPEGRepresentation(UIImage(named: "img2.jpg"), 0.5)
+          var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+          let filePath = appDelegate.filePath!
+          if (data.writeToFile("\(filePath)/img\(nid).jpg", atomically: true)) {
+            println("Save Photo Suceeded(filePath: \(filePath)/img\(nid).png")
+          }else {
+            println("Failed to save photo")
+          }
+      }
+*/
+        
     }else {
       println("notes table already exists")
     }
-    
-    
-    // share one filePath
-    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
-    appDelegate.filePath = filePath
     
     self.allTableView.reloadData()
     

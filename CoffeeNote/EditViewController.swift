@@ -104,7 +104,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     var size = GADAdSizeFullWidthPortraitWithHeight(50) // set size to 50
     var adB = GADBannerView(adSize: size, origin: origin) // create the banner
-    var config = Config()
+    var config =  Config()
     adB.adUnitID = config.setAdUnitId()
     adB.delegate = self // ??
     adB.rootViewController = self // ??
