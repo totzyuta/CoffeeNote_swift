@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var editImage: UIImage?
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    println(">>> didFinishLaunchingWithOptinos")
+    
     // Override point for customization after application launch.
     
     // change color of navigationbar and title
@@ -28,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // navBar.tintColor = UIColor(red: 0.00, green: 0.55, blue: 0.95, alpha: 1.0)
     navBar.tintColor = UIColor(red: 0.90, green: 0.35, blue: 0.35, alpha: 1.0)
     
+    // first time to launch this app
+    let defaults = NSUserDefaults.standardUserDefaults()
+    var dic = ["firstLaunch": true]
+    defaults.registerDefaults(dic)
     
     return true
   }

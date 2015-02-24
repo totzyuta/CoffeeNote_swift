@@ -50,6 +50,14 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     if result_create_table {
       println("notes table created")
       println(_path)
+    }else {
+      println("notes table already exists")
+    }
+    
+    // process if this is first time to launch this app
+    let defaults = NSUserDefaults.standardUserDefaults()
+    if defaults.boolForKey("firstLaunch") {
+      
       // Create sample data
       // set data when to create this note
       let now = NSDate()
@@ -59,12 +67,15 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       dateFormatter.dateStyle = .ShortStyle
       println(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
       let sample_comment = NSLocalizedString("sampleComment", comment: "comment")
-      let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('House Blend', 'Brazil', 'CoffeeNote Cafe', 2, 3, 2, 1, 4, 2, 5, 4, 4, \(sample_comment), '\(dateFormatter.stringFromDate(now))');"
-      db.executeUpdate(sql_insert, withArgumentsInArray: nil)
-    }else {
-      println("notes table already exists")
-    }
+      let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('House Blend', 'Brazil', 'CoffeeNote Cafe', 2, 3, 2, 1, 4, 2, 5, 4, 4, '\(sample_comment)', '\(dateFormatter.stringFromDate(now))');"
+      
+      if db.executeUpdate(sql_insert, withArgumentsInArray: nil) {
+        println("Sample Note Created")
+      }
     
+      // off the flag to know if it is first time to launch
+      defaults.setBool(false, forKey: "firstLaunch")
+    }
     
     // share one filePath
     let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
