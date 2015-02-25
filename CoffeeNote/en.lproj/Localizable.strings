@@ -63,12 +63,13 @@
 "Phrase" = "Log Your Favorite Coffee";
 "Information" = "Information";
 "AllNotes" = "All Notes";
-"bugReportBody" = "There is a bug like that. Please fix it";
+"bugReportBody" = "There is a bug like that. Please fix it. Content: ";
 "Support" = "Support";
 "ReportBug" = "Report a Bug";
 "TwitterSupport" = "Twitter Support";
 "SayHi" = "Contact (Twitter)";
 "back" = "Back";
+"supportURL" = "https://twitter.com/CoffeeNote_info/";
 
 // AboutView in SettingView
 "titleAboutView" = "About";
@@ -85,4 +86,7 @@
 
 // sample data
 "sampleComment" = "It was first time to come to this cafe. And it was a nice cup of coffee. This is sample note. If you want to delete this note, please tap Edit button at the right up corner of navigation bar and select Edit This Note. Delete button is the bottom of edit view. Thank you for using :)";
+"sampleName" = "Special Blend";
+"sampleOrigin" = "Ethiopia";
+"samplePlace" = "SampleNote Cafe";
 "sampleComment2" = "The flavor seems cherry. That was an impressive cup of coffee. This is sample note. If you want to delete this note, please tap Edit button at the right up corner of navigation bar and select Edit This Note. Delete button is the bottom of edit view. Thank you for using :)";

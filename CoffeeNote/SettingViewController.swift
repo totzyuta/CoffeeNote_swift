@@ -145,7 +145,7 @@ class SettingViewController: UIViewController, MFMailComposeViewControllerDelega
   }
   
   @IBAction func supportAccountButtonPushed(sender: AnyObject) {
-    UIApplication.sharedApplication().openURL(NSURL(string: "https://twitter.com/CoffeeNote_info/")!)
+    UIApplication.sharedApplication().openURL(NSURL(string: "https://twitter.com/CoffeeNote_jp/")!)
   }
   
   @IBAction func contactButtonPushed(sender: AnyObject) {

@@ -78,8 +78,11 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       }
       
       // Create second sample note
+      let sample_name = NSLocalizedString("sampleName", comment: "comment")
+      let sample_origin = NSLocalizedString("sampleOrigin", comment: "comment")
+      let sample_place = NSLocalizedString("samplePlace", comment: "comment")
       let sample_comment2 = NSLocalizedString("sampleComment2", comment: "comment")
-      let sql_insert_second_note = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('Special Blend', 'Ethiopia', 'SampleNote Cafe', 1, 2, 1, 5, 2, 4, 2, 2, 3, '\(sample_comment2)', '\(dateFormatter.stringFromDate(now))');"
+      let sql_insert_second_note = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('\(sample_name)', '\(sample_origin)', '\(sample_place)', 1, 2, 1, 5, 2, 4, 2, 2, 3, '\(sample_comment2)', '\(dateFormatter.stringFromDate(now))');"
     
       if db.executeUpdate(sql_insert_second_note, withArgumentsInArray: nil) {
         println("Second Sample Note Created")
