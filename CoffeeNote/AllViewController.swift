@@ -29,6 +29,10 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     title.sizeToFit()
     self.navigationItem.titleView = title;
     
+    // share one filePath
+    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    appDelegate.filePath = filePath
 
     // Create a notes table if not exists
     let _dbfile:NSString = "sqlite.db"
@@ -49,7 +53,6 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     var result_create_table = db.executeStatements(sql_create_table)
     if result_create_table {
       println("notes table created")
-      println(_path)
     }else {
       println("notes table already exists")
     }
@@ -66,21 +69,39 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       dateFormatter.timeStyle = .ShortStyle
       dateFormatter.dateStyle = .ShortStyle
       println(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
+      // Create first sample note
       let sample_comment = NSLocalizedString("sampleComment", comment: "comment")
-      let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('House Blend', 'Brazil', 'CoffeeNote Cafe', 2, 3, 2, 1, 4, 2, 5, 4, 4, '\(sample_comment)', '\(dateFormatter.stringFromDate(now))');"
+      let sql_insert_first_note = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('House Blend', 'Brazil', 'CoffeeNote Cafe', 2, 3, 2, 1, 4, 2, 5, 4, 4, '\(sample_comment)', '\(dateFormatter.stringFromDate(now))');"
       
-      if db.executeUpdate(sql_insert, withArgumentsInArray: nil) {
-        println("Sample Note Created")
+      if db.executeUpdate(sql_insert_first_note, withArgumentsInArray: nil) {
+        println("First Sample Note Created")
       }
+      
+      // Create second sample note
+      let sample_comment2 = NSLocalizedString("sampleComment2", comment: "comment")
+      let sql_insert_second_note = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('Special Blend', 'Ethiopia', 'SampleNote Cafe', 1, 2, 1, 5, 2, 4, 2, 2, 3, '\(sample_comment2)', '\(dateFormatter.stringFromDate(now))');"
     
+      if db.executeUpdate(sql_insert_second_note, withArgumentsInArray: nil) {
+        println("Second Sample Note Created")
+      }
+      
+      // Set Sample Photo
+      var lastInsertId: Int = Int(db.lastInsertRowId())
+      
+      // save sample image in DocumentDirectory
+      var sampleImage = UIImage(named: "img5.jpg")
+      var data: NSData = UIImageJPEGRepresentation(sampleImage, 0.5)
+      var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+      let filePath = appDelegate.filePath! // Path to Documents Directory
+      if (data.writeToFile("\(filePath)/img\(lastInsertId).jpg", atomically: true)) {
+        println("Save Photo Suceeded(filePath: \(filePath)/img\(lastInsertId).jpg")
+      }else {
+        println("Failed to save photo for second sample note")
+      }
+
       // off the flag to know if it is first time to launch
       defaults.setBool(false, forKey: "firstLaunch")
     }
-    
-    // share one filePath
-    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
-    appDelegate.filePath = filePath
     
     self.allTableView.reloadData()
     

@@ -84,4 +84,5 @@
 "twitterURL" = "https://twitter.com/yutaTotz/";
 
 // sample data
-"sampleComment" = "It was first time to come to this cafe. And it was a nice cup of coffee.";
+"sampleComment" = "It was first time to come to this cafe. And it was a nice cup of coffee. This is sample note. If you want to delete this note, please tap Edit button at the right up corner of navigation bar and select Edit This Note. Delete button is the bottom of edit view. Thank you for using :)";
+"sampleComment2" = "The flavor seems cherry. That was an impressive cup of coffee. This is sample note. If you want to delete this note, please tap Edit button at the right up corner of navigation bar and select Edit This Note. Delete button is the bottom of edit view. Thank you for using :)";

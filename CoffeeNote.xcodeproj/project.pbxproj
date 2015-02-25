@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		120105201A1C48FD00868167 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1201051F1A1C48FD00868167 /* setting@2x.png */; };
+		12026C321A9CB88200844E18 /* img5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12026C311A9CB88100844E18 /* img5.jpg */; };
 		1212F69A19E570B300F14F7C /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1212F69919E570B300F14F7C /* EditViewController.swift */; };
 		12153F8E1A1DE3AB0047B316 /* coffee_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 12153F8D1A1DE3AB0047B316 /* coffee_logo.png */; };
 		121567B619EE9441001802D5 /* gray-star.png in Resources */ = {isa = PBXBuildFile; fileRef = 121567B519EE9441001802D5 /* gray-star.png */; };
@@ -77,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		1201051F1A1C48FD00868167 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "setting@2x.png"; path = "Images.xcassets/setting@2x.png"; sourceTree = "<group>"; };
+		12026C311A9CB88100844E18 /* img5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img5.jpg; sourceTree = "<group>"; };
 		1212F69919E570B300F14F7C /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		12153F8D1A1DE3AB0047B316 /* coffee_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = coffee_logo.png; path = Images.xcassets/coffee_logo.png; sourceTree = "<group>"; };
 		121567B519EE9441001802D5 /* gray-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gray-star.png"; path = "Images.xcassets/gray-star.png"; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				12CD442B19EC101000FE07AE /* img2.jpg */,
 				12CD442D19EC102C00FE07AE /* img3.jpg */,
 				12AD799619EB7EB100A320D4 /* img4.jpg */,
+				12026C311A9CB88100844E18 /* img5.jpg */,
 				12D8EC4119EE5FAD00BC8521 /* blue-coffee-icon.jpeg */,
 				12D6706B19ED310E0079F550 /* icon_camera.png */,
 				123D904019EE7AE300BDC598 /* star.png */,
@@ -590,6 +593,7 @@
 				128871471A0E1B6D007F3027 /* nendSDKiOS2.5.5_manual.pdf in Resources */,
 				12D6706C19ED310E0079F550 /* icon_camera.png in Resources */,
 				12D8EC4219EE5FAD00BC8521 /* blue-coffee-icon.jpeg in Resources */,
+				12026C321A9CB88200844E18 /* img5.jpg in Resources */,
 				128871441A0E1B6D007F3027 /* libAdapterNend_readme.txt in Resources */,
 				1224CABA1A1CB31800750AD6 /* triangle-arrow.jpg in Resources */,
 				1224CABE1A1CCFB600750AD6 /* info-icon@2x.png in Resources */,
