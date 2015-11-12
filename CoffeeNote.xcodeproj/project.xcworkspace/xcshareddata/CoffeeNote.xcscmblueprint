@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "933139CFE3539FA7207E45B1E2273C0C13CAA3DC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "910A3B3A1D352F7A0B5C487506E17B8D6367FF66" : 0,
+    "933139CFE3539FA7207E45B1E2273C0C13CAA3DC" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "05065F4E-0478-4585-9755-4682E617FD72",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "910A3B3A1D352F7A0B5C487506E17B8D6367FF66" : "CoffeeNoteExternals\/Squeal",
+    "933139CFE3539FA7207E45B1E2273C0C13CAA3DC" : "CoffeeNote"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CoffeeNote",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CoffeeNote.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nerdyc\/Squeal.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "910A3B3A1D352F7A0B5C487506E17B8D6367FF66"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/totzYuta\/CoffeeNote_swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "933139CFE3539FA7207E45B1E2273C0C13CAA3DC"
+    }
+  ]
+}

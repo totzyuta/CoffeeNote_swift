@@ -31,7 +31,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     // share one filePath
     let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
     appDelegate.filePath = filePath
 
     // Create a notes table if not exists
@@ -41,7 +41,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
     let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
     
     let db = FMDatabase(path: _path)
     
@@ -52,9 +52,9 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     var result_create_table = db.executeStatements(sql_create_table)
     if result_create_table {
-      println("notes table created")
+      print("notes table created")
     }else {
-      println("notes table already exists")
+      print("notes table already exists")
     }
     
     // process if this is first time to launch this app
@@ -68,13 +68,13 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       // dateFormatter.dateFormat = "dd/MM"
       dateFormatter.timeStyle = .ShortStyle
       dateFormatter.dateStyle = .ShortStyle
-      println(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
+      print(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
       // Create first sample note
       let sample_comment = NSLocalizedString("sampleComment", comment: "comment")
       let sql_insert_first_note = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('House Blend', 'Brazil', 'CoffeeNote Cafe', 2, 3, 2, 1, 4, 2, 5, 4, 4, '\(sample_comment)', '\(dateFormatter.stringFromDate(now))');"
       
       if db.executeUpdate(sql_insert_first_note, withArgumentsInArray: nil) {
-        println("First Sample Note Created")
+        print("First Sample Note Created")
       }
       
       // Create second sample note
@@ -85,7 +85,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       let sql_insert_second_note = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('\(sample_name)', '\(sample_origin)', '\(sample_place)', 1, 2, 1, 5, 2, 4, 2, 2, 3, '\(sample_comment2)', '\(dateFormatter.stringFromDate(now))');"
     
       if db.executeUpdate(sql_insert_second_note, withArgumentsInArray: nil) {
-        println("Second Sample Note Created")
+        print("Second Sample Note Created")
       }
       
       // Set Sample Photo
@@ -93,13 +93,13 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       
       // save sample image in DocumentDirectory
       var sampleImage = UIImage(named: "img5.jpg")
-      var data: NSData = UIImageJPEGRepresentation(sampleImage, 0.5)
-      var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+      var data: NSData = UIImageJPEGRepresentation(sampleImage!, 0.5)!
+      var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
       let filePath = appDelegate.filePath! // Path to Documents Directory
       if (data.writeToFile("\(filePath)/img\(lastInsertId).jpg", atomically: true)) {
-        println("Save Photo Suceeded(filePath: \(filePath)/img\(lastInsertId).jpg")
+        print("Save Photo Suceeded(filePath: \(filePath)/img\(lastInsertId).jpg")
       }else {
-        println("Failed to save photo for second sample note")
+        print("Failed to save photo for second sample note")
       }
 
       // off the flag to know if it is first time to launch
@@ -111,7 +111,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   }
   
   override func viewWillAppear(animated: Bool) {
-    println("---AllViewWillAppear---")
+    print("---AllViewWillAppear---")
     
     let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
     
@@ -122,7 +122,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
     let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
     
     let db = FMDatabase(path: _path)
     
@@ -174,7 +174,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
     // let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "noteCell")
-    let cell: CustomCell = tableView.dequeueReusableCellWithIdentifier("Cell") as CustomCell
+    let cell: CustomCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! CustomCell
     
     // sql from here
     let _dbfile:NSString = "sqlite.db"
@@ -183,7 +183,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
     let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
     
     let db = FMDatabase(path: _path)
     
@@ -217,17 +217,17 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     
     // set image
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
     let filePath = appDelegate.filePath
     var imageFilePath = filePath!+"/img\(nidArray[indexPath.row]).jpg"
     var imgfileManager = NSFileManager()
-    println("imageFilePath: \(imageFilePath)")
+    print("imageFilePath: \(imageFilePath)")
     if (imgfileManager.fileExistsAtPath(imageFilePath)) {
       cell.backImage.image = UIImage(contentsOfFile: imageFilePath)
-      println("imageFilepath is there!")
+      prprintimageFilepath is there!")
     }else{
       cell.backImage.image = UIImage(named: "img1.jpg")
-      println("NO imageFilepath")
+      print("NO imageFilepath")
     }
     
     // set propety font for title
@@ -259,7 +259,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
     let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
     
     let db = FMDatabase(path: _path)
     
@@ -291,7 +291,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
     let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    let _path:String = _dir.stringByAppendingPathCompone as Stringnt;(_dbfile)
     
     let db = FMDatabase(path: _path)
     let sql = "SELECT * FROM notes LIMIT 1 OFFSET \(cellNumber)"
@@ -318,7 +318,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
     let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    let _path:String = _dir.stringByAppendingPathCompone as Stringnt;(_dbfile)
     
     let db = FMDatabase(path: _path)
     
@@ -333,7 +333,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     while rows.next() {
       var nid: Int = Int(rows.intForColumn("nid"))
-      var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+      var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
       appDelegate.nid = nid
     }
     
