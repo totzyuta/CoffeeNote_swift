@@ -50,7 +50,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     self.placeTextField.delegate = self
     
     // change title of navigation bar
-    var title = UILabel()
+    let title = UILabel()
     title.font = UIFont.boldSystemFontOfSize(16)
     // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
     title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
@@ -90,7 +90,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     // to show aleart when not to have camera in device
     if (!UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
-      var myAlertView = UIAlertView()
+      let myAlertView = UIAlertView()
       myAlertView.title = "Alert"
       myAlertView.message = "There's no camera on this device."
       myAlertView.addButtonWithTitle("Okay")
@@ -98,18 +98,18 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     /* Ad Setting */
-    var origin = CGPointMake(0.0,
+    let origin = CGPointMake(0.0,
         self.view.frame.size.height -
             CGSizeFromGADAdSize(kGADAdSizeBanner).height); // place at bottom of view
 
-    var size = GADAdSizeFullWidthPortraitWithHeight(50) // set size to 50
-    var adB = GADBannerView(adSize: size, origin: origin) // create the banner
-    var config = Config()
+    let size = GADAdSizeFullWidthPortraitWithHeight(50) // set size to 50
+    let adB = GADBannerView(adSize: size, origin: origin) // create the banner
+    let config = Config()
     adB.adUnitID = config.setAdUnitId()
     adB.delegate = self // ??
     adB.rootViewController = self // ??
     self.view.addSubview(adB) // ??
-    var request = GADRequest() // create request
+    let request = GADRequest() // create request
     request.testDevices = [ GAD_SIMULATOR_ID ]; // set it to "test" request
     adB.loadRequest(request) // actually load it (?
   }
@@ -121,8 +121,8 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   
   override func viewWillAppear(animated: Bool) {
     print("--- EditView --- viewWillAppear called!!")
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    var nid = Int(appDelegate.nid!)
+    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    let nid = Int(appDelegate.nid!)
     
     
     // sqlite from here
@@ -138,7 +138,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     _db.open()
     
     let sql_select = "SELECT * FROM notes WHERE nid=\(nid);"
-    var rows = _db.executeQuery(sql_select, withArgumentsInArray: nil)
+    let rows = _db.executeQuery(sql_select, withArgumentsInArray: nil)
     while rows.next() {
       self.blendNameTextField.text = rows.stringForColumn("blendName")
       self.originTextField.text = rows.stringForColumn("origin")
@@ -160,8 +160,8 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   }
   
   override func viewDidAppear(animated: Bool) {
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    var nid = Int(appDelegate.nid!)
+    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let nid = Int(appDelegate.nid!)
     // set image
     if ((appDelegate.editImage) != nil) {
       // set new image (editImage)
@@ -172,7 +172,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
       print("appDelegate.editImage NOT exists")
       let filePath = appDelegate.filePath
       let imageFilePath = filePath!+"/img\(nid).jpg"
-      var imgfileManager = NSFileManager()
+      let imgfileManager = NSFileManager()
       if (imgfileManager.fileExistsAtPath(imageFilePath)) {
         coffeeImageView.image = UIImage(contentsOfFile: imageFilePath)
         print(imageFilePath)
@@ -203,7 +203,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   // MARK: - Photo
   
   func takePhoto(sender: AnyObject) {
-    var picker = UIImagePickerController()
+    let picker = UIImagePickerController()
     picker.delegate = self
     picker.allowsEditing = true
     picker.sourceType = UIImagePickerControllerSourceType.Camera
@@ -211,7 +211,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   }
   
   func selectPhoto(sender: AnyObject) {
-    var picker = UIImagePickerController()
+    let picker = UIImagePickerController()
     picker.delegate = self
     picker.allowsEditing = true
     picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
@@ -221,10 +221,10 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
     
     // set image to imageView
-    var chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
+    let chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
     picker.dismissViewControllerAnimated(true, completion: nil)
     // save the image to appDelegate.editImage
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     print(appDelegate.editImage)
     appDelegate.editImage = chosenImage
     print("Saved appDelegate.editImage")
@@ -240,7 +240,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   
   
   @IBAction func pushCameraButton(sender: AnyObject) {
-    var sheetCamera = UIActionSheet()
+    let sheetCamera = UIActionSheet()
     sheetCamera.title = NSLocalizedString("setPhoto", comment: "comment")
     sheetCamera.delegate = self
     sheetCamera.addButtonWithTitle(NSLocalizedString("takePhoto", comment: "comment"))
@@ -258,7 +258,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   // MARK: Delete Button
   
   @IBAction func pushedDeleteButton(sender: AnyObject) {
-    var sheet = UIActionSheet()
+    let sheet = UIActionSheet()
     sheet.title = NSLocalizedString("deleteNote", comment: "comment")
     sheet.delegate = self
     sheet.addButtonWithTitle("OK")

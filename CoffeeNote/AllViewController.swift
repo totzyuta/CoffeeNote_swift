@@ -21,7 +21,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     allTableView.dataSource = self
     
     // change title of navigation bar
-    var title = UILabel()
+    let title = UILabel()
     title.font = UIFont.boldSystemFontOfSize(16)
     // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
     title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
@@ -31,7 +31,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     // share one filePath
     let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
+    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
     appDelegate.filePath = filePath
 
     // Create a notes table if not exists
@@ -50,7 +50,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     db.open()
     
-    var result_create_table = db.executeStatements(sql_create_table)
+    let result_create_table = db.executeStatements(sql_create_table)
     if result_create_table {
       print("notes table created")
     }else {
@@ -89,12 +89,12 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       }
       
       // Set Sample Photo
-      var lastInsertId: Int = Int(db.lastInsertRowId())
+      let lastInsertId: Int = Int(db.lastInsertRowId())
       
       // save sample image in DocumentDirectory
-      var sampleImage = UIImage(named: "img5.jpg")
-      var data: NSData = UIImageJPEGRepresentation(sampleImage!, 0.5)!
-      var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+      let sampleImage = UIImage(named: "img5.jpg")
+      let data: NSData = UIImageJPEGRepresentation(sampleImage!, 0.5)!
+      let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
       let filePath = appDelegate.filePath! // Path to Documents Directory
       if (data.writeToFile("\(filePath)/img\(lastInsertId).jpg", atomically: true)) {
         print("Save Photo Suceeded(filePath: \(filePath)/img\(lastInsertId).jpg")
@@ -131,7 +131,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     db.open()
     
-    var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
+    let rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
     var blendNames: [String] = []
     
@@ -268,7 +268,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     db.open()
     
-    var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
+    let rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
     var blendNames: [String] = []
     

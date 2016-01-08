@@ -95,21 +95,21 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
   }
   
   override func viewWillAppear(animated: Bool) {
-    println("viewwillAppear in DetailView called")
+    print("viewwillAppear in DetailView called")
 
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegatのインスタンスを取得
-    var nid = Int(appDelegate.nid!)
-    println("nid: \(nid)")
+    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegatのインスタンスを取得
+    let nid = Int(appDelegate.nid!)
+    print("nid: \(nid)")
     
     // set image
     let filePath = appDelegate.filePath!
-    var imageFilePath = filePath+"/img\(nid).jpg"
-    var imgfileManager = NSFileManager()
+    let imageFilePath = filePath+"/img\(nid).jpg"
+    let imgfileManager = NSFileManager()
     if (imgfileManager.fileExistsAtPath(imageFilePath)) {
       coffeeImage.image = UIImage(contentsOfFile: imageFilePath)
-      println("imagefile exists(imageFilePath: \(imageFilePath))")
+      print("imagefile exists(imageFilePath: \(imageFilePath))")
     }else{
-      println("imagefile NOT exists(imagefilePath: \(imageFilePath)")
+      prprintimagefile NOT exists(imagefilePath: \(imageFilePath)")
       coffeeImage.image = UIImage(named: "img1.jpg")
     }
     
@@ -129,7 +129,7 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
     
     db.open()
     
-    var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
+    let rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     var blendName: String
     // fetch data and put data into label
     while rows.next() {
@@ -170,11 +170,11 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
         self.star4Image.image = UIImage(named: "star.png")
         self.star5Image.image = UIImage(named: "star.png")
       default:
-        println("Error of overall parametor")
+        prprintError of overall parametor")
       }
       
       // change title of navigation bar
-      var title = UILabel()
+      let title = UILabel()
       title.font = UIFont.boldSystemFontOfSize(16)
       // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
       title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
@@ -247,7 +247,7 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
         self.flavorStar4.hidden = false
         self.flavorStar5.hidden = false
       default:
-        println("Error of overall parametor")
+        print("Error of overall parametor")
       }
       switch (rows.intForColumn("acidity")){
       case 1:
@@ -281,7 +281,7 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
         self.acidityStar4.hidden = false
         self.acidityStar5.hidden = false
       default:
-        println("Error of overall parametor")
+        print("Error of overall parametor")
       }
       switch (rows.intForColumn("sweetness")){
       case 1:
@@ -315,7 +315,7 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
         self.sweetnessStar4.hidden = false
         self.sweetnessStar5.hidden = false
       default:
-        println("Error of overall parametor")
+        print("Error of overall parametor")
       }
       switch (rows.intForColumn("cleancup")){
       case 1:
@@ -349,7 +349,7 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
         self.cleancupStar4.hidden = false
         self.cleancupStar5.hidden = false
       default:
-        println("Error of overall parametor")
+        print("Error of overall parametor")
       }
       switch (rows.intForColumn("aftertaste")){
       case 1:
@@ -383,7 +383,7 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
         self.aftertasteStar4.hidden = false
         self.aftertasteStar5.hidden = false
       default:
-        println("Error of overall parametor")
+        print("Error of overall parametor")
       }
       self.commentText.text = rows.stringForColumn("comment")
       self.commentText.textColor = UIColor.grayColor()
@@ -400,7 +400,7 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
   
   
   @IBAction func pushedEditButton(sender: AnyObject) {
-    var sheet = UIActionSheet()
+    let sheet = UIActionSheet()
     sheet.title = NSLocalizedString("action", comment: "comment")
     sheet.delegate = self
     sheet.addButtonWithTitle(NSLocalizedString("editThisNote", comment: "comment"))
@@ -416,7 +416,7 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
   
   // Tweet
   func postToTwitter() {
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegatのインスタンスを取得
+    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegatのインスタンスを取得
     var nid = Int(appDelegate.nid!)
     // sql from here
     let _dbfile:NSString = "sqlite.db"
@@ -424,8 +424,8 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
       NSSearchPathDirectory.DocumentDirectory,
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
-    let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    _:NSFileManager = NSFileManager.defaultManager()
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
     
     let db = FMDatabase(path: _path)
     
@@ -470,7 +470,7 @@ class DetailViewController: UIViewController, UIActionSheetDelegate {
       if (imgfileManager.fileExistsAtPath(imageFilePath)) {
         composeSelect.addImage(UIImage(contentsOfFile: imageFilePath))
         // coffeeImage.image = UIImage(contentsOfFile: imageFilePath)
-        println("imagefile exists(imageFilePath: \(imageFilePath))")
+        print("imagefile exists(imageFilePath: \(imageFilePath))")
       }
       
       self.presentViewController(composeSelect, animated: true, completion: nil)

@@ -77,7 +77,7 @@ class SettingViewController: UIViewController, MFMailComposeViewControllerDelega
     
     db.open()
     
-    var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
+    let rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     var flg = 0
     // fetch data and put data into label
     while rows.next() {
@@ -110,13 +110,13 @@ class SettingViewController: UIViewController, MFMailComposeViewControllerDelega
   @IBAction func reportButtonPushed(sender: AnyObject) {
     // check if can send an email
     if MFMailComposeViewController.canSendMail()==false {
-      println("Email Send Failed")
+      print("Email Send Failed")
       return
     }
-    var mailViewController = MFMailComposeViewController()
+    let mailViewController = MFMailComposeViewController()
     mailViewController.mailComposeDelegate = self
     mailViewController.setSubject("Bug Report")
-    var toRecipients = ["yuta.totz@gmail.com"]
+    let toRecipients = ["yuta.totz@gmail.com"]
     mailViewController.setToRecipients(toRecipients)
     mailViewController.setMessageBody(NSLocalizedString("bugReportBody", comment: "comment"), isHTML: false)
     self.presentViewController(mailViewController, animated: true, completion: nil)
@@ -126,16 +126,16 @@ class SettingViewController: UIViewController, MFMailComposeViewControllerDelega
     
     switch result.value {
     case MFMailComposeResultCancelled.value:
-      println("Email Send Cancelled")
+      print("Email Send Cancelled")
       break
     case MFMailComposeResultSaved.value:
-      println("Email Saved as a Draft")
+      print("Email Saved as a Draft")
       break
     case MFMailComposeResultSent.value:
-      println("Email Sent Successfully")
+      print("Email Sent Successfully")
       break
     case MFMailComposeResultFailed.value:
-      println("Email Send Failed")
+      print("Email Send Failed")
       break
     default:
       break
