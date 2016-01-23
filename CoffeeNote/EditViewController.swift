@@ -218,15 +218,13 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     self.presentViewController(picker, animated: true, completion: nil)
   }
  
-  func imagePickerController(picker: UIImagePickerController, didFinishPickingImage info: [NSObject : AnyObject]) {
+  func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
     
-    // set image to imageView
-    let chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
     picker.dismissViewControllerAnimated(true, completion: nil)
     // save the image to appDelegate.editImage
     let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     print(appDelegate.editImage)
-    appDelegate.editImage = chosenImage
+    appDelegate.editImage = image
     print("Saved appDelegate.editImage")
     print(appDelegate.editImage)
    

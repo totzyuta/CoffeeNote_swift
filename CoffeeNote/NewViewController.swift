@@ -58,7 +58,6 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     title.sizeToFit()
     self.navigationItem.titleView = title;
     
-    
     // set localized value
     blendNameTextField.placeholder = NSLocalizedString("blendName", comment: "comment")
     originTextField.placeholder = NSLocalizedString("origin", comment: "comment")
@@ -88,7 +87,6 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     originTextField.autocapitalizationType = UITextAutocapitalizationType.Sentences
     placeTextField.autocapitalizationType = UITextAutocapitalizationType.Sentences
     
-    
     // to show aleart when not to have camera in device
     if (!UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
       let myAlertView = UIAlertView()
@@ -113,7 +111,6 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     let request = GADRequest() // create request
     request.testDevices = [ GAD_SIMULATOR_ID ]; // set it to "test" request
     adB.loadRequest(request) // actually load it (?
-    
   }
   
   
@@ -151,16 +148,12 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     self.presentViewController(picker, animated: true, completion: nil)
   }
   
-  func imagePickerController(picker: UIImagePickerController, didFinishPickingImage info: [NSObject : AnyObject]) {
+  func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
     
-    // set image to imageView
-    let chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
-    self.imageView.image = chosenImage
+    self.imageView.image = image
     picker.dismissViewControllerAnimated(true, completion: nil)
     
-    
     self.cameraButton.alpha = 0.5
-    
   }
   
   func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -207,14 +200,12 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }else {
       performSegueWithIdentifier("unwindToAllBySave", sender: self)
     }
-    
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     print("prepareForSegue was called!")
     
     print(segue.identifier)
-    
     
     if (segue.identifier == "unwindToAllBySave") {
       
@@ -259,7 +250,6 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         let _result_insert = _db.executeUpdate(sql_insert, withArgumentsInArray:nil)
         
-        
         // Debug and save photo
         
         let lastInsertId: Int = Int(_db.lastInsertRowId())
@@ -298,16 +288,10 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
               print("Failed to save photo")
             }
           }
-          
         }
         
         _db.close()
       }
-      
-    
-      
     }
-    
   }
-  
 }

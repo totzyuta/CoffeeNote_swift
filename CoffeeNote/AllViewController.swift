@@ -107,7 +107,6 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     self.allTableView.reloadData()
-    
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -143,7 +142,6 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     db.close()
     
     self.allTableView.reloadData()
-
   }
   
   
@@ -186,7 +184,6 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
     
     let db = FMDatabase(path: _path)
-    
     
     let sql_select = "SELECT * FROM notes ORDER BY nid;"
     
@@ -251,7 +248,6 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   
   // return number of cell
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
     // sql from here
     let _dbfile:NSString = "sqlite.db"
     let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
@@ -304,6 +300,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     while rows.next() {
       nid = Int(rows.intForColumn("nid"))
     }
+    
     return nid
   }
   
@@ -339,9 +336,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     db.close()
     
-    
     performSegueWithIdentifier("toDetailViewController", sender: self)
-    
   }
   
   @IBAction func unwindToAllFromSetting(segue: UIStoryboardSegue) {
@@ -355,7 +350,5 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   
   @IBAction func unwindFromEditByDeleteButton(segue: UIStoryboardSegue) {
   }
-
-  
 }
 

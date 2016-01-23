@@ -31,5 +31,4 @@ class CustomCell: UITableViewCell {
     self.titleLabel.text = titleLabel
     self.backImage.image = UIImage(named: imageName)
   }
-
 }

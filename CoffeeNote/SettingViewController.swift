@@ -151,6 +151,4 @@ class SettingViewController: UIViewController, MFMailComposeViewControllerDelega
   @IBAction func contactButtonPushed(sender: AnyObject) {
     UIApplication.sharedApplication().openURL(NSURL(string: NSLocalizedString("twitterURL", comment: "comment"))!)
   }
-  
-
 }
