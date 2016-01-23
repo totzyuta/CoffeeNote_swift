@@ -21,7 +21,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     allTableView.dataSource = self
     
     // change title of navigation bar
-    var title = UILabel()
+    let title = UILabel()
     title.font = UIFont.boldSystemFontOfSize(16)
     // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
     title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
@@ -31,7 +31,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     // share one filePath
     let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
     appDelegate.filePath = filePath
 
     // Create a notes table if not exists
@@ -41,7 +41,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
     let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
     
     let db = FMDatabase(path: _path)
     
@@ -50,11 +50,11 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     db.open()
     
-    var result_create_table = db.executeStatements(sql_create_table)
+    let result_create_table = db.executeStatements(sql_create_table)
     if result_create_table {
-      println("notes table created")
+      print("notes table created")
     }else {
-      println("notes table already exists")
+      print("notes table already exists")
     }
     
     // process if this is first time to launch this app
@@ -68,13 +68,13 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       // dateFormatter.dateFormat = "dd/MM"
       dateFormatter.timeStyle = .ShortStyle
       dateFormatter.dateStyle = .ShortStyle
-      println(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
+      print(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
       // Create first sample note
       let sample_comment = NSLocalizedString("sampleComment", comment: "comment")
       let sql_insert_first_note = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('House Blend', 'Brazil', 'CoffeeNote Cafe', 2, 3, 2, 1, 4, 2, 5, 4, 4, '\(sample_comment)', '\(dateFormatter.stringFromDate(now))');"
       
       if db.executeUpdate(sql_insert_first_note, withArgumentsInArray: nil) {
-        println("First Sample Note Created")
+        print("First Sample Note Created")
       }
       
       // Create second sample note
@@ -85,21 +85,21 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       let sql_insert_second_note = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('\(sample_name)', '\(sample_origin)', '\(sample_place)', 1, 2, 1, 5, 2, 4, 2, 2, 3, '\(sample_comment2)', '\(dateFormatter.stringFromDate(now))');"
     
       if db.executeUpdate(sql_insert_second_note, withArgumentsInArray: nil) {
-        println("Second Sample Note Created")
+        print("Second Sample Note Created")
       }
       
       // Set Sample Photo
-      var lastInsertId: Int = Int(db.lastInsertRowId())
+      let lastInsertId: Int = Int(db.lastInsertRowId())
       
       // save sample image in DocumentDirectory
-      var sampleImage = UIImage(named: "img5.jpg")
-      var data: NSData = UIImageJPEGRepresentation(sampleImage, 0.5)
-      var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+      let sampleImage = UIImage(named: "img5.jpg")
+      let data: NSData = UIImageJPEGRepresentation(sampleImage!, 0.5)!
+      let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
       let filePath = appDelegate.filePath! // Path to Documents Directory
       if (data.writeToFile("\(filePath)/img\(lastInsertId).jpg", atomically: true)) {
-        println("Save Photo Suceeded(filePath: \(filePath)/img\(lastInsertId).jpg")
+        print("Save Photo Suceeded(filePath: \(filePath)/img\(lastInsertId).jpg")
       }else {
-        println("Failed to save photo for second sample note")
+        print("Failed to save photo for second sample note")
       }
 
       // off the flag to know if it is first time to launch
@@ -107,11 +107,10 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     self.allTableView.reloadData()
-    
   }
   
   override func viewWillAppear(animated: Bool) {
-    println("---AllViewWillAppear---")
+    print("---AllViewWillAppear---")
     
     let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
     
@@ -122,7 +121,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
     let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
     
     let db = FMDatabase(path: _path)
     
@@ -131,7 +130,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     db.open()
     
-    var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
+    let rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
     var blendNames: [String] = []
     
@@ -143,7 +142,6 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     db.close()
     
     self.allTableView.reloadData()
-
   }
   
   
@@ -174,7 +172,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
     // let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "noteCell")
-    let cell: CustomCell = tableView.dequeueReusableCellWithIdentifier("Cell") as CustomCell
+    let cell: CustomCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! CustomCell
     
     // sql from here
     let _dbfile:NSString = "sqlite.db"
@@ -183,10 +181,9 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
     let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
     
     let db = FMDatabase(path: _path)
-    
     
     let sql_select = "SELECT * FROM notes ORDER BY nid;"
     
@@ -204,8 +201,8 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       nidArray.append(rows.stringForColumn("nid"))
       blendNameArray.append(rows.stringForColumn("blendName"))
       placesArray.append(rows.stringForColumn("place"))
-      var tmp_datewords = split(rows.stringForColumn("date"), { $0 == "," })
-      var datewords = split(tmp_datewords[0], { $0 == "/" })
+      let tmp_datewords = rows.stringForColumn("date").componentsSeparatedByString(",")
+      let datewords = tmp_datewords[0].componentsSeparatedByString("/")
       dateArray.append(datewords[0]+"/"+datewords[1])
     }
     
@@ -217,17 +214,17 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     
     // set image
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
     let filePath = appDelegate.filePath
-    var imageFilePath = filePath!+"/img\(nidArray[indexPath.row]).jpg"
-    var imgfileManager = NSFileManager()
-    println("imageFilePath: \(imageFilePath)")
+    let imageFilePath = filePath!+"/img\(nidArray[indexPath.row]).jpg"
+    let imgfileManager = NSFileManager()
+    print("imageFilePath: \(imageFilePath)")
     if (imgfileManager.fileExistsAtPath(imageFilePath)) {
       cell.backImage.image = UIImage(contentsOfFile: imageFilePath)
-      println("imageFilepath is there!")
+      print("imageFilepath is there!")
     }else{
       cell.backImage.image = UIImage(named: "img1.jpg")
-      println("NO imageFilepath")
+      print("NO imageFilepath")
     }
     
     // set propety font for title
@@ -251,7 +248,6 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   
   // return number of cell
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
     // sql from here
     let _dbfile:NSString = "sqlite.db"
     let _dir:AnyObject = NSSearchPathForDirectoriesInDomains(
@@ -259,7 +255,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
     let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
     
     let db = FMDatabase(path: _path)
     
@@ -268,7 +264,7 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     db.open()
     
-    var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
+    let rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
     var blendNames: [String] = []
     
@@ -291,19 +287,20 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
     let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
     
     let db = FMDatabase(path: _path)
     let sql = "SELECT * FROM notes LIMIT 1 OFFSET \(cellNumber)"
     
     db.open()
     
-    var rows = db.executeQuery(sql, withArgumentsInArray: nil)
+    let rows = db.executeQuery(sql, withArgumentsInArray: nil)
     var nid = 1
     
     while rows.next() {
       nid = Int(rows.intForColumn("nid"))
     }
+    
     return nid
   }
   
@@ -318,30 +315,28 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
     let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
     
     let db = FMDatabase(path: _path)
     
     
-    var cellNumber = fetchCellNumber(indexPath.row)
+    let cellNumber = fetchCellNumber(indexPath.row)
     
     let sql_select = "SELECT * FROM notes WHERE nid=\(cellNumber);"
     
     db.open()
     
-    var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
+    let rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
     while rows.next() {
-      var nid: Int = Int(rows.intForColumn("nid"))
-      var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+      let nid: Int = Int(rows.intForColumn("nid"))
+      let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
       appDelegate.nid = nid
     }
     
     db.close()
     
-    
     performSegueWithIdentifier("toDetailViewController", sender: self)
-    
   }
   
   @IBAction func unwindToAllFromSetting(segue: UIStoryboardSegue) {
@@ -355,7 +350,5 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
   
   @IBAction func unwindFromEditByDeleteButton(segue: UIStoryboardSegue) {
   }
-
-  
 }
 

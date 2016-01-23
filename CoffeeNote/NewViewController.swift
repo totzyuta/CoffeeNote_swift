@@ -50,14 +50,13 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     placeTextField.delegate = self
     
     // change title of navigation bar
-    var title = UILabel()
+    let title = UILabel()
     title.font = UIFont.boldSystemFontOfSize(16)
     // title.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
     title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
     title.text = NSLocalizedString("titleNewView", comment: "comment")
     title.sizeToFit()
     self.navigationItem.titleView = title;
-    
     
     // set localized value
     blendNameTextField.placeholder = NSLocalizedString("blendName", comment: "comment")
@@ -88,10 +87,9 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     originTextField.autocapitalizationType = UITextAutocapitalizationType.Sentences
     placeTextField.autocapitalizationType = UITextAutocapitalizationType.Sentences
     
-    
     // to show aleart when not to have camera in device
     if (!UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
-      var myAlertView = UIAlertView()
+      let myAlertView = UIAlertView()
       myAlertView.title = "Alert"
       myAlertView.message = "There's no camera on this device."
       myAlertView.addButtonWithTitle("Okay")
@@ -99,21 +97,20 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     /* Ad Setting */
-    var origin = CGPointMake(0.0,
+    let origin = CGPointMake(0.0,
         self.view.frame.size.height -
             CGSizeFromGADAdSize(kGADAdSizeBanner).height); // place at bottom of view
 
-    var size = GADAdSizeFullWidthPortraitWithHeight(50) // set size to 50
-    var adB = GADBannerView(adSize: size, origin: origin) // create the banner
-    var config = Config()
+    let size = GADAdSizeFullWidthPortraitWithHeight(50) // set size to 50
+    let adB = GADBannerView(adSize: size, origin: origin) // create the banner
+    let config = Config()
     adB.adUnitID = config.setAdUnitId()
     adB.delegate = self // ??
     adB.rootViewController = self // ??
     self.view.addSubview(adB) // ??
-    var request = GADRequest() // create request
+    let request = GADRequest() // create request
     request.testDevices = [ GAD_SIMULATOR_ID ]; // set it to "test" request
     adB.loadRequest(request) // actually load it (?
-    
   }
   
   
@@ -136,7 +133,7 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
   // MARK: Photo
   
   func takePhoto(sender: AnyObject) {
-    var picker = UIImagePickerController()
+    let picker = UIImagePickerController()
     picker.delegate = self
     picker.allowsEditing = true
     picker.sourceType = UIImagePickerControllerSourceType.Camera
@@ -144,23 +141,19 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
   }
   
   func selectPhoto(sender: AnyObject) {
-    var picker = UIImagePickerController()
+    let picker = UIImagePickerController()
     picker.delegate = self
     picker.allowsEditing = true
     picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
     self.presentViewController(picker, animated: true, completion: nil)
   }
   
-  func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+  func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
     
-    // set image to imageView
-    var chosenImage = info[UIImagePickerControllerEditedImage] as UIImage
-    self.imageView.image = chosenImage
+    self.imageView.image = image
     picker.dismissViewControllerAnimated(true, completion: nil)
     
-    
     self.cameraButton.alpha = 0.5
-    
   }
   
   func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -180,7 +173,7 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
   }
   
   @IBAction func pushCameraButton(sender: AnyObject) {
-    var sheet = UIActionSheet()
+    let sheet = UIActionSheet()
     // sheet.title = "Set Photo of Coffee"
     sheet.title = NSLocalizedString("setPhoto", comment: "comment")
     sheet.delegate = self
@@ -199,7 +192,7 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
   @IBAction func saveButtonPushed(sender: AnyObject) {
     // NULL check
     if (blendNameTextField.text == "" || placeTextField.text == "" || originTextField.text == "") {
-      var myAlertView = UIAlertView()
+      let myAlertView = UIAlertView()
       myAlertView.title = NSLocalizedString("alertTitleNewTexts", comment: "comment")
       myAlertView.message = NSLocalizedString("alertNewTexts", comment: "comment")
       myAlertView.addButtonWithTitle("Okay")
@@ -207,14 +200,12 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }else {
       performSegueWithIdentifier("unwindToAllBySave", sender: self)
     }
-    
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    println("prepareForSegue was called!")
+    print("prepareForSegue was called!")
     
-    println(segue.identifier)
-    
+    print(segue.identifier)
     
     if (segue.identifier == "unwindToAllBySave") {
       
@@ -233,7 +224,7 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
           NSSearchPathDomainMask.UserDomainMask,
           true)[0]
         let fileManager:NSFileManager = NSFileManager.defaultManager()
-        let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+        let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
         
         // println(_path)
         
@@ -247,25 +238,24 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         // dateFormatter.dateFormat = "dd/MM"
         dateFormatter.timeStyle = .ShortStyle
         dateFormatter.dateStyle = .ShortStyle
-        println(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
+        print(dateFormatter.stringFromDate(now)) // -> 6/24/14, 11:01 AM
         
         // To avoid error of single quotation
-        var blendNameTextFieldModified = blendNameTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
-        var originTextFieldModified = originTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
-        var placeTextFieldModified = placeTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
-        var commentTextFieldModified = commentTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
+        let blendNameTextFieldModified = blendNameTextField.text!.stringByReplacingOccurrencesOfString("\'", withString: "\'\'")
+        let originTextFieldModified = originTextField.text!.stringByReplacingOccurrencesOfString("\'", withString: "\'\'")
+        let placeTextFieldModified = placeTextField.text!.stringByReplacingOccurrencesOfString("\'", withString: "\'\'")
+        let commentTextFieldModified = commentTextField.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'")
         
         let sql_insert = "INSERT INTO notes (blendName, origin, place, roast, dark, body, acidity, flavor, sweetness, cleancup, aftertaste, overall, comment, date) VALUES ('\(blendNameTextFieldModified)', '\(originTextFieldModified)', '\(placeTextFieldModified)', \(roastSegment.selectedSegmentIndex+1), \(darkSegment.selectedSegmentIndex+1), \(bodySegment.selectedSegmentIndex+1), \(aciditySegment.selectedSegmentIndex+1), \(flavorSegment.selectedSegmentIndex+1), \(sweetnessSegment.selectedSegmentIndex+1), \(cleanCupSegment.selectedSegmentIndex+1), \(aftertasteSegment.selectedSegmentIndex+1), \(overallSegment.selectedSegmentIndex+1), '\(commentTextFieldModified)', '\(dateFormatter.stringFromDate(now))');"
         
-        var _result_insert = _db.executeUpdate(sql_insert, withArgumentsInArray:nil)
-        
+        let _result_insert = _db.executeUpdate(sql_insert, withArgumentsInArray:nil)
         
         // Debug and save photo
         
-        var lastInsertId: Int = Int(_db.lastInsertRowId())
+        let lastInsertId: Int = Int(_db.lastInsertRowId())
       
         let sql_select = "SELECT * FROM notes WHERE nid=\(lastInsertId);"
-        var rows = _db.executeQuery(sql_select, withArgumentsInArray: nil)
+        let rows = _db.executeQuery(sql_select, withArgumentsInArray: nil)
         
         while rows.next() {
           let nid = rows.intForColumn("nid")
@@ -284,30 +274,24 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
           let comment = rows.stringForColumn("comment")
           let date = rows.stringForColumn("date")
           
-          println("nid: \(nid), blendName: \(blendName), origin: \(origin), place: \(place), roast: \(roast), dark: \(dark), body: \(body), acidity: \(acidity), flavor: \(flavor), sweetness: \(sweetness), cleancup: \(cleancup), aftertaste: \(aftertaste), overall: \(overall), comment: \(comment), date: \(date)")
+          print("nid: \(nid), blendName: \(blendName), origin: \(origin), place: \(place), roast: \(roast), dark: \(dark), body: \(body), acidity: \(acidity), flavor: \(flavor), sweetness: \(sweetness), cleancup: \(cleancup), aftertaste: \(aftertaste), overall: \(overall), comment: \(comment), date: \(date)")
           
           // save photo
           if ((imageView.image) != nil) {
             // save image in DocumentDirectory
-            var data: NSData = UIImageJPEGRepresentation(imageView.image, 0.5)
-            var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+            let data: NSData = UIImageJPEGRepresentation(imageView.image!, 0.5)!
+            let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
             let filePath = appDelegate.filePath!
             if (data.writeToFile("\(filePath)/img\(nid).jpg", atomically: true)) {
-              println("Save Photo Suceeded(filePath: \(filePath)/img\(nid).png")
+              print("Save Photo Suceeded(filePath: \(filePath)/img\(nid).png")
             }else {
-              println("Failed to save photo")
+              print("Failed to save photo")
             }
           }
-          
         }
         
         _db.close()
       }
-      
-    
-      
     }
-    
   }
-  
 }

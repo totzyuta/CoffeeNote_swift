@@ -42,7 +42,7 @@ class SettingViewController: UIViewController, MFMailComposeViewControllerDelega
       
       var lang: AnyObject = NSLocale.preferredLanguages()[0]
     
-      if (lang as NSString=="ja") {
+      if (lang as! NSString=="ja") {
         appNameLabel.hidden = true
         phraseLabel.hidden = true
       }else {
@@ -68,7 +68,7 @@ class SettingViewController: UIViewController, MFMailComposeViewControllerDelega
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
     let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
     
     let db = FMDatabase(path: _path)
     
@@ -77,7 +77,7 @@ class SettingViewController: UIViewController, MFMailComposeViewControllerDelega
     
     db.open()
     
-    var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
+    let rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     var flg = 0
     // fetch data and put data into label
     while rows.next() {
@@ -110,13 +110,13 @@ class SettingViewController: UIViewController, MFMailComposeViewControllerDelega
   @IBAction func reportButtonPushed(sender: AnyObject) {
     // check if can send an email
     if MFMailComposeViewController.canSendMail()==false {
-      println("Email Send Failed")
+      print("Email Send Failed")
       return
     }
-    var mailViewController = MFMailComposeViewController()
+    let mailViewController = MFMailComposeViewController()
     mailViewController.mailComposeDelegate = self
     mailViewController.setSubject("Bug Report")
-    var toRecipients = ["yuta.totz@gmail.com"]
+    let toRecipients = ["yuta.totz@gmail.com"]
     mailViewController.setToRecipients(toRecipients)
     mailViewController.setMessageBody(NSLocalizedString("bugReportBody", comment: "comment"), isHTML: false)
     self.presentViewController(mailViewController, animated: true, completion: nil)
@@ -124,22 +124,22 @@ class SettingViewController: UIViewController, MFMailComposeViewControllerDelega
   
   func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
     
-    switch result.value {
-    case MFMailComposeResultCancelled.value:
-      println("Email Send Cancelled")
-      break
-    case MFMailComposeResultSaved.value:
-      println("Email Saved as a Draft")
-      break
-    case MFMailComposeResultSent.value:
-      println("Email Sent Successfully")
-      break
-    case MFMailComposeResultFailed.value:
-      println("Email Send Failed")
-      break
-    default:
-      break
-    }
+    // switch result.value {
+    // case MFMailComposeResultCancelled.value:
+    //   print("Email Send Cancelled")
+    //   break
+    // case MFMailComposeResultSaved.value:
+    //   print("Email Saved as a Draft")
+    //   break
+    // case MFMailComposeResultSent.value:
+    //   print("Email Sent Successfully")
+    //   break
+    // case MFMailComposeResultFailed.value:
+    //   print("Email Send Failed")
+    //   break
+    // default:
+    //   break
+    // }
     
     self.dismissViewControllerAnimated(true, completion: nil)
   }
@@ -151,6 +151,4 @@ class SettingViewController: UIViewController, MFMailComposeViewControllerDelega
   @IBAction func contactButtonPushed(sender: AnyObject) {
     UIApplication.sharedApplication().openURL(NSURL(string: NSLocalizedString("twitterURL", comment: "comment"))!)
   }
-  
-
 }
