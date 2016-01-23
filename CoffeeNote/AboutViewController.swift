@@ -21,17 +21,17 @@ class AboutViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    var lang: AnyObject = NSLocale.preferredLanguages()[0]
+    let lang: AnyObject = NSLocale.preferredLanguages()[0]
     
     // change title of navigation bar
-    var title = UILabel()
+    let title = UILabel()
     title.font = UIFont.boldSystemFontOfSize(16)
     title.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
     title.text = NSLocalizedString("titleAboutView", comment: "comment")
     title.sizeToFit()
     self.navigationItem.titleView = title;
     
-    if (lang as NSString=="en") {
+    if (lang as! NSString=="en") {
       aboutThisAppLabel.text = NSLocalizedString("aboutThisAppLabel", comment: "comment")
       aboutThisAppTextView.text = NSLocalizedString("aboutThisAppTextView", comment: "comment")
       aboutThisAppTextView.font = UIFont(name: "HelveticaNeue", size: 20)

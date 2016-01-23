@@ -121,7 +121,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
   
   override func viewWillAppear(animated: Bool) {
     print("--- EditView --- viewWillAppear called!!")
-    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     let nid = Int(appDelegate.nid!)
     
     
@@ -217,8 +217,8 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
     self.presentViewController(picker, animated: true, completion: nil)
   }
-  
-  func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+ 
+  func imagePickerController(picker: UIImagePickerController, didFinishPickingImage info: [NSObject : AnyObject]) {
     
     // set image to imageView
     let chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
@@ -296,8 +296,8 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         /* Delete Note */
         
-        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegatのインスタンスを取得
-        var nid = Int(appDelegate.nid!)
+        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegatのインスタンスを取得
+        let nid = Int(appDelegate.nid!)
         
         // sql from here
         let _dbfile:NSString = "sqlite.db"
@@ -317,12 +317,16 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         if db.executeUpdate(sql_delete, withArgumentsInArray: nil) {
           print("Delete notes nid: \(nid)")
           
-          var fileManager = NSFileManager()
-          var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
-          var filePath = appDelegate.filePath
+          let fileManager = NSFileManager()
+          let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
+          let filePath = appDelegate.filePath
           // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-          if fileManager.removeItemAtPath(filePath!+"/img\(nid).img", error: nil) {
+          do {
+            try fileManager.removeItemAtPath(filePath!+"/img\(nid).img")
             print("Deleted img file (Path: \(filePath)/img\(nid).img")
+          }
+          catch let error as NSError {
+            print("Failed to delete image file (Path: \(filePath)/img\(nid).img")
           }
         }
         
@@ -360,27 +364,27 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
       
       _db.open()
       
-      var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-      var nid = Int(appDelegate.nid!)
+      let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+      let nid = Int(appDelegate.nid!)
       
       // To avoid error of single quotation
-      var blendNameTextFieldModified = blendNameTextField.text!.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
-      var originTextFieldModified = originTextField.text!.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
-      var placeTextFieldModified = placeTextField.text!.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
-      var commentTextFieldModified = commentTextView.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'", options: nil, range: nil)
+      let blendNameTextFieldModified = blendNameTextField.text!.stringByReplacingOccurrencesOfString("\'", withString: "\'\'")
+      let originTextFieldModified = originTextField.text!.stringByReplacingOccurrencesOfString("\'", withString: "\'\'")
+      let placeTextFieldModified = placeTextField.text!.stringByReplacingOccurrencesOfString("\'", withString: "\'\'")
+      let commentTextFieldModified = commentTextView.text.stringByReplacingOccurrencesOfString("\'", withString: "\'\'")
       
       // let sql_update = "UPDATE notes SET blendName='\(self.blendNameTextField.text)' WHERE nid=\(nid);"
       let sql_update = "UPDATE notes SET blendName='\(blendNameTextFieldModified)', origin='\(originTextFieldModified)', place='\(placeTextFieldModified)', roast='\(roastSegmentedControl.selectedSegmentIndex+1)', dark=\(darkSegmentedControl.selectedSegmentIndex+1), body=\(bodySegmentedControl.selectedSegmentIndex+1), acidity=\(aciditySegmentedControl.selectedSegmentIndex+1), flavor=\(flavorSegmentedControl.selectedSegmentIndex+1), sweetness=\(sweetnessSegmentedControl.selectedSegmentIndex+1), cleancup=\(cleanCupSegmentedControl.selectedSegmentIndex+1), aftertaste=\(aftertasteSegmentedControl.selectedSegmentIndex+1), overall=\(overallSegmentedControl.selectedSegmentIndex+1), comment='\(commentTextFieldModified)' WHERE nid=\(nid);"
-      var _result_insert = _db.executeUpdate(sql_update, withArgumentsInArray: nil)
+      let _result_insert = _db.executeUpdate(sql_update, withArgumentsInArray: nil)
       
       // save photo
       if (appDelegate.editImage != nil) {
         // save image in DocumentDirectory
-        // var data: NSData = UIImagePNGRepresentation(coffeeImageView.image)
-        var data: NSData = UIImageJPEGRepresentation(coffeeImageView.image!, 1.0)!
+        // let data: NSData = UIImagePNGRepresentation(coffeeImageView.image)
+        let data: NSData = UIImageJPEGRepresentation(coffeeImageView.image!, 1.0)!
         let filePath = appDelegate.filePath!
         // let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-        var imageFilePath = filePath+"/img\(nid).jpg"
+        let imageFilePath = filePath+"/img\(nid).jpg"
         /*if (fileManager.removeItemAtPath(imageFilePath, error: nil)) {
           print("Delete old photo")
         }*/
@@ -397,7 +401,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
       /* Debug to comfirm the inserted data */
       
       let sql_select = "SELECT * FROM notes WHERE nid=\(nid);"
-      var rows = _db.executeQuery(sql_select, withArgumentsInArray: nil)
+      let rows = _db.executeQuery(sql_select, withArgumentsInArray: nil)
       while rows.next() {
         let nid = rows.intForColumn("nid")
         let blendName = rows.stringForColumn("blendName")

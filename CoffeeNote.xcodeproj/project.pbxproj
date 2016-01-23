@@ -121,11 +121,11 @@
 		129411F319FE951200074D62 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		129D3E1119E2C61900180B94 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		129D3E1319E2C64B00180B94 /* CoffeeNote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoffeeNote-Bridging-Header.h"; sourceTree = "<group>"; };
-		12AD799519EB7EB100A320D4 /* img1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img1.jpg; path = ../../../Dropbox/images/img1.jpg; sourceTree = "<group>"; };
-		12AD799619EB7EB100A320D4 /* img4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img4.jpg; path = ../../../Dropbox/images/img4.jpg; sourceTree = "<group>"; };
+		12AD799519EB7EB100A320D4 /* img1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img1.jpg; path = ../../../../Dropbox/images/img1.jpg; sourceTree = "<group>"; };
+		12AD799619EB7EB100A320D4 /* img4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img4.jpg; path = ../../../../Dropbox/images/img4.jpg; sourceTree = "<group>"; };
 		12CD442619EBE24A00FE07AE /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		12CD442B19EC101000FE07AE /* img2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img2.jpg; path = ../../../Dropbox/images/img2.jpg; sourceTree = "<group>"; };
-		12CD442D19EC102C00FE07AE /* img3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img3.jpg; path = ../../../Dropbox/images/Picture/img3.jpg; sourceTree = "<group>"; };
+		12CD442B19EC101000FE07AE /* img2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img2.jpg; path = ../../../../Dropbox/images/img2.jpg; sourceTree = "<group>"; };
+		12CD442D19EC102C00FE07AE /* img3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img3.jpg; path = ../../../../Dropbox/images/img3.jpg; sourceTree = "<group>"; };
 		12D35D021A0CD41C00EE87D0 /* DFPBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPBannerView.h; sourceTree = "<group>"; };
 		12D35D031A0CD41C00EE87D0 /* DFPExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPExtras.h; sourceTree = "<group>"; };
 		12D35D041A0CD41C00EE87D0 /* DFPInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPInterstitial.h; sourceTree = "<group>"; };

@@ -42,7 +42,7 @@ class SettingViewController: UIViewController, MFMailComposeViewControllerDelega
       
       var lang: AnyObject = NSLocale.preferredLanguages()[0]
     
-      if (lang as NSString=="ja") {
+      if (lang as! NSString=="ja") {
         appNameLabel.hidden = true
         phraseLabel.hidden = true
       }else {
@@ -68,7 +68,7 @@ class SettingViewController: UIViewController, MFMailComposeViewControllerDelega
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
     let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathComponent(_dbfile)
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
     
     let db = FMDatabase(path: _path)
     
@@ -124,22 +124,22 @@ class SettingViewController: UIViewController, MFMailComposeViewControllerDelega
   
   func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
     
-    switch result.value {
-    case MFMailComposeResultCancelled.value:
-      print("Email Send Cancelled")
-      break
-    case MFMailComposeResultSaved.value:
-      print("Email Saved as a Draft")
-      break
-    case MFMailComposeResultSent.value:
-      print("Email Sent Successfully")
-      break
-    case MFMailComposeResultFailed.value:
-      print("Email Send Failed")
-      break
-    default:
-      break
-    }
+    // switch result.value {
+    // case MFMailComposeResultCancelled.value:
+    //   print("Email Send Cancelled")
+    //   break
+    // case MFMailComposeResultSaved.value:
+    //   print("Email Saved as a Draft")
+    //   break
+    // case MFMailComposeResultSent.value:
+    //   print("Email Sent Successfully")
+    //   break
+    // case MFMailComposeResultFailed.value:
+    //   print("Email Send Failed")
+    //   break
+    // default:
+    //   break
+    // }
     
     self.dismissViewControllerAnimated(true, completion: nil)
   }

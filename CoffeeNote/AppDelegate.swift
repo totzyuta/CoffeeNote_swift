@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var editImage: UIImage?
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    println(">>> didFinishLaunchingWithOptinos")
+    print(">>> didFinishLaunchingWithOptinos")
     
     // Override point for customization after application launch.
     

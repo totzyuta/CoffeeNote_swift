@@ -204,8 +204,8 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       nidArray.append(rows.stringForColumn("nid"))
       blendNameArray.append(rows.stringForColumn("blendName"))
       placesArray.append(rows.stringForColumn("place"))
-      var tmp_datewords = split(rows.stringForColumn("date"), { $0 == "," })
-      var datewords = split(tmp_datewords[0], { $0 == "/" })
+      let tmp_datewords = rows.stringForColumn("date").componentsSeparatedByString(",")
+      let datewords = tmp_datewords[0].componentsSeparatedByString("/")
       dateArray.append(datewords[0]+"/"+datewords[1])
     }
     
@@ -217,14 +217,14 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     
     // set image
-    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
+    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
     let filePath = appDelegate.filePath
-    var imageFilePath = filePath!+"/img\(nidArray[indexPath.row]).jpg"
-    var imgfileManager = NSFileManager()
+    let imageFilePath = filePath!+"/img\(nidArray[indexPath.row]).jpg"
+    let imgfileManager = NSFileManager()
     print("imageFilePath: \(imageFilePath)")
     if (imgfileManager.fileExistsAtPath(imageFilePath)) {
       cell.backImage.image = UIImage(contentsOfFile: imageFilePath)
-      prprintimageFilepath is there!")
+      print("imageFilepath is there!")
     }else{
       cell.backImage.image = UIImage(named: "img1.jpg")
       print("NO imageFilepath")
@@ -291,14 +291,14 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
     let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathCompone as Stringnt;(_dbfile)
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
     
     let db = FMDatabase(path: _path)
     let sql = "SELECT * FROM notes LIMIT 1 OFFSET \(cellNumber)"
     
     db.open()
     
-    var rows = db.executeQuery(sql, withArgumentsInArray: nil)
+    let rows = db.executeQuery(sql, withArgumentsInArray: nil)
     var nid = 1
     
     while rows.next() {
@@ -318,22 +318,22 @@ class AllViewController: UIViewController, UITableViewDataSource, UITableViewDel
       NSSearchPathDomainMask.UserDomainMask,
       true)[0]
     let fileManager:NSFileManager = NSFileManager.defaultManager()
-    let _path:String = _dir.stringByAppendingPathCompone as Stringnt;(_dbfile)
+    let _path:String = _dir.stringByAppendingPathComponent(_dbfile as String)
     
     let db = FMDatabase(path: _path)
     
     
-    var cellNumber = fetchCellNumber(indexPath.row)
+    let cellNumber = fetchCellNumber(indexPath.row)
     
     let sql_select = "SELECT * FROM notes WHERE nid=\(cellNumber);"
     
     db.open()
     
-    var rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
+    let rows = db.executeQuery(sql_select, withArgumentsInArray: nil)
     
     while rows.next() {
-      var nid: Int = Int(rows.intForColumn("nid"))
-      var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
+      let nid: Int = Int(rows.intForColumn("nid"))
+      let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
       appDelegate.nid = nid
     }
     
