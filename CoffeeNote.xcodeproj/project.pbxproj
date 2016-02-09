@@ -536,7 +536,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = totz;
 				TargetAttributes = {
 					127ACED819DBF1BE00B39373 = {
@@ -711,6 +711,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -787,6 +788,7 @@
 					"$(PROJECT_DIR)/Externals/NendSDK_iOS-2.5.5/AdMobMediationAdapter",
 					"$(PROJECT_DIR)/Externals/NendSDK_iOS-2.5.5/Nend/NendAd",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.totuiy.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/CoffeeNote-Bridging-Header.h";
@@ -811,6 +813,7 @@
 					"$(PROJECT_DIR)/Externals/NendSDK_iOS-2.5.5/AdMobMediationAdapter",
 					"$(PROJECT_DIR)/Externals/NendSDK_iOS-2.5.5/Nend/NendAd",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.totuiy.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/CoffeeNote-Bridging-Header.h";
@@ -832,6 +835,7 @@
 				);
 				INFOPLIST_FILE = CoffeeNoteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.totuiy.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoffeeNote.app/CoffeeNote";
 			};
@@ -847,6 +851,7 @@
 				);
 				INFOPLIST_FILE = CoffeeNoteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.totuiy.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoffeeNote.app/CoffeeNote";
 			};
